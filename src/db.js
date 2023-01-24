@@ -15,10 +15,3 @@ export const pool = createPool({
     port: DB_PORT,
     database: DB_DATABASE
 })
-
-// export const PORT = process.env.PORT || 6641
-// export const DB_HOST = 'containers-us-west-175.railway.app'
-// export const DB_USER = 'root'
-// export const DB_PASSWORD = 'OVA0FamMNKlFdLLemE6J'
-// export const DB_NAME = 'railway'
-// export const DB_PORT = 3000
