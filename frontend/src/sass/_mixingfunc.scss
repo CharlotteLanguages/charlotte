@@ -1,0 +1,22 @@
+@mixin measures($width, $height, $left, $top) {
+  width: $width;
+  height: $height;
+  left: $left;
+  top: $top;
+}
+
+@mixin font-style(
+  $font-family,
+  $font-style,
+  $font-weight,
+  $font-size,
+  $line-height,
+  $text-align
+) {
+  font-family: $font-family;
+  font-style: $font-style;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  text-align: $text-align;
+}

@@ -1,0 +1,347 @@
+@use "mixingfunc";
+/* ----------------------Section Form---------------------------- */
+.cont-new-member {
+  @include mixingfunc.measures(1251px, 840px, 424px, 144px);
+  position: absolute;
+  background: #ffffff;
+  border-radius: 20px;
+
+  .title-member {
+    box-sizing: border-box;
+    padding-left: 19px;
+    padding-right: 10px;
+    position: absolute;
+    width: 1194px;
+    height: 51px;
+    left: 29px;
+    top: 65px;
+    color: #000;
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    font-size: 25px;
+  }
+}
+.open-form-member {
+  transform: translateY(-200%);
+}
+
+#cont-form-member {
+  .input-category-member {
+    box-sizing: border-box;
+    position: absolute;
+    @include mixingfunc.measures(590px, 51px, 29px, 131px);
+    @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    padding-left: 19px;
+    color: #000000;
+  }
+
+  .input-tags-member{
+
+    box-sizing: border-box;
+    position: absolute;
+    @include mixingfunc.measures(590px, 51px, 632px, 131px);
+    @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    padding-left: 19px;
+    color: #000000;
+    
+
+  }
+
+
+
+
+}
+#create-member {
+  position: absolute;
+  width: 266px;
+  height: 48px;
+  left: 957px;
+  top: 771px;
+
+  background: #338af3;
+  border-radius: 20px;
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 130%;
+  transition: all 0.4s ease;
+  border: 0;
+
+  color: #ffffff;
+  &:hover {
+    background: rgb(140, 168, 250);
+  }
+}
+
+.font-title-member {
+  position: absolute;
+  width: 278px;
+  height: 39px;
+  left: 17px;
+  top: 11px;
+
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 130%;
+  /* identical to box height, or 39px */
+
+  color: #000000;
+}
+
+.none-member {
+  display: none;
+}
+
+.input-category-member {
+  box-sizing: border-box;
+  position: absolute;
+  @include mixingfunc.measures(590px, 51px, 29px, 131px);
+  @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  padding-left: 19px;
+  color: #000000;
+}
+
+.font-title-member {
+  position: absolute;
+  width: 400px;
+  height: 39px;
+  left: 30px;
+  top: 11px;
+
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 130%;
+}
+
+.input-offer-member {
+  box-sizing: border-box;
+  position: absolute;
+  @include mixingfunc.measures(590px, 51px, 633px, 197px);
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 130%;
+  color: #000000;
+  padding-left: 19px;
+}
+
+#area-member {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 1194px;
+  height: 550px;
+  left: 29px;
+  top: 200px;
+  
+  border-radius: 10px;
+  .txtarea-member {
+    margin-top: 10px;
+    resize: none;
+    border-radius: 10px;
+    width: 1194px;
+    height: 550px;
+  }
+}
+.input-price-member{
+    box-sizing: border-box;
+    position: absolute;
+    @include mixingfunc.measures(590px, 51px, 633px, 131px);
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 130%;
+    color: #000000;
+    padding-left: 19px;
+}
+
+/*----------------------------- Section Table---------------------- */
+
+.cont-tables-member {
+  //@include mixingfunc.measures(1051px, 594px, 344px, 142px);
+  margin: 142px 45px 288px 424px;
+
+  width: 1251px;
+  height: 594px;
+  background: #8eaaff;
+  border-radius: 20px;
+  position: absolute;
+  box-shadow: 5px 10px 10px 10px rgba(0, 0, 0, 0.25);
+
+  .cont-table-member_blue {
+    overflow-y: auto;
+    width: 1251px;
+    height: 529px;
+    border-radius: 18px;
+  }
+
+  .table-member {
+    width: 1251px;
+    height: 529px;
+    background: #ffffff;
+    border-radius: 20px;
+    border-collapse: collapse;
+    th {
+      @include mixingfunc.font-style(
+        Helvetica,
+        normal,
+        600,
+        30px,
+        130%,
+        center
+      );
+      font-family: Arial, Helvetica, sans-serif;
+      border: solid 1px black;
+      height: 60px;
+      border-top: none;
+    }
+    td {
+      @include mixingfunc.font-style(Helvetica, normal, 400, 25px, 130%, left);
+      border: solid 1px black;
+      padding-left: 17px;
+      padding-right: 17px;
+      max-height: 39px;
+      max-width: 400px;
+      text-align: justify;
+      border-bottom: none;
+    }
+  }
+}
+.up-table-member {
+  transform: translateY(-200%);
+}
+
+.btn-member {
+  @include mixingfunc.measures(290px, 48px, 950px, 539px);
+  @include mixingfunc.font-style(Arial, normal, 600, 25px, 130%, center);
+  background: #338af3;
+  border-radius: 20px;
+  position: absolute;
+  color: #ffffff;
+  transition: all 0.5s ease;
+  padding-top: 5px;
+  border: 0.5px solid #1a63f5;
+
+  &:hover {
+    background: #fff;
+    color: #000;
+    transition: all 0.4s ease;
+  }
+  color: #ffffff;
+  text-decoration: none;
+}
+
+
+
+
+
+/*-------------Modal delete --------------------------*/
+
+#modal-container-member {
+  opacity: 0;
+ visibility: hidden;  
+ position: absolute;
+ z-index: 1000;
+ @include mixingfunc.measures(100%, 100%, 0, 0);
+ background-color: rgba(143, 143, 143, 0.65);
+}
+
+
+.modal-member {
+ position: relative;
+ width: 930px;
+ height: 800px;
+ left: 493px;
+ top: 70px;
+ border-radius: 10px;
+background-color: #ffffff;
+ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+ border-radius: 20px;
+ transition: transform 1s;
+ transform: translateY(0%);
+
+ .close-member {
+   position: absolute;
+   left: 94.2%;
+   right: 1.72%;
+   top: 2.50%;
+   bottom: 93.65%;
+   color: #000;
+   z-index: 1000;
+   i {
+     font-size: 30px;
+   }
+ }
+
+ .cont-p-member {
+   position: absolute;
+   width: 920px;
+   max-height: 785px;
+   top: 10px;
+   bottom: 10px;
+   left: 10px;
+   right: 10px;
+   overflow: auto;
+   padding: 20px 40px 20px 20px;
+ }
+
+}
+.modal-clm {
+ transform: translateY(-200%); 
+}
+
+
+
+
+
+/*----------------buttons admin------------------*/
+.icons-member {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  i {
+    width: 30px;
+    height: 30px;
+  }
+
+  .edit-member {
+    font-size: 30px;
+    color: #ff9811;
+    transition: all 0.5s ease;
+    &:hover {
+      color: #6e7f8f;
+    }
+  }
+  .remove-member {
+    font-size: 30px;
+    color: red;
+     &:hover {
+      color: #6e7f8f;
+    }
+  }
+
+  .read-member {
+    font-size: 30px;
+    color: #0057ff;
+     &:hover {
+      color: #6e7f8f;
+    }
+  }
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/en.js"></script>
+
+
+    <title>Classes</title>
+</head>
+
+<body>
+    <div id="container">
+
+        <section class="cont-new-classes open-form-classes">
+            <section class=" crud-classes" id="cont-form-classes">
+                <article>
+                    <p class="crud-title-classes font-title-classes">Create new class</p>
+                    <form action="" class="crud-form-classes">
+                        <input type="hidden" name="idi">
+
+                        <input class="title-classes" type="text" name="classeTitle"
+                            placeholder="New class personalized" required>
+
+                        <select class="input-category-classes" name="classeCategory">
+                            <option selected disabled="">Category</option>
+                            <option>FREE</option>
+                            <option>BASIC</option>
+                            <option>PRO</option>
+                            <option>PRO +</option>
+                        </select>
+                        <input class="input-DateStart-classes" type="date" name="classeDateStart"
+                            placeholder="Start Date*">
+                        <input class="input-price-classes" type="text" name="classePrice" placeholder="Student name">
+                        <div>
+                            <input class="input-DateEnd-classes" type="time" name="classeDateEnd"
+                                placeholder="Final Date*">
+                        </div>
+                        <input class="input-offer-classes" type="text" name="classeOffer" placeholder="Type">
+
+
+                        <div id="area-classes">
+                            <textarea name="classeDescription" class="txtarea-classes" cols="30"
+                                rows="10"> </textarea>
+                        </div>
+
+                    </form>
+                    <input id="create-classes" type="submit" value="Create new class" class="btn-submit">
+                    <input class="cancel-form" type="button" value="Cancel">
+                </article>
+
+            </section>
+        </section>
+
+        <div class="menu">
+            <a href="" class="menu__logo"></a>
+            <div class="menu__list">
+                <li><a href="/src/views/student.html">Students</a></li>
+                <li><a href="/src/views/news.html">News</a></li>
+                <li><a href="/src/views/courses.html">Courses</a></li>
+                <li><a href="/src/views/actividades.html">Activities</a></li>
+                <li><a href="/src/views/resource.html">Resources</a></li>
+                <li><a href="/src/views/certificates.html">Certificates</a></li>
+                <li class="press"><a href="/src/views/classes.html" class="space">Private Classes</a></li>
+                <div class="space-top">
+                    <li><a href="/src/views/promotions.html">Offers</a></li>
+                    <li><a href="/src/views/menbership.html">Memberships</a></li>
+                    <li><a href=" /src/views/referrals.html">Referrals</a></li>
+                    <li><a href="/src/views/sponsors.html">Sponsors</a></li>
+                    <li><a href="/src/views/reviews.html">Reviews</a>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <section id="nav">
+
+            <div class="nav__icon">
+                <i class="fas fa-bell"></i>
+                <i class="far fa-envelope"></i>
+                <a href="" class="profile"></a>
+            </div>
+            <div class="btn-certificates-badges">class</div>
+            <div class="btn-search">Calendar</div>
+        </section>
+
+        <section class="cont-tables-classes ">
+            <div class="cont-table-classes_blue">
+                <table class="crud-table-classes table-classes">
+
+                </table>
+            </div>
+
+
+            <button class="btn-classes">Add new class</button>
+
+        </section>
+
+        <section id="modal-container-classes">
+            <div class="modal-classes modal-clp">
+                <div class="close-classes"><i class="fas fa-times-circle poi"></i></div>
+                <div class="cont-p-classes">
+                </div>
+        </section>
+        <form class="form-delete" action="">
+            <section id="modal-container-dr">
+                <div class="modal-dr modal-close-dr">
+                    <h3>Delete item</h3>
+                    <textarea name="cuadro" id="text-dr" cols="30" rows="10" placeholder="Reason..." required></textarea>
+                    <button type="submit" class="close-dr bnt-dr">Yes, Delete</button>
+                    <button class="close-dr btn-dr2">Cancel</button>
+
+                </div>
+            </section>
+
+        </form>
+
+        <section class="container-notify-succes sucesx alert " id="alert">
+            <i class="fas fa-check-circle close-notify-succes"></i>
+            <p class="parrafo-succes"></p>
+        </section>
+
+        <section id="container-noti">
+            <div class="noti__idea"></div>
+            <p class="noti__parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deserunt eius,
+                animi fugiat debitis, id ipsa sint recusandae eum nobis odit sequi nihil dicta beatae qui eveniet
+                mollitia, excepturi adipisci.</p>
+
+        </section>
+
+        <div class="calendar up-calendar">
+            <div class="calendar__info">
+                <div class="calendar__prev" id="prev-month">&#9664;</div>
+                <div class="calendar__text">
+                    <div class="calendar__month" id="month"></div>
+                    <div class="calendar__year" id="year"></div>
+                </div>
+                <div class="calendar__next" id="next-month">&#9654;</div>
+            </div>
+
+            <div class="calendar__week">
+                <div class="calendar__day calendar__item">Mo</div>
+                <div class="calendar__day calendar__item">Tu</div>
+                <div class="calendar__day calendar__item">We</div>
+                <div class="calendar__day calendar__item">Th</div>
+                <div class="calendar__day calendar__item">Fr</div>
+                <div class="calendar__day calendar__item">Sa</div>
+                <div class="calendar__day calendar__item">Su</div>
+            </div>
+
+            <div class="calendar__dates" id="dates"></div>
+
+        </div>
+
+    </div>
+    <script src="/src/js/classes/main-classes.js" type="module"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

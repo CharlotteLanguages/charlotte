@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/en.js"></script>
+    <title>News</title>
+</head>
+
+<body>
+    <div id="container">
+
+        <section class="cont-new-news open-form-news ">
+            <section class=" crud-news" id="cont-form-news">
+                <article>
+                    <p class="crud-title-news font-title-news">Create new news</p>
+                    <form action="" class="crud-form-news">
+
+                        <input type="hidden" name="idi">
+                        <input class="title-news" type="text" name="titleNews" placeholder="Title new" required>
+                        <select class="input-category-news" name="categoryNews">
+                            <option selected disabled="">Category</option>
+                            <option>Noticia 1</option>
+                            <option>Noticia 2</option>
+                            <option>Noticia 3</option>
+                        </select>
+                        <select class="input-price-news" name="tagsNews">
+                            <option selected disabled="">Optional tags</option>
+                            <option>Agent</option>
+                            <option>Liaison</option>
+                            <option>Analiyt</option>
+                            <option>Facilitator</option>
+                            <option>Architect</option>
+                            <option>Producer</option>
+                            <option>Specialist</option>
+                            <option>Assistant</option>
+                        </select>
+
+
+                        <div id="area-news">
+                            <textarea name="description" class="txtarea-news" cols="30" rows="10"> </textarea>
+                        </div>
+                    </form>
+                    <input id="create-news" type="submit" value="Create news" class="btn-submit">
+                    <input class="cancel-form" type="button" value="Cancel">
+                </article>
+
+            </section>
+        </section>
+
+        <div class="menu">
+            <a href="" class="menu__logo"></a>
+            <div class="menu__list">
+                <div>
+                    <li><a href="/src/views/student.html">Students</a></li>
+                    <li class="press"><a href="/src/views/news.html">News</a></li>
+                    <li><a href="/src/views/courses.html">Courses</a></li>
+                    <li><a href="/src/views/actividades.html">Activities</a></li>
+                    <li><a href="/src/views/resource.html">Resources</a></li>
+                    <li><a href="/src/views/certificates.html">Certificates</a></li>
+                    <li><a href="/src/views/classes.html" class="space">Private Classes</a></li>
+                </div>
+                <div class="space-top">
+                    <li class="space2"><a href="/src/views/promotions.html">Offers</a></li>
+                    <li><a href="/src/views/menbership.html">Memberships</a></li>
+                    <li><a href=" /src/views/referrals.html">Referrals</a> </li>
+                    <li><a href="/src/views/sponsors.html">Sponsors</a></li>
+                    <li><a href="/src/views/reviews.html">Reviews</a>
+
+                </div>
+            </div>
+        </div>
+
+        <section id="nav">
+            <div class="nav__icon">
+                <i class="fas fa-bell"></i>
+                <i class="far fa-envelope"></i>
+                <a href="" class="profile"></a>
+            </div>
+        </section>
+
+        <section class="cont-tables-news">
+            <div class="cont-table-news_blue">
+                <table class="crud-table-news table-news">
+                </table>
+            </div>
+            <button class="btn-news">Add new news</button>
+        </section>
+
+        <section id="modal-container-news">
+            <div class="modal-news modal-cl">
+                <div class="close-news"><i class="fas fa-times-circle poi"></i></div>
+                <div class="cont-p-news">
+                </div>
+
+        </section>
+
+        <form class="form-delete" action="">
+            <section id="modal-container-dr">
+                <div class="modal-dr modal-close-dr">
+                    <h3>Delete item</h3>
+                    <textarea name="cuadro" id="text-dr" cols="30" rows="10" placeholder="Reason..."
+                        required></textarea>
+                    <button type="submit" class="close-dr bnt-dr">Yes, Delete</button>
+                    <button class="close-dr btn-dr2">Cancel</button>
+
+                </div>
+            </section>
+
+        </form>
+        <section class="container-notify-succes sucesx alert" id="alert">
+            <i class="fas fa-check-circle close-notify-succes"></i>
+            <p class="parrafo-succes"></p>
+            <!--   <i class="fas fa-check-circle check-succes"></i> -->
+        </section>
+
+
+        <section id="container-noti">
+            <div class="noti__idea"></div>
+            <p class="noti__parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deserunt eius,
+                animi fugiat debitis, id ipsa sint recusandae eum nobis odit sequi nihil dicta beatae qui eveniet
+                mollitia, excepturi adipisci.</p>
+
+        </section>
+
+
+    </div>
+    <script src="/src/js/news/main-new.js" type="module"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

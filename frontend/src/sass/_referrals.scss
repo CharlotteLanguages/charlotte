@@ -1,0 +1,450 @@
+@use "mixingfunc";
+/* ----------------------Section Form---------------------------- */
+.cont-new-referral {
+  @include mixingfunc.measures(1251px, 276px, 424px, 184px);
+  position: absolute;
+  background: #ffffff;
+  border-radius: 20px;
+
+  .title-referral {
+    box-sizing: border-box;
+    padding-left: 19px;
+    padding-right: 10px;
+    position: absolute;
+    width: 1194px;
+    height: 51px;
+    left: 29px;
+    top: 65px;
+    color: #000;
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    font-size: 25px;
+    
+  }
+}
+.open-form-referral {
+  transform: translateY(-200%);
+}
+
+
+  .email-referral {
+    box-sizing: border-box;
+    position: absolute;
+    @include mixingfunc.measures(590px, 51px, 29px, 131px);
+    @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    padding-left: 19px;
+    color: #000000;
+  }
+
+  .phone-referral{
+    box-sizing: border-box;
+    position: absolute;
+    @include mixingfunc.measures(590px, 51px, 632px, 131px);
+    @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    padding-left: 19px;
+    color: #000000;
+    
+
+  }
+
+
+#create-referral {
+  position: absolute;
+  width: 236px;
+  height: 48px;
+  left: 987px;
+  top: 207px;
+
+  background: #338af3;
+  border-radius: 20px;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 130%;
+  transition: all 0.4s ease;
+  outline:none;
+  border: 0;
+  color: #ffffff;
+  border: 0;
+  &:hover {
+    background: rgb(140, 168, 250);
+    /* color: #000;
+    border: 1px solid; */
+  }
+}
+.cancel-referral{
+  position: absolute;
+  width: 170px;
+  height: 48px;
+  left: 25px;
+  top: 207px;
+  background:white ;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  border-radius: 20px;
+  border: 0.5px solid  rgb(150, 148, 148); 
+  transition: all 0.4s ease;
+ 
+  &:hover {
+    background: rgb(238, 238, 238);
+    
+  }
+}
+.font-title-referral {
+  position: absolute;
+  width: 278px;
+  height: 39px;
+  left: 30px;
+  top: 11px;
+
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 130%;
+  /* identical to box height, or 39px */
+
+  color: #000000;
+}
+
+
+.input-category-referral {
+  box-sizing: border-box;
+  position: absolute;
+  @include mixingfunc.measures(590px, 51px, 29px, 131px);
+  @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  padding-left: 19px;
+  color: #000000;
+}
+
+.font-title-referral {
+  position: absolute;
+  width: 400px;
+  height: 39px;
+  left: 30px;
+  top: 11px;
+
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 130%;
+}
+
+.input-offer-referral {
+  box-sizing: border-box;
+  position: absolute;
+  @include mixingfunc.measures(590px, 51px, 633px, 197px);
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 130%;
+  color: #000000;
+  padding-left: 19px;
+}
+
+#area-referral {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 1194px;
+  height: 443px;
+  left: 29px;
+  top: 200px;
+  border-radius: 10px;
+  .txtarea-referral {
+    margin-top: 70px;
+    resize: none;
+    border-radius: 10px;
+    width: 1194px;
+    height: 483px;
+  }
+}
+
+/*----------------------------- Section Table---------------------- */
+
+.cont-tables-referral {
+  //@include mixingfunc.measures(1051px, 594px, 344px, 142px);
+  margin: 142px 45px 288px 424px;
+
+  width: 1251px;
+  height: 594px;
+  background: #8eaaff;
+  border-radius: 20px;
+  position: absolute;
+  box-shadow: 5px 10px 10px 10px rgba(0, 0, 0, 0.25);
+
+  .cont-table-referral_blue {
+    overflow-y: auto;
+    width: 1251px;
+    height: 529px;
+    border-radius: 18px;
+  }
+
+  .table-referral {
+    width: 1251px;
+    height: 529px;
+    background: #ffffff;
+    border-radius: 20px;
+    border-collapse: collapse;
+    th {
+      @include mixingfunc.font-style(
+        arial,
+        normal,
+        600,
+        30px,
+        130%,
+        center
+      );
+      font-family: Arial;
+      border: solid 1px black;
+      height: 60px;
+      border-top: none
+    }
+    td {
+      @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, left);
+      border: solid 1px black;
+      padding-left: 17px;
+      padding-right: 17px;
+      white-space: nowrap;
+      overflow: hidden; 
+      text-overflow:ellipsis;
+      max-width: 400px;
+      min-width: 60px;
+      text-align: justify;
+      border-bottom: none;
+    }
+  }
+}
+.up-table-referral {
+  transform: translateY(-200%);
+}
+
+.btn-referral {
+  @include mixingfunc.measures(256px, 48px, 980px, 539px);
+  @include mixingfunc.font-style(Arial, normal, 600, 25px, 130%, center);
+  background: #338af3;
+  border-radius: 20px;
+  position: absolute;
+  color: #ffffff;
+  transition: all 0.5s ease;
+  padding-top: 5px;
+  border: 0.5px solid #1a63f5;
+
+  &:hover {
+    background: #fff;
+    color: #000;
+    transition: all 0.4s ease;
+  }
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/*------------------Section Modal-----------*/
+
+#modal-container-referral {
+   opacity: 0;
+  visibility: hidden;  
+  position: absolute;
+  z-index: 1000;
+  @include mixingfunc.measures(100%, 100%, 0, 0);
+  background-color: rgba(143, 143, 143, 0.65);
+}
+
+
+.modal-referral {
+  position: relative;
+  width: 930px;
+  height: 200px;
+  left: 493px;
+  top: 400px;
+  border-radius: 10px;
+ background-color: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  transition: transform 1s;
+  transform: translateY(0%);
+
+  .close-referral {
+    position: absolute;
+    left: 890px;
+    right: 1.72%;
+    top: 10px;
+    bottom: 93.65%;
+    color: #000;
+    z-index: 1000;
+    i {
+      font-size: 30px;
+    }
+  }
+
+  .cont-p-referral {
+    position: absolute;
+    width: 920px;
+    max-height: 785px;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    overflow: auto;
+    padding: 20px 40px 20px 20px;
+  }
+ 
+}
+.modal-clos {
+  transform: translateY(-400%); 
+ }
+
+
+
+
+/*-------------Modal delete --------------------------*/
+
+
+/*modal-container*/
+#modal-container-dr {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  z-index: 1000;
+  @include mixingfunc.measures(100%, 100%, 0, 0);
+  background-color: rgba(143, 143, 143, 0.65);
+}
+
+.modal-dr {
+  box-sizing: border-box;
+  position: absolute;
+  @include mixingfunc.measures(898px, 305px, 25%, 381px);
+  bottom: 338px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 3px solid #0057ff;
+  box-shadow: 0px 4px 6px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  transition: transform 1s;
+  transform: translateY(0%);
+  /*modal resource*/
+
+  h3 {
+    position: absolute;
+    @include mixingfunc.measures(166px, 39px, 366px, 21px);
+    @include mixingfunc.font-style(Arial, normal, 600, 30px, 130%, center);
+    color: #000000;
+  }
+}
+#text-dr {
+  box-sizing: border-box;
+  position: absolute;
+  @include mixingfunc.measures(808px, 129px, 45px, 82px);
+  @include mixingfunc.font-style(Arial, normal, 300, 20px, 130%, center);
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  resize: none;
+  color: #000000;
+  padding-left: 18px;
+  padding-top: 12px;
+}
+
+.bnt-dr {
+  position: absolute;
+  /*   @include mixingfunc.measures(186px, 48px, 667px, 237px); */
+  @include mixingfunc.measures(137px, 32px, 692px, 245px);
+  @include mixingfunc.font-style(Arial, normal, 700, 25px, 130%, center);
+  background: #d80027;
+  border-radius: 20px;
+  position: absolute;
+  color: #ffffff;
+}
+
+.btn-dr2 {
+  position: absolute;
+  @include mixingfunc.measures(84px, 32px, 45px, 245px);
+  @include mixingfunc.font-style(Arial, normal, 600, 25px, 130%, center);
+  color: #000000;
+}
+.modal-close-dr {
+  transform: translateY(-200%);
+  /*modal close*/
+}
+
+
+
+/*----------------buttons admin------------------*/
+.icons-referral {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  i {
+    width: 35px;
+    height: 43px;
+    padding-top: 3px;
+    transition: all 0.3s ease;
+  }
+
+  .edit-referral {
+    font-size: 30px;
+    color: #ff9811;
+    &:hover {
+      color: #6e7f8f;
+    }
+  }
+  .remove-referral {
+    font-size: 30px;
+    color: red;
+     &:hover {
+      color: #6e7f8f;
+    }
+  }
+
+  .read-referral {
+    font-size: 30px;
+    color: #0057ff;
+     &:hover {
+      color: #6e7f8f;
+    }
+  }
+}
+.stylee{
+  color: #d80027;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.refname{
+  display: flex;
+  font-size: 25px;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+
+  margin-bottom: 20px;
+}
+.refemail{
+  display: flex;
+  font-size: 25px;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+ 
+  margin-bottom: 20px;
+}
+.refphone{
+  display: flex;
+  font-size: 25px;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
