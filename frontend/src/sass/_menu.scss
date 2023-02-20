@@ -1,0 +1,72 @@
+@use "mixingfunc";
+
+.menu {
+  @include mixingfunc.measures(299px, 1024px, 0px, 0px);
+  background: #ebebeb;
+  box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 20px 20px 0px;
+  &::after {
+    content: "";
+    position: absolute;
+    @include mixingfunc.measures(232.5px, 0px, 34px, 598.5px);
+    border: 1px solid #000000;
+  }
+  .menu__logo {
+    @include mixingfunc.measures(230px, 99px, 35px, 19px);
+    background: url("/src/public/charlotte.PNG");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+  }
+
+  .menu__list {
+    margin-top: 220px;
+    /*   margin-bottom: 156px; */
+
+    li {
+      width: 282px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      list-style: none;
+      margin-bottom: 15px;
+      height: 38px;
+      transition: all 0.5s linear;
+      
+      &:hover {
+        height: 43px;
+        background: #8eaaff;
+        border-radius: 50px 0px 0px 50px;
+        text-align: center;
+      }
+
+      a {
+        text-decoration: none;
+        @include mixingfunc.font-style(Arial, normal, 500, 24px, 38px, center);
+         
+        width: 265px;
+        color: #000000;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+}
+.space2 {
+  padding-top: 12px;
+}
+
+.press {
+  width: 282px;
+  height: 46px;
+  background: #8eaaff;
+  border-radius: 50px 0px 0px 50px;
+  text-align: center;
+  /* transition: all 0.4s ease; */
+  
+}
+.space-top{
+  margin-top: 35px;
+}

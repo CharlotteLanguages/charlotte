@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/en.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/xml/xml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/css/css.js"></script>
+    <title>Offers</title>
+</head>
+
+<body>
+    <div id="container">
+
+        <section class="cont-new-promotion open-form-promotion">
+            <section class=" crud-promotion" id="cont-form-promotion">
+                <article>
+                    <p class="crud-title-promotion font-title-promotion">Create new promotion</p>
+                    <form action="" class="crud-form-promotion">
+                        <input type="hidden" name="idi">
+
+                        <input class="title-promotion" type="text" name="promotionTitle" placeholder="Prmotion name"
+                            required>
+
+                        <select class="input-category-promotion" name="promotionCategory">
+                            <option selected disabled="">Category</option>
+                            <option>Bussiness</option>
+                            <option>Engineer</option>
+                            <option>Specialist</option>
+                            <option>Associate</option>
+                            <option>Producer</option>
+                            <option>Developer</option>
+                            <option>Manager</option>
+                            <option>Technician</option>
+                            <option>Assistant</option>
+                        </select>
+                        <input class="input-DateStart-promotion" type="datetime-local" name="promotionDateStart"
+                            placeholder="Start Date*">
+                            <input class="input-DateEnd-promotion" type="datetime-local" name="promotionDateEnd"
+                                placeholder="Final Date*">
+                        <input class="input-price-promotion" type="number" name="promotionPrice" placeholder="Price*">
+                        <div>
+                        </div>
+                        <input class="input-offer-promotion" type="text" name="promotionOffer" placeholder="Offer*">
+
+
+                        <div id="area-promotion">
+                            <textarea name="promotionDescription" class="txtarea-promotion" cols="30"
+                                rows="10"> </textarea>
+                        </div>
+
+                    </form>
+                    <input id="create-promotion" type="submit" value="Create offer" class="btn-submit">
+                    <input class="cancel-form" type="button" value="Cancel">
+                </article>
+
+            </section>
+        </section>
+
+        <div class="menu">
+            <a href="" class="menu__logo"></a>
+            <div class="menu__list">
+                <li><a href="/src/views/student.html">Students</a></li>
+                <li><a href="/src/views/news.html">News</a></li>
+                <li><a href="/src/views/courses.html">Courses</a></li>
+                <li><a href="/src/views/actividades.html">Activities</a></li>
+                <li><a href="/src/views/resource.html">Resources</a></li>
+                <li><a href="/src/views/certificates.html">Certificates</a></li>
+                <li><a href="/src/views/classes.html" class="space">Private Classes</a></li>
+                <div class="space-top">
+                    <li class=" press"><a href="">Offers</a></li>
+                    <li><a href="/src/views/menbership.html">Memberships</a></li>
+                    <li><a href=" /src/views/referrals.html">Referrals</a></li>
+                    <li><a href="/src/views/sponsors.html">Sponsors</a></li>
+                    <li><a href="/src/views/reviews.html">Reviews</a>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <section id="nav">
+
+            <div class="nav__icon">
+                <i class="fas fa-bell"></i>
+                <i class="far fa-envelope"></i>
+                <a href="" class="profile"></a>
+            </div>
+        </section>
+
+        <section class="cont-tables-promotion ">
+            <div class="cont-table-promotion_blue">
+                <table class="crud-table-promotion table-promotion">
+
+                </table>
+            </div>
+
+
+            <button class="btn-promotion">Add new offer</button>
+
+        </section>
+
+        <section id="modal-container-promotion">
+            <div class="modal-promotion modal-clp">
+                <div class="close-promotion"><i class="fas fa-times-circle poi"></i></div>
+                <div class="cont-p-promotion">
+                </div>
+        </section>
+        <form class="form-delete" action="">
+            <section id="modal-container-dr">
+                <div class="modal-dr modal-close-dr">
+                    <h3>Delete item</h3>
+                    <textarea name="cuadro" id="text-dr" cols="30" rows="10" placeholder="Reason..." required></textarea>
+                    <button type="submit" class="close-dr bnt-dr">Yes, Delete</button>
+                    <button class="close-dr btn-dr2">Cancel</button>
+
+                </div>
+            </section>
+
+        </form>
+
+        <section class="container-notify-succes sucesx alert " id="alert">
+            <i class="fas fa-check-circle close-notify-succes"></i>
+            <p class="parrafo-succes"></p>
+        </section>
+
+        <section id="container-noti">
+            <div class="noti__idea"></div>
+            <p class="noti__parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deserunt eius,
+                animi fugiat debitis, id ipsa sint recusandae eum nobis odit sequi nihil dicta beatae qui eveniet
+                mollitia, excepturi adipisci.</p>
+
+        </section>
+
+        <template id="crud-template-promotion">
+            <tr>
+                <td class="id-promotion"></td>
+                <td class="promotionTitle"></td>
+                <td class="promotionPrice"></td>
+                <td class="promotionOffer"></td>
+                <td class="promotionDateStart"></td>
+                <td>
+
+                    <div class="icons">
+                        <i class="fas fa-dot-circle read "></i>
+                        <i class="fas fa-pen edit"></i>
+                        <i class="fas fa-times-circle remove delete"></i>
+                    </div>
+                </td>
+            </tr>
+        </template>
+
+    </div>
+    <script src="/src/js/offers/main-offer.js" type="module"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

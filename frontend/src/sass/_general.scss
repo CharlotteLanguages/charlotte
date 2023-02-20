@@ -1,0 +1,91 @@
+@use "media-queries";
+@use "mixingfunc";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  width: 100%;
+  height: 1024px;
+  display: flex;
+  /*   background: radial-gradient(
+    circle at 36.11% 58.02%,
+    #c6deff 0,
+    #1a3a6d 50%,
+    #0047a7 100%
+  ); */
+  /*  background-image: linear-gradient(
+    to right top,
+    #e6eaf2,
+    #d0dbea,
+    #b7cee2,
+    #9bc1d8,
+    #7db4cd,
+    #62accf,
+    #43a3d1,
+    #009ad3,
+    #008fe5,
+    #0081f4,
+    #006ffe,
+    #0157ff
+  ); */
+  /*   background-image: linear-gradient(
+    to right top,
+    #e6eaf2,
+    #d8e1ec,
+    #cad8e5,
+    #bad0de,
+    #aac8d6,
+    #8dbfd7,
+    #6bb7d8,
+    #3daeda,
+    #009feb,
+    #008dfa,
+    #0076ff,
+    #0157ff
+  ); */
+  background-image: radial-gradient(
+    circle at 36.11% 58.02%,
+    #c6deff 0,
+    #5b8ee1 50%,
+    #0047a7 100%
+  );
+  @media only screen and (max-width: 600px) {
+    background-color: aqua;
+  }
+  position: relative;
+}
+
+.center{
+  text-align: center;
+}
+
+.no-activities {
+  background-color: rgba(230, 230, 230, 0.65);
+  @include mixingfunc.font-style(Cambria, normal, 550, 65px, 130%, center);
+  width: 1100px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 70px 50px 0px 75.5px;
+  border-radius: 20px;
+}
+
+.no-description{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(230, 230, 230, 0.65);
+  width: 830px;
+  height: 600px;
+  text-align: center;
+  font-size: 70px;
+  font-weight: 600px;
+  margin-left: 20px;
+  margin-top: 55px;
+  border-radius: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

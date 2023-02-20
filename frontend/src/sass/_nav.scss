@@ -1,0 +1,80 @@
+@use "mixingfunc";
+
+@mixin fa-btn-style($left, $right, $top, $bottom) {
+  position: absolute;
+  left: $left;
+  right: $right;
+  top: $top;
+  bottom: $bottom;
+  color: #fff;
+  font-size: 50px;
+}
+
+.boton-nav-3 {
+  padding-top: 8px;
+  text-decoration: none;
+  position: absolute;
+  background: #8eaaff;
+  color: #fff;
+  border-radius: 50px;
+  @include mixingfunc.measures(264px, 47px, 344px, 53px);
+  @include mixingfunc.font-style(Montserrat, normal, 600, 25px, 30px, center);
+  &:hover {
+    background: #fff;
+    color: #000;
+
+    transition: all 0.4s ease;
+  }
+}
+
+.boton-nav-4 {
+  position: absolute;
+  padding-top: 8px;
+  text-decoration: none;
+
+  background: #fff;
+  color: #000;
+  border-radius: 50px;
+  @include mixingfunc.measures(264px, 47px, 623px, 53px);
+  @include mixingfunc.font-style(Montserrat, normal, 600, 25px, 30px, center);
+  text-decoration: none;
+
+  &:hover {
+    background: #8eaaff;
+    color: #fff;
+
+    transition: all 0.4s ease;
+  }
+}
+
+/* .nav__icon {
+  position: absolute;
+  left: 700px;
+  top: 35px;
+  width: 700px;
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  background-color: aqua;
+}
+ */
+.fa-bell {
+  @include fa-btn-style(75.5%, 19.58%, 5.08%, 90.04%);
+  &:hover {
+    color: rgba(230, 218, 218, 0.5);
+  }
+}
+.fa-envelope {
+  margin-left: 50px;
+  @include fa-btn-style(79.5%, 12.5%, 5.08%, 90.04%);
+}
+
+.profile {
+  @include mixingfunc.measures(83px, 83px, 1590px, 35px);
+  position: absolute;
+  border-radius: 50%;
+  background: url("/src/public/perfil2.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
