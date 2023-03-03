@@ -1,0 +1,482 @@
+@use "mixingfunc";
+
+.cont-new-classes {
+    @include mixingfunc.measures(1251px, 840px, 424px, 144px);
+    position: absolute;
+    background: #ffffff;
+    border-radius: 20px;
+  
+    .title-classes {
+      box-sizing: border-box;
+      padding-left: 19px;
+      padding-right: 10px;
+      position: absolute;
+      width: 1194px;
+      height: 51px;
+      left: 29px;
+      top: 65px;
+      color: #000;
+      border: 1px solid #8f8f8f;
+      border-radius: 10px;
+      font-size: 25px;
+    }
+  }
+  .open-form-classes {
+    transform: translateY(-200%);
+  }
+  
+  
+  
+  #cont-form-classes {
+    .input-category-course {
+      box-sizing: border-box;
+      position: absolute;
+      @include mixingfunc.measures(590px, 51px, 29px, 131px);
+      @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
+      border: 1px solid #8f8f8f;
+      border-radius: 10px;
+      padding-left: 19px;
+      color: #000000;
+    }
+  
+    .input-price-classes {
+      box-sizing: border-box;
+      position: absolute;
+      @include mixingfunc.measures(590px, 51px, 633px, 131px);
+      border: 1px solid #8f8f8f;
+      border-radius: 10px;
+      font-family: "Arial";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 130%;
+      color: #000000;
+      padding-left: 19px;
+    }
+  
+   
+  
+    #area-classes {
+      box-sizing: border-box;
+  
+      position: absolute;
+      width: 1194px;
+      height: 443px;
+      left: 29px;
+      top: 200px;
+      border-radius: 10px;
+      .txtarea-course {
+        margin-top: 40px;
+        resize: none;
+        border-radius: 10px;
+        width: 1194px;
+        height: 483px;
+      }
+    }
+  }
+  #create-classes {
+    position: absolute;
+    width: 226px;
+    height: 48px;
+    left: 997px;
+    top: 771px;
+  
+    background: #338af3;
+    border-radius: 20px;
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 130%;
+    transition: all 0.4s ease;
+    border: 0;
+    color: #ffffff;
+    &:hover {
+      background: rgb(140, 168, 250);
+    }
+  }
+  
+  .font-title-classes {
+    position: absolute;
+    width: 278px;
+    height: 39px;
+    left: 17px;
+    top: 11px;
+  
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 130%;
+    /* identical to box height, or 39px */
+  
+    color: #000000;
+  }
+  
+  .input-DateEnd-classes {
+    position: absolute;
+    width: 290px;
+    height: 51px;
+    left: 26px;
+    top: 198px;
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 130%;
+    z-index: 1000;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* identical to box height, or 39px */
+  
+    color: #000000;
+  }
+  .input-DateStart-classes {
+    position: absolute;
+    width: 290px;
+    height: 51px;
+    left: 327px;
+    top: 198px;
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 130%;
+    z-index: 1000;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* identical to box height, or 39px */
+  
+    color: #000000;
+  }
+  
+  .none-classes {
+    display: none;
+  }
+  
+  .input-category-classes {
+    box-sizing: border-box;
+    position: absolute;
+    @include mixingfunc.measures(590px, 51px, 29px, 131px);
+    @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    padding-left: 19px;
+    color: #000000;
+  }
+  
+  .font-title-classes {
+    position: absolute;
+    width: 400px;
+    height: 39px;
+    left: 30px;
+    top: 11px;
+  
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 130%;
+  }
+  
+  .input-offer-classes {
+    box-sizing: border-box;
+    position: absolute;
+    @include mixingfunc.measures(590px, 51px, 633px, 197px);
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 130%;
+    color: #000000;
+    padding-left: 19px;
+    z-index: 1000;
+  }
+  
+  #area-classes {
+    box-sizing: border-box;
+  
+    position: absolute;
+    width: 1194px;
+    height: 400px;
+    left: 29px;
+    margin-top: 70px;
+    border-radius: 10px;
+  
+    .txtarea-classes {
+      margin-top: 10px;
+      resize: none;
+      border-radius: 10px;
+      width: 1194px;
+      height: 430px;
+    }
+  }
+  
+  /*----------------------------- Section Table---------------------- */
+  
+  .cont-tables-classes {
+    //@include mixingfunc.measures(1051px, 594px, 344px, 142px);
+    margin: 142px 45px 288px 424px;
+  
+    width: 1251px;
+    height: 594px;
+    background: #8eaaff;
+    border-radius: 20px;
+    position: absolute;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.30);
+  
+    .cont-table-classes_blue {
+      overflow-y: auto;
+      width: 1251px;
+      height: 529px;
+      border-radius: 18px;
+    }
+  
+    .table-classes {
+      width: 1251px;
+      height: 529px;
+      background: #ffffff;
+      border-radius: 20px;
+      border-collapse: collapse;
+      th {
+        @include mixingfunc.font-style(Arial, normal, 600, 30px, 130%, center);
+        font-family: Arial;
+        border: solid 1px black;
+        height: 60px;
+        border-top: none
+      }
+      td {
+        @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, left);
+        border: solid 1px black;
+        padding-left: 17px;
+        padding-right: 17px;
+  
+        max-height: 39px;
+        max-width: 400px;
+        text-align: justify;
+        border-bottom: none;
+      }
+    }
+  }
+  .up-table-classes {
+    transform: translateY(-200%);
+  }
+  
+  
+  .btn-classes {
+    @include mixingfunc.measures(280px, 48px, 950px, 539px);
+    @include mixingfunc.font-style(Arial, normal, 600, 25px, 130%, center);
+    background: #338af3;
+    border-radius: 20px;
+    position: absolute;
+    color: #ffffff;
+    transition: all 0.5s ease;
+    padding-top: 5px;
+    border: 0.5px solid #1a63f5;
+  
+    &:hover {
+      background: #fff;
+      color: #000;
+      transition: all 0.4s ease;
+    }
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  /*------------------Section Modal-----------*/
+  #modal-container-classes {
+    opacity: 0;
+   visibility: hidden;  
+   position: absolute;
+   z-index: 1000;
+   @include mixingfunc.measures(100%, 100%, 0, 0);
+   background-color: rgba(143, 143, 143, 0.65);
+  }
+  
+  
+  .modal-classes {
+   position: relative;
+   width: 930px;
+   height: 800px;
+   left: 493px;
+   top: 70px;
+   border-radius: 10px;
+  background-color: #ffffff;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 20px;
+   transition: transform 1s;
+   transform: translateY(0%);
+  
+   .close-classes {
+     position: absolute;
+     left: 94.2%;
+     right: 1.72%;
+     top: 2.50%;
+     bottom: 93.65%;
+     color: #000;
+     z-index: 1000;
+     i {
+       font-size: 30px;
+     }
+   }
+  
+   .cont-p-classes {
+     position: absolute;
+     width: 920px;
+     max-height: 785px;
+     top: 10px;
+     bottom: 10px;
+     left: 10px;
+     right: 10px;
+     overflow: auto;
+     padding: 20px 40px 20px 20px;
+   }
+  
+  }
+  .modal-clp {
+   transform: translateY(-200%); 
+  }
+  
+  
+  
+  
+  .icons-classes {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    i {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .edit-classes {
+      font-size: 30px;
+      color: #ff9811;
+      transition: all 0.5s ease;
+      &:hover {
+        color: #6e7f8f;
+      }
+    }
+    .remove-classes {
+      font-size: 30px;
+      color: red;
+       &:hover {
+        color: #6e7f8f;
+      }
+    }
+  
+    .read-classes {
+      font-size: 30px;
+      color: #0057ff;
+       &:hover {
+        color: #6e7f8f;
+      }
+    }
+  }
+
+
+
+
+
+
+
+.calendar{
+    $width: 1251px;
+  margin-left: 80px;
+  position: absolute;
+  width: $width;
+  @include mixingfunc.measures($width, 439px, 344px, 144px);
+  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.30);
+  &__info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2em;
+  @include mixingfunc.measures($width, 134px, 0, 0);
+  @include mixingfunc.font-style(Arial, normal, 550, 30px, 130%, "");
+  color: white;
+  background: #0057FF;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  }
+  
+    &__text{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    &__prev, &__next{
+      color: rgb(255, 255, 255);
+      cursor: pointer;
+      font-size: 1.4em;
+      
+  
+    }
+  
+    &__week{
+      display: grid;
+      align-items: center;
+      grid-template-columns: repeat(7, 1fr);
+      grid-gap:10px;
+      background: #D9D9D9;
+      height: 57px;
+      @include mixingfunc.font-style(Arial, normal, 550, 30px, 130%, "");
+      color: #000;
+      cursor: pointer;
+    }
+    &__dates{
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-gap:10px;
+      background: #D9D9D9;
+      height: 57px;
+      @include mixingfunc.font-style(Arial, normal, 500, 28px, 130%, "");
+      color: #000;
+      align-items: center;
+  
+    
+  
+    }
+  
+    &__item{
+      text-align: center;
+      line-height: 1.5;
+      cursor: pointer;
+  
+    }
+    &__dates{
+      width: $width;
+      height: 400px;
+      left: 0px;
+      top: 134px;
+      background: #ffffff;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+   
+    }
+    &__today{
+      background-color: #599ef3;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin: auto;
+      transition: all 0.4s ease;
+      &:hover{
+        background-color: #11c1ed;
+      }
+      
+    }
+    &__lastDays{
+      opacity: 0.3;
+    }
+  }
+
+  .up-calendar{
+    transform: translateY(-200%);
+  }

@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  body{
+      background-image: url("/src/public/fondo.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center; 
+      background-attachment: fixed;      
+}
+
+.login-box{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 90vh;     
+}
+
+.container{
+    width: 549px;
+    height: 710px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(18px);
+    border-radius: 20px;
+    margin-top:40px;
+    h1{    
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 35px;
+        line-height: 43px;
+        text-align: center;
+        color: #FFFFFF;
+        margin-top: 40px;
+    }
+
+    h4{
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+}
+
+.form__group{
+    margin-left: 65px;
+}
+.input{
+    
+    width: 410px;
+    height: 62px;
+    opacity: 0.3;  
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    padding: 0 43px 0 20px;
+    font-size: 20px;
+     color: #000;
+     font-weight: bold; 
+     outline: none;
+     
+    }
+    i{
+        position: relative;
+        right: 45px;
+        font-size: 23px;
+    }
+    
+    
+    .form__input-error1{
+        position: absolute;
+    left: 62px;
+    width: 410px;
+    margin-top: 10px;
+    color: rgb(255, 1, 1);
+    font-weight: bold;
+    top: 230px;
+    font-size: 14px;
+    display: none;
+}
+.form__input-error2{
+    position: absolute;
+    left: 62px;
+    width: 410px;
+    margin-top: 10px;
+    color: rgb(255, 1, 1);
+    font-weight: bold;
+    top: 330px;
+    font-size: 14px;
+    display: none;
+}
+
+
+#group__user{
+    margin-top: 69px;
+    margin-bottom: 40px; 
+}
+
+.form__checkbox{ 
+    display: flex;
+    margin-left: 65px;
+    margin-top: 33px; 
+    color: #ECECEC;
+}
+
+.left{
+    width: 205px;
+    text-align: center;
+        display: flex;
+        
+        .text-check{
+            padding-left: 20px;
+        }
+    }
+
+    .right{
+        width: 205px;
+        text-align: center;
+        padding-left: 50px;
+       
+    }
+    .forgot{
+        transition: all 0.4s ease;
+        &:hover{
+            cursor: pointer;
+            color: #000000;
+        }
+        
+    }
+
+    .checkbox{
+        width: 20px;
+        height: 20px;
+        opacity: 0.3;
+        border: 1px solid #FFFFFF;
+        border-radius: 3px;
+    }
+
+    .btn-login{
+        width: 410px;
+        height: 58px;
+        left: 70px;
+        top: 433px;
+        background: #0057FF;
+        border-radius: 50px;
+        border: 0;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 27px;
+        text-align: center;
+        color: #FFFFFF;
+        margin-left: 60px;
+        margin-top: 55px;
+        transition: all 0.4s ease;
+        &:hover{
+            background-color: #4080ff;
+        }
+    }
+    .btn-login-forgot{
+        width: 410px;
+        height: 58px;
+        left: 70px;
+        top: 0px;
+        background: #0057FF;
+        border-radius: 50px;
+        border: 0;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 27px;
+        text-align: center;
+        color: #FFFFFF;
+        margin-left: 60px;
+        margin-top: 30px;
+        transition: all 0.4s ease;
+        &:hover{
+            background-color: #4080ff;
+        }
+    }
+    
+    .buttons{
+        margin-top: 75px;
+        display: flex;
+        justify-content: space-between;
+        width: 410px;
+        margin-left: 60px;
+        
+    }
+
+    .init-btn{
+     
+        width: 130px;
+        height: 56px;
+        background-color: #fff;
+        border: 0;
+        border-radius: 10px;
+    }
+
+    .go-signup{
+        display: flex;
+        width: 410px;
+        margin-left: 60px;
+        margin-top: 80px;
+        justify-content: center;
+       
+        
+    }
+    
+    .haveAccount{
+        color: #fff;
+        font-size: 16px;
+        
+        
+    }
+    
+    .sign-up{
+        color: #0057FF;
+        font-weight: bold;   
+        padding-left: 10px;
+    }
+
+    .logous{
+        position: absolute;
+        left: 50px;
+        top: 50px;
+        width: 257.98px;
+        height: 112px;
+        background: url("/src/public/charlotte-logo.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      
+    
+    }
+    .buttom-signup{
+        position: absolute;
+        width: 217px;
+        height: 71px;
+        right: 30px;
+        top: 50px;
+        background: #0057FF;
+        border-radius: 10px;
+        border: 0;
+        font-size: 22px;
+        font-weight: bold;
+        color: #fff;
+        transition: all 0.4s ease;
+        &:hover{
+            background-color: #4080ff;
+        }
+    }
+
+    .buttons-signup{
+        display: flex;
+    }
+
+    .change-forgot-password{
+        display: none;
+    }
+    .container-forgot-password{
+        width: 549px;
+        height: 407px;
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(18px);
+        border-radius: 20px;
+       
+        h1{
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 35px;
+            line-height: 43px;
+            text-align: center;
+            color: #FFFFFF;
+            text-align: center;
+            margin-top: 15px;
+        }
+   
+        .cancel-forgot-pass{
+            display: flex;
+            align-items: center;
+           
+            
+            .cancel-back{
+                font-size: 25px;
+                color: #0057FF;
+                font-weight: bold;
+                margin-left: 10px;
+                font-weight: bold;
+                transition: all 0.4s ease;
+                cursor: pointer;
+                &:hover{
+                    color: #4080ff;
+                }
+                
+            }
+            .cancel-left{
+                position: relative;
+                left: 2px;
+                font-size: 60px;
+                color:#0057FF; 
+                transition: all 0.4s ease;
+                cursor: pointer;
+                &:hover{
+                color: #4080ff;
+                }
+            }
+        }
+
+    }
+    .logous-p{
+        position: absolute;
+        left: -600px;
+        top: -270px;
+        width: 257.98px;
+        height: 112px;
+        background: url("/src/public/logo-charlotte.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    #group__id{
+        margin-top: 19px;
+        margin-bottom: 40px; 
+    }
+
+    .created-user{
+        position: relative;
+        top: 50px;
+        text-align: center;
+        width: 1000px;
+        margin: auto;
+        color: #fff;
+        font-size: 25px;
+        font-weight: bold;
+        display: none;
+        i{
+            color: #00FF59;
+            margin-left: 50px;
+            font-size: 30px;
+            margin-bottom: -20px;
+            
+        }
+    }
+
+    .form__bottoms {
+        /*  background-color: rgb(27, 195, 246); */
+        width: 450px;
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+        margin-bottom: -40px;
+        margin-top: 40px;
+        margin-left: 40px;
+      
+        .btn {
+          max-width: 135px;
+          width: 100%;
+          height: 56px;
+               background-color: #b0b0b0; 
+          border-radius: 10px;
+          color: #000;
+          font-weight: bold;
+          align-items: center;
+          display: flex;
+          padding-left: 50px;
+          position: relative;
+          cursor: pointer;
+          font-family: "Montserrat", sans-serif;
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+          transition: all 0.4s ease;
+          &:hover {
+            background-color: #e6e4e4;
+          }
+        }
+        .select-login {
+          position: absolute;
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          left: 5px;
+        }
+      }
+      #login-microsoft {
+        background: url("/src/public/login/login-microsoft.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+      #login-google {
+        background: url("/src/public/login/login-google.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+      #login-facebook {
+        background: url("/src/public/login/login-facebook.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }

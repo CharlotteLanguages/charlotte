@@ -1,0 +1,744 @@
+@use "mixingfunc";
+/* ----------------------Section Form---------------------------- */
+.cont-new-student {
+  @include mixingfunc.measures(1251px, 795px, 424px, 144px);
+  position: absolute;
+  background: #ffffff;
+  border-radius: 20px;
+
+  .title-student {
+    box-sizing: border-box;
+    padding-left: 19px;
+    padding-right: 10px;
+    position: absolute;
+    width: 1194px;
+    height: 51px;
+    left: 29px;
+    top: 65px;
+    color: #000;
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    font-size: 25px;
+    
+  }
+
+  .file-student{
+    display: flex;
+    box-sizing: border-box;
+    padding-left: 19px;
+    padding-right: 10px;
+    position: absolute;
+    width: 1194px;
+    height: 51px;
+    left: 29px;
+    top: 197px;
+    color: #000;
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    font-size: 25px;
+    padding-top: 10px;
+    padding-right: 80px;
+
+}
+.file-student-btn{
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 1110px;
+    font-size: 32px;
+    color: #000;
+
+}
+
+
+.file-student-text{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    color: rgb(97, 97, 97);
+}
+
+
+  .truck{
+  
+   /*  position: absolute; */
+    width: 488px;
+    border-radius: 50%;
+    height: 488px;
+    left: 220px;
+    top: 200px;
+    background: url("/src/public/paisaje.jpg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat
+}
+
+#imgSponsor{
+    display: none;
+}
+
+}
+.open-form-student {
+  transform: translateY(-200%);
+}
+
+
+  
+  .first-name-student{
+    box-sizing: border-box;
+    position: absolute;
+    @include mixingfunc.measures(590px, 51px, 29px, 65px);
+    @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    padding-left: 19px;
+    color: #000000;
+  }
+
+  .last-name-student{
+    box-sizing: border-box;
+    position: absolute;
+    @include mixingfunc.measures(590px, 51px, 632px, 65px);
+    @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    padding-left: 19px;
+    color: #000000;
+
+  }
+  
+.email-student{
+    
+    box-sizing: border-box;
+    padding-left: 19px;
+    padding-right: 10px;
+    position: absolute;
+    width: 1194px;
+    height: 51px;
+    left: 29px;
+    top: 131px;
+    color: #000;
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    font-size: 25px;
+}
+
+.birth-day-student{
+    box-sizing: border-box;
+    position: absolute;
+    @include mixingfunc.measures(590px, 51px, 29px, 197px);
+    @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    padding-left: 19px;
+    color: rgb(0, 0, 0);
+    padding-left: 370px;
+    padding-right: 15px;
+
+}
+.text-birth-day{
+  position: absolute;
+  font-size: 25px;
+  color: rgb(113, 112, 112);
+  margin-top: 208px;
+  margin-left: 50px;
+  z-index: 10;
+  @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify)
+}
+
+
+.gender-student{
+    box-sizing: border-box;
+    position: absolute;
+    @include mixingfunc.measures(590px, 51px, 632px, 197px);
+    @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    padding-left: 19px;
+    color: rgb(0, 0, 0);
+}
+
+.text-gender{
+  position: absolute;
+  font-size: 25px;
+  color: rgb(113, 112, 112);
+  margin-top: 209px;
+  margin-left: 655px;
+  z-index: 10;
+  @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify)
+}
+.username-student{
+    box-sizing: border-box;
+    position: absolute;
+    @include mixingfunc.measures(590px, 51px, 29px, 263px);
+    @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    padding-left: 19px;
+    color: #000000;
+}
+
+.password-student{
+    box-sizing: border-box;
+    position: absolute;
+    @include mixingfunc.measures(590px, 51px, 632px, 263px);
+    @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    padding-left: 19px;
+    color: #000000;
+}
+
+.membership-student{
+    box-sizing: border-box;
+    padding-left: 19px;
+    padding-right: 10px;
+    position: absolute;
+    width: 1194px;
+    height: 51px;
+    left: 29px;
+    top: 329px;
+    color: rgb(0, 0, 0);
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    font-size: 25px;
+}
+.text-membership{
+  position: absolute;
+  font-size: 25px;
+  color: rgb(113, 112, 112);
+  margin-top: 340px;
+  margin-left: 50px;
+  z-index: 10;
+  @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify)
+}
+
+#area-student {
+    box-sizing: border-box;
+    position: absolute;
+    width: 1194px;
+    height: 309px;
+    left: 29px;
+    top: 395px;
+    border-radius: 10px;
+    .editor-student {
+      
+      resize: none;
+      border-radius: 10px;
+      width: 1194px;
+      height: 530px;
+    }
+  }
+
+#create-student {
+  position: absolute;
+  width: 236px;
+  height: 48px;
+  left: 987px;
+  top: 726px;
+  background: #338af3;
+  border-radius: 20px;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 130%;
+  transition: all 0.4s ease;
+  outline:none;
+  border: 0;
+
+  color: #ffffff;
+  &:hover {
+    background: rgb(140, 168, 250);
+    /* color: #000;
+    border: 1px solid; */
+  }
+}
+.cancel-student{
+  position: absolute;
+  width: 170px;
+  height: 48px;
+  left: 25px;
+  top: 726px;
+  background:white ;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  border-radius: 20px;
+  border: 0.5px solid  rgb(150, 148, 148); 
+  transition: all 0.4s ease;
+ 
+  &:hover {
+    background: rgb(238, 238, 238);
+    
+  }
+}
+.font-title-student {
+  position: absolute;
+  width: 278px;
+  height: 39px;
+  left: 30px;
+  top: 11px;
+
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 130%;
+  /* identical to box height, or 39px */
+
+  color: #000000;
+}
+
+.font-title-student {
+  position: absolute;
+  width: 400px;
+  height: 39px;
+  left: 30px;
+  top: 11px;
+
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 130%;
+}
+
+
+
+/*----------------------------- Section Table---------------------- */
+
+.cont-tables-student {
+  //@include mixingfunc.measures(1051px, 594px, 344px, 142px);
+  margin: 142px 45px 288px 424px;
+  width: 1251px;
+  height: 594px;
+  background: #8eaaff;
+  border-radius: 20px;
+  position: absolute;
+  box-shadow: 5px 10px 10px 10px rgba(0, 0, 0, 0.25);
+
+  .cont-table-student_blue {
+    overflow-y: auto;
+    width: 1251px;
+    height: 529px;
+    border-radius: 18px;
+  }
+
+  .table-student {
+    width: 1251px;
+    height: 529px;
+    background: #ffffff;
+    border-radius: 20px;
+    border-collapse: collapse;
+    th {
+      @include mixingfunc.font-style(
+        arial,
+        normal,
+        600,
+        30px,
+        130%,
+        center
+      );
+      font-family: Arial;
+      border: solid 1px black;
+      height: 60px;
+      border-top:none
+    }
+    td {
+      @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, left);
+ 
+      border: solid 1px black;
+      padding-left: 17px;
+      padding-right: 17px;
+      white-space: nowrap;
+      overflow: hidden; 
+      text-overflow:ellipsis;
+      max-height: 39px;
+      max-width: 400px;
+     min-width: 60px;
+      text-align: justify;
+      border-bottom: none;
+      
+      
+    }
+  }
+}
+.up-table-student {
+  transform: translateY(-200%);
+}
+
+.btn-student {
+  @include mixingfunc.measures(256px, 48px, 980px, 539px);
+  @include mixingfunc.font-style(Arial, normal, 600, 25px, 130%, center);
+  background: #338af3;
+  border-radius: 20px;
+  position: absolute;
+  color: #ffffff;
+  transition: all 0.5s ease;
+  padding-top: 5px;
+  border: 0.5px solid #1a63f5;
+
+  &:hover {
+    background: #fff;
+    color: #000;
+    transition: all 0.4s ease;
+  }
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/*------------------Section Modal-----------*/
+
+#modal-container-student {
+   opacity: 0;
+  visibility: hidden;  
+  position: absolute;
+  z-index: 1000;
+  @include mixingfunc.measures(100%, 100%, 0, 0);
+  background-color: rgba(143, 143, 143, 0.65);
+}
+
+
+.modal-student {
+  position: relative;
+  width: 1094px;
+  height: 941px;
+  left: 329px;
+  top: 41px;
+  border-radius: 10px;
+ background-color: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  transition: transform 1s;
+  transform: translateY(0%);
+
+  .close-student {
+    position: absolute;
+    left:1035px;
+    right: 1.72%;
+    top: 20px;
+    bottom: 93.65%;
+    color: #000;
+    z-index: 1000;
+    i {
+      font-size: 35px;
+    }
+  }
+
+  .cont-p-student {
+    position: absolute;
+    width: 1090px;
+    max-height: px;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    overflow: auto;
+    padding: 20px 40px 20px 20px;
+  }
+  .hola{
+    position: absolute;
+    width: 483px;
+    height: 40px;
+    left: 540px;
+    top: 107px;
+    background: #038C33;
+    border-radius: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    padding-left: 0px;
+text-align: center;
+color: #FFFFFF;
+
+    }
+  .hola1{
+    position: absolute;
+    width: 483px;
+    height: 40px;
+    left: 540px;
+    top: 160px;
+    background: #8F8F8F;
+    border-radius: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    padding-left: 0px;
+text-align: center;
+color: #FFFFFF;
+
+    }
+  .hola2{
+    position: absolute;
+    width: 483px;
+    height: 40px;
+    left: 540px;
+    top: 213px;
+    background: #8F8F8F;
+    border-radius: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    padding-left: 0px;
+text-align: center;
+color: #FFFFFF;
+
+    }
+    .hello{
+      position: absolute;
+width: 235px;
+height: 32px;
+left: 519px;
+top: 55px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 130%;
+/* or 32px */
+color: #000000;
+    }
+}
+    .hello2{
+      
+      position: absolute;
+      width: 221px;
+      height: 32px;
+      left: 437px;
+      top: 569px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 130%;
+/* or 32px */
+color: #000000;
+    }
+.succes-student{
+position: absolute;
+left: 50.27%;
+right: 47.44%;
+top: 12.5%;
+bottom: 85.23%;
+font-size: 25px;
+color: #FFFFFF;
+}
+.succes-student2{
+position: absolute;
+left: 50.27%;
+right: 47.44%;
+top: 17.9%;
+bottom: 85.23%;
+font-size: 25px;
+color: #FFFFFF;
+}
+.succes-student23{
+position: absolute;
+left: 50.27%;
+right: 47.44%;
+top: 23.9%;
+bottom: 85.23%;
+font-size: 25px;
+color: #FFFFFF;
+}
+.dowload1{
+position: absolute;
+width: 221px;
+height: 45px;
+left: 100px;
+top: 481px;
+border: 1px solid #8F8F8F;
+border-radius: 20px;
+font-family: Arial;
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 130%;
+text-align: center;
+padding-top: 5px;
+color: #0057FF;
+}
+.dowload2{
+position: absolute;
+width: 221px;
+height: 45px;
+left: 100px;
+top: 829px;
+border: 1px solid #8F8F8F;
+border-radius: 20px;
+font-family: Arial;
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 130%;
+text-align: center;
+padding-top: 5px;
+color: #0057FF;
+}
+.modal-clos {
+  transform: translateY(-200%); 
+ }
+
+
+
+
+/*-------------Modal delete --------------------------*/
+
+
+/*modal-container*/
+#modal-container-dr {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  z-index: 1000;
+  @include mixingfunc.measures(100%, 100%, 0, 0);
+  background-color: rgba(143, 143, 143, 0.65);
+}
+
+.modal-dr {
+  box-sizing: border-box;
+  position: absolute;
+  @include mixingfunc.measures(898px, 305px, 25%, 381px);
+  bottom: 338px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 3px solid #0057ff;
+  box-shadow: 0px 4px 6px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  transition: transform 1s;
+  transform: translateY(0%);
+  /*modal resource*/
+
+  h3 {
+    position: absolute;
+    @include mixingfunc.measures(166px, 39px, 366px, 21px);
+    @include mixingfunc.font-style(Arial, normal, 600, 30px, 130%, center);
+    color: #000000;
+  }
+}
+#text-dr {
+  box-sizing: border-box;
+  position: absolute;
+  @include mixingfunc.measures(808px, 129px, 45px, 82px);
+  @include mixingfunc.font-style(Arial, normal, 300, 20px, 130%, center);
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  resize: none;
+  color: #000000;
+  padding-left: 18px;
+  padding-top: 12px;
+}
+
+.bnt-dr {
+  position: absolute;
+  /*   @include mixingfunc.measures(186px, 48px, 667px, 237px); */
+  @include mixingfunc.measures(137px, 32px, 692px, 245px);
+  @include mixingfunc.font-style(Arial, normal, 700, 25px, 130%, center);
+  background: #d80027;
+  border-radius: 20px;
+  position: absolute;
+  color: #ffffff;
+}
+
+.btn-dr2 {
+  position: absolute;
+  @include mixingfunc.measures(84px, 32px, 45px, 245px);
+  @include mixingfunc.font-style(Arial, normal, 600, 25px, 130%, center);
+  color: #000000;
+}
+.modal-close-dr {
+  transform: translateY(-200%);
+  /*modal close*/
+}
+
+
+
+/*----------------buttons admin------------------*/
+.icons-student {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  i {
+    width: 35px;
+    height: 43px;
+    padding-top: 3px;
+    transition: all 0.3s ease;
+  }
+
+  .edit-student {
+    font-size: 30px;
+    color: #ff9811;
+    &:hover {
+      color: #6e7f8f;
+    }
+  }
+  .remove-student {
+    font-size: 30px;
+    color: red;
+     &:hover {
+      color: #6e7f8f;
+    }
+  }
+
+  .read-student {
+    font-size: 30px;
+    color: #0057ff;
+     &:hover {
+      color: #6e7f8f;
+    }
+  }
+}
+
+.refname{
+  display: flex;
+  font-size: 25px;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 25px;
+}
+
+
+#myChart{
+  position: absolute;
+  background-color: #0057ff;
+}
+
+.card-info-students{
+  box-sizing: border-box;
+position: absolute;
+width: 357px;
+height: 192px;
+left: 72px;
+top: 51px;
+border: 1px solid rgba(143, 143, 143, 0.65);
+border-radius: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+font-family: Arial;
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 30px;
+
+
+overflow: auto;
+color: #000;
+
+/* or 32px */
+
+
+color: #000000;
+
+}

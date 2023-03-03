@@ -1,0 +1,152 @@
+@use "mixingfunc";
+
+#modal-container-d {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1000;
+  @include mixingfunc.measures(100%, 100%, 0, 0);
+  background-color: rgba(143, 143, 143, 0.65);
+}
+.modal-d {
+  box-sizing: border-box;
+  position: absolute;
+  @include mixingfunc.measures(898px, 305px, 25%, 381px);
+  bottom: 338px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 3px solid #0057ff;
+  box-shadow: 0px 4px 6px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  transition: transform 1s;
+  transform: translateY(0%);
+
+  h3 {
+    position: absolute;
+    @include mixingfunc.measures(166px, 39px, 366px, 21px);
+    @include mixingfunc.font-style(Arial, normal, 600, 30px, 130%, center);
+    color: #000000;
+  }
+}
+#text-d {
+  box-sizing: border-box;
+  position: absolute;
+  @include mixingfunc.measures(808px, 129px, 45px, 82px);
+  @include mixingfunc.font-style(Arial, normal, 300, 20px, 130%, center);
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  resize: none;
+  color: #000000;
+  padding-left: 18px;
+  padding-top: 12px;
+}
+
+.bnt-d {
+  position: absolute;
+  /*   @include mixingfunc.measures(186px, 48px, 667px, 237px); */
+  @include mixingfunc.measures(137px, 32px, 692px, 245px);
+  @include mixingfunc.font-style(Arial, normal, 700, 25px, 130%, center);
+  background: #d80027;
+  border-radius: 20px;
+  position: absolute;
+  color: #ffffff;
+}
+
+.btn-d2 {
+  position: absolute;
+  @include mixingfunc.measures(84px, 32px, 45px, 245px);
+  @include mixingfunc.font-style(Arial, normal, 600, 25px, 130%, center);
+  color: #000000;
+}
+.modal-close-d {
+  transform: translateY(-200%);
+}
+
+/*modal read  --------------------------------------------------------*/
+.modal {
+  margin: 75px 256px 175px 25%;
+  width: 928px;
+  height: 854px;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  transition: transform 1s;
+  transform: translateY(0%);
+
+  .parrafo {
+    position: absolute;
+    @include mixingfunc.measures(850px, 307px, 39px, 71px);
+    @include mixingfunc.font-style(Poppins, normal, 400, 25px, 130%, center);
+    text-align: justify;
+    color: #000000;
+    overflow-y: scroll;
+  }
+  .title-modal {
+    position: absolute;
+    @include mixingfunc.measures(328px, 32px, 300px, 23px);
+    @include mixingfunc.font-style(Poppins, normal, 700, 25px, 130%, center);
+    color: #000000;
+  }
+  .mention-modal {
+    position: absolute;
+    @include mixingfunc.measures(138px, 32px, 39px, 101px);
+    @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, center);
+    color: #000000;
+  }
+  .type-modal {
+    position: absolute;
+    @include mixingfunc.measures(114px, 32px, 39px, 133px);
+    @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, center);
+    color: #000000;
+  }
+  .close {
+    position: absolute;
+    left: 95.04%;
+    right: 1.72%;
+    top: 2.11%;
+    bottom: 93.65%;
+    color: #000;
+    i {
+      font-size: 30px;
+    }
+  }
+}
+
+.img-section {
+  position: absolute;
+  width: 396px;
+  height: 416px;
+  left: 39px;
+  top: 407px;
+  background: url("/src/public/libro2.jpg");
+  background-size: contain;
+  background-position: center;
+  border-radius: 20px;
+}
+.aside {
+  position: absolute;
+  width: 431px;
+  height: 213px;
+  left: 466px;
+  top: 491px;
+
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 130%;
+  /* or 26px */
+
+  text-align: justify;
+
+  color: #000000;
+}
+#modal-container {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1000;
+  @include mixingfunc.measures(100%, 100%, 0, 0);
+  background-color: rgba(143, 143, 143, 0.65);
+}
+.modal-close {
+  transform: translateY(-200%);
+}
