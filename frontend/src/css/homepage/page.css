@@ -392,14 +392,11 @@ background-color: aqua; */
   width: 151px;
   height: 50px;
   background: #4457b9;
-  /*  background:  #fccb4f; */
-  /* background: #ffd66d; */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 50px;
   text-align: center;
   padding-top: 12px;
   color: #ffffff;
-  /* color: #373737; */
   font-family: Arial;
   font-style: normal;
   font-weight: 600;
@@ -449,20 +446,23 @@ background-color: aqua; */
 }
 @media all and (min-width: 500px) and (max-width: 748px) {
   .navbar__menu #login {
-    font-size: 22px;
+    font-size: 24px;
     background: none;
     box-shadow: none;
     width: 90%;
     padding-top: 3px;
+    font-weight: 500;
   }
 }
 @media all and (min-width: 320px) and (max-width: 500px) {
   .navbar__menu #login {
-    font-size: 22px;
     background: none;
     box-shadow: none;
     width: 90%;
     padding-top: 3px;
+    font-weight: 500;
+    font-size: 21px;
+    font-weight: 500;
   }
 }
 
@@ -638,7 +638,7 @@ ul.show {
 @media all and (min-width: 320px) and (max-width: 500px) {
   .info-contact {
     font-size: 12.5px;
-    padding-left: 10px;
+    padding-left: 8px;
     position: absolute;
     top: 100px;
   }
@@ -883,7 +883,7 @@ ul.show {
 @media all and (min-width: 500px) and (max-width: 748px) {
   .info-contact2 {
     font-size: 15px;
-    padding-right: 20px;
+    padding-right: 15px;
     position: absolute;
     right: 0px;
     top: 145px;
@@ -892,10 +892,10 @@ ul.show {
 @media all and (min-width: 320px) and (max-width: 500px) {
   .info-contact2 {
     font-size: 12px;
-    padding-right: 20px;
+    padding-right: 8px;
     position: absolute;
     right: 0px;
-    top: 115px;
+    top: 100px;
   }
 }
 
@@ -993,7 +993,7 @@ ul.show {
   .headphone-icon {
     width: 17px;
     height: 17px;
-    left: 104px;
+    left: 100px;
   }
 }
 
@@ -1013,7 +1013,7 @@ ul.show {
   font-size: 25px;
   transition: all 0.4s ease;
   display: block;
-  background-color: #8c8c8c;
+  background-color: #919090;
 }
 @media screen and (min-width: 1310px) and (max-width: 1450px) {
   .slider i {
@@ -1067,7 +1067,7 @@ ul.show {
   }
 }
 .slider i:hover {
-  background-color: #0099ff;
+  background-color: #54b6dd;
 }
 
 .slider-btns {
@@ -1341,7 +1341,7 @@ ul.show {
 }
 
 .card-title {
-  font-family: "Montserrat";
+  font-family: sans-serif;
   font-size: 26px;
   font-weight: bold;
   text-align: justify;
@@ -1412,6 +1412,9 @@ ul.show {
   margin-bottom: 12px;
   cursor: pointer;
   transition: all 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .btn-dark:hover {
   background-color: #485fd4;
@@ -2176,7 +2179,7 @@ ul.show {
 }
 @media all and (min-width: 500px) and (max-width: 748px) {
   .call-action {
-    height: 58px;
+    height: 56px;
     padding-left: 5px;
     padding-right: 5px;
   }
@@ -2184,6 +2187,8 @@ ul.show {
 @media all and (min-width: 320px) and (max-width: 500px) {
   .call-action {
     height: 47px;
+    padding-left: 3px;
+    padding-right: 3px;
   }
 }
 .call-action p {
@@ -2216,7 +2221,7 @@ ul.show {
 }
 @media all and (min-width: 500px) and (max-width: 748px) {
   .call-action p {
-    font-size: 17px;
+    font-size: 14px;
   }
 }
 @media all and (min-width: 320px) and (max-width: 500px) {
@@ -2275,23 +2280,23 @@ ul.show {
 }
 @media all and (min-width: 748px) and (max-width: 860px) {
   .call-action .btn-start {
-    font-size: 19px;
+    font-size: 18px;
     max-width: 170px;
     height: 38px;
   }
 }
 @media all and (min-width: 500px) and (max-width: 748px) {
   .call-action .btn-start {
-    font-size: 18px;
-    max-width: 160px;
+    font-size: 14px;
+    max-width: 140px;
     height: 35px;
   }
 }
 @media all and (min-width: 320px) and (max-width: 500px) {
   .call-action .btn-start {
-    font-size: 12px;
-    max-width: 100px;
-    height: 29px;
+    font-size: 11px;
+    max-width: 95px;
+    height: 25px;
     margin-right: 15px;
     margin-left: 8px;
   }

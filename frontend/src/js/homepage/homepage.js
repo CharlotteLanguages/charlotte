@@ -209,11 +209,10 @@ d.addEventListener("click", (e)=>{
 
 
 d.addEventListener("click", (e)=>{
-
   if(e.target.matches("#bars")){
-    d.querySelector(".navbar__social-medias").classList.toggle("move_social-medias")
-    d.querySelector(".navbar__menu").classList.toggle("move-menu")
-    d.querySelector(".navbar").classList.toggle("top_navbar")
+    d.querySelector(".navbar__social-medias").classList.toggle("move_social-medias");
+    d.querySelector(".navbar__menu").classList.toggle("move-menu");
+    d.querySelector(".navbar").classList.toggle("top_navbar");
 
   }
 })
