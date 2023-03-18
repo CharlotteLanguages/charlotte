@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+  <!--  <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/> -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="/src/css/homepage_user/homepage_user.css">
+    <title>Home User</title>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <img src="/src/public/logo-charlotte.png" class="logo">
+            <ul class="navbar__menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">Dashboard</a></li>
+                <div class="user">
+                    <i class="far fa-user-circle"></i>
+                   <p>Alberto B.</p>
+                   <i class="fas fa-chevron-down open_tooltip"></i>
+                   <div class="tooltip">
+                       <div class="profile">
+                        <i class="fas fa-user-circle"></i>
+                        <p>See my profile</p>
+                       </div>
+                       <div class="section_medium">
+                           <div class="see_courses">
+                             <img src="/src/public/homepageUser/course.png" alt="">
+                             <p>See all my courses</p>
+                           </div>
+                           <div class="resources">
+                             <img src="/src/public/homepageUser/resource.png" alt="">
+                             <p>Resources</p>
+                           </div>
+                           <div class="subs">
+                             <img src="/src/public/homepageUser/subscription.png" alt="" class="subscription-img">
+                             <p>My subscription</p>
+                           </div>
+                        </div>
+                        <div class="section_final">
+                            <div class="customer_service">
+                              <img src="/src/public/homepageUser/customer.png" alt="">
+                              <p>Customer service</p>
+                            </div>
+                          <div class="logout">
+                            <img src="/src/public/homepageUser/logout.png" alt="">
+                            <p>Log out</p>
+                          </div>
+                        </div>
+                   </div>
+                </div>
+                <div class="user_notification">
+                    <img src="/src/public/homepageUser/notificacion.png" class="notifications">
+                    <div class="tooltip_message">
+                        <div class="notify_content">
+                            <div class="notify">
+                              <div class="notify_section">
+                                  <label class="notify_circle" id="color1"></label>
+                                  <h2 class="notify_title">Notify</h2>
+                              </div>
+                              <p class="notify_subject">Subject: "Welcome lorem ipsum"</p>
+                            </div>
+                            <div class="notify">
+                              <div class="notify_section">
+                                  <label class="notify_circle" id="color2"></label>
+                                  <h2 class="notify_title">Receive new Certify</h2>
+                              </div>
+                              <p class="notify_subject">Subject: "Congratulations"</p>
+                            </div>
+                            <div class="notify">
+                              <div class="notify_section">
+                                  <label class="notify_circle"></label>
+                                  <h2 class="notify_title">Renew your membership</h2>
+                              </div>
+                              <p class="notify_subject">Subject: "Welcome lorem ipsum"</p>
+                            </div>
+                            <div class="notify">
+                              <div class="notify_section">
+                                  <label class="notify_circle"></label>
+                                  <h2 class="notify_title">Lvl 1 Completed</h2>
+                              </div>
+                              <p class="notify_subject">Subject: "Welcome lorem ipsum"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="selectbox">
+                    <div class="select" id="select">
+                        <div class="content-select">
+                            <img src="/src/public/homepage/united_states-icon.png" class="country-icon">
+                        </div>
+                        <i class="fas fa-angle-down down"></i>
+                    </div>
+            <div class="options" id="options">
+                <div class="option">
+                    <div class="content-option">
+                        <img src="/src/public/hompage/brazil-icon.png" class="country-icon" id="brasil">
+                        <p class="title">PT</p>
+                    </div>
+                </div>
+                <div class="option">
+                    <div class="content-option">
+                        <img src="/src/public/hompage/spain-icon.png" class="country-icon" id="spain">
+                        <p class="title">ES</p>
+                    </div>
+                </div>
+                <div class="option">
+                    <div class="content-option">
+                        <img src="/src/public/hompage/france-icon.png" class="country-icon" id="japan">
+                        <p class="title">FR</p>
+                    </div>
+                </div>
+                <div class="option">
+                    <div class="content-option">
+                        <img src="/src/public/hompage/united_states-icon.png" class="country-icon" id="eeuu">
+                        <p class="title">EN</p>
+                    </div>
+                </div>
+            </div>
+                 </div>
+                <input type="hidden" name="pais"id="inputSelect" value="">
+            </ul>
+    </div>
+
+    <div class="slider">
+      <div class="slider-slides">
+          <div class="slider-slide active">
+              <img class="img1">
+          </div>
+          <div class="slider-slide">
+              <img class="img2">
+          </div>
+          <div class="slider-slide">
+              <img class="img3">
+          </div>
+          <div class="slider-slide">
+              <img class="img4">
+          </div>
+          <div class="slider-slide">
+              <img class="img5">
+          </div>
+      </div>
+      <div class="slider-btns">
+          <i class="fas fa-chevron-left prev"></i>
+          <i class="fas fa-chevron-right next"></i>
+      </div>
+  </div>
+
+
+        <!-- Swiper -->
+<!--         <section>
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            
+</section> -->
+
+<section id="tranding">
+  <div class="container">
+    <h3 class="text-center section-subheading">My Courses</h3>
+    <!-- <h1 class="text-center section-heading">Tranding food</h1> -->
+  </div>
+  <div class="container">
+    <div class="swiper tranding-slider">
+      <div class="swiper-wrapper">
+        <!-- Slide-start -->
+        <div class="swiper-slide tranding-slide">
+          <div class="tranding-slide-img">
+            <img src="https://raw.githubusercontent.com/emetdas/Youtube-code/master/web%20components/Swiper-Slider-3D-Coverflow/images/tranding-food-1.png" alt="Tranding">
+          </div>
+          <div class="tranding-slide-content">
+            <!-- <h1 class="food-price">$20</h1> -->
+            <div class="tranding-slide-content-bottom">
+              <h2 class="food-name">
+                English for Travel
+              </h2>
+           <!--    <h3 class="food-rating">
+                <span>4.5</span>
+                <div class="rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+              </h3> -->
+            </div>
+          </div>
+        </div>
+        <!-- Slide-end -->
+        <!-- Slide-start -->
+        <div class="swiper-slide tranding-slide">
+          <div class="tranding-slide-img">
+            <img src="https://raw.githubusercontent.com/emetdas/Youtube-code/master/web%20components/Swiper-Slider-3D-Coverflow/images/tranding-food-2.png" alt="Tranding">
+          </div>
+          <div class="tranding-slide-content">
+            <!-- <h1 class="food-price">$20</h1> -->
+            <div class="tranding-slide-content-bottom">
+              <h2 class="food-name">
+                English Business 
+              </h2>
+              <!-- <h3 class="food-rating">
+                <span>4.5</span>
+                <div class="rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+              </h3> -->
+            </div>
+          </div>
+        </div>
+        <!-- Slide-end -->
+        <!-- Slide-start -->
+        <div class="swiper-slide tranding-slide">
+          <div class="tranding-slide-img">
+            <img src="https://raw.githubusercontent.com/emetdas/Youtube-code/master/web%20components/Swiper-Slider-3D-Coverflow/images/tranding-food-3.png" alt="Tranding">
+          </div>
+          <div class="tranding-slide-content">
+           <!--  <h1 class="food-price">$40</h1> -->
+            <div class="tranding-slide-content-bottom">
+              <h2 class="food-name">
+                Basic English
+              </h2>
+            <!--   <h3 class="food-rating">
+                <span>4.5</span>
+                <div class="rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+              </h3> -->
+            </div>
+          </div>
+        </div>
+        <!-- Slide-end -->
+        <!-- Slide-start -->
+        <div class="swiper-slide tranding-slide">
+          <div class="tranding-slide-img">
+            <img src="https://raw.githubusercontent.com/emetdas/Youtube-code/master/web%20components/Swiper-Slider-3D-Coverflow/images/tranding-food-4.png" alt="Tranding">
+          </div>
+          <div class="tranding-slide-content">
+            <!-- <h1 class="food-price">$15</h1> -->
+            <div class="tranding-slide-content-bottom">
+              <h2 class="food-name">
+                intermediate English
+              </h2>
+             <!--  <h3 class="food-rating">
+                <span>4.5</span>
+                <div class="rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+              </h3> -->
+            </div>
+          </div>
+        </div>
+        <!-- Slide-end -->
+        <!-- Slide-start -->
+        <div class="swiper-slide tranding-slide">
+          <div class="tranding-slide-img">
+            <img src="https://raw.githubusercontent.com/emetdas/Youtube-code/master/web%20components/Swiper-Slider-3D-Coverflow/images/tranding-food-5.png" alt="Tranding">
+          </div>
+          <div class="tranding-slide-content">
+            <!-- <h1 class="food-price">$15</h1> -->
+            <div class="tranding-slide-content-bottom">
+              <h2 class="food-name">
+                Advanced English
+              </h2>
+             <!--  <h3 class="food-rating">
+                <span>4.5</span>
+                <div class="rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+              </h3> -->
+            </div>
+          </div>
+        </div>
+        <!-- Slide-end -->
+        <!-- Slide-start -->
+        <div class="swiper-slide tranding-slide">
+          <div class="tranding-slide-img">
+            <img src="https://raw.githubusercontent.com/emetdas/Youtube-code/master/web%20components/Swiper-Slider-3D-Coverflow/images/tranding-food-6.png" alt="Tranding">
+          </div>
+          <div class="tranding-slide-content">
+            <!-- <h1 class="food-price">$20</h1> -->
+            <div class="tranding-slide-content-bottom">
+              <h2 class="food-name">
+                English For Writte
+              </h2>
+              <!-- <h3 class="food-rating">
+                <span>4.5</span>
+                <div class="rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+              </h3> -->
+            </div>
+          </div>
+        </div>
+        <!-- Slide-end -->
+        <!-- Slide-start -->
+        <div class="swiper-slide tranding-slide">
+          <div class="tranding-slide-img">
+            <img src="https://raw.githubusercontent.com/emetdas/Youtube-code/master/web%20components/Swiper-Slider-3D-Coverflow/images/tranding-food-7.png" alt="Tranding">
+          </div>
+          <div class="tranding-slide-content">
+           <!--  <h1 class="food-price">$8</h1> -->
+            <div class="tranding-slide-content-bottom">
+              <h2 class="food-name">
+                English For Food
+              </h2>
+             <!--  <h3 class="food-rating">
+                <span>4.5</span>
+                <div class="rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+              </h3> -->
+            </div>
+          </div>
+        </div>
+        <!-- Slide-end -->
+      </div>
+
+      <div class="tranding-slider-control">
+        <div class="swiper-button-prev slider-arrow">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+        </div>
+        <div class="swiper-button-next slider-arrow">
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col s12">            
+            <h1 class="center-align titulo" >que se te antoja?</h1>        
+                <div class="carousel center-align">
+                    <div class="carousel-item">
+                        <h2 class="subtitulo">Donas</h2>
+                        <div class="linea-division"></div>
+                        <p class="sabor">glaseadas</p>
+                        <img src="/src/public/customer_service/" alt="">
+                   </div>
+                </div>           
+        </div>
+    </div>
+</div>
+ -->
+
+
+    <div class="news">
+        <div class="card">
+            <div class="card__section">
+                <h1 class="title-new">Lorem ipsum</h1>
+                <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. In ut eum qui ipsum. Expedita officia, asperiores molestias rerum minus corrupti nemo nam mollitia impedit et quas. Placeat minima neque pariatur.</p>
+            </div>
+            <img src="/src/public/homepageUser/img1.png" alt="">
+        </div>
+        <div class="card">
+            <div class="card__section">
+                <h1 class="title-new">Lorem ipsum</h1>
+                <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. In ut eum qui ipsum. Expedita officia, asperiores molestias rerum minus corrupti nemo nam mollitia impedit et quas. Placeat minima neque pariatur.</p>
+            </div>
+            <img src="/src/public/homepageUser/img2.png" alt="">
+        </div>
+        <div class="card">
+            <div class="card__section">
+                <h1 class="title-new">Lorem ipsum</h1>
+                <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. In ut eum qui ipsum. Expedita officia, asperiores molestias rerum minus corrupti nemo nam mollitia impedit et quas. Placeat minima neque pariatur.</p>
+            </div>
+            <img src="/src/public/homepageUser/img3.png" alt="">
+        </div>
+    </div>
+
+    <div class="modal_window">
+        <div class="window modal-cl">
+            <div class="icon">
+             <h1>!</h1>
+            </div>
+            <div class="modal_section">
+                <h1 class="modal_title">Attention</h1>
+                <p class="modal_description">Lorem ipsum dolor, sit amet ciente? Impedit neque voluptas veritatis totam perferendis illo, enim dolore ipsum nisi laborum alias non corrupti qui sequi molestias a doloremque!</p>
+                <div class="btn_confirm">Confirm</div>
+            </div>
+        </div>
+    
+    </div>
+</div>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> -->
+<script src="/src/js/homepage_user/homepage_user.js"></script>
+<script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous"> </script>
+ <!--    <script>
+        var swiper = new Swiper(".swiper-container", {
+          effect: "coverflow",
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: "auto",
+          coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+          },
+        });
+      </script> -->
+     
+</body>
+</html>

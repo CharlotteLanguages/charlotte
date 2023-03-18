@@ -80,7 +80,7 @@ function passInformation(news) {
 }
 
 const printNewsData = (news) => {
-  news.forEach((ele) => {
+  news.reverse().forEach((ele) => {
     const $tr = d.createElement("tr"),
       codigo = `
     <tbody class = "body">
@@ -107,6 +107,82 @@ const printNewsData = (news) => {
 
 /*---------------------------------------------------------------Method Post-------------------------------*/
 
+d.addEventListener("submit", async (e) => {
+  if (e.target === $formNews) {
+    e.preventDefault();
+    if (!e.target.idi.value) {
+      ///CREATE POST
+      try {
+        let options = {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              titleNews: e.target.titleNews.value,
+              categoryNews: e.target.categoryNews.value,
+              tagsNews: e.target.target.value,
+              editorNews: editor.getContents(),
+            }),
+          },
+          res = await fetch(API_URL, options),
+          json = await res.json();
+
+        if (!res.ok) throw { status: res.status, statusText: res.statusText };
+          load();
+          getNewsData();
+          alertManager("success", "Created Successfully");
+          $formNews.reset();
+      } catch (err) {
+        let message = err.statusText || "ocurrió un Error";
+        /*  $formActivity.insertAdjacentHTML(
+            "afterend",
+            `<p><b>Error ${err.status}:${message}</p></b>`
+          ); */
+      }
+    } else {
+      //UPDATE -PUT
+      try {
+        let options = {
+            method: "PUT",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              titleNews: e.target.titleNews.value,
+              categoryNews: e.target.categoryNews.value,
+              tagsNews: e.target.target.value,
+              editorNews: editor.getContents(),
+            }),
+          },
+          res = await fetch(
+            `${API_URL}/${e.target.idi.value}`,
+            options
+          ),
+          json = await res.json();
+        if (!res.ok) throw { status: res.status, statusText: res.statusText };
+        /*  location.reload(); */
+        load();
+        getNewsData();
+        alertManager("update", "Edit Successfully");
+        openEditingForm("Create new news", "Add New news");
+        $formNews.reset();
+      } catch (err) {
+        let message = err.statusText || "ocurrió un Error";
+        /* $formActivity.insertAdjacentHTML(
+            "afterend",
+            `<p><b>Error ${err.status}:${message}</p></b>`
+          ); */
+      }
+    }
+  }
+});
+
+
+
+
+
+
+
+
+
+
 function getDataFromForm() {
   return {
     id: $formNews.idi.value,
@@ -117,7 +193,7 @@ function getDataFromForm() {
   };
 }
 
-export const addNews = () => {
+export const addNews = (datos) => {
   d.addEventListener("click", (e) => {
     if (e.target.matches(".btn-submit")) {
       if (!$formNews.titleNews.value.length) {
@@ -152,7 +228,7 @@ export const addNews = () => {
           getNewsData();
           alertManager("success", "Created Successfully");
           $formNews.reset();
-          editor.setContents(`hola mundo`);
+          /*   datos(); */
         });
     }
   });
@@ -349,11 +425,14 @@ const editor = SUNEDITOR.create(document.querySelector(".txtarea-news"), {
     ["save", "template", "codeView"],
     ["dir", "dir_ltr", "dir_rtl"],
   ],
-  height: 435,
+  Height: "90%",
+  minHeight: "220px",
+  width: "100%",
+  maxWidth: "1200px",
   lang: SUNEDITOR_LANG["en"],
 });
 editor.setDefaultStyle("font-family: Arial; font-size: 20px;");
-const vc = d.querySelector(".cont-table-course_blue");
+const vc = d.querySelector(".cont-table-news_blue");
 
 window.sr = ScrollReveal();
 sr.reveal(vc, {
@@ -361,3 +440,7 @@ sr.reveal(vc, {
   origin: "bottom",
   distance: "-5px",
 });
+
+/* window.addEventListener("load", ()=>{
+  document.getElementById("loader").classList.toggle("loader2");
+}) */

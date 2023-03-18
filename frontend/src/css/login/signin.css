@@ -29,6 +29,7 @@ body {
   border-radius: 20px;
   margin-top: 40px;
 }
+
 .container h1 {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
@@ -39,6 +40,7 @@ body {
   color: #FFFFFF;
   margin-top: 40px;
 }
+
 .container h4 {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
@@ -113,6 +115,7 @@ i {
   text-align: center;
   display: flex;
 }
+
 .left .text-check {
   padding-left: 20px;
 }
@@ -126,6 +129,7 @@ i {
 .forgot {
   transition: all 0.4s ease;
 }
+
 .forgot:hover {
   cursor: pointer;
   color: #000000;
@@ -158,6 +162,7 @@ i {
   margin-top: 55px;
   transition: all 0.4s ease;
 }
+
 .btn-login:hover {
   background-color: #4080ff;
 }
@@ -181,6 +186,7 @@ i {
   margin-top: 30px;
   transition: all 0.4s ease;
 }
+
 .btn-login-forgot:hover {
   background-color: #4080ff;
 }
@@ -246,6 +252,7 @@ i {
   color: #fff;
   transition: all 0.4s ease;
 }
+
 .buttom-signup:hover {
   background-color: #4080ff;
 }
@@ -265,6 +272,7 @@ i {
   backdrop-filter: blur(18px);
   border-radius: 20px;
 }
+
 .container-forgot-password h1 {
   font-family: "Montserrat";
   font-style: normal;
@@ -276,10 +284,12 @@ i {
   text-align: center;
   margin-top: 15px;
 }
+
 .container-forgot-password .cancel-forgot-pass {
   display: flex;
   align-items: center;
 }
+
 .container-forgot-password .cancel-forgot-pass .cancel-back {
   font-size: 25px;
   color: #0057FF;
@@ -289,9 +299,11 @@ i {
   transition: all 0.4s ease;
   cursor: pointer;
 }
+
 .container-forgot-password .cancel-forgot-pass .cancel-back:hover {
   color: #4080ff;
 }
+
 .container-forgot-password .cancel-forgot-pass .cancel-left {
   position: relative;
   left: 2px;
@@ -300,6 +312,7 @@ i {
   transition: all 0.4s ease;
   cursor: pointer;
 }
+
 .container-forgot-password .cancel-forgot-pass .cancel-left:hover {
   color: #4080ff;
 }
@@ -332,6 +345,7 @@ i {
   font-weight: bold;
   display: none;
 }
+
 .created-user i {
   color: #00FF59;
   margin-left: 50px;
@@ -349,6 +363,7 @@ i {
   margin-top: 40px;
   margin-left: 40px;
 }
+
 .form__bottoms .btn {
   max-width: 135px;
   width: 100%;
@@ -366,9 +381,11 @@ i {
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
   transition: all 0.4s ease;
 }
+
 .form__bottoms .btn:hover {
   background-color: #e6e4e4;
 }
+
 .form__bottoms .select-login {
   position: absolute;
   width: 36px;
@@ -400,5 +417,7 @@ i {
   background-repeat: no-repeat;
   cursor: pointer;
 }
+
+/*# sourceMappingURL=signin.css.map */
 
 /*# sourceMappingURL=signin.css.map */

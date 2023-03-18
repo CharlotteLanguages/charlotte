@@ -5,11 +5,13 @@ const d = document,
   $formStudent = d.querySelector(".crud-form-student"),
   $titleStudent = d.querySelector(".crud-title-student"),
   $btnStudent = d.getElementById("create-student"),
+  $btnStudent2 = d.getElementById("update-student"),
   $tableStudent = d.querySelector(".crud-table-student"),
   $fragment = d.createDocumentFragment(),
   $formDelete = d.querySelector(".form-delete-dr"),
-  $modal = document.querySelector(".cont-p-student");
-const news = d.querySelector("#container-noti");
+  $modal = document.querySelector(".cont-p-student"),
+  inputs = document.querySelectorAll(".form__input"),
+  news = d.querySelector("#container-noti");
 
 export function ModalRemoveStudent(btnshow, btnclose, modalContainer, modal) {
   d.addEventListener("click", (e) => {
@@ -24,6 +26,67 @@ export function ModalRemoveStudent(btnshow, btnclose, modalContainer, modal) {
     } */
   });
 }
+
+const fields = {
+  firstName: false,
+  lastName: false,
+  password: false,
+  email: false,
+  userName: false,
+};
+
+const expressions = {
+  firstName: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
+  lastName: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
+  userName: /^[a-zA-Z0-9\_\-\.]{4,16}$/,
+  email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+  password:
+    /(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040"])(?=.*[A-Z])(?=.*[a-z])\S{6,16}$/,
+};
+
+const validateFields = (expression, input, camp) => {
+  if (expression.test(input.value)) {
+    d.querySelector(`#group__${camp} .form__input-error`).classList.remove(
+      "form__input-error-active"
+    );
+    fields[camp] = true;
+  } else {
+    d.querySelector(`#group__${camp} .form__input-error`).classList.add(
+      "form__input-error-active"
+    );
+    fields[camp] = false;
+  }
+};
+
+const validateForm = (e) => {
+  switch (e.target.name) {
+    case "firstName":
+      validateFields(expressions.firstName, e.target, e.target.name);
+      hasUser();
+      break;
+    case "lastName":
+      validateFields(expressions.lastName, e.target, e.target.name);
+      hasUser();
+      break;
+    case "email":
+      validateFields(expressions.email, e.target, e.target.name);
+      emailUser();
+      break;
+    case "userName":
+      validateFields(expressions.userName, e.target, e.target.name);
+      break;
+    case "password":
+      validateFields(expressions.password, e.target, e.target.name);
+      break;
+    case "dateBirth":
+      hasUser();
+      break;
+  }
+};
+
+inputs.forEach((input) => {
+  input.addEventListener("keyup", validateForm);
+});
 
 /*--------------------------------------------show-----------------------*/
 
@@ -75,7 +138,9 @@ export const studentp = async () => {
   try {
     let res = await fetch(API_URL),
       json = await res.json();
-    /*  if (!res.ok) throw { status: res.status, statusText: res.statusText }; */
+    if (!res.ok) {
+      table.innerHTML = `<div class ="nada">no hay conexion </div>`;
+    }
     if (json.length <= 0) {
       const table = d.querySelector(".crud-table-student");
       table.innerHTML = `<div class = "no-activities">NO STUDENTS YET</div>`;
@@ -84,7 +149,7 @@ export const studentp = async () => {
       }, 4000);
     } else {
       student = json;
-      renderSponsor(student);
+      renderStudent(student);
     }
   } catch (err) {
     let message = err.statusText || "ocurrió un Error";
@@ -92,18 +157,18 @@ export const studentp = async () => {
 };
 
 /*--------------------------------------------Render Resources-------------------------------- */
-const renderSponsor = (student) => {
+const renderStudent = (student) => {
   let codigo = "";
-  student.forEach((ele, i) => {
+  student.reverse().forEach((ele, i) => {
     const $tr = d.createElement("tr");
     codigo = `
     <tbody class = "body">
     <tr class = "tr">
-    <td>${ele.id}</td>
-    <td>${ele.studentName} ${ele.lastNameStudent}</td>
-    <td>${ele.emailStudent}</td>
-    <td>${ele.membershipStudent}</td>
-    <td>
+    <td data-label = "ID">${ele.id}</td>
+    <td data-label = "Student">${ele.studentName} ${ele.lastNameStudent}</td>
+    <td data-label = "Email">${ele.emailStudent}</td>
+    <td data-label = "Membership">${ele.membershipStudent}</td>
+    <td data-label = "Action">
         <div class="icons-student">
         <i class="fas fa-dot-circle read-student" data-ids = ${ele.id} ></i>
         <i class="fas fa-pen edit-student" data-id = ${ele.id}></i> 
@@ -137,26 +202,7 @@ d.addEventListener("click", (e) => {
     });
 
     let code = `
-      <div class ="card-info-students">
-      <div>${students.studentName} ${students.lastNameStudent}</div> 
-      <div>${students.emailStudent}</div> 
-      <div>${students.genderStudent}</div> 
-      <div>${students.birthdayStudent}</div> 
-      <div>${students.usernameStudent}</div> 
-      <div>${students.membershipStudent}</div> 
-      </div>
-      
-       <div class="hello">Completed Courses</div> 
-       <div class="hello2">Completed Courses</div> 
-       <div class="hola">exercice introduccion</div> 
-       <div class="hola1">exercice introduccion</div> 
-       <div class="hola2">exercice introduccion</div> 
-       <div class="dowload1">Dowload Report</div> 
-       <div class="dowload2">Dowload Report</div> 
-       <i class="fas fa-check-circle succes-student"></i>
-       <i class="fas fa-check-circle succes-student2"></i>
-       <i class="fas fa-check-circle succes-student23"></i>
-
+   
       `;
     $modal.innerHTML = code;
   }
@@ -170,65 +216,82 @@ d.addEventListener("click", (e) => {
   }
 });
 
-/*--------------------------------------------------POST Method----------------------------------------- */
+/*--------------------------------------------------POST and PUT Method----------------------------------------- */
 
-d.addEventListener("click", (e) => {
-  /*   const email = d.querySelector(".email-referral"); */
-  if (e.target.matches(".btn-submit")) {
+d.addEventListener("submit", async (e) => {
+  if (e.target === $formStudent) {
+    e.preventDefault();
+    if (!e.target.idi.value) {
+      ///CREATE POST
+      try {
+        let options = {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              studentName: e.target.studentName.value,
+              lastNameStudent: e.target.lastNameStudent.value,
+              emailStudent: e.target.emailStudent.value,
+              birthdayStudent: e.target.birthdayStudent.value,
+              genderStudent: e.target.genderStudent.value,
+              usernameStudent: e.target.usernameStudent.value,
+              passwordStudent: e.target.passwordStudent.value,
+              membershipStudent: e.target.membershipStudent.value,
+              commentstudent: editor.getContents(),
+            }),
+          },
+          res = await fetch("http://localhost:3000/student", options),
+          json = await res.json();
 
-    let regexp_password =
-      /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/;
-    /* !validEmai.test($formReferral["referralEmail"].value) */
-    if (
-      regexp_password.test($formStudent["studentName"].value) ||
-      !$formStudent["usernameStudent"].value.length ||
-      !$formStudent["passwordStudent"].value.length
-    ) {
-      const value = $formStudent["studentName"].value;
-      const web = $formStudent["usernameStudent"].value;
-      const pass = $formStudent["passwordStudent"].value;
-
-      $formStudent["studentName"].value = "* Enter student name";
-      $formStudent["usernameStudent"].value = "* Enter user student";
-      $formStudent["passwordStudent"].value = "* Enter a valid password";
-
-      setTimeout(() => {
-        $formStudent["studentName"].value = value;
-        $formStudent["usernameStudent"].value = web;
-        $formStudent["passwordStudent"].value = pass;
-      }, 1500);
-
-      return;
-    }
-    const activity = {
-      studentName: $formStudent["studentName"].value,
-      lastNameStudent: $formStudent["lastNameStudent"].value,
-      emailStudent: $formStudent["emailStudent"].value,
-      birthdayStudent: $formStudent["birthdayStudent"].value,
-      genderStudent: $formStudent["genderStudent"].value,
-      usernameStudent: $formStudent["usernameStudent"].value,
-      passwordStudent: $formStudent["passwordStudent"].value,
-      membershipStudent: $formStudent["membershipStudent"].value,
-      commentstudent: editor.getContents(),
-    };
-    fetch(API_URL, {
-      method: "POST",
-      body: JSON.stringify(activity),
-      headers: { "content-Type": "application/json" },
-    })
-      .then((res) => {
-        res.json();
-      })
-      .catch((error) => {
-        alertManager("error", error);
-      })
-      .then((res) => {
+        if (!res.ok) throw { status: res.status, statusText: res.statusText };
         studentp();
         load();
         $formStudent.reset();
         alertManager("success", "Created Successfully");
-        editor.value("hola");
-      });
+      } catch (err) {
+        let message = err.statusText || "ocurrió un Error";
+        /*  $formActivity.insertAdjacentHTML(
+            "afterend",
+            `<p><b>Error ${err.status}:${message}</p></b>`
+          ); */
+      }
+    } else {
+      //UPDATE -PUT
+      try {
+        let options = {
+            method: "PUT",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              studentName: e.target.studentName.value,
+              lastNameStudent: e.target.lastNameStudent.value,
+              emailStudent: e.target.emailStudent.value,
+              birthdayStudent: e.target.birthdayStudent.value,
+              genderStudent: e.target.genderStudent.value,
+              usernameStudent: e.target.usernameStudent.value,
+              passwordStudent: e.target.passwordStudent.value,
+              membershipStudent: e.target.membershipStudent.value,
+              commentstudent: editor.getContents(),
+            }),
+          },
+          res = await fetch(
+            `http://localhost:3000/student/${e.target.idi.value}`,
+            options
+          ),
+          json = await res.json();
+        if (!res.ok) throw { status: res.status, statusText: res.statusText };
+        /*  location.reload(); */
+        $btnStudent.value = "Add new student";
+        $titleStudent.textContent = "Create new student";
+        load();
+        alertManager("update", "Edit Successfully");
+        $formStudent.reset();
+      } catch (err) {
+        let message = err.statusText || "ocurrió un Error";
+        /* $formActivity.insertAdjacentHTML(
+            "afterend",
+            `<p><b>Error ${err.status}:${message}</p></b>`
+          ); */
+      }
+    }
   }
 });
 
@@ -237,20 +300,13 @@ d.addEventListener("click", (e) => {
 function alertManager(typeMsg, message) {
   const alert = document.querySelector("#alert"),
     me = document.querySelector(".parrafo-succes");
-
   me.innerHTML = message || "Se produjo cambios";
   alert.classList.add(typeMsg);
   alert.style.display = "block";
-
   setTimeout(() => {
     alert.style.display = "none";
     alert.classList.remove(typeMsg);
   }, 1500);
-
-  /*  setTimeout(() => {
-    location.reload();
-
-  }, 2000); */
 }
 
 /*-----------------------------------------------------Btn Edit Up Modify----------------------------------------- */
@@ -259,8 +315,8 @@ d.addEventListener("click", (e) => {
   if (e.target.matches(".edit-student")) {
     $titleStudent.textContent = "Modify students";
     $btnStudent.value = "Save Changes";
-    $btnStudent.classList.toggle("edit-two");
-    $btnStudent.classList.toggle("btn-submit");
+    d.querySelector(".text-membership").style.display = "none";
+    d.querySelector(".text-gender").style.display = "none";
     let id = e.target.dataset.id,
       students = {};
     student.filter((el) => {
@@ -285,62 +341,6 @@ d.addEventListener("click", (e) => {
 
 /*---------------------------------------------------PUT Method---------------------------------- */
 
-d.addEventListener("click", (e) => {
-  if (e.target.matches(".edit-two")) {
-    const valueStudents = {
-      id: $formStudent.idi.value,
-      studentName: $formStudent.studentName.value,
-      lastNameStudent: $formStudent.lastNameStudent.value,
-      emailStudent: $formStudent.emailStudent.value,
-      birthdayStudent: $formStudent.birthdayStudent.value,
-      genderStudent: $formStudent.genderStudent.value,
-      usernameStudent: $formStudent.usernameStudent.value,
-      passwordStudent: $formStudent.passwordStudent.value,
-      membershipStudent: $formStudent.membershipStudent.value,
-      commentstudent: editor.getContents(),
-    };
-
-    /*   if (
-      !$formStudent["sponsorName"].value.length ||
-      !$formStudent["sponsorWebsite"].value.length
-    ) {
-      const value = $formStudent["sponsorName"].value;
-      const web = $formStudent["sponsorWebsite"].value;
-
-      $formStudent["sponsorName"].value = "* Enter sponsor name";
-      $formStudent["sponsorWebsite"].value = "* Enter the Sponsor's Website";
-
-      setTimeout(() => {
-        $formStudent["sponsorName"].value = value;
-        $formStudent["sponsorWebsite"].value = web;
-      }, 1500);
-
-      return;
-    } */
-
-    fetch(`${API_URL}/${valueStudents.id}`, {
-      method: "PUT",
-      body: JSON.stringify(valueStudents),
-      headers: {
-        "content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .catch((error) => {
-        alertManager("error", error);
-      })
-      .then((response) => {
-        $btnStudent.value = "Add new student";
-        load();
-        alertManager("update", "Edit Successfully");
-        document.querySelector(".crud-form-student").reset();
-        $btnStudent.classList.toggle("edit-two");
-        $btnStudent.classList.toggle("btn-submit");
-        $titleStudent.textContent = "Create New student";
-      });
-  }
-});
-
 /*--------------------------------------------Load----------------------------------- */
 
 function load() {
@@ -351,13 +351,22 @@ function load() {
 }
 /* -------------------------------------------------DELETE Method-------------------------------- */
 
+d.addEventListener("change", (e) => {
+  if (e.target.matches(".membership-student")) {
+    d.querySelector(".text-membership").style.display = "none";
+  }
+  if (e.target.matches(".gender-student")) {
+    d.querySelector(".text-gender").style.display = "none";
+  }
+});
+
 d.addEventListener("click", (e) => {
   if (e.target.matches(".remove-student")) {
     d.querySelector("#modal-container-dr").style.opacity = "1";
     d.querySelector("#modal-container-dr").style.visibility = "visible";
     d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
     let id = e.target.dataset.idr;
-    d.addEventListener("submit", (e) => {
+    d.addEventListener("submit", async (e) => {
       if (e.target === $formDelete) {
         e.preventDefault();
 
@@ -383,62 +392,63 @@ d.addEventListener("click", (e) => {
             }, 1500);
           });
       }
+
+      if (e.target === $formDelete) {
+        let options = {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              reasonDeleteStudent: e.target.reasonDelete.value,
+            }),
+          },
+          res = await fetch(
+            "http://localhost:3000/reasonDeleteStudent",
+            options
+          ),
+          json = await res.json();
+
+        if (!res.ok) throw { status: res.status, statusText: res.statusText };
+      }
     });
   }
 });
 
 const vc = d.querySelector(".cont-table-student_blue"),
   vd = d.querySelector(".cont-tables-student");
-
-window.sr = ScrollReveal();
-sr.reveal(vc, {
-  duration: 2500,
-  origin: "bottom",
-  distance: "-5px",
+  window.sr = ScrollReveal();
+  sr.reveal(vc, {
+    duration: 2500,
+    origin: "bottom",
+    distance: "-5px",
 });
 
 const editor = SUNEDITOR.create(document.querySelector(".editor-student"), {
   value: "Comments...",
 
   buttonList: [
-    [
-      "undo",
-      "redo",
-      "font",
-      "fontSize",
-      "formatBlock",
-      "paragraphStyle",
-      "blockquote",
-    ],
+    ["font", "fontSize", "formatBlock"],
+    ["paragraphStyle", "blockquote", "bold"],
 
-    [
-      "bold",
-      "underline",
-      "italic",
-      "strike",
-      "fontColor",
-      "hiliteColor",
-      "textStyle",
-    ],
-    ["align", "horizontalRule", "list", "lineHeight", "fullScreen"],
+    ["underline", "italic"],
+    ["strike", "fontColor", "hiliteColor"],
 
-    "/", // Line break
+    ["textStyle", "align", "horizontalRule"],
+
+    ["list", "lineHeight", "fullScreen"],
   ],
-
-  height: 250,
-
+  Height: "90%",
+  minHeight: "200px",
+  width: "100%",
+  maxWidth: "1200px",
   lang: SUNEDITOR_LANG["en"],
 });
 
-editor.setDefaultStyle("font-family: Arial; font-size: 20px;");
-
+editor.setDefaultStyle("font-family: Arial; font-size: 17px;");
 
 const change = d.querySelector(".gender-student");
-change.addEventListener("click", (e) => {
-  alert("cambio");
-});
+change.addEventListener("click", (e) => {});
 
-const ctx = d.querySelector("#myChart");
+/* const ctx = d.querySelector("#myChart");
 
 new Chart(ctx, {
   type: "bar",
@@ -452,4 +462,14 @@ new Chart(ctx, {
       },
     ],
   },
+});
+ */
+
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".fa-bars")) {
+    setTimeout(() => {
+      e.target.classList.toggle("changeColor");
+    }, 500);
+    d.querySelector(".menu").classList.toggle("move-menu");
+  }
 });

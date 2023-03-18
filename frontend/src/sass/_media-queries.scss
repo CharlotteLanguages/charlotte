@@ -1,15 +1,104 @@
-@mixin lg {
-  @media only screen and (max-width: 1024px) {
+@mixin table {
+  @media  screen and (min-width: 1450px) and (max-width: 1700px) {
     @content;
   }
 }
-@mixin md {
-  @media only screen and (max-width: 780px) {
+
+@mixin desktop {
+  @media  screen and (min-width: 1450px) and (max-width: 1600px) {
     @content;
   }
 }
-@mixin sm {
-  @media only screen and (max-width: 480px) {
+
+@mixin phone2 {
+  @media  screen and (min-width: 1310px) and (max-width: 1450px) {
     @content;
   }
 }
+
+@mixin phone {
+  @media  screen and (min-width: 1225px) and (max-width: 1310px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (min-width: 1060px) and (max-width: 1225px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 860px) and (max-width: 1060px) {
+    @content;
+  }
+}
+
+@mixin tablett {
+  @media all and (min-width: 748px) and (max-width: 860px){
+    @content;
+  }
+}
+@mixin big-phone {
+  @media all and (min-width: 500px) and (max-width: 748px){
+    @content;
+  }
+}
+
+@mixin menu {
+  @media  screen and (min-width: 1000px) and (max-width: 1225px) {
+    @content;
+  }
+}
+@mixin menus {
+    @media screen and (orientation:portrait){
+    @content;
+  }
+}
+@mixin lands {
+  @media screen and (orientation:landscape){
+    @content;
+  }
+}
+
+
+@mixin defect {
+  @media all and (min-width: 1024px) and (max-width: 1280px){
+    @content;
+  }
+}
+/* @mixin tablet-horizontal {
+  @media all and (min-width: 768px) and (max-width: 1024px){
+    @content;
+  }
+} */
+
+@mixin phoness {
+  @media all and (min-width: 320px) and (max-width: 500px){
+    @content;
+  }
+}
+
+
+
+@mixin iphone-vertical {
+  @media screen and (max-device-width: 480px) and (orientation:portrait){
+    @content;
+  }
+}
+@mixin iphone-horizontal {
+  @media screen and (max-device-width: 480px) and (orientation:landscape){
+    @content;
+  }
+}
+@mixin ipad-vertical {
+  @media screen and (min-device-width: 481px) and (orientation:portrait){
+    @content;
+  }
+}
+@mixin ipad-horizontal {
+  @media screen and (min-device-width: 481px) and (orientation:landscape){
+    @content;
+  }
+}
+

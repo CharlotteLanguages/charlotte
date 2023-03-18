@@ -1,72 +1,331 @@
 @use "mixingfunc";
+@use "media-queries";
 
 .menu {
-  @include mixingfunc.measures(299px, 1024px, 0px, 0px);
+  @include mixingfunc.measures(15%, 800px, 0px, 0px);
   background: #ebebeb;
   box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 20px 20px 0px;
+  transition: transform 1s;
+  margin-bottom: 50px;
+ 
   &::after {
     content: "";
     position: absolute;
-    @include mixingfunc.measures(232.5px, 0px, 34px, 598.5px);
+    @include mixingfunc.measures(9%, 0px, 2%, 415px);
     border: 1px solid #000000;
+   /*  @include media-queries.phoness {
+      display: none;
+    
+    }
+    @include media-queries.big-phone {
+      display: none;
+    
+    }
+    @include media-queries.tablett {
+      display: none;
+    
+    }
+    @include media-queries.tablet {
+      display: none;
+    
+    }
+    @include media-queries.mobile {
+      width: 113px;
+    }
+    @include media-queries.phone {
+      width: 153px;
+    }
+    @include media-queries.phone2 {
+      width: 193px;
+    }
+    @include media-queries.desktop {
+      width: 213px;
+    } */
   }
+  /* @include media-queries.tablet {
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    opacity: .9;
+    height: 100%;
+    transform: translateX(-150%);
+    border-radius: 0;
+    overflow: auto;
+   
+  }
+  @include media-queries.tablett {
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    opacity: .9;
+    height: 100%;
+    transform: translateX(-150%);
+    border-radius: 0;
+    overflow: auto;
+  }
+  @include media-queries.big-phone {
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    opacity: .9;
+    height: 100%;
+    transform: translateX(-150%);
+    border-radius: 0;
+    overflow: auto;
+  }
+  @include media-queries.phoness {
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    opacity: .9;
+    height: 100%;
+    transform: translateX(-150%);
+    border-radius: 0;
+    overflow: auto;
+  }
+    
+  @include media-queries.mobile {
+    width: 190px;
+    max-height: 100%;
+
+  }
+  @include media-queries.phone {
+    width: 229px;
+    max-height: 100%;
+  }
+  @include media-queries.phone2 {
+    width: 269px;
+    max-height: 100%;
+  }
+  @include media-queries.desktop {
+    width: 289px;
+    max-height: 100%;
+  } */
   .menu__logo {
-    @include mixingfunc.measures(230px, 99px, 35px, 19px);
-    background: url("/src/public/charlotte.PNG");
+    background: url("/src/public/logo-charlotte.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    position: absolute;
+    width: 75%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+     margin: auto;
+     margin-top: 5%;
+   /*  @include media-queries.mobile {
+      left: 21px;
+      width: 140px;
+    }
+    @include media-queries.phone {
+      left: 21px;
+      width: 160px;
+    }
+    @include media-queries.phone2 {
+      left: 22px;
+      width: 200px;
+    }
+    @include media-queries.tablet {
+      margin: auto;
+      width: 200px;
+      right: 50px;
+  
+    }
+    @include media-queries.tablett {
+      margin: auto;
+      width: 200px;
+      right: 50px;
+    }
+    @include media-queries.big-phone {
+      margin: auto;
+      width: 190px;
+      right: 40px;
+    }
+    @include media-queries.phoness {
+      margin: auto;
+      width: 155px;
+      right: 30px;
+    } */
   }
 
   .menu__list {
-    margin-top: 220px;
-    /*   margin-bottom: 156px; */
+    margin-top: 60px;
+    @include media-queries.phoness {
+     margin-top:180px ;
+
+    }
 
     li {
-      width: 282px;
+      width: 94%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       list-style: none;
-      margin-bottom: 15px;
-      height: 38px;
-      transition: all 0.5s linear;
+      margin-bottom: 12px;
+      height: 27px;
+      transition: all 0.3s linear;
+
       
+    /*   @include media-queries.mobile {
+        width: 180px;
+        margin-right: 10px;
+       
+      
+      }
+      @include media-queries.phone {
+        width: 212px;
+        margin-right: 10px;
+      
+      }
+      @include media-queries.phone2 {
+        width: 252px;
+      }
+
+      @include media-queries.desktop {
+        width: 272px;
+      }
+      @include media-queries.tablet {
+        width: 90%;
+        margin: auto;
+        height: 38px;
+        margin-bottom: 20px;
+      }
+      @include media-queries.tablett {
+        width: 90%;
+        margin: auto;
+        height: 37px;
+        margin-bottom: 20px;
+      }
+      
+      @include media-queries.big-phone {
+        width: 90%;
+        margin: auto;
+        height: 37px;
+        margin-bottom: 20px;
+      }
+      @include media-queries.phoness {
+        width: 90%;
+        margin: auto;
+        height: 36px;
+        margin-bottom: 13px;
+  
+      } */
+      
+
       &:hover {
-        height: 43px;
+        transform: scale(1.04);
         background: #8eaaff;
         border-radius: 50px 0px 0px 50px;
-        text-align: center;
+      
+      /*   @include media-queries.mobile {
+          width: 180px;
+        }
+        @include media-queries.phone {
+          width: 210px;
+        }
+        @include media-queries.phone2 {
+          width: 252px;
+        }
+  
+        @include media-queries.desktop {
+          width: 272px;
+        }
+        @include media-queries.tablet {
+        width: 90%;
+        transform: scale(1.01);
+        }
+        @include media-queries.tablett {
+        width: 90%;
+        transform: scale(1.01);
+        }
+        @include media-queries.big-phone {
+        width: 90%;
+        transform: scale(1.01);
+        }
+        @include media-queries.phoness {
+        width: 90%;
+        transform: scale(1.01);
+        } */
       }
 
       a {
         text-decoration: none;
-        @include mixingfunc.font-style(Arial, normal, 500, 24px, 38px, center);
-         
-        width: 265px;
+        @include mixingfunc.font-style(Arial, normal, 500, 1.05rem, 36px, center);
+        width: 100%;
+        height: 28px;
         color: #000000;
-        padding: 0;
-        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      
+
+       
+      
+      /*   @include media-queries.phone2 {
+          font-size: 21px;
+        }
+        @include media-queries.desktop {
+          font-size: 22px;
+        }
+        @include media-queries.phone {
+          font-size: 20px;
+         
+        }
+        @include media-queries.mobile {
+          font-size: 18px;
+         
+        }
+        @include media-queries.tablet{
+         width: 90%; 
+         font-size: 22px;   
+        }
+        @include media-queries.tablett{
+         width: 90%;    
+         font-size: 21px;
+        }
+        @include media-queries.big-phone{
+         width: 90%;    
+         font-size: 21px;
+        }
+        @include media-queries.phoness{
+         width: 90%;    
+         font-size: 16px;
+        } */
       }
     }
   }
 }
+
+.move-menu {
+  transform: translateX(0%);
+
+}
 .space2 {
   padding-top: 12px;
+  
 }
 
 .press {
-  width: 282px;
   height: 46px;
   background: #8eaaff;
   border-radius: 50px 0px 0px 50px;
   text-align: center;
   /* transition: all 0.4s ease; */
-  
+
 }
-.space-top{
+.space-top {
   margin-top: 35px;
+ /*  @include media-queries.tablet{
+   margin-top: 0px; 
+   }
+  @include media-queries.tablett{
+   margin-top: 0px; 
+   }
+  @include media-queries.big-phone{
+   margin-top: 0px; 
+   }
+  @include media-queries.phoness{
+   margin-top: 0px; 
+   } */
 }
