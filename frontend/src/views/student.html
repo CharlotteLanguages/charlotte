@@ -22,9 +22,18 @@
                     <p class="crud-title-student font-title-student">Create new student</p>
                     <form class="crud-form-student">
                         <input type="hidden" name="idi">
-                        <input type="text" class="first-name-student form__input" name="studentName" placeholder="First name" required>
-                        <input type="text" class="last-name-student form__input" name="lastNameStudent" placeholder="Last name" required>
-                        <input type="email" class="email-student" name="emailStudent" placeholder="Email" required>
+                        <div>
+                            <!-- <label for="">*</label> -->
+                            <input type="text" class="first-name-student form__input" name="studentName" placeholder="First name" required>
+                        </div>
+                        <div>
+                            <input type="text" class="last-name-student form__input" name="lastNameStudent" placeholder="Last name" required>
+                          <!--   <label for="">*</label> -->
+                        </div>
+                        <div>
+                            <input type="email" class="email-student" name="emailStudent" placeholder="Email" required>
+                           <!--  <label for="">*</label> -->
+                        </div>
                         <div>
 
                             <label for="birthdayStudent" class="text-birth-day">Date of Birth</label>
@@ -52,12 +61,8 @@
                             <textarea name="commets-student" class="editor-student" cols="30" rows="10"></textarea>
                         </div>
                         <input id="create-student" type="submit" value="Create student" class="btn-submit">
-                  
                         <input class="cancel-student" type="button" value="Cancel">
                     </form>
-                 
-
-                   
                 </article>
 
             </section>
@@ -139,18 +144,21 @@
                 </div>
         </section>
 
-        <form class="form-delete-dr" action="">
-            <section id="modal-container-dr">
-                <div class="modal-dr modal-close-dr">
-                    <h3>Delete item</h3>
-                    <textarea name="reasonDelete" id="text-dr"  placeholder="Reason..." required></textarea>
-                        <div class="buttons_delete">
-                            <button class="close-dr btn-dr2">Cancel</button>
-                            <input type="submit" class="close-dr bnt-dr" value="Yes, Delete"></input>
-                      </div>
-                </div>
-            </section>
-        </form>
+     
+            <form class="form-delete-dr" action="">
+                <section id="modal-container-dr">
+                    <div class="modal-dr modal-close-dr">
+                        <h3>Delete item</h3>
+                        <textarea name="reasonDelete" id="text-dr"  placeholder="Reason..." required></textarea>
+                            <div class="buttons_delete">
+                                <div class="btn-dr2">Cancel</div>
+                                <input type="submit" class="bnt-dr" value="Yes, Delete"></input>
+                            </div>
+                        </div>
+                    </section>
+                </form>
+                
+  
 
         <section class="container-notify-succes alert" id="alert">
             <i class="fas fa-check-circle close-notify-succes"></i>

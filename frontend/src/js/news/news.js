@@ -51,11 +51,11 @@ function CodeTh() {
 
 /* -----------------------------------------------------Main Fetch----------------------------- */
 
+let news = [];
 export const getNewsData = async () => {
   try {
     let res = await fetch(API_URL),
-      json = await res.json(),
-      news = [];
+      json = await res.json()
     if (json.length <= 0) {
       const tables = d.querySelector(".crud-table-news");
       tables.innerHTML = `<div class = "no-activities">NO NEWS YET</div>`;
@@ -119,7 +119,7 @@ d.addEventListener("submit", async (e) => {
             body: JSON.stringify({
               titleNews: e.target.titleNews.value,
               categoryNews: e.target.categoryNews.value,
-              tagsNews: e.target.target.value,
+              tagsNews: e.target.tagsNews.value,
               editorNews: editor.getContents(),
             }),
           },
@@ -147,7 +147,7 @@ d.addEventListener("submit", async (e) => {
             body: JSON.stringify({
               titleNews: e.target.titleNews.value,
               categoryNews: e.target.categoryNews.value,
-              tagsNews: e.target.target.value,
+              tagsNews: e.target.tagsNews.value,
               editorNews: editor.getContents(),
             }),
           },
@@ -183,7 +183,7 @@ d.addEventListener("submit", async (e) => {
 
 
 
-function getDataFromForm() {
+/* function getDataFromForm() {
   return {
     id: $formNews.idi.value,
     titleNews: $formNews.titleNews.value,
@@ -192,9 +192,9 @@ function getDataFromForm() {
     editorNews: editor.getContents(),
   };
 }
-
+ */
 export const addNews = (datos) => {
-  d.addEventListener("click", (e) => {
+/*   d.addEventListener("click", (e) => {
     if (e.target.matches(".btn-submit")) {
       if (!$formNews.titleNews.value.length) {
         const value = $formNews.titleNews.value;
@@ -228,10 +228,10 @@ export const addNews = (datos) => {
           getNewsData();
           alertManager("success", "Created Successfully");
           $formNews.reset();
-          /*   datos(); */
+        
         });
     }
-  });
+  }); */
 };
 
 /*-----------------------------------------------------Btn Read show------------------------------------------- */
@@ -275,14 +275,15 @@ export function closeWindowModal(btn, container, modal, toggle) {
 function openEditingForm(title, btn) {
   $titleNews.textContent = title;
   $btnNews.value = btn;
-  $btnNews.classList.toggle("edit-two");
-  $btnNews.classList.toggle("btn-submit");
+/*   $btnNews.classList.toggle("edit-two");
+  $btnNews.classList.toggle("btn-submit") */;
 }
 
-function loadDataForEditing(news) {
+
   d.addEventListener("click", (e) => {
     if (e.target.matches(".edit-news")) {
-      openEditingForm("Modify news", "Save Changes");
+      $titleNews.textContent = "Modify news";
+      $btnNews.value = "Save Changes";
       let id = e.target.dataset.id,
         cours = {};
       news.filter((el) => {
@@ -297,12 +298,12 @@ function loadDataForEditing(news) {
       load();
     }
   });
-}
+
 
 /*--------------------------------------------------------Put Method ---------------------------- */
 
 export function editNews() {
-  d.addEventListener("click", (e) => {
+ /*  d.addEventListener("click", (e) => {
     if (e.target.matches(".edit-two")) {
       fetch(`${API_URL}/${getDataFromForm().id}`, {
         method: "PUT",
@@ -326,7 +327,7 @@ export function editNews() {
           }, 1500);
         });
     }
-  });
+  }); */
 }
 
 /*----------------------------------------------Method Delete----------------------------------------- */
@@ -425,8 +426,8 @@ const editor = SUNEDITOR.create(document.querySelector(".txtarea-news"), {
     ["save", "template", "codeView"],
     ["dir", "dir_ltr", "dir_rtl"],
   ],
-  Height: "90%",
-  minHeight: "220px",
+  Height: "100%",
+  minHeight: "190px",
   width: "100%",
   maxWidth: "1200px",
   lang: SUNEDITOR_LANG["en"],

@@ -10,15 +10,16 @@
   }
 
 .head{
-    background: url("/src/public/homepage_free/banner_countdown.png");
+    background: url("/src/public/homepage_basic/background.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
     width: 100%;
-    height: 200px;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 .logo-charlotte {
     width: 100%;
@@ -43,6 +44,7 @@
     line-height: 55px;
     color: #FFFFFF;
 
+
 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -50,7 +52,6 @@ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 .navbar {
     width: 100%;
     height: 60px;
-    background: #3E4095;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -59,13 +60,16 @@ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     top: 0px;
     transition: all 0.4s ease;
     padding-bottom: 2.5px;
+    background: rgba(242, 190, 66, 0.65);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
   }
   
   .navbar__menu {
-    width: 70%;
+    width: 30%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+   
    
   
     li {
@@ -465,14 +469,15 @@ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
  main{
     display: flex;
-    width: 100%;
+   
  }
 
   .side_navbar{
     width: 250px;
-    height: 1050px;
+    height: 1430px;
+
     background: #3E4095;
-    border-radius: 0px 0px 100px 0px;
+    border-radius: 0px 0px 80px 0px;
     padding-left: 10px;
     padding-right: 5px;
     display: flex;
@@ -527,12 +532,14 @@ li::marker{
 /*----------------------sectiom-main-------------------*/
 
 .section_main{
-    padding: 20px;
+   
     width: 90%;
+  
 }
 
 
 .header_information{
+    padding: 12px;
     display: flex;
     justify-content: space-between;
 }
@@ -566,6 +573,7 @@ li::marker{
     gap: 3px;
  }
 
+ 
 
  .import_information{
     display: flex;
@@ -645,6 +653,7 @@ li::marker{
 
  .activities-tutorials{
     display: flex;
+    padding-left: 12px;
  }
 
  .activities{
@@ -869,3 +878,70 @@ li::marker{
     top: 78%;
 }
 
+.profile-basic{
+    width: 190px;
+    height: 190px;
+    margin: auto;
+    margin-top:40px ;
+    display: flex;
+    justify-content: center;
+}
+.level{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    p{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 25px;
+        text-align: center;
+        color: #FFFFFF;
+   
+            }
+}
+.img-vip{
+    width: 18px;
+    height: 18px;
+}
+
+.desciption-profile{
+    p{
+        color: #fff;
+        text-align: center;
+    }
+    border-bottom: 1px solid #000 ;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border-bottom:  1px solid #000;
+    width: 80%;
+    margin: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    p{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    color: #FFFFFF;
+
+    }
+}
+.content-item{
+    padding-left: 8px;
+    margin-top: 20px;
+}

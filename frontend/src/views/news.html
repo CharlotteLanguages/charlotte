@@ -31,7 +31,8 @@
                             <option>Noticia 3</option>
                         </select>
                         <select class="input-tags-news" name="tagsNews">
-                            <option selected disabled="">Optional tags</option>
+                            <option selected disabled=""></option>
+                           <!--  <option>Optional Tags</option> -->
                             <option>Agent</option>
                             <option>Liaison</option>
                             <option>Analiyt</option>
@@ -41,6 +42,20 @@
                             <option>Specialist</option>
                             <option>Assistant</option>
                         </select>
+
+                        <div>
+
+                            <input type="file" accept="image/*" multiple name="sponsorImage"
+                                placeholder="Profille image..." id="imgSponsor">
+                            <label for="imgSponsor" class="file-sponsor">
+                                <span class="file-sponsor-btn"><i class="fas fa-upload"></i></span>
+                                <span class="file-sponsor-text">Profile image...</span>
+                                <!--   BUSCAR UN ARCHIVO QUE ES MUY IMPORTANTE PARA
+                                    LASOCIEDAD Y
+                                    EL ESTADO CIVIL COLOMBIANO DADO A LA FALTA DE COSAS
+                                </span> -->
+                            </label>
+                        </div>
 
                         <div id="area-news">
                             <textarea name="description" class="txtarea-news" cols="30" rows="10"> </textarea>
@@ -133,19 +148,18 @@
 
         </section>
 
-     <!--    <form class="form-delete" action="">
+        <form class="form-delete-dr" action="">
             <section id="modal-container-dr">
                 <div class="modal-dr modal-close-dr">
                     <h3>Delete item</h3>
-                    <textarea name="cuadro" id="text-dr" cols="30" rows="10" placeholder="Reason..."
-                        required></textarea>
-                    <button type="submit" class="close-dr bnt-dr">Yes, Delete</button>
-                    <button class="close-dr btn-dr2">Cancel</button>
-
+                    <textarea name="reasonDelete" id="text-dr"  placeholder="Reason..." required></textarea>
+                        <div class="buttons_delete">
+                            <button class="close-dr btn-dr2">Cancel</button>
+                            <input type="submit" class="close-dr bnt-dr" value="Yes, Delete"></input>
+                      </div>
                 </div>
             </section>
-
-        </form> -->
+        </form>
         <section class="container-notify-succes sucesx alert" id="alert">
             <i class="fas fa-check-circle close-notify-succes"></i>
             <p class="parrafo-succes"></p>

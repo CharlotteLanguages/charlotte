@@ -23,7 +23,7 @@ ShowNews(
   ".modal-news"
 );
 /* ModalRemoveCourses(".remove", ".close-dc", "#modal-container-dc", ".modal-dc"); */
-openFormNews(".btn-news", ".cancel-form");
+openFormNews(".btn-news", ".cancel-news");
 addNews();
 closeWindowModal(".poi", "#modal-container-news", ".modal-news", "modal-cl");
 editNews();

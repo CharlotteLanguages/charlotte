@@ -1,92 +1,15 @@
-/*-----------------------------------------init const -----------------------------*/
+/*-----------------------------------------daclare const -----------------------------*/
 
 const d = document,
   API_URL = `http://localhost:3000/student`,
   $formStudent = d.querySelector(".crud-form-student"),
   $titleStudent = d.querySelector(".crud-title-student"),
   $btnStudent = d.getElementById("create-student"),
-  $btnStudent2 = d.getElementById("update-student"),
   $tableStudent = d.querySelector(".crud-table-student"),
   $fragment = d.createDocumentFragment(),
   $formDelete = d.querySelector(".form-delete-dr"),
   $modal = document.querySelector(".cont-p-student"),
-  inputs = document.querySelectorAll(".form__input"),
   news = d.querySelector("#container-noti");
-
-export function ModalRemoveStudent(btnshow, btnclose, modalContainer, modal) {
-  d.addEventListener("click", (e) => {
-    /* if (e.target.matches(btnshow)) {
-      console.log(e.target);
-      d.querySelector(modalContainer).style.visibility = "visible";
-      d.querySelector(modal).classList.toggle("modal-close-d");
-    }
-    if (e.target.matches(btnclose)) {
-      d.querySelector(modalContainer).style.visibility = "hidden";
-      d.querySelector(modal).classList.toggle("modal-close-d");
-    } */
-  });
-}
-
-const fields = {
-  firstName: false,
-  lastName: false,
-  password: false,
-  email: false,
-  userName: false,
-};
-
-const expressions = {
-  firstName: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
-  lastName: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
-  userName: /^[a-zA-Z0-9\_\-\.]{4,16}$/,
-  email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-  password:
-    /(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040"])(?=.*[A-Z])(?=.*[a-z])\S{6,16}$/,
-};
-
-const validateFields = (expression, input, camp) => {
-  if (expression.test(input.value)) {
-    d.querySelector(`#group__${camp} .form__input-error`).classList.remove(
-      "form__input-error-active"
-    );
-    fields[camp] = true;
-  } else {
-    d.querySelector(`#group__${camp} .form__input-error`).classList.add(
-      "form__input-error-active"
-    );
-    fields[camp] = false;
-  }
-};
-
-const validateForm = (e) => {
-  switch (e.target.name) {
-    case "firstName":
-      validateFields(expressions.firstName, e.target, e.target.name);
-      hasUser();
-      break;
-    case "lastName":
-      validateFields(expressions.lastName, e.target, e.target.name);
-      hasUser();
-      break;
-    case "email":
-      validateFields(expressions.email, e.target, e.target.name);
-      emailUser();
-      break;
-    case "userName":
-      validateFields(expressions.userName, e.target, e.target.name);
-      break;
-    case "password":
-      validateFields(expressions.password, e.target, e.target.name);
-      break;
-    case "dateBirth":
-      hasUser();
-      break;
-  }
-};
-
-inputs.forEach((input) => {
-  input.addEventListener("keyup", validateForm);
-});
 
 /*--------------------------------------------show-----------------------*/
 
@@ -96,6 +19,7 @@ export function ModalShowStudent(btnshow, btnclose, modalContainer, modal) {
       d.querySelector(modalContainer).style.visibility = "visible";
       d.querySelector(modal).classList.toggle("modal-close-student");
     }
+
     if (e.target.matches(btnclose)) {
       d.querySelector(modalContainer).style.visibility = "hidden";
       d.querySelector(modal).classList.toggle("modal-close-student");
@@ -110,6 +34,8 @@ export function openFormStudent(btnshow, btnclose, modal, table) {
     if (e.target.matches(btnshow)) {
       load();
       $formStudent.reset();
+      editor.setContents(`Writte here...`);
+      d.querySelector("#alert").style.display = "none";
     }
     if (e.target.matches(btnclose)) {
       load();
@@ -179,8 +105,6 @@ const renderStudent = (student) => {
     </tbody>`;
     $tr.innerHTML = codigo;
     $fragment.appendChild($tr);
-    /* if ((ele[i] = typeof Number)) console.log("es un numero", ele[i].category);
-    console.log(referral[i].category); */
   });
   $tableStudent.innerHTML = CodeTh();
   $tableStudent.appendChild($fragment);
@@ -200,12 +124,10 @@ d.addEventListener("click", (e) => {
         students = el;
       }
     });
-
-    let code = `
-   
-      `;
+    let code = ``;
     $modal.innerHTML = code;
   }
+
   if (e.target.matches(".poi")) {
     d.querySelector(".modal-student").classList.toggle("modal-clos");
     setTimeout(() => {
@@ -247,6 +169,8 @@ d.addEventListener("submit", async (e) => {
         load();
         $formStudent.reset();
         alertManager("success", "Created Successfully");
+        d.querySelector(".text-membership").style.display = "inline";
+        d.querySelector(".text-gender").style.display = "inline";
       } catch (err) {
         let message = err.statusText || "ocurrió un Error";
         /*  $formActivity.insertAdjacentHTML(
@@ -284,6 +208,9 @@ d.addEventListener("submit", async (e) => {
         load();
         alertManager("update", "Edit Successfully");
         $formStudent.reset();
+        e.target.idi.value = "";
+        d.querySelector(".text-membership").style.display = "inline";
+        d.querySelector(".text-gender").style.display = "inline";
       } catch (err) {
         let message = err.statusText || "ocurrió un Error";
         /* $formActivity.insertAdjacentHTML(
@@ -299,14 +226,14 @@ d.addEventListener("submit", async (e) => {
 
 function alertManager(typeMsg, message) {
   const alert = document.querySelector("#alert"),
-    me = document.querySelector(".parrafo-succes");
-  me.innerHTML = message || "Se produjo cambios";
+    mensaje = document.querySelector(".parrafo-succes");
+  mensaje.innerHTML = message || "Se produjo cambios";
   alert.classList.add(typeMsg);
   alert.style.display = "block";
   setTimeout(() => {
     alert.style.display = "none";
     alert.classList.remove(typeMsg);
-  }, 1500);
+  }, 2500);
 }
 
 /*-----------------------------------------------------Btn Edit Up Modify----------------------------------------- */
@@ -317,6 +244,7 @@ d.addEventListener("click", (e) => {
     $btnStudent.value = "Save Changes";
     d.querySelector(".text-membership").style.display = "none";
     d.querySelector(".text-gender").style.display = "none";
+    d.querySelector("#alert").style.display = "none";
     let id = e.target.dataset.id,
       students = {};
     student.filter((el) => {
@@ -338,8 +266,6 @@ d.addEventListener("click", (e) => {
     load();
   }
 });
-
-/*---------------------------------------------------PUT Method---------------------------------- */
 
 /*--------------------------------------------Load----------------------------------- */
 
@@ -366,32 +292,78 @@ d.addEventListener("click", (e) => {
     d.querySelector("#modal-container-dr").style.visibility = "visible";
     d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
     let id = e.target.dataset.idr;
+ 
+   
+    /*    deleteStudent(id); */
     d.addEventListener("submit", async (e) => {
       if (e.target === $formDelete) {
-        e.preventDefault();
 
-        fetch(`${API_URL}/${id}`, {
-          method: "DELETE",
+        e.preventDefault();
+        let res = await fetch(`${API_URL}/${id}`,
+         { method: "DELETE"})
+        .then((res) => res.json())
+        .catch((error) => {
+          alertManager("error", error);
         })
-          .then((res) => res.json())
-          .catch((error) => {
-            alertManager("error", error);
-          })
-          .then((res) => {
-            d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
-            setTimeout(() => {
-              d.querySelector("#modal-container-dr").style.opacity = "0";
-              d.querySelector("#modal-container-dr").style.visibility =
-                "hidden";
-            }, 700);
-            studentp();
-            alertManager("deleted", "Deleted Successfully");
-            $formDelete.reset();
-            setTimeout(() => {
-              location.reload();
-            }, 1500);
-          });
+        .then((res) => {
+          d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
+          setTimeout(() => {
+            d.querySelector("#modal-container-dr").style.opacity = "0";
+            d.querySelector("#modal-container-dr").style.visibility = "hidden";
+          }, 700);
+          studentp();
+          alertManager("deleted", "Deleted Successfully");
+          $formDelete.reset();
+      /*    d.querySelector(".remove-student").dataset.idr = ""; */
+          setTimeout(() => {
+            location.reload();
+          }, 1900);
+        });
       }
+
+    /* let json = res.json();
+        d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
+        setTimeout(() => {
+          d.querySelector("#modal-container-dr").style.opacity = "0";
+          d.querySelector("#modal-container-dr").style.visibility = "hidden";
+        }, 700);
+        studentp();
+        alertManager("deleted", "Deleted Successfully");
+        $formDelete.reset();
+
+        setTimeout(() => {
+          location.reload();
+        }, 1900); */
+
+
+
+
+
+
+
+      /*  try {
+      let options = {
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json; charset=utf-8",
+        },
+      };
+      (res = await fetch(
+        `http://localhost:3000/course/${e.target.dataset.id}`,
+        options
+      )),
+        (json = await res.json());
+      if (!res.ok) throw { status: res.status, statusText: res.statusText };
+      location.reload();
+    } catch (error) {
+      let message = err.statusText || "ocurrió un Error";
+      $formCourse.insertAdjacentHTML(
+        "afterend",
+        `<p><b>Error ${err.status}:${message}</p></b>`
+      );
+    }
+  
+  */
 
       if (e.target === $formDelete) {
         let options = {
@@ -408,18 +380,35 @@ d.addEventListener("click", (e) => {
           json = await res.json();
 
         if (!res.ok) throw { status: res.status, statusText: res.statusText };
+        /* d.querySelector(".remove-student").dataset.idr = ""; */
       }
     });
   }
 });
 
+d.addEventListener("click", (e)=>{
+  if(e.target.matches(".btn-dr2")){
+    $formDelete.reset();
+    d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
+    d.querySelector(".remove-student").dataset.idr = null;
+    /* setTimeout(() => {
+      location.reload();
+    }, 1200); */
+    setTimeout(() => {
+      d.querySelector("#modal-container-dr").style.opacity = "0";
+      d.querySelector("#modal-container-dr").style.visibility = "hidden";
+    }, 700);
+  }
+})
+
+
 const vc = d.querySelector(".cont-table-student_blue"),
   vd = d.querySelector(".cont-tables-student");
-  window.sr = ScrollReveal();
-  sr.reveal(vc, {
-    duration: 2500,
-    origin: "bottom",
-    distance: "-5px",
+window.sr = ScrollReveal();
+sr.reveal(vc, {
+  duration: 2500,
+  origin: "bottom",
+  distance: "-5px",
 });
 
 const editor = SUNEDITOR.create(document.querySelector(".editor-student"), {
@@ -436,8 +425,7 @@ const editor = SUNEDITOR.create(document.querySelector(".editor-student"), {
 
     ["list", "lineHeight", "fullScreen"],
   ],
-  Height: "90%",
-  minHeight: "200px",
+
   width: "100%",
   maxWidth: "1200px",
   lang: SUNEDITOR_LANG["en"],

@@ -58,6 +58,22 @@
   justify-content: flex-end;
   gap: 40px;
   align-items: center;
+
+
+  @include media-queries.big-phone {
+    top: 20px;
+    height: 40px;
+    gap: 30px;
+    width: 70%;
+    }
+    @include media-queries.phoness {
+      top: 20px;
+      height: 40px;
+      gap: 30px;
+      width: 70%;
+    }
+  
+  
 }
 
 .fa-bell {
@@ -68,46 +84,24 @@
   &:hover {
     transform: scale(1.1);
   }
-/* 
-  @include media-queries.table {
-    font-size: 45px;
-  }
- 
-  @include media-queries.phone2 {
-    font-size: 40px;
-  }
-  @include media-queries.phone {
-    font-size: 38px;
-    left: 72%;
-     top: 7%;
-  }
-  @include media-queries.mobile {
-    font-size: 38px;
-     left: 72%;
-     top: 7%;
-  
-  }
+
   @include media-queries.tablet {
-    font-size: 36px;
-    left: 72%;
-     top: 7%;
+    font-size: 33px;
+ 
 
   }
   @include media-queries.tablett {
-  font-size: 36px;
-    left: 69%;
-     top: 7%;
+  font-size: 30px;
+
   }
   @include media-queries.big-phone {
-  font-size: 36px;
-    left: 69%;
-     top: 7%;
+  font-size: 28px;
+  
   }
   @include media-queries.phoness {
-  font-size: 36px;
-    left: 69%;
-     top: 7%;
-  } */
+  font-size: 25px;
+
+  }
   }
 
 .fa-envelope {
@@ -115,51 +109,18 @@
   font-size: 35px;
   color: #fff;
 
- /*   @include fa-btn-style(79.5%, 12.5%, 5.08%, 90.04%); */
-/*
-  @include media-queries.table {
-    font-size: 45px;
-  }
- 
-  @include media-queries.phone2 {
-    font-size: 40px;
-  }
-  @include media-queries.phone {
-    font-size: 38px;
-    left: 76%;
-    top: 7%;
-  }
-  @include media-queries.mobile {
-    font-size: 38px;
-    left: 76%;
-    top: 7%;
-  
-  }
   @include media-queries.tablet {
-    font-size: 36px;
-    left: 76%;
-    top: 7%;
-
- 
+    font-size: 33px; 
   }
   @include media-queries.tablett {
-    font-size: 36px;
-    left: 71%;
-    top: 7%;
- 
+    font-size: 30px;
   }
   @include media-queries.big-phone {
-    font-size: 36px;
-    left: 71%;
-    top: 7%;
- 
+    font-size: 28px;
   }
   @include media-queries.phoness {
-    font-size: 36px;
-    left: 71%;
-    top: 7%;
- 
-  } */
+    font-size: 25px; 
+  }
 }
 
 .profile {
@@ -170,53 +131,26 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  margin-left: 3%;
- /*  @include fa-btn-style(89%, 19.58%, 6%, 90.04%); */
+  margin-left: 5%;
 
- /*  @include media-queries.table {
-    width: 73px;
-    height: 73px;
-  }
- 
-  @include media-queries.phone2 {
-    width: 63px;
-    height: 63px;
-  }
-  @include media-queries.phone {
-    width: 58px;
-    height: 58px;
-    top: 7%;
-  }
-  @include media-queries.mobile {
-    width: 58px;
-    height: 58px;
-    top: 7%;
 
-  }
   @include media-queries.tablet {
-    width: 53px;
-    height: 53px;
-    top: 7%;
+    width: 44px;
+    height: 44px;
   }
   @include media-queries.tablett {
-    width: 53px;
-    height: 53px;
-    top: 7%;
-    left: 86%;
-  
+    width: 40px;
+    height: 40px;
   }
   @include media-queries.big-phone {
-    width: 53px;
-    height: 53px;
-    top: 7%;
-    left: 86%;
-  
+    width: 35px;
+    height: 35px;
+    margin-left: 8%;
   }
   @include media-queries.phoness {
-    width: 53px;
-    height: 53px;
-    top: 7%;
-    left: 86%;
-  
-  } */
+    width: 33px;
+    height: 33px;
+    margin-left: 10%;
+  }
+ 
 }

@@ -29,21 +29,28 @@
 }
 
 @mixin tablet {
-  @media screen and (min-width: 860px) and (max-width: 1060px) {
+  @media screen and (min-width: 975px) and (max-width: 1250px) {
     @content;
   }
 }
 
 @mixin tablett {
-  @media all and (min-width: 748px) and (max-width: 860px){
+  @media all and (min-width: 755px) and (max-width: 974px){
     @content;
   }
 }
 @mixin big-phone {
-  @media all and (min-width: 500px) and (max-width: 748px){
+  @media all and (min-width: 540px) and (max-width: 754px){
     @content;
   }
 }
+
+@mixin phoness {
+  @media all and (min-width: 320px) and (max-width: 639px){
+    @content;
+  }
+}
+
 
 @mixin menu {
   @media  screen and (min-width: 1000px) and (max-width: 1225px) {
@@ -56,7 +63,17 @@
   }
 }
 @mixin lands {
-  @media screen and (orientation:landscape){
+  @media only screen and (min-width: 330px)  and (orientation:landscape){
+    @content;
+  }
+}
+@mixin lands2 {
+  @media only screen and (min-width: 630px) and  (max-width: 620px) and (orientation:landscape){
+    @content;
+  }
+}
+@mixin lands3 {
+  @media only screen and (min-width: 930px) and (orientation:landscape){
     @content;
   }
 }
@@ -73,11 +90,7 @@
   }
 } */
 
-@mixin phoness {
-  @media all and (min-width: 320px) and (max-width: 500px){
-    @content;
-  }
-}
+
 
 
 

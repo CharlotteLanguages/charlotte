@@ -2,17 +2,17 @@
 @use "media-queries";
 /* ----------------------Section Form---------------------------- */
 .cont-new-news {
-  /* @include mixingfunc.measures(1251px, 840px, 424px, 144px); */
-  max-width: 1251px;
-  width: 100%;
-  height: 795px;
+  
+  width: 63%;
+  height: 590px;
   left: 25%;
-  top: 15%;
+  top: 17%;
   margin-right: 20px;
   position: absolute;
   background: #fff;
   border-radius: 20px;
-
+ 
+/* 
   @include media-queries.table {
     width: 1100px;
     font-size: 22px;
@@ -21,8 +21,7 @@
 
   @include media-queries.phone2 {
     width: 940px;
-    /*  margin-left: -30px; */
-    /*     font-size: 15px; */
+
   }
   @include media-queries.phone {
     width: 790px;
@@ -48,22 +47,21 @@
   }
   @include media-queries.big-phone {
     width: 90%;
-    /* max-width: 450px; */
     height: 550px;
     left: 5%;
     right: 1%;
     bottom: 60px;
-    /* left: auto; */
+  
   }
   @include media-queries.phoness {
     width: 90%;
-    /* max-width: 450px; */
+    
     height: 550px;
     left: 5%;
     right: 1%;
     bottom: 60px;
-    /* left: auto; */
-  }
+    
+  } */
   
 
   .title-news {
@@ -71,15 +69,17 @@
     padding-left: 19px;
     padding-right: 10px;
     position: absolute;
-    width: 1194px;
-    height: 51px;
+    width: 93.6%;
+    height: 30px;
     left: 29px;
-    top: 65px;
+    top: 55px;
     color: #000;
     border: 1px solid #8f8f8f;
     border-radius: 10px;
-    font-size: 25px;
-
+    font-size: 1rem;
+    outline: none;
+  
+/* 
     
   @include media-queries.table {
     width: 1050px;
@@ -126,7 +126,7 @@
     font-size: 15px;
     height: 35px;
     left: 4%;
-  }
+  } */
 
   }
 }
@@ -138,13 +138,17 @@
   .input-category-news {
     box-sizing: border-box;
     position: absolute;
-    @include mixingfunc.measures(590px, 51px, 29px, 131px);
-    @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
+    top: 97px;
+    left: 29px;
+    @include mixingfunc.font-style(Arial, normal, 400, 1rem, 100%, justify);
+    width: 46%;
+    height: 33px;
     border: 1px solid #8f8f8f;
     border-radius: 10px;
     padding-left: 19px;
     color: #000000;
-    @include media-queries.table {
+    outline: none;
+    /* @include media-queries.table {
       width: 520px;
       font-size: 22px;
       padding-left: 320px;
@@ -198,24 +202,22 @@
       padding-left: 25%;
       padding-top: 2px;
     }
-
+ */
   }
 
   .input-tags-news {
     box-sizing: border-box;
     position: absolute;
-    @include mixingfunc.measures(590px, 51px, 633px, 131px);
+    @include mixingfunc.measures(46%, 33px, 49%, 97px);
+    @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
     border: 1px solid #8f8f8f;
     border-radius: 10px;
-    font-family: Arial;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
-    line-height: 130%;
-    color: #000000;
     padding-left: 19px;
+    color: #000000;
+    outline: none;
+    margin-left: 18px;
 
-    
+    /* 
   @include media-queries.table {
     width: 520px;
     left: 560px;
@@ -263,20 +265,20 @@
     font-size: 15px;
     height: 35px;
     left: 51%;
-  }
+  } */
 
   }
 
   #area-news {
     box-sizing: border-box;
     position: absolute;
-    width: 1194px;
-    height: 443px;
+    width: 93.5%;
+    height: 200px;
     left: 29px;
-    top: 200px;
+    top: 185px;
     border-radius: 10px;
 
-    @include media-queries.table {
+/*     @include media-queries.table {
       width: 1050px;
     }
   
@@ -298,47 +300,44 @@
       width: 520px;
     }
     @include media-queries.big-phone {
-    /*   width: 92%;
-      top: 290px;
-      left: 4%; */
+
       display: none;
     }
     @include media-queries.phoness {
-    /*   width: 92%;
-      top: 290px;
-      left: 4%; */
+    
       display: none;
-    }
+    } */
     .txtarea-news {
       margin-top: 40px;
       resize: none;
       border-radius: 10px;
       width: 1194px;
-      height: 483px;
+      height: 200px;
     }
   }
 }
 #create-news {
   position: absolute;
-  width: 226px;
-  height: 48px;
-  left: 997px;
-  top: 730px;
+  width: 170px;
+  height: 35px;
+  right: 3%;
+  top: 540px;
   background: #338af3;
   border-radius: 20px;
   font-family: Arial;
   font-style: normal;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 18px;
   line-height: 130%;
   transition: all 0.4s ease;
+  outline: none;
   border: 0;
-  color: #ffffff;
+  color: #fff;
   &:hover {
     background: rgb(140, 168, 250);
   }
 
-  @include media-queries.table {
+ /*  @include media-queries.table {
     width: 216px;
     font-size: 22px;
     left: 860px;
@@ -391,24 +390,24 @@
     font-size: 13px;
     top: 490px;
     height: 40px;
-  }
+  } */
 }
 
 .cancel-news {
   position: absolute;
-  width: 170px;
-  height: 48px;
+  width: 120px;
+  height: 35px;
   left: 25px;
-  top: 726px;
+  top: 540px;
   background: white;
   font-family: Arial;
   font-style: normal;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 18px;
   border-radius: 20px;
   border: 0.5px solid rgb(150, 148, 148);
   transition: all 0.4s ease;
-  @include media-queries.table {
+ /*  @include media-queries.table {
     font-size: 22px;
     width: 150px;
     height: 47px;
@@ -454,7 +453,7 @@
     width: 110px;
     top: 490px;
     height: 40px;
-  }
+  } */
 
   &:hover {
     background: rgb(238, 238, 238);
@@ -463,17 +462,15 @@
 
 .font-title-news {
   position: absolute;
-  width: 278px;
   height: 39px;
-  left: 30px;
+  left: 28px;
   top: 11px;
   font-family: Arial;
   font-style: normal;
   font-weight: 600;
-  font-size: 28px;
+  font-size: 20px;
   line-height: 130%;
-  color: #000000;
-
+/* 
   @include media-queries.table {
     font-size: 26px;
   }
@@ -505,7 +502,7 @@
   @include media-queries.phoness {
     font-size: 19px;
     top: 21px;
-  }
+  } */
 }
 
 .none-news {
@@ -517,15 +514,17 @@
 .cont-tables-news {
   //@include mixingfunc.measures(1051px, 594px, 344px, 142px);
   margin: auto;
-  margin-top: 200px;
-  margin-bottom: 200px;
+  margin-top: 120px;
+/*   margin-bottom: 70px; */
   max-width: 1251px;
-  width: 100%;
-  height: 594px;
+  width: 70%;
+  height: 460px;
   background: #8eaaff;
-  border-radius: 20px;
+  border-radius: 15px;
+  /*  position: absolute; */
   box-shadow: 5px 10px 10px 10px rgba(0, 0, 0, 0.25);
-  @include media-queries.mobile {
+  position: relative;
+ /*  @include media-queries.mobile {
     margin: auto;
     width: 800px;
     margin-top: 200px;
@@ -546,7 +545,7 @@
   }
   @include media-queries.big-phone {
     margin: auto;
-    /*  width: 510px; */
+  
     width: 100%;
     margin-left: 20px;
     margin-right: 20px;
@@ -555,8 +554,7 @@
     height: 560px;
   }
   @include media-queries.phoness {
-    margin: auto;
-    /*  width: 510px; */
+   
     width: 100%;
     margin-left: 20px;
     margin-right: 20px;
@@ -576,46 +574,46 @@
     width: 1000px;
     margin-top: 200px;
     margin-bottom: 200px;
-    /*     font-size: 15px; */
+  
   }
   @include media-queries.phone {
     width: 900px;
     margin-left: 5%;
     margin-top: 200px;
     margin-bottom: 200px;
-  }
+  } */
 
   .cont-table-news_blue {
     overflow-y: auto;
-    width: 1251px;
-    height: 529px;
-    border-radius: 18px;
-    border-top-right-radius: 8px;
-    @include media-queries.tablett {
+    width: 100%;
+    max-width: 1251px;
+    height: 400px;
+    margin-top: 5px;
+
+ /*    @include media-queries.tablett {
       height: 415px;
     }
 
     @include media-queries.phoness { 
       height: 450px;
    
-    }
+    } */
   }
 
   .table-news {
-    width: 1251px;
-    height: 529px;
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
     background: #ffffff;
-    border-radius: 20px;
+    border-radius: 12px;
     border-collapse: collapse;
-    border-top-right-radius: 8px;
     th {
-      @include mixingfunc.font-style(arial, normal, 600, 28px, 130%, center);
+      @include mixingfunc.font-style(arial, normal, 600, 19px, 100%, center);
       font-family: Arial;
       border: solid 1px black;
-      height: 60px;
+      height: 40px;
       border-top: none;
-      height: 60px;
-      @include media-queries.table {
+     /*  @include media-queries.table {
         font-size: 23px;
         height: 59px;
       }
@@ -629,8 +627,7 @@
       }
 
       @include media-queries.mobile {
-        /* font-size: 20px;
-        height: 53px */
+       
         font-size: 17px;
         height: 50px;
       }
@@ -641,22 +638,22 @@
       @include media-queries.tablett {
         font-size: 15px;
         height: 50px;
-      }
+      } */
     }
     td {
-      @include mixingfunc.font-style(Helvetica, normal, 400, 25px, 130%, left);
+      @include mixingfunc.font-style(Arial, normal, 400, 17px, 130%, left);
       border: solid 1px black;
       padding-left: 17px;
       padding-right: 17px;
       white-space: nowrap;
       overflow: auto;
-      height: 55px;
-      max-width: 400px;
+      height: 32px;
+      max-width: 310px;
       min-width: 60px;
       text-align: justify;
       border-bottom: none;
 
-      @include media-queries.phone2 {
+     /*  @include media-queries.phone2 {
         font-size: 21px;
         max-width: 290px;
         height: 44px;
@@ -668,9 +665,7 @@
       }
 
       @include media-queries.mobile {
-        /* font-size: 20px;
-        height: 36px;
-        max-width: 274px; */
+       
         font-size: 16px;
         height: 30px;
         max-width: 250px;
@@ -714,7 +709,7 @@
         font-size: 23px;
         max-width: 300px;
         min-width: 50px;
-      }
+      } */
 
 
     }
@@ -824,23 +819,25 @@ tr {
 }
 
 .btn-news {
-  @include mixingfunc.measures(226px, 48px, 1000px, 539px);
-  @include mixingfunc.font-style(Arial, normal, 600, 25px, 130%, center);
+  @include mixingfunc.font-style(Arial, normal, 600, 19px, 130%, center);
+  width:195px;
+  height: 35px;
   background: #338af3;
-  border-radius: 20px;
+  border-radius: 15px;
   color: #ffffff;
   transition: all 0.5s ease;
   margin-top: 10px;
-  padding-top: 5px;
-  margin-left: 980px;
+  margin-left: 785px;
   border: 0.5px solid #1a63f5;
-  text-decoration: none;
+  position: absolute;
+  top: 88.5%;
+  right: 1%;
   &:hover {
     background: #fff;
     color: #000;
     transition: all 0.4s ease;
   }
-  @include media-queries.mobile {
+  /* @include media-queries.mobile {
     font-size: 15px;
     margin-left: 610px;
     width: 175px;
@@ -886,7 +883,7 @@ tr {
     margin-left: 822px;
     width: 216;
   }
- 
+  */
   
 }
 
@@ -903,17 +900,17 @@ tr {
 
 .modal-news {
   position: relative;
-  width: 1094px;
-  height: 800px;
+  width: 60%;
+  height: 500px;
   margin: auto;
   margin-top: 100px;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   transition: transform 1.3s;
   transform: translateY(0%);
-  @include media-queries.table {
+ /*  @include media-queries.table {
     width: 994px;
     height: 780px;
   }
@@ -950,23 +947,21 @@ tr {
     margin-top: 20px;
   }
   @include media-queries.phoness {
-   /*  width: 380px; */
+   
     width: 96%;
     height: 95%;
     margin-top: 18px;
-  }
+  } */
 
   .close-news {
     position: absolute;
-    left: 94.2%;
-    right: 1.72%;
-    top: 2.5%;
-    bottom: 93.65%;
+    right: 1.4%;
+    top: 8px;
     color: #000;
     z-index: 1000;
     i {
-      font-size: 30px;
-      @include media-queries.table {
+      font-size: 22px;
+      /* @include media-queries.table {
         font-size: 29px;
       }
       @include media-queries.phone2 {
@@ -990,7 +985,7 @@ tr {
       @include media-queries.phoness {
         font-size: 24px;
        
-      }
+      } */
     }
 
     @include media-queries.table {
@@ -1098,32 +1093,38 @@ tr {
 
 .icons-news {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   i {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 25px;
+    transition: all 0.3s ease;;
   }
 
   .edit-news {
-    font-size: 30px;
+    margin-top: 6px;
+    font-size: 19px;
     color: #ff9811;
-    transition: news5s ease;
+    transition: all 0.4s ease;
     &:hover {
       color: #6e7f8f;
     }
   }
   .remove-news {
-    font-size: 30px;
+    margin-top: 6px;
+    font-size: 19px;
     color: red;
+    transition: all 0.4s ease;
     &:hover {
       color: #6e7f8f;
     }
   }
 
   .read-news {
-    font-size: 30px;
+    margin-top: 6px;
+    font-size: 19px;
     color: #0057ff;
+    transition: all 0.4s ease;
     &:hover {
       color: #6e7f8f;
     }
@@ -1201,4 +1202,62 @@ tr {
    visibility: hidden;
   /* display: none; */
   /*  transform: translateY(200%); */
+}
+
+
+.file-sponsor{
+  /* display: flex;
+  box-sizing: border-box;
+  padding-left: 19px;
+  padding-right: 10px;
+  position: absolute;
+  width: 1194px;
+  height: 51px;
+  left: 29px;
+  top: 197px;
+  color: #000;
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  font-size: 25px;
+  padding-top: 136px;
+  padding-right: 80px; */
+  display: flex;
+  box-sizing: border-box;
+  padding-left: 19px;
+  padding-right: 10px;
+  position: absolute;
+  width: 93.6%;
+  height: 33px;
+  left: 29px;
+  top: 142px;
+  color: #000;
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  align-items: center;
+
+
+}
+.file-sponsor-btn{
+  position: absolute;
+  margin-top: 0px;
+  right: 2%;
+  font-size: 20px;
+  color: #000;
+
+}
+
+
+.file-sponsor-text{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: rgb(97, 97, 97);
+}
+
+#imgSponsor{
+  display: none;
 }
