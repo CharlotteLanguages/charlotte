@@ -1,16 +1,49 @@
 const d = document,
   API_URL = `http://localhost:3000/news`,
   $modal = document.querySelector(".cont-p-news");
+  const noticia = [{
+    titleNews:"Welcome to Charlotte Languages Center",
+    editorNews: `
+    <div class = "new-noticia">
+    <p>Dear language learners,</p>
+    <p>We are excited to announce the launch of the Charlotte Languages Center, a new online language academy opening its virtual doors this April!</p>
+    <p>At the Charlotte Languages Center, we are dedicated to providing high-quality language education to the Charlotte community. Our experienced and passionate instructors are committed to helping you achieve your language learning goals, whether you are a beginner or an advanced student.
+    </p>
+    <p>We believe that language learning is a journey that should be fun, engaging, and rewarding. That's why we offer a wide range of courses in English designed to meet the needs of students of all ages and levels. Our curriculum is tailored to help you develop the skills you need to communicate effectively in real-life situations, and to deepen your understanding of different cultures and ways of life.</p>
+    <p>
+    Our courses are designed to be interactive and engaging, with plenty of opportunities for practice and feedback. We use a communicative approach that emphasizes real-life situations and contexts, so you can start using your new language skills right away.
+    </p>
+    <p>But the Charlotte Languages Center is more than just a language school - it's a community of learners and teachers who are passionate about language and culture. We believe that language learning is a journey that should be shared with others, and we encourage our students to connect with each other and with our instructors through a variety of social events and activities.</p>
+    <p>So if you're looking to learn a new language, or to improve your existing skills, we invite you to join us at the Charlotte Languages Center. Our launch event will take place on Saturday, April 2nd, from 11 am to 3 pm. During the event, you will have the opportunity to tour our new facility, meet our instructors, and learn more about our courses.</p>
+    <p>To RSVP for the launch event or to learn more about our courses, please visit our website at www.charlottelanguages.com or email us at info@charlottelanguages.com.</p>
+    <p>We can't wait to meet you and share our passion for language and culture with you!</p>
+    <p>Sincerely,</p>
+    <p>Charlotte Languages Center team</p>
+    </div>
+
+
+    `,
+    id: 1
+  }]
 
 const getHomePageData = async () => {
   try {
-    let res = await fetch(API_URL),
-      json = await res.json();
-    showNews(json);
-    json.reverse().forEach((ele) => {
+   /*  let res = await fetch(API_URL),
+      json = await res.json();json.reverse() */
+
+      if(noticia.length==1){
+        d.querySelector(".section-main").style.gridTemplateColumns = "repeat(1, 1fr)";
+/*         d.querySelector(".card-news").style.width = "90%";
+        d.querySelector(".card-news").style.margin = "auto"; */
+      }
+      if(noticia.length==2){
+        d.querySelector(".section-main").style.gridTemplateColumns = "repeat(2, 1fr)"
+      }
+    showNews(noticia);
+    noticia.reverse().forEach((ele) => {
       const code = `
       <div class="card-news">
-      <img src="/src/public/fondo-login.png" class="card-image">
+      <img src="https://image.shutterstock.com/image-vector/welcome-letters-banner-on-blue-260nw-1189574716.jpg" class="card-image">
       <h1 class="card-title">${ele.titleNews}</h1>
       <p class="card-paragraph">${ele.editorNews.slice(0, 350)}...</p>
       <div class="btn-dark" data-ids=${ele.id}>Read more</div>
@@ -37,26 +70,26 @@ function showNews(news) {
   d.addEventListener("click", (e) => {
     if (e.target.matches(".btn-dark")) {
       let id = e.target.dataset.ids,
-        courses = {};
+        newss = {};
       addStyles();
 
       news.filter((el) => {
-        if (el.id == id) courses = el;
+        if (el.id == id) newss = el;
       });
-      if (courses.editorNews.length < 1000) {
-        d.querySelector(".modal-news").style.height = "400px";
+      if (newss.editorNews.length < 1000) {
+    /*     d.querySelector(".modal-news").style.height = "400px";
         d.querySelector(".modal-news").style.top = "170px";
-        d.querySelector(".cont-p-news").style.height = "400px";
-        courses.editorNews == "<p><br></p>"
+        d.querySelector(".cont-p-news").style.height = "400px"; */
+        newss.editorNews == "<p><br></p>"
           ? ($modal.innerHTML = `<div class = "no-description">Empty section</div>`)
-          : ($modal.innerHTML = `<div>${courses.editorNews}</div>`);
+          : ($modal.innerHTML = `<div>${newss.editorNews}</div>`);
       } else {
-        courses.editorNews == "<p><br></p>"
+        newss.editorNews == "<p><br></p>"
           ? ($modal.innerHTML = `<div class = "no-description">Empty section</div>`)
-          : ($modal.innerHTML = `<div>${courses.editorNews}</div>`);
-        d.querySelector(".modal-news").style.height = "800px";
+          : ($modal.innerHTML = `<div>${newss.editorNews}</div>`);
+    /*     d.querySelector(".modal-news").style.height = "600px";
         d.querySelector(".modal-news").style.top = "50px";
-        d.querySelector(".cont-p-news").style.height = "785px";
+        d.querySelector(".cont-p-news").style.height = "785px"; */
       }
     }
   });
