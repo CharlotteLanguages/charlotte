@@ -491,3 +491,12 @@ d.addEventListener("click", (e) => {
     );
   }
 });
+
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".fa-bars")) {
+    setTimeout(() => {
+      e.target.classList.toggle("changeColor");
+    }, 500);
+    d.querySelector(".menu").classList.toggle("move-menu");
+  }
+});

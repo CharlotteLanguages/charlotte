@@ -3,44 +3,46 @@
 
 /* ----------------------Section Form---------------------------- */
 .cont-new-student {
-  /* @include mixingfunc.measures(1251px, 795px, 424px, 144px); */
-
   width: 63%;
-  height: 590px;
+  height: 640px;
   left: 25%;
   top: 110px;
   margin-right: 20px;
   position: absolute;
   background: #fff;
   border-radius: 20px;
-  
+
   @include media-queries.tablet {
     width: 65%;
     left: 26%;
     height: 630px;
-
   }
   @include media-queries.tablett {
     width: 77%;
     left: 12%;
-    background-color: #f6f6f6;
-    height: 590px;
+    height: 630px;
     top: 120px;
   }
   @include media-queries.big-phone {
     width: 85%;
     left: 7.5%;
     height: 560px;
-    background-color: #038c33;
-
+    background-color: #ffb3cb;
+    top: 90px;
   }
   @include media-queries.phoness {
     width: 90%;
     left: 5%;
     height: 85%;
     top: 80px;
-    
+    background-color: #c2d1ff;
   }
+
+  /*   @include media-queries.lands {
+    top: 80px;
+  background-color: #9b008e;
+    
+  } */
   /* 
   .title-student {
     box-sizing: border-box;
@@ -83,19 +85,23 @@
     height: 30px;
     font-size: .9rem; */
     left: 22px;
-    font-size: .9rem;
+    font-size: 0.9rem;
     height: 31px;
   }
   @include media-queries.big-phone {
-   top:50px;
-   height: 28px;
-   font-size: .8rem;
-   left: 17px;
-   padding-left: 10px;
-   padding-right: 5px;
+    top: 47px;
+    height: 28px;
+    font-size: 0.8rem;
+    left: 17px;
+    padding-left: 10px;
+    padding-right: 5px;
   }
   @include media-queries.phoness {
-  
+    left: 10px;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
   }
 }
 
@@ -110,29 +116,32 @@
   color: #000000;
   outline: none;
   margin-left: 18px;
-  
- 
+
   @include media-queries.tablet {
     left: 48%;
   }
   @include media-queries.tablett {
-   /*  top: 48px;
+    /*  top: 48px;
     height: 30px;
     font-size: .9rem; */
     left: 48%;
-    font-size: .9rem;
+    font-size: 0.9rem;
     height: 31px;
   }
   @include media-queries.big-phone {
-    top:50px;
+    top: 47px;
     height: 28px;
-    font-size: .8rem;
+    font-size: 0.8rem;
     left: 47%;
     padding-left: 10px;
     padding-right: 5px;
   }
   @include media-queries.phoness {
-
+    left: 45%;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
   }
 }
 
@@ -151,29 +160,33 @@
   font-size: 1rem;
   outline: none;
 
- 
   @include media-queries.tablet {
-  left: 22px;
-
+    left: 22px;
   }
   @include media-queries.tablett {
     /* top: 88px;
     height: 30px;
     font-size: .9rem; */
     left: 22px;
-    font-size: .9rem;
+    font-size: 0.9rem;
     height: 31px;
   }
   @include media-queries.big-phone {
-    top:87px;
+    top: 82px;
     height: 28px;
-    font-size: .8rem;
+    font-size: 0.8rem;
     left: 17px;
     padding-left: 10px;
     padding-right: 5px;
   }
   @include media-queries.phoness {
-  
+    left: 10px;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 157px;
+    width: 92.7%;
   }
 }
 
@@ -186,37 +199,41 @@
   border-radius: 10px;
   padding-left: 19px;
   color: rgb(0, 0, 0);
-  padding-left: 240px;
+  padding-left: 215px;
   padding-right: 19px;
   outline: none;
-   
+
   @include media-queries.tablet {
     left: 22px;
     padding-left: 150px;
-    font-size: .95rem;
+    font-size: 0.95rem;
   }
   @include media-queries.tablett {
     left: 22px;
     padding-left: 150px;
-    font-size: .9rem;
+    font-size: 0.9rem;
     height: 31px;
-/*   font-size: .9rem;
+    /*   font-size: .9rem;
   height: 30px;
   top: 128px;
   padding-left: 200px; */
-
   }
   @include media-queries.big-phone {
-    top:125px;
+    top: 117px;
     height: 28px;
-    font-size: .8rem;
+    font-size: 0.8rem;
     left: 17px;
-    padding-left:22%;
+    padding-left: 22%;
     padding-right: 5px;
-
   }
   @include media-queries.phoness {
-
+    left: 10px;
+    padding-left: 47%;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 89px;
+    width: 92.9%;
   }
 }
 
@@ -232,25 +249,20 @@
   z-index: 10;
   @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
 
-  
   @include media-queries.tablet {
- 
-
   }
   @include media-queries.tablett {
-
-    font-size: .9rem;
- 
-  
+    font-size: 0.9rem;
   }
   @include media-queries.big-phone {
-    margin-top:132px;
-    font-size: .8rem;
+    margin-top: 124px;
+    font-size: 0.8rem;
     margin-left: 28px;
-  
   }
   @include media-queries.phoness {
-
+    margin-top: 95px;
+    font-size: 0.8rem;
+    margin-left: 22px;
   }
 }
 
@@ -266,26 +278,29 @@
   outline: none;
   margin-left: 18px;
 
- 
   @include media-queries.tablet {
     left: 48%;
   }
   @include media-queries.tablett {
     left: 48%;
     height: 31px;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
   @include media-queries.big-phone {
-    top:125px;
+    top: 117px;
     height: 28px;
-    font-size: .8rem;
+    font-size: 0.8rem;
     left: 47%;
     padding-left: 10px;
     padding-right: 5px;
-  
   }
   @include media-queries.phoness {
-
+    left: 45%;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 191px;
   }
 }
 
@@ -298,23 +313,22 @@
   z-index: 10;
   @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
   margin-left: 53%;
- 
-  @include media-queries.tablet {
 
+  @include media-queries.tablet {
   }
   @include media-queries.tablett {
-    font-size: .9rem;
+    font-size: 0.9rem;
     margin-left: 54%;
- 
   }
   @include media-queries.big-phone {
-    margin-top:132px;
-    font-size: .8rem;
+    margin-top: 124px;
+    font-size: 0.8rem;
     margin-left: 52%;
-  
   }
   @include media-queries.phoness {
-
+    margin-left: 53.5%;
+    font-size: 0.8rem;
+    margin-top: 197px;
   }
 }
 .username-student {
@@ -334,19 +348,23 @@
   @include media-queries.tablett {
     left: 22px;
     height: 31px;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
   @include media-queries.big-phone {
-    top:163px;
+    top: 152px;
     height: 28px;
-    font-size: .8rem;
+    font-size: 0.8rem;
     left: 17px;
     padding-left: 10px;
     padding-right: 5px;
-
   }
   @include media-queries.phoness {
-
+    left: 10px;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 123px;
   }
 }
 
@@ -368,21 +386,23 @@
   @include media-queries.tablett {
     left: 48%;
     height: 31px;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
   @include media-queries.big-phone {
-    top:163px;
+    top: 152px;
     height: 28px;
-    font-size: .8rem;
+    font-size: 0.8rem;
     left: 47%;
     padding-left: 10px;
     padding-right: 5px;
-
-    
   }
   @include media-queries.phoness {
-
-    
+    left: 45%;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 123px;
   }
 }
 
@@ -400,27 +420,31 @@
   border-radius: 10px;
   font-size: 1rem;
   outline: none;
-  
-  
+
   @include media-queries.tablet {
     left: 22px;
   }
   @include media-queries.tablett {
     left: 22px;
     height: 31px;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
   @include media-queries.big-phone {
-    top:201px;
+    top: 187px;
     height: 28px;
-    font-size: .8rem;
+    font-size: 0.8rem;
     left: 17px;
     padding-left: 10px;
     padding-right: 5px;
-  
   }
   @include media-queries.phoness {
- 
+    left: 10px;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 191px;
+    width: 46%;
   }
 }
 .text-membership {
@@ -432,20 +456,20 @@
   z-index: 10;
   @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
 
-   
   @include media-queries.tablet {
- 
   }
   @include media-queries.tablett {
     margin-left: 40px;
   }
   @include media-queries.big-phone {
     margin-left: 30px;
-    font-size: .8rem;
-    margin-top: 208px;
+    font-size: 0.8rem;
+    margin-top: 194px;
   }
   @include media-queries.phoness {
-    
+    margin-left: 20px;
+    font-size: 0.8rem;
+    margin-top: 197px;
   }
 }
 
@@ -458,10 +482,9 @@
   top: 260px;
   border-radius: 10px;
 
-  
   @include media-queries.tablet {
-   left: 22px;
-   top: 262px;
+    left: 22px;
+    top: 262px;
   }
   @include media-queries.tablett {
     left: 22px;
@@ -469,10 +492,11 @@
   }
   @include media-queries.big-phone {
     left: 17px;
-    top: 240px;
+    top: 225px;
   }
   @include media-queries.phoness {
-    display: none;
+    left: 10px;
+    top: 225px;
   }
 
   .editor-student {
@@ -480,21 +504,22 @@
     border-radius: 10px;
     max-width: 1200px;
     width: 100%;
-    height: 165px;
+    height: 205px;
     @include media-queries.tablet {
       height: 200px;
-     }
-     @include media-queries.tablett {
-    
-     }
-     @include media-queries.big-phone {
-      height: 155px;
-     }
-     @include media-queries.phoness {
-       display: none;
-     }
+    }
+    @include media-queries.tablett {
+    }
+    @include media-queries.big-phone {
+      height: 177px;
+    }
+    @include media-queries.phoness {
+      height: 90px;
+    }
+    /*   @include media-queries.lands {
+       height: 185px;
+     } */
   }
-
 }
 
 #create-student {
@@ -502,7 +527,7 @@
   width: 170px;
   height: 35px;
   right: 3%;
-  top: 540px;
+  top: 585px;
   background: #338af3;
   border-radius: 20px;
   font-family: Arial;
@@ -513,7 +538,7 @@
   transition: all 0.4s ease;
   outline: none;
   border: 0;
- 
+
   @include media-queries.tablet {
     top: 580px;
     font-size: 17px;
@@ -521,30 +546,26 @@
   }
 
   @include media-queries.big-phone {
-    max-width: 140px;
-   
+    max-width: 130px;
     font-size: 15px;
-    top: 510px;
-    height: 40px;
+    top: 520px;
+    height: 30px;
   }
   @include media-queries.phoness {
- /*    max-width: 140px;
-    left: 55%;
-    font-size: 13px;
-    top: 490px;
-    height: 40px; */
+    max-width: 125px;
+    font-size: 14px;
+    top: 500px;
+    height: 30px;
   }
 
   color: #fff;
   &:hover {
     background: rgb(140, 168, 250);
-    /* color: #000;
-    border: 1px solid; */
   }
 }
 
 #update-student {
-  position: absolute;
+/*   position: absolute;
   width: 170px;
   height: 35px;
   right: 33%;
@@ -558,7 +579,7 @@
   line-height: 130%;
   transition: all 0.4s ease;
   outline: none;
-  border: 0;
+  border: 0; */
 
   /* @include media-queries.table {
     width: 216px;
@@ -627,7 +648,7 @@
   width: 120px;
   height: 35px;
   left: 25px;
-  top: 540px;
+  top: 585px;
   background: white;
   font-family: Arial;
   font-style: normal;
@@ -636,23 +657,25 @@
   border-radius: 20px;
   border: 0.5px solid rgb(150, 148, 148);
   transition: all 0.4s ease;
-  
-   @include media-queries.tablet {
+
+  @include media-queries.tablet {
     width: 100px;
-    top:580px;
+    top: 580px;
   }
- 
+
   @include media-queries.big-phone {
     font-size: 15px;
     width: 100px;
-    top: 510px;
-    height: 40px;
+    top: 520px;
+    height: 30px;
+    left: 17px;
   }
   @include media-queries.phoness {
-    font-size: 13px;
-    width: 110px;
-    top: 490px;
-    height: 40px;
+    width: 90px;
+    font-size: 14px;
+    top: 500px;
+    height: 30px;
+    left: 10px;
   }
 
   &:hover {
@@ -671,22 +694,17 @@
   font-size: 20px;
   line-height: 130%;
 
- 
   @include media-queries.tablet {
     font-size: 19px;
- 
   }
   @include media-queries.tablett {
     font-size: 19px;
-   ;
   }
   @include media-queries.big-phone {
     font-size: 18px;
-  
   }
   @include media-queries.phoness {
     font-size: 17px;
-    
   }
 }
 
@@ -719,6 +737,10 @@
     height: 340px;
     margin-top: 80px;
   }
+  @include media-queries.big-vertical {
+    height: 505px;
+    margin-top: 100px;
+  }
 
   .cont-table-student_blue {
     overflow-y: auto;
@@ -732,6 +754,9 @@
     }
     @include media-queries.phoness {
       height: 295px;
+    }
+    @include media-queries.big-vertical {
+      height: 455px;
     }
 
     /*   @include media-queries.tablett {
@@ -766,10 +791,14 @@
     @include media-queries.phoness {
       width: 98.5%;
       margin-left: 4px;
-     
+
       /*     margin-left: 3px;
         margin-top: px;
         background-color: #ffa5d3; */
+    }
+
+    @include media-queries.big-vertical {
+      height: 455px;
     }
 
     th {
@@ -828,6 +857,7 @@
         align-items: center;
         padding-top: 12px;
         border: 1px solid #ddd;
+        overflow: auto;
       }
       @include media-queries.phoness {
         display: block;
@@ -841,6 +871,7 @@
         border: 1px solid #ddd;
         padding-left: 8px;
         padding-right: 8px;
+        overflow: auto;
       }
     }
     td:last-child {
@@ -879,46 +910,23 @@
         content: attr(data-label);
         font-weight: bold;
         float: left;
+        margin-right: 10px;
       }
       @include media-queries.phoness {
         content: attr(data-label);
         font-weight: bold;
         float: left;
+        margin-right: 10px;
+        /*  border-radius: 5px;
+        background-color: #c1}d8f5;
+        padding-left: 4px;
+        padding-right: 4px;
+        text-align: left;
+        height: 18px;
+        display: flex;
+        align-items: center; */
       }
     }
-    /* @include media-queries.mobile {
-
-      width: 793px;
-    }
-
-    @include media-queries.table {
-      width: 1092px;
-    }
-
-    @include media-queries.phone2 {
-      width: 992px;
-    }
-    @include media-queries.phone {
-      width: 890px;
-    } */
-
-    /*    @include media-queries.big-phone {
-      width: 99%;
-      height: 404px;
-      margin: auto;
-      margin-top: 7px;
-      border-radius: 10px;
-  
-
-    } */
-    /*     @include media-queries.phoness {
-      width: 99%;
-      height: 350px;
-      margin: auto;
-      margin-top: 7px;
-      border-radius: 10px;
-     
-    } */
   }
 }
 
@@ -934,13 +942,10 @@ thead {
 tr {
   @include media-queries.big-phone {
     background-color: #f7f7f7;
-    /* border: 1px solid #ddd; */
     display: block;
     margin-bottom: 10px;
     border-bottom: 4px solid #ddd;
     border-radius: 10px;
-    /* margin-right: 1px;
-  margin-left: 5px; */
   }
   @include media-queries.phoness {
     background-color: #f7f7f7;
@@ -969,6 +974,13 @@ tr {
   position: absolute;
   top: 88.5%;
   right: 1%;
+  text-decoration: none;
+
+  &:hover {
+    background: #fff;
+    color: #000;
+    transition: all 0.4s ease;
+  }
 
   @include media-queries.tablet {
     font-size: 18px;
@@ -995,14 +1007,9 @@ tr {
     top: 87.5%;
     right: 2.5%;
   }
-
-  &:hover {
-    background: #fff;
-    color: #000;
-    transition: all 0.4s ease;
+  @include media-queries.big-vertical {
+    top: 91%;
   }
-  color: #ffffff;
-  text-decoration: none;
 }
 
 /*------------------Section Modal-----------*/
@@ -1029,15 +1036,15 @@ tr {
   transition: transform 1.3s;
   transform: translateY(0%);
 
-
   @include media-queries.tablet {
-    
-    
+    width: 80%;
+    height: 50%;
+    margin-top: 80px;
   }
   @include media-queries.tablett {
     background-color: #0057ff;
     width: 80%;
-   height: 50%;   
+    height: 50%;
   }
   @include media-queries.big-phone {
     width: 80%;
@@ -1048,16 +1055,10 @@ tr {
     width: 94%;
     height: 92%;
     margin-top: 15px;
-   
   }
   @include media-queries.lands {
-
-  height: 80%;
-   
+    height: 80%;
   }
-
-
-
 
   .close-student {
     position: absolute;
@@ -1067,30 +1068,18 @@ tr {
     z-index: 1000;
     i {
       font-size: 22px;
-       
+
       @include media-queries.tablett {
-        font-size: 21x;
+        font-size: 21px;
       }
       @include media-queries.big-phone {
         font-size: 20px;
       }
       @include media-queries.phoness {
         font-size: 19px;
-       
       }
     }
-    @include media-queries.table {
-      right: 1.3%;
-    }
-    @include media-queries.phone2 {
-      right: 1.3%;
-    }
-    @include media-queries.phone {
-      right: 1.3%;
-    }
-    @include media-queries.mobile {
-      right: 1.3%;
-    }
+   
     @include media-queries.tablet {
       right: 1.3%;
     }
@@ -1261,9 +1250,7 @@ tr {
   transform: translateY(-200%);
 }
 
-/*-------------Modal delete --------------------------*/
 
-/*modal-container*/
 
 /*----------------buttons admin------------------*/
 .icons-student {
@@ -1273,18 +1260,10 @@ tr {
 
   i {
     width: 35px;
-    /*  height: 25px; */
     transition: all 0.3s ease;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /*   @include media-queries.big-phone {
-      height: 25px;
-    }
-    @include media-queries.phoness {
-      height: 23px;
-    } */
   }
 
   .edit-student {
@@ -1435,11 +1414,11 @@ tr {
     visibility: visible;
     z-index: 101;
     font-size: 24px;
-    margin-top: 7%;
+    margin-top: 5%;
   }
   @include media-queries.lands {
     margin-top: 3.5%;
-   } 
+  }
 }
 
 .changeColor {
@@ -1465,35 +1444,7 @@ tr {
 }
 
   */
-
-/* 
-  .no-activities {
-    background-color: rgba(230, 230, 230, 0.65);
-    @include mixingfunc.font-style(Cambria, normal, 550, 65px, 130%, center);
-    width: 1100px;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 70px 50px 0px 75.5px;
-    border-radius: 20px;
-  }
   
-  .no-description{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(230, 230, 230, 0.65);
-    width: 830px;
-    height: 600px;
-    text-align: center;
-    font-size: 70px;
-    font-weight: 600px;
-    margin-left: 20px;
-    margin-top: 55px;
-    border-radius: 20px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  } */
 
 .cont-table-student_blue::-webkit-scrollbar {
   width: 7.9px;

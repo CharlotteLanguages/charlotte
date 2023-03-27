@@ -198,6 +198,7 @@ function registerUser() {
           }),
           json = await res.json();
         resetForm(e);
+        window.location.href = "/src/views/login.html"
         if (!res.ok) throw { status: res.status, statusText: res.statusText };
       } catch (error) {
         /*    let message = err.statusText || "ocurrió un Error";

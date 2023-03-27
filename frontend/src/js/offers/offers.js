@@ -371,3 +371,12 @@ sr.reveal(vc, {
   origin: "bottom",
   distance: "-5px",
 });
+
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".fa-bars")) {
+    setTimeout(() => {
+      e.target.classList.toggle("changeColor");
+    }, 500);
+    d.querySelector(".menu").classList.toggle("move-menu");
+  }
+});

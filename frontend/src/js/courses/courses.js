@@ -85,11 +85,11 @@ const printCoursesData = (course) => {
       codigo = `
     <tbody class = "body">
     <tr class = "tr">
-    <td>${ele.id}</td>
-    <td>${ele.courseTitle}</td>
-    <td>${ele.category}</td>
-    <td>${ele.price}</td>
-    <td>
+    <td data-label = "ID">${ele.id}</td>
+    <td data-label = "Course title">${ele.courseTitle}</td>
+    <td data-label = "Category">${ele.category}</td>
+    <td data-label = "Price">${ele.price}</td>
+    <td data-label = "Actions">
         <div class="icons-course">
         <i class="fas fa-dot-circle read-course" data-ids=${ele.id}></i>
         <i class="fas fa-pen edit-course" data-id = ${ele.id}></i> 
@@ -350,4 +350,14 @@ sr.reveal(vc, {
   duration: 2500,
   origin: "bottom",
   distance: "-5px",
+});
+
+
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".fa-bars")) {
+    setTimeout(() => {
+      e.target.classList.toggle("changeColor");
+    }, 500);
+    d.querySelector(".menu").classList.toggle("move-menu");
+  }
 });

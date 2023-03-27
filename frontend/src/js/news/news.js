@@ -85,11 +85,11 @@ const printNewsData = (news) => {
       codigo = `
     <tbody class = "body">
     <tr class = "tr">
-    <td>${ele.id}</td>
-    <td>${ele.titleNews}</td>
-    <td>${ele.categoryNews}</td>
-    <td>${ele.tagsNews}</td>
-    <td>
+    <td data-label = "ID">${ele.id}</td>
+    <td data-label = "News">${ele.titleNews}</td>
+    <td data-label = "Category">${ele.categoryNews}</td>
+    <td data-label = "Tags">${ele.tagsNews}</td>
+    <td data-label = "Actions">
         <div class="icons-news">
         <i class="fas fa-dot-circle read-news" data-ids=${ele.id}></i>
         <i class="fas fa-pen edit-news" data-id = ${ele.id}></i> 
@@ -445,3 +445,11 @@ sr.reveal(vc, {
 /* window.addEventListener("load", ()=>{
   document.getElementById("loader").classList.toggle("loader2");
 }) */
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".fa-bars")) {
+    setTimeout(() => {
+      e.target.classList.toggle("changeColor");
+    }, 500);
+    d.querySelector(".menu").classList.toggle("move-menu");
+  }
+});

@@ -1,11 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
-/* @mixin tablet-horizontal {
-  @media all and (min-width: 768px) and (max-width: 1024px){
-    @content;
-  }
-} */
 *,
 *::before,
 *::after {
@@ -1721,7 +1716,7 @@ body {
     font-size: 20px;
   }
 }
-@media all and (min-width: 540px) and (max-width: 754px) {
+@media all and (min-width: 550px) and (max-width: 754px) {
   .slider i {
     width: 28px;
     height: 28px;
@@ -1729,7 +1724,7 @@ body {
     padding-top: 6px;
   }
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .slider i {
     width: 19px;
     height: 19px;
@@ -1750,7 +1745,7 @@ body {
   padding-left: 10px;
   padding-right: 10px;
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .slider-btns {
     top: 38%;
     padding-left: 5px;
@@ -1795,12 +1790,12 @@ body {
     height: 220px;
   }
 }
-@media all and (min-width: 540px) and (max-width: 754px) {
+@media all and (min-width: 550px) and (max-width: 754px) {
   .slider-slides {
     height: 189px;
   }
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .slider-slides {
     height: 126px;
   }
@@ -1825,7 +1820,7 @@ body {
   width: 100%;
   height: 100%;
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .img1 {
     margin-top: -20px;
   }
@@ -1839,7 +1834,7 @@ body {
   width: 100%;
   height: 100%;
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .img2 {
     margin-top: -20px;
   }
@@ -1853,7 +1848,7 @@ body {
   width: 100%;
   height: 100%;
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .img3 {
     margin-top: -20px;
   }
@@ -1867,7 +1862,7 @@ body {
   width: 100%;
   height: 100%;
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .img4 {
     margin-top: -20px;
   }
@@ -1881,7 +1876,7 @@ body {
   width: 100%;
   height: 100%;
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .img5 {
     margin-top: -20px;
   }
@@ -1924,13 +1919,13 @@ body {
     grid-gap: 30px;
   }
 }
-@media all and (min-width: 540px) and (max-width: 754px) {
+@media all and (min-width: 550px) and (max-width: 754px) {
   .section-main {
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 30px;
   }
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .section-main {
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 10px;
@@ -1950,13 +1945,13 @@ body {
 .card-news:hover {
   transform: scale(1.02);
 }
-@media all and (min-width: 540px) and (max-width: 754px) {
+@media all and (min-width: 550px) and (max-width: 754px) {
   .card-news {
     width: 88%;
     margin: auto;
   }
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .card-news {
     width: 85%;
     margin: auto;
@@ -2000,12 +1995,12 @@ body {
     height: 220px;
   }
 }
-@media all and (min-width: 540px) and (max-width: 754px) {
+@media all and (min-width: 550px) and (max-width: 754px) {
   .card-image {
     height: 215px;
   }
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .card-image {
     height: 190px;
   }
@@ -2042,12 +2037,12 @@ body {
     font-size: 23px;
   }
 }
-@media all and (min-width: 540px) and (max-width: 754px) {
+@media all and (min-width: 550px) and (max-width: 754px) {
   .card-title {
     font-size: 22px;
   }
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .card-title {
     font-size: 17px;
   }
@@ -2059,12 +2054,12 @@ body {
   text-align: justify;
   font-size: 35px;
 }
-@media all and (min-width: 540px) and (max-width: 754px) {
+@media all and (min-width: 550px) and (max-width: 754px) {
   .card-paragraph {
     left: 10%;
   }
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .card-paragraph {
     left: 10%;
   }
@@ -2115,12 +2110,12 @@ body {
     font-size: 17px;
   }
 }
-@media all and (min-width: 540px) and (max-width: 754px) {
+@media all and (min-width: 550px) and (max-width: 754px) {
   .btn-dark {
     font-size: 16px;
   }
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .btn-dark {
     font-size: 14px;
     width: 88px;
@@ -2157,12 +2152,12 @@ body {
     height: 350px;
   }
 }
-@media all and (min-width: 540px) and (max-width: 754px) {
+@media all and (min-width: 550px) and (max-width: 754px) {
   .container__subscribe {
     height: 300px;
   }
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .container__subscribe {
     height: 280px;
   }
@@ -2208,14 +2203,14 @@ body {
     margin-bottom: 35px;
   }
 }
-@media all and (min-width: 540px) and (max-width: 754px) {
+@media all and (min-width: 550px) and (max-width: 754px) {
   .container__subscribe h1 {
     font-size: 30px;
     line-height: 30px;
     margin-bottom: 25px;
   }
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .container__subscribe h1 {
     font-size: 22px;
     line-height: 30px;
@@ -2270,7 +2265,7 @@ body {
     margin-top: 0;
   }
 }
-@media all and (min-width: 540px) and (max-width: 754px) {
+@media all and (min-width: 550px) and (max-width: 754px) {
   .subscribe {
     margin-top: 0px;
     height: 190px;
@@ -2278,7 +2273,7 @@ body {
     padding-top: 14px;
   }
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .subscribe {
     margin-top: 0px;
     height: 170px;
@@ -2332,14 +2327,14 @@ body {
     line-height: 35px;
   }
 }
-@media all and (min-width: 540px) and (max-width: 754px) {
+@media all and (min-width: 550px) and (max-width: 754px) {
   .subscribe h1 {
     font-size: 33px;
     margin-top: 0px;
     line-height: 35px;
   }
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .subscribe h1 {
     font-size: 25px;
     margin-top: 20px;
@@ -2352,12 +2347,12 @@ body {
   margin-top: 10px;
   position: relative;
 }
-@media all and (min-width: 540px) and (max-width: 754px) {
+@media all and (min-width: 550px) and (max-width: 754px) {
   .getStarted {
     margin-top: 5px;
   }
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .getStarted {
     margin-top: 0px;
   }
@@ -2403,14 +2398,14 @@ body {
     margin-bottom: 12px;
   }
 }
-@media all and (min-width: 540px) and (max-width: 754px) {
+@media all and (min-width: 550px) and (max-width: 754px) {
   .getStarted p {
     font-size: 20px;
     line-height: 30px;
     margin-bottom: 15px;
   }
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .getStarted p {
     font-size: 17px;
     line-height: 30px;
@@ -2470,7 +2465,7 @@ body {
     width: 90%;
   }
 }
-@media all and (min-width: 540px) and (max-width: 754px) {
+@media all and (min-width: 550px) and (max-width: 754px) {
   .getStarted .email {
     font-size: 15px;
     height: 47px;
@@ -2478,7 +2473,7 @@ body {
     margin-left: 15px;
   }
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .getStarted .email {
     font-size: 14px;
     width: 90%;
@@ -2528,14 +2523,14 @@ body {
     right: 7%;
   }
 }
-@media all and (min-width: 540px) and (max-width: 754px) {
+@media all and (min-width: 550px) and (max-width: 754px) {
   .getStarted .envelope {
     font-size: 21px;
     top: 61px;
     right: 7%;
   }
 }
-@media all and (min-width: 320px) and (max-width: 639px) {
+@media all and (min-width: 280px) and (max-width: 549px) {
   .getStarted .envelope {
     font-size: 19px;
     top: 47px;

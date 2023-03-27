@@ -1,12 +1,42 @@
 @use "mixingfunc";
+@use "media-queries";
 /* ----------------------Section Form---------------------------- */
 .cont-new-course {
-  @include mixingfunc.measures(1251px, 840px, 424px, 144px);
+  width: 63%;
+  height: 640px;
+  left: 25%;
+  top: 110px;
+  margin-right: 20px;
   position: absolute;
-  background: #ffffff;
+  background: #fff;
   border-radius: 20px;
 
-  .title-course {
+  @include media-queries.tablet {
+    width: 65%;
+    left: 26%;
+    height: 630px;
+  }
+  @include media-queries.tablett {
+    width: 77%;
+    left: 12%;
+    height: 630px;
+    top: 120px;
+  }
+  @include media-queries.big-phone {
+    width: 85%;
+    left: 7.5%;
+    height: 560px;
+    background-color: #ffb3cb;
+    top: 90px;
+  }
+  @include media-queries.phoness {
+    width: 90%;
+    left: 5%;
+    height: 85%;
+    top: 80px;
+    background-color: #c2d1ff;
+  }
+  /* .title-course {
     box-sizing: border-box;
     padding-left: 19px;
     padding-right: 10px;
@@ -19,7 +49,7 @@
     border: 1px solid #8f8f8f;
     border-radius: 10px;
     font-size: 25px;
-  }
+  } */
 }
 .open-form-course {
   transform: translateY(-200%);
@@ -54,60 +84,154 @@
 
   #area-courses {
     box-sizing: border-box;
-
     position: absolute;
-    width: 1194px;
-    height: 443px;
+    width: 93.2%;
+    max-width: 1100px;
     left: 29px;
-    top: 200px;
+    top: 260px;
     border-radius: 10px;
+  
+    @include media-queries.tablet {
+      left: 22px;
+      top: 262px;
+    }
+    @include media-queries.tablett {
+      left: 22px;
+      top: 262px;
+    }
+    @include media-queries.big-phone {
+      left: 17px;
+      top: 225px;
+    }
+    @include media-queries.phoness {
+      left: 10px;
+      top: 225px;
+    }
     .txtarea-course {
-      margin-top: 40px;
       resize: none;
       border-radius: 10px;
-      width: 1194px;
-      height: 483px;
+      max-width: 1200px;
+      width: 100%;
+      height: 205px;
+      @include media-queries.tablet {
+        height: 200px;
+      }
+      @include media-queries.tablett {
+      }
+      @include media-queries.big-phone {
+        height: 177px;
+      }
+      @include media-queries.phoness {
+        height: 90px;
+      }
     }
   }
 }
 #create-course {
   position: absolute;
-  width: 226px;
-  height: 48px;
-  left: 997px;
-  top: 771px;
-
+  width: 170px;
+  height: 35px;
+  right: 3%;
+  top: 585px;
   background: #338af3;
   border-radius: 20px;
   font-family: Arial;
   font-style: normal;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 18px;
   line-height: 130%;
   transition: all 0.4s ease;
-  border: none;
+  outline: none;
+  border: 0;
 
-  color: #ffffff;
+  @include media-queries.tablet {
+    top: 580px;
+    font-size: 17px;
+    width: 155px;
+  }
+
+  @include media-queries.big-phone {
+    max-width: 130px;
+    font-size: 15px;
+    top: 520px;
+    height: 30px;
+  }
+  @include media-queries.phoness {
+    max-width: 125px;
+    font-size: 14px;
+    top: 500px;
+    height: 30px;
+  }
+
+  color: #fff;
   &:hover {
     background: rgb(140, 168, 250);
   }
 }
 
-.font-title-course {
+.cancel-course {
   position: absolute;
-  width: 278px;
-  height: 39px;
-  left: 30px;
-  top: 11px;
-
+  width: 120px;
+  height: 35px;
+  left: 25px;
+  top: 585px;
+  background: white;
   font-family: Arial;
   font-style: normal;
   font-weight: 600;
-  font-size: 28px;
-  line-height: 130%;
-  /* identical to box height, or 39px */
+  font-size: 18px;
+  border-radius: 20px;
+  border: 0.5px solid rgb(150, 148, 148);
+  transition: all 0.4s ease;
 
-  color: #000000;
+  @include media-queries.tablet {
+    width: 100px;
+    top: 580px;
+  }
+
+  @include media-queries.big-phone {
+    font-size: 15px;
+    width: 100px;
+    top: 520px;
+    height: 30px;
+    left: 17px;
+  }
+  @include media-queries.phoness {
+    width: 90px;
+    font-size: 14px;
+    top: 500px;
+    height: 30px;
+    left: 10px;
+  }
+
+  &:hover {
+    background: rgb(238, 238, 238);
+  }
+}
+
+.font-title-course {
+  position: absolute;
+  height: 39px;
+  left: 28px;
+  top: 11px;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 130%;
+
+  @include media-queries.tablet {
+    font-size: 19px;
+  }
+  @include media-queries.tablett {
+    font-size: 19px;
+  }
+  @include media-queries.big-phone {
+    font-size: 18px;
+  }
+  @include media-queries.phoness {
+    font-size: 17px;
+  }
 }
 
 .none-course {
@@ -117,80 +241,295 @@
 /*----------------------------- Section Table---------------------- */
 
 .cont-tables-course {
-  //@include mixingfunc.measures(1051px, 594px, 344px, 142px);shadow
-  margin: 142px 45px 288px 424px;
-
-  width: 1251px;
-  height: 594px;
+  margin: auto;
+  margin-top: 120px;
+  max-width: 1251px;
+  width: 70%;
+  height: 460px;
   background: #8eaaff;
-  border-radius: 20px;
-  position: absolute;
+  border-radius: 15px;
   box-shadow: 5px 10px 10px 10px rgba(0, 0, 0, 0.25);
+  position: relative;
 
+  @include media-queries.tablett {
+    width: 85%;
+  }
+  @include media-queries.tablet {
+    width: 75%;
+  }
+  @include media-queries.big-phone {
+    width: 88%;
+    height: 330px;
+    margin-top: 80px;
+  }
+  @include media-queries.phoness {
+    width: 90%;
+    height: 340px;
+    margin-top: 80px;
+  }
+  @include media-queries.big-vertical {
+    height: 505px;
+    margin-top: 100px;
+  }
   
   .cont-table-course_blue {
     overflow-y: auto;
-    width: 1251px;
-    height: 529px;
-    border-radius: 18px;
+    width: 100%;
+    max-width: 1251px;
+    height: 400px;
+    margin-top: 5px;
+
+    @include media-queries.big-phone {
+      height: 280px;
+    }
+    @include media-queries.phoness {
+      height: 295px;
+    }
+    @include media-queries.big-vertical {
+      height: 455px;
+    }
   }
 
   .table-course {
-    width: 1251px;
-    height: 529px;
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
     background: #ffffff;
-    border-radius: 20px;
+    border-radius: 12px;
     border-collapse: collapse;
+
+    @include media-queries.tablet {
+      width: 100%;
+    }
+    @include media-queries.tablett {
+      width: 100%;
+    }
+    @include media-queries.big-phone {
+      width: 98.8%;
+      margin-left: 6px;
+      margin-top: 3px;
+    }
+    @include media-queries.phoness {
+      width: 98.5%;
+      margin-left: 4px;
+
+      /*     margin-left: 3px;
+        margin-top: px;
+        background-color: #ffa5d3; */
+    }
+
+    @include media-queries.big-vertical {
+      height: 455px;
+    }
     th {
-      @include mixingfunc.font-style(
-        Helvetica,
-        normal,
-        600,
-        30px,
-        130%,
-        center
-      );
-      font-family: Arial, Helvetica, sans-serif;
+      @include mixingfunc.font-style(arial, normal, 600, 19px, 100%, center);
+      font-family: Arial;
       border: solid 1px black;
-      height: 60px;
+      height: 40px;
       border-top: none;
+
+      @include media-queries.tablet {
+        font-size: 16px;
+      }
+      @include media-queries.tablett {
+        font-size: 16px;
+      }
     }
     td {
-      @include mixingfunc.font-style(Helvetica, normal, 400, 25px, 130%, left);
+      @include mixingfunc.font-style(Arial, normal, 400, 17px, 130%, left);
       border: solid 1px black;
       padding-left: 17px;
       padding-right: 17px;
-      margin-left: 0;
-      max-height: 39px;
-      max-width: 400px;
+      white-space: nowrap;
+      overflow: auto;
+      height: 32px;
+      max-width: 310px;
+      min-width: 60px;
       text-align: justify;
       border-bottom: none;
-      min-width: 60px;
+
+      @include media-queries.tablet {
+        font-size: 14px;
+        height: 30px;
+        max-width: 190px;
+        min-width: 28px;
+      }
+      @include media-queries.tablett {
+        font-size: 13px;
+        height: 30px;
+        max-width: 170px;
+        min-width: 20px;
+      }
+      /*       @include media-queries.tablett {
+        font-size: 12px;
+        height: 24px;
+        max-width: 150px;
+        min-width: 15px;
+        background-color: #1a63f5;
+      } */
+      @include media-queries.big-phone {
+        display: block;
+        margin: auto;
+        max-width: 100%;
+        height: 40px;
+        font-size: 14px;
+        text-align: right;
+        align-items: center;
+        padding-top: 12px;
+        border: 1px solid #ddd;
+        overflow: auto;
+      }
+      @include media-queries.phoness {
+        display: block;
+        margin: auto;
+        max-width: 100%;
+        height: 35px;
+        font-size: 12px;
+        text-align: right;
+        align-items: center;
+        padding-top: 12px;
+        border: 1px solid #ddd;
+        padding-left: 8px;
+        padding-right: 8px;
+        overflow: auto;
+      }
+    }
+    td:last-child {
+      @include media-queries.big-phone {
+        border-bottom: 0;
+      }
+    }
+    td:first-child {
+      @include media-queries.big-phone {
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        text-align: right;
+      }
+      @include media-queries.phoness {
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        text-align: right;
+      }
+
+      text-align: center;
+    }
+    td::-webkit-scrollbar {
+      width: 8px;
+      border-radius: 20px;
+      height: 3px;
+    }
+
+    td::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 20px;
+    }
+
+    td:before {
+      @include media-queries.big-phone {
+        content: attr(data-label);
+        font-weight: bold;
+        float: left;
+        margin-right: 10px;
+      }
+      @include media-queries.phoness {
+        content: attr(data-label);
+        font-weight: bold;
+        float: left;
+        margin-right: 10px;
+        /*  border-radius: 5px;
+        background-color: #c1}d8f5;
+        padding-left: 4px;
+        padding-right: 4px;
+        text-align: left;
+        height: 18px;
+        display: flex;
+        align-items: center; */
+      }
     }
   }
 }
+
+thead {
+  @include media-queries.big-phone {
+    display: none;
+  }
+  @include media-queries.phoness {
+    display: none;
+  }
+}
+
+tr {
+  @include media-queries.big-phone {
+    background-color: #f7f7f7;
+    display: block;
+    margin-bottom: 10px;
+    border-bottom: 4px solid #ddd;
+    border-radius: 10px;
+  }
+  @include media-queries.phoness {
+    background-color: #f7f7f7;
+    display: block;
+    margin-bottom: 10px;
+    border-bottom: 4px solid #ddd;
+    border-radius: 10px;
+  }
+}
+
+
 .up-table-course {
   transform: translateY(-200%);
 }
 
 .btn-courses {
-  @include mixingfunc.measures(226px, 48px, 1000px, 539px);
-  @include mixingfunc.font-style(Arial, normal, 600, 25px, 130%, center);
+  @include mixingfunc.font-style(Arial, normal, 600, 19px, 130%, center);
+  width: 195px;
+  height: 35px;
   background: #338af3;
-  border-radius: 20px;
-  position: absolute;
+  border-radius: 15px;
   color: #ffffff;
   transition: all 0.5s ease;
-  padding-top: 5px;
+  margin-top: 10px;
+  margin-left: 785px;
   border: 0.5px solid #1a63f5;
+  position: absolute;
+  top: 88.5%;
+  right: 1%;
+  text-decoration: none;
 
   &:hover {
     background: #fff;
     color: #000;
     transition: all 0.4s ease;
   }
-  color: #ffffff;
-  text-decoration: none;
+
+  @include media-queries.tablet {
+    font-size: 18px;
+    width: 175px;
+    height: 32px;
+  }
+  @include media-queries.tablett {
+    font-size: 17px;
+    width: 170px;
+    height: 32px;
+  }
+
+  @include media-queries.big-phone {
+    font-size: 15px;
+    width: 150px;
+    height: 28px;
+    top: 86%;
+    right: 1.8%;
+  }
+  @include media-queries.phoness {
+    font-size: 14px;
+    width: 135px;
+    height: 27px;
+    top: 87.5%;
+    right: 2.5%;
+  }
+  @include media-queries.big-vertical {
+    top: 91%;
+  }
 }
 
 /*------------------Section Modal-----------*/
@@ -198,7 +537,7 @@
 #modal-container-course {
   opacity: 0;
   visibility: hidden;
-  position: absolute;
+  position: fixed;
   z-index: 1000;
   @include mixingfunc.measures(100%, 100%, 0, 0);
   background-color: rgba(143, 143, 143, 0.65);
@@ -207,141 +546,203 @@
 
 .modal-course {
   position: relative;
-  width: 930px;
-  height: 800px;
-  left: 493px;
-  top: 70px;
+  width: 60%;
+  height: 500px;
+  margin: auto;
+  margin-top: 100px;
   border-radius: 10px;
- background-color: #ffffff;
+  background-color: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  transition: transform 1s;
+  transition: transform 1.3s;
   transform: translateY(0%);
+
+  @include media-queries.tablet {
+    width: 80%;
+    height: 50%;
+    margin-top: 80px;
+  }
+  @include media-queries.tablett {
+
+    width: 80%;
+    height: 50%;
+    margin-top: 80px;
+  }
+  @include media-queries.big-phone {
+    width: 80%;
+    height: 90%;
+    margin-top: 30px;
+  }
+  @include media-queries.phoness {
+    width: 94%;
+    height: 92%;
+    margin-top: 15px;
+  }
+  @include media-queries.lands {
+    height: 80%;
+  }
 
   .close-course {
     position: absolute;
-    left: 94.2%;
-    right: 1.72%;
-    top: 2.50%;
-    bottom: 93.65%;
+    right: 1.4%;
+    top: 8px;
     color: #000;
     z-index: 1000;
     i {
-      font-size: 30px;
+      font-size: 22px;
+
+      @include media-queries.tablett {
+        font-size: 21px;
+      }
+      @include media-queries.big-phone {
+        font-size: 20px;
+      }
+      @include media-queries.phoness {
+        font-size: 19px;
+      }
+    }
+    @include media-queries.tablet {
+      right: 1.3%;
+    }
+    @include media-queries.tablett {
+      right: 1.3%;
+    }
+    @include media-queries.big-phone {
+      right: 1.5%;
+    }
+    @include media-queries.phoness {
+      right: 1.7%;
     }
   }
 
   .cont-p-course {
     position: absolute;
-    width: 920px;
+    width: 97%;
     max-height: 785px;
-    top: 10px;
+    top: 25px;
     bottom: 10px;
     left: 10px;
     right: 10px;
     overflow: auto;
-    padding: 20px 40px 20px 20px;
+    padding: 20px 20px 20px 20px;
+
+    @include media-queries.tablet {
+      width: 98%;
+      height: 92%;       
+     }
+    @include media-queries.tablett {
+      width: 97%;
+      height: 92%;     
+     }
+    @include media-queries.big-phone {
+      width: 97%;
+      height: 90%;     
+      background-color: #ffc3f5;
+      top: 20px;
+     }
+    @include media-queries.phoness {
+      width: 97%;
+      height: 92%;     
+     }
   }
  
 }
 .modal-cl {
   transform: translateY(-200%); 
  }
-/*-------------Modal delete --------------------------*/
 
 
 
-#modal-container-dc {
-  visibility: hidden;
-  position: absolute;
-  z-index: 1000;
-  @include mixingfunc.measures(100%, 100%, 0, 0);
-  background-color: rgba(143, 143, 143, 0.65);
-}
-.modal-dc {
-  box-sizing: border-box;
-  position: absolute;
-  @include mixingfunc.measures(898px, 305px, 25%, 381px);
-  bottom: 338px;
-  background: rgba(255, 255, 255, 0.65);
-  border: 3px solid #0057ff;
-  box-shadow: 0px 4px 6px 3px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  transition: transform 1s;
-  transform: translateY(0%);
-
-  h3 {
-    position: absolute;
-    @include mixingfunc.measures(166px, 39px, 366px, 21px);
-    @include mixingfunc.font-style(Arial, normal, 600, 30px, 130%, center);
-    color: #000000;
-  }
-}
-#text-dc {
-  box-sizing: border-box;
-  position: absolute;
-  @include mixingfunc.measures(808px, 129px, 45px, 82px);
-  @include mixingfunc.font-style(Arial, normal, 300, 20px, 130%, center);
-  border: 1px solid #8f8f8f;
-  border-radius: 10px;
-  resize: none;
-  color: #000000;
-  padding-left: 18px;
-  padding-top: 12px;
-}
-
-.bnt-dc {
-  position: absolute;
-  /*   @include mixingfunc.measures(186px, 48px, 667px, 237px); */
-  @include mixingfunc.measures(137px, 32px, 692px, 245px);
-  @include mixingfunc.font-style(Arial, normal, 700, 25px, 130%, center);
-  background: #d80027;
-  border-radius: 20px;
-  position: absolute;
-  color: #ffffff;
-}
-
-.btn-dc2 {
-  position: absolute;
-  @include mixingfunc.measures(84px, 32px, 45px, 245px);
-  @include mixingfunc.font-style(Arial, normal, 600, 25px, 130%, center);
-  color: #000000;
-}
-.modal-close-dc {
-  transform: translateY(-200%);
-}
-
+/*----------------buttons admin------------------*/
 
 .icons-course {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   i {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .edit-course {
-    font-size: 30px;
+    font-size: 19px;
     color: #ff9811;
-    transition: all 0.5s ease;
+    transition: all 0.4s ease;
     &:hover {
       color: #6e7f8f;
     }
+
+    @include media-queries.tablet {
+      font-size: 17px;
+    }
+    @include media-queries.tablett {
+      font-size: 16px;
+    }
+    @include media-queries.big-phone {
+      font-size: 18px;
+    }
+    @include media-queries.phoness {
+      font-size: 16px;
+    }
   }
   .remove-course {
-    font-size: 30px;
+    font-size: 19px;
     color: red;
-     &:hover {
+    transition: all 0.4s ease;
+    &:hover {
       color: #6e7f8f;
+    }
+
+    @include media-queries.tablet {
+      font-size: 17px;
+    }
+    @include media-queries.tablett {
+      font-size: 16px;
+    }
+    @include media-queries.big-phone {
+      font-size: 18px;
+    }
+    @include media-queries.phoness {
+      font-size: 16px;
     }
   }
 
   .read-course {
-    font-size: 30px;
+    font-size: 19px;
     color: #0057ff;
-     &:hover {
+    transition: all 0.4s ease;
+    &:hover {
       color: #6e7f8f;
     }
+
+    @include media-queries.tablet {
+      font-size: 17px;
+    }
+    @include media-queries.tablett {
+      font-size: 16px;
+    }
+    @include media-queries.big-phone {
+      font-size: 18px;
+    }
+    @include media-queries.phoness {
+      font-size: 16px;
+    }
+  }
+}
+
+.cont-table-course_blue::-webkit-scrollbar {
+  width: 7.9px;
+  border-radius: 20px;
+  height: 8px;
+}
+
+.cont-table-course_blue::-webkit-scrollbar-thumb {
+  background: rgba(231, 230, 230, 0.7);
+  border-radius: 20px;
+  &:hover {
+    background: rgba(255, 255, 255, 0.5);
   }
 }

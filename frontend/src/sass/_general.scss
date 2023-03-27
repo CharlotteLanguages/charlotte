@@ -62,29 +62,43 @@
   display: flex;
   align-items: center;
   justify-content: center;
-margin: auto;
-margin-top: 30px;
+  margin: auto;
+  margin-top: 30px;
   border-radius: 20px;
 }
 
 .no-description{
-
   display: flex;
   background-color: rgba(230, 230, 230, 0.65);
-  width: 73%;
+  width: 100%;
   height: 440px;
-  text-align: center;
+  justify-content: center;
   font-size: 70px;
   font-weight: 600px;
   align-items: center;
   justify-content: center;
   border-radius: 20px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  @include media-queries.tablet {
+   width: 100%;
+   height: 440px;
+   font-size: 65px;
+  }
+  @include media-queries.tablett {
+   width: 99%;
+   font-size: 60px;
+   height: 95%;
+  }
+  @include media-queries.big-phone {
+    font-size: 50px;
+    height: 95%;
+  }
+  @include media-queries.phoness {
+    font-size: 40px;
+    height: 97%;
+    text-align: center;
+  }
 }
-
-
-
-
 
 /*-------------Modal delete --------------------------*/
 
@@ -324,6 +338,9 @@ margin-top: 30px;
     left: 20.5%;
     height: 50px;
   } 
+  @include media-queries.big-vertical {
+    top: 628px;
+   }
 
   .close-notify-succes {
     position: absolute;
@@ -419,7 +436,7 @@ margin-top: 30px;
 
 
 
-
+/*--------------------------------------------------*/
 
 #container-noti {
   position: absolute;
@@ -453,6 +470,11 @@ margin-top: 30px;
      left: 5%;
      height: 100px;
    
+   }
+   @include media-queries.big-vertical {
+
+    margin-top: 695px;
+     
    }
  
    .noti__idea {
@@ -527,3 +549,67 @@ margin-top: 30px;
      background: rgba(255, 255, 255,.5);
    }
  }
+
+
+ /*--------------------Loader--------------------*/
+
+ 
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #c4e8fb transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  background-color: #2e2e2e;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 100000;
+  display: flex;
+  top: 0;
+  left: 0;
+  /*   clip-path: circle(150% at 100% 0); */
+  transition: all 0.8s ease-in-out;
+  opacity: 0.9;
+}
+
+.loader2 {
+  /* clip-path: circle(0% at 100% 0%); */
+  visibility: hidden;
+  /* display: none; */
+  /*  transform: translateY(200%); */
+}

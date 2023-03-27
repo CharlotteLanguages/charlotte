@@ -94,7 +94,7 @@ const renderStudent = (student) => {
     <td data-label = "Student">${ele.studentName} ${ele.lastNameStudent}</td>
     <td data-label = "Email">${ele.emailStudent}</td>
     <td data-label = "Membership">${ele.membershipStudent}</td>
-    <td data-label = "Action">
+    <td data-label = "Actions">
         <div class="icons-student">
         <i class="fas fa-dot-circle read-student" data-ids = ${ele.id} ></i>
         <i class="fas fa-pen edit-student" data-id = ${ele.id}></i> 
@@ -391,9 +391,6 @@ d.addEventListener("click", (e)=>{
     $formDelete.reset();
     d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
     d.querySelector(".remove-student").dataset.idr = null;
-    /* setTimeout(() => {
-      location.reload();
-    }, 1200); */
     setTimeout(() => {
       d.querySelector("#modal-container-dr").style.opacity = "0";
       d.querySelector("#modal-container-dr").style.visibility = "hidden";
