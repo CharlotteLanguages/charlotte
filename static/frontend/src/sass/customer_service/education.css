@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.banner {
+  background-image: url("/src/public/customer_service/education/banner-education.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 397px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.charlotte-logo {
+  width: 100%;
+  max-width: 661px;
+  max-height: 287px;
+  height: auto;
+}
+
+.image-section {
+  width: 100%;
+  max-width: 1290px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /*  margin: auto; */
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+.image {
+  width: 100%;
+  /*  margin: auto; */
+  width: 320px;
+  height: 290px;
+  transition: all 0.3s ease;
+}
+.image:hover {
+  transform: scale(1.1);
+}
+
+#image-one {
+  max-width: 320px;
+  height: 290px;
+  width: 100%;
+  background-image: url("/src/public/customer_service/education/education-one.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#image-two {
+  max-width: 320px;
+  height: 290px;
+  width: 100%;
+  background-image: url("/src/public/customer_service/education/education-two.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#image-three {
+  max-width: 320px;
+  height: 290px;
+  width: 100%;
+  background-image: url("/src/public/customer_service/education/education-three.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.text-one {
+  max-width: 1290px;
+  width: 100%;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: #000;
+  /* margin: auto; */
+  padding-top: 26px;
+}
+
+.text-two {
+  max-width: 1290px;
+  width: 100%;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: #000;
+  /*    margin: auto; */
+  /* margin-top: 26px; */
+  margin-bottom: 30px;
+}
+
+.social-medias {
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn__social-medias {
+  font-size: 36px;
+  margin-left: 15px;
+  transition: all 0.3s ease;
+}
+.btn__social-medias:hover {
+  transform: scale(1.04);
+}
+
+#linkedin {
+  color: #0a66c2;
+  transition: all 0.4s ease;
+}
+#linkedin:hover {
+  color: #268ff7;
+}
+
+#facebook {
+  color: #0b3fff;
+  transition: all 0.4s ease;
+}
+#facebook:hover {
+  color: #7a97ff;
+}
+
+#twitter {
+  color: #00acee;
+  transition: all 0.4s ease;
+}
+#twitter:hover {
+  color: #3ac3f9;
+}
+
+#instagram {
+  color: #ff0080;
+  transition: all 0.4s ease;
+}
+#instagram:hover {
+  color: #ff7fbf;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=education.css.map */

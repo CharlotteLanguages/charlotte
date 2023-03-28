@@ -1,3 +1,5 @@
+
+/* import { getHomePageData } from "../homepage/homepage.js"; */
 import {
   getNewsData,
   /*   ModalRemoveCourses, */
@@ -13,6 +15,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
   getNewsData();
 });
 
+
 ShowNews(
   ".fa-dot-circle",
   ".close-news",
@@ -20,7 +23,8 @@ ShowNews(
   ".modal-news"
 );
 /* ModalRemoveCourses(".remove", ".close-dc", "#modal-container-dc", ".modal-dc"); */
-openFormNews(".btn-news", ".cancel-form");
+openFormNews(".btn-news", ".cancel-news");
 addNews();
 closeWindowModal(".poi", "#modal-container-news", ".modal-news", "modal-cl");
 editNews();
+

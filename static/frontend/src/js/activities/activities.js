@@ -2,7 +2,7 @@ const d = document;
 const API_URL = `http://localhost:3000/activities`,
   $formActivity = d.querySelector(".crud-form"),
   $titleActivity = d.querySelector(".crud-title"),
-  $tbnActivity = d.getElementById("create-review"),
+  $tbnActivity = d.getElementById("create-activitie"),
   $tableActivity = d.querySelector(".crud-table"),
   $fragment = d.createDocumentFragment(),
   $formDelete = d.querySelector(".form-delete"),
@@ -282,7 +282,7 @@ d.addEventListener("click", (e) => {
 
 /*------------------------------------------------load-----------------------------*/
 function load() {
-  d.querySelector(".cont-new-review").classList.toggle("open-form-input");
+  d.querySelector(".cont-new-activitie").classList.toggle("open-form-input");
   d.querySelector(".container__tables").classList.toggle("up-table");
   d.querySelector("#container-noti").classList.toggle("noticia");
 }
@@ -379,3 +379,12 @@ export function tiempo_carga() {
   var salida = "La pagina ha sido cargada en " + segundos + " segundos";
   document.getElementById("tiempoCarga").innerHTML = salida;
 }
+
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".fa-bars")) {
+    setTimeout(() => {
+      e.target.classList.toggle("changeColor");
+    }, 500);
+    d.querySelector(".menu").classList.toggle("move-menu");
+  }
+});

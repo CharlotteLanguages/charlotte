@@ -18,13 +18,11 @@
   .table {
     width: 1251px;
     height: 529px;
-    
     border-radius: 20px;
     border-collapse: collapse;
 
     th {
       @include mixingfunc.font-style(Arial, normal, 400, 28px, 130%, center);
-     
       border: solid 1px black;
       max-height: 53px;
     }

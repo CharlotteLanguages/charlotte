@@ -2,10 +2,10 @@ package models
 
 import "github.com/jinzhu/gorm"
 
-type persona struct {
+type Persona struct {
 	gorm.Model
 
-	ID        int64  `json:"idPerson"`
+	IDPerson  int64  `json:"idPerson"`
 	Nombre    string `json:"name"`
 	LastName  string `json:"lastname"`
 	Birthdate string `json:"birthdate"`

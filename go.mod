@@ -3,7 +3,9 @@ module charlotte
 go 1.19
 
 require (
+	github.com/4softwaredevelopers/demo-crud-api-rest-go v0.0.0-20210502172256-62b3055fa71b // indirect
 	github.com/andybalholm/brotli v1.0.5 // indirect
+	github.com/go-sql-driver/mysql v1.7.0 // indirect
 	github.com/gofiber/fiber v1.14.6 // indirect
 	github.com/gofiber/fiber/v2 v2.42.0 // indirect
 	github.com/gofiber/utils v1.0.1 // indirect

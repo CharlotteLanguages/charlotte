@@ -16,7 +16,7 @@
 
 <body>
     <div id="container">
-
+        <i class="fas fa-bars" id="bars"></i>
         <section class="cont-new-classes open-form-classes">
             <section class=" crud-classes" id="cont-form-classes">
                 <article>
@@ -51,7 +51,7 @@
 
                     </form>
                     <input id="create-classes" type="submit" value="Create new class" class="btn-submit">
-                    <input class="cancel-form" type="button" value="Cancel">
+                    <input class="cancel-classes" type="button" value="Cancel">
                 </article>
 
             </section>
@@ -109,7 +109,7 @@
                 <div class="cont-p-classes">
                 </div>
         </section>
-        <form class="form-delete" action="">
+   <!--      <form class="form-delete" action="">
             <section id="modal-container-dr">
                 <div class="modal-dr modal-close-dr">
                     <h3>Delete item</h3>
@@ -120,7 +120,21 @@
                 </div>
             </section>
 
+        </form> -->
+
+        <form class="form-delete-dr" action="">
+            <section id="modal-container-dr">
+                <div class="modal-dr modal-close-dr">
+                    <h3>Delete item</h3>
+                    <textarea name="reasonDelete" id="text-dr"  placeholder="Reason..." required></textarea>
+                        <div class="buttons_delete">
+                            <button class="close-dr btn-dr2">Cancel</button>
+                            <input type="submit" class="close-dr bnt-dr" value="Yes, Delete"></input>
+                      </div>
+                </div>
+            </section>
         </form>
+
 
         <section class="container-notify-succes sucesx alert " id="alert">
             <i class="fas fa-check-circle close-notify-succes"></i>

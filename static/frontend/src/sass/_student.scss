@@ -1,11 +1,49 @@
 @use "mixingfunc";
+@use "media-queries";
+
 /* ----------------------Section Form---------------------------- */
 .cont-new-student {
-  @include mixingfunc.measures(1251px, 795px, 424px, 144px);
+  width: 63%;
+  height: 640px;
+  left: 25%;
+  top: 110px;
+  margin-right: 20px;
   position: absolute;
-  background: #ffffff;
+  background: #fff;
   border-radius: 20px;
 
+  @include media-queries.tablet {
+    width: 65%;
+    left: 26%;
+    height: 630px;
+  }
+  @include media-queries.tablett {
+    width: 77%;
+    left: 12%;
+    height: 630px;
+    top: 120px;
+  }
+  @include media-queries.big-phone {
+    width: 85%;
+    left: 7.5%;
+    height: 560px;
+    background-color: #ffb3cb;
+    top: 90px;
+  }
+  @include media-queries.phoness {
+    width: 90%;
+    left: 5%;
+    height: 85%;
+    top: 80px;
+    background-color: #c2d1ff;
+  }
+
+  /*   @include media-queries.lands {
+    top: 80px;
+  background-color: #9b008e;
+    
+  } */
+  /* 
   .title-student {
     box-sizing: border-box;
     padding-left: 19px;
@@ -14,239 +52,589 @@
     width: 1194px;
     height: 51px;
     left: 29px;
-    top: 65px;
+    top: 45px;
     color: #000;
     border: 1px solid #8f8f8f;
     border-radius: 10px;
-    font-size: 25px;
-    
-  }
-
-  .file-student{
-    display: flex;
-    box-sizing: border-box;
-    padding-left: 19px;
-    padding-right: 10px;
-    position: absolute;
-    width: 1194px;
-    height: 51px;
-    left: 29px;
-    top: 197px;
-    color: #000;
-    border: 1px solid #8f8f8f;
-    border-radius: 10px;
-    font-size: 25px;
-    padding-top: 10px;
-    padding-right: 80px;
-
-}
-.file-student-btn{
-    position: absolute;
-    margin-top: 0px;
-    margin-left: 1110px;
-    font-size: 32px;
-    color: #000;
-
-}
-
-
-.file-student-text{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
-    color: rgb(97, 97, 97);
-}
-
-
-  .truck{
-  
-   /*  position: absolute; */
-    width: 488px;
-    border-radius: 50%;
-    height: 488px;
-    left: 220px;
-    top: 200px;
-    background: url("/src/public/paisaje.jpg");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat
-}
-
-#imgSponsor{
-    display: none;
-}
-
+    font-size: 22px;
+  } */
 }
 .open-form-student {
-  transform: translateY(-200%);
+  transform: translateY(-150%);
 }
 
+.first-name-student {
+  box-sizing: border-box;
+  position: absolute;
+  top: 55px;
+  left: 29px;
+  @include mixingfunc.font-style(Arial, normal, 400, 1rem, 100%, justify);
+  width: 46%;
+  height: 33px;
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  padding-left: 19px;
+  color: #000000;
+  outline: none;
 
-  
-  .first-name-student{
-    box-sizing: border-box;
-    position: absolute;
-    @include mixingfunc.measures(590px, 51px, 29px, 65px);
-    @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
-    border: 1px solid #8f8f8f;
-    border-radius: 10px;
-    padding-left: 19px;
-    color: #000000;
+  @include media-queries.tablet {
+    left: 22px;
   }
-
-  .last-name-student{
-    box-sizing: border-box;
-    position: absolute;
-    @include mixingfunc.measures(590px, 51px, 632px, 65px);
-    @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
-    border: 1px solid #8f8f8f;
-    border-radius: 10px;
-    padding-left: 19px;
-    color: #000000;
-
+  @include media-queries.tablett {
+    /* top: 48px;
+    height: 30px;
+    font-size: .9rem; */
+    left: 22px;
+    font-size: 0.9rem;
+    height: 31px;
   }
-  
-.email-student{
-    
-    box-sizing: border-box;
-    padding-left: 19px;
-    padding-right: 10px;
-    position: absolute;
-    width: 1194px;
-    height: 51px;
-    left: 29px;
-    top: 131px;
-    color: #000;
-    border: 1px solid #8f8f8f;
-    border-radius: 10px;
-    font-size: 25px;
+  @include media-queries.big-phone {
+    top: 47px;
+    height: 28px;
+    font-size: 0.8rem;
+    left: 17px;
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+  @include media-queries.phoness {
+    left: 10px;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+  }
 }
 
-.birth-day-student{
-    box-sizing: border-box;
-    position: absolute;
-    @include mixingfunc.measures(590px, 51px, 29px, 197px);
-    @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
-    border: 1px solid #8f8f8f;
-    border-radius: 10px;
-    padding-left: 19px;
-    color: rgb(0, 0, 0);
-    padding-left: 370px;
-    padding-right: 15px;
+.last-name-student {
+  box-sizing: border-box;
+  position: absolute;
+  @include mixingfunc.measures(46%, 33px, 48.5%, 55px);
+  @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  padding-left: 19px;
+  color: #000000;
+  outline: none;
+  margin-left: 18px;
 
+  @include media-queries.tablet {
+    left: 48%;
+  }
+  @include media-queries.tablett {
+    /*  top: 48px;
+    height: 30px;
+    font-size: .9rem; */
+    left: 48%;
+    font-size: 0.9rem;
+    height: 31px;
+  }
+  @include media-queries.big-phone {
+    top: 47px;
+    height: 28px;
+    font-size: 0.8rem;
+    left: 47%;
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+  @include media-queries.phoness {
+    left: 45%;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+  }
 }
-.text-birth-day{
+
+.email-student {
+  box-sizing: border-box;
+  padding-left: 19px;
+  padding-right: 10px;
+  position: absolute;
+  width: 93.3%;
+  height: 30px;
+  left: 29px;
+  top: 97px;
+  color: #000;
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+
+  @include media-queries.tablet {
+    left: 22px;
+  }
+  @include media-queries.tablett {
+    /* top: 88px;
+    height: 30px;
+    font-size: .9rem; */
+    left: 22px;
+    font-size: 0.9rem;
+    height: 31px;
+  }
+  @include media-queries.big-phone {
+    top: 82px;
+    height: 28px;
+    font-size: 0.8rem;
+    left: 17px;
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+  @include media-queries.phoness {
+    left: 10px;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 157px;
+    width: 92.7%;
+  }
+}
+
+.birth-day-student {
+  box-sizing: border-box;
+  position: absolute;
+  @include mixingfunc.measures(46%, 33px, 29px, 136px);
+  @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  padding-left: 19px;
+  color: rgb(0, 0, 0);
+  padding-left: 215px;
+  padding-right: 19px;
+  outline: none;
+
+  @include media-queries.tablet {
+    left: 22px;
+    padding-left: 150px;
+    font-size: 0.95rem;
+  }
+  @include media-queries.tablett {
+    left: 22px;
+    padding-left: 150px;
+    font-size: 0.9rem;
+    height: 31px;
+    /*   font-size: .9rem;
+  height: 30px;
+  top: 128px;
+  padding-left: 200px; */
+  }
+  @include media-queries.big-phone {
+    top: 117px;
+    height: 28px;
+    font-size: 0.8rem;
+    left: 17px;
+    padding-left: 22%;
+    padding-right: 5px;
+  }
+  @include media-queries.phoness {
+    left: 10px;
+    padding-left: 47%;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 89px;
+    width: 92.9%;
+  }
+}
+
+.birth-day {
+  position: relative;
+}
+.text-birth-day {
   position: absolute;
   font-size: 25px;
   color: rgb(113, 112, 112);
-  margin-top: 208px;
+  margin-top: 143px;
+  margin-left: 6%;
+  z-index: 10;
+  @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
+
+  @include media-queries.tablet {
+  }
+  @include media-queries.tablett {
+    font-size: 0.9rem;
+  }
+  @include media-queries.big-phone {
+    margin-top: 124px;
+    font-size: 0.8rem;
+    margin-left: 28px;
+  }
+  @include media-queries.phoness {
+    margin-top: 95px;
+    font-size: 0.8rem;
+    margin-left: 22px;
+  }
+}
+
+.gender-student {
+  box-sizing: border-box;
+  position: absolute;
+  @include mixingfunc.measures(46%, 33px, 48.5%, 136px);
+  @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  padding-left: 19px;
+  color: #000000;
+  outline: none;
+  margin-left: 18px;
+
+  @include media-queries.tablet {
+    left: 48%;
+  }
+  @include media-queries.tablett {
+    left: 48%;
+    height: 31px;
+    font-size: 0.9rem;
+  }
+  @include media-queries.big-phone {
+    top: 117px;
+    height: 28px;
+    font-size: 0.8rem;
+    left: 47%;
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+  @include media-queries.phoness {
+    left: 45%;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 191px;
+  }
+}
+
+.text-gender {
+  position: absolute;
+  font-size: 25px;
+  color: rgb(113, 112, 112);
+  margin-top: 144px;
+  margin-left: 53%;
+  z-index: 10;
+  @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
+  margin-left: 53%;
+
+  @include media-queries.tablet {
+  }
+  @include media-queries.tablett {
+    font-size: 0.9rem;
+    margin-left: 54%;
+  }
+  @include media-queries.big-phone {
+    margin-top: 124px;
+    font-size: 0.8rem;
+    margin-left: 52%;
+  }
+  @include media-queries.phoness {
+    margin-left: 53.5%;
+    font-size: 0.8rem;
+    margin-top: 197px;
+  }
+}
+.username-student {
+  box-sizing: border-box;
+  position: absolute;
+  @include mixingfunc.measures(46%, 33px, 29px, 178px);
+  @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  padding-left: 19px;
+  color: #000000;
+  outline: none;
+
+  @include media-queries.tablet {
+    left: 22px;
+  }
+  @include media-queries.tablett {
+    left: 22px;
+    height: 31px;
+    font-size: 0.9rem;
+  }
+  @include media-queries.big-phone {
+    top: 152px;
+    height: 28px;
+    font-size: 0.8rem;
+    left: 17px;
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+  @include media-queries.phoness {
+    left: 10px;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 123px;
+  }
+}
+
+.password-student {
+  box-sizing: border-box;
+  position: absolute;
+  @include mixingfunc.measures(46%, 33px, 48.5%, 178px);
+  @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  padding-left: 19px;
+  color: #000000;
+  outline: none;
+  margin-left: 18px;
+
+  @include media-queries.tablet {
+    left: 48%;
+  }
+  @include media-queries.tablett {
+    left: 48%;
+    height: 31px;
+    font-size: 0.9rem;
+  }
+  @include media-queries.big-phone {
+    top: 152px;
+    height: 28px;
+    font-size: 0.8rem;
+    left: 47%;
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+  @include media-queries.phoness {
+    left: 45%;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 123px;
+  }
+}
+
+.membership-student {
+  box-sizing: border-box;
+  padding-left: 19px;
+  padding-right: 10px;
+  position: absolute;
+  width: 93.3%;
+  height: 33px;
+  left: 29px;
+  top: 220px;
+  color: #000;
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+
+  @include media-queries.tablet {
+    left: 22px;
+  }
+  @include media-queries.tablett {
+    left: 22px;
+    height: 31px;
+    font-size: 0.9rem;
+  }
+  @include media-queries.big-phone {
+    top: 187px;
+    height: 28px;
+    font-size: 0.8rem;
+    left: 17px;
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+  @include media-queries.phoness {
+    left: 10px;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 191px;
+    width: 46%;
+  }
+}
+.text-membership {
+  position: absolute;
+  font-size: 25px;
+  color: rgb(113, 112, 112);
+  margin-top: 227px;
   margin-left: 50px;
   z-index: 10;
-  @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify)
-}
+  @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
 
-
-.gender-student{
-    box-sizing: border-box;
-    position: absolute;
-    @include mixingfunc.measures(590px, 51px, 632px, 197px);
-    @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
-    border: 1px solid #8f8f8f;
-    border-radius: 10px;
-    padding-left: 19px;
-    color: rgb(0, 0, 0);
-}
-
-.text-gender{
-  position: absolute;
-  font-size: 25px;
-  color: rgb(113, 112, 112);
-  margin-top: 209px;
-  margin-left: 655px;
-  z-index: 10;
-  @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify)
-}
-.username-student{
-    box-sizing: border-box;
-    position: absolute;
-    @include mixingfunc.measures(590px, 51px, 29px, 263px);
-    @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
-    border: 1px solid #8f8f8f;
-    border-radius: 10px;
-    padding-left: 19px;
-    color: #000000;
-}
-
-.password-student{
-    box-sizing: border-box;
-    position: absolute;
-    @include mixingfunc.measures(590px, 51px, 632px, 263px);
-    @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
-    border: 1px solid #8f8f8f;
-    border-radius: 10px;
-    padding-left: 19px;
-    color: #000000;
-}
-
-.membership-student{
-    box-sizing: border-box;
-    padding-left: 19px;
-    padding-right: 10px;
-    position: absolute;
-    width: 1194px;
-    height: 51px;
-    left: 29px;
-    top: 329px;
-    color: rgb(0, 0, 0);
-    border: 1px solid #8f8f8f;
-    border-radius: 10px;
-    font-size: 25px;
-}
-.text-membership{
-  position: absolute;
-  font-size: 25px;
-  color: rgb(113, 112, 112);
-  margin-top: 340px;
-  margin-left: 50px;
-  z-index: 10;
-  @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify)
+  @include media-queries.tablet {
+  }
+  @include media-queries.tablett {
+    margin-left: 40px;
+  }
+  @include media-queries.big-phone {
+    margin-left: 30px;
+    font-size: 0.8rem;
+    margin-top: 194px;
+  }
+  @include media-queries.phoness {
+    margin-left: 20px;
+    font-size: 0.8rem;
+    margin-top: 197px;
+  }
 }
 
 #area-student {
-    box-sizing: border-box;
-    position: absolute;
-    width: 1194px;
-    height: 309px;
-    left: 29px;
-    top: 395px;
-    border-radius: 10px;
-    .editor-student {
-      
-      resize: none;
-      border-radius: 10px;
-      width: 1194px;
-      height: 530px;
-    }
+  box-sizing: border-box;
+  position: absolute;
+  width: 93.2%;
+  max-width: 1100px;
+  left: 29px;
+  top: 260px;
+  border-radius: 10px;
+
+  @include media-queries.tablet {
+    left: 22px;
+    top: 262px;
   }
+  @include media-queries.tablett {
+    left: 22px;
+    top: 262px;
+  }
+  @include media-queries.big-phone {
+    left: 17px;
+    top: 225px;
+  }
+  @include media-queries.phoness {
+    left: 10px;
+    top: 225px;
+  }
+
+  .editor-student {
+    resize: none;
+    border-radius: 10px;
+    max-width: 1200px;
+    width: 100%;
+    height: 205px;
+    @include media-queries.tablet {
+      height: 200px;
+    }
+    @include media-queries.tablett {
+    }
+    @include media-queries.big-phone {
+      height: 177px;
+    }
+    @include media-queries.phoness {
+      height: 90px;
+    }
+    /*   @include media-queries.lands {
+       height: 185px;
+     } */
+  }
+}
 
 #create-student {
   position: absolute;
-  width: 236px;
-  height: 48px;
-  left: 987px;
-  top: 726px;
+  width: 170px;
+  height: 35px;
+  right: 3%;
+  top: 585px;
   background: #338af3;
   border-radius: 20px;
   font-family: Arial;
   font-style: normal;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 18px;
   line-height: 130%;
   transition: all 0.4s ease;
-  outline:none;
+  outline: none;
   border: 0;
+
+  @include media-queries.tablet {
+    top: 580px;
+    font-size: 17px;
+    width: 155px;
+  }
+
+  @include media-queries.big-phone {
+    max-width: 130px;
+    font-size: 15px;
+    top: 520px;
+    height: 30px;
+  }
+  @include media-queries.phoness {
+    max-width: 125px;
+    font-size: 14px;
+    top: 500px;
+    height: 30px;
+  }
+
+  color: #fff;
+  &:hover {
+    background: rgb(140, 168, 250);
+  }
+}
+
+#update-student {
+/*   position: absolute;
+  width: 170px;
+  height: 35px;
+  right: 33%;
+  top: 570px;
+  background: #338af3;
+  border-radius: 20px;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+  transition: all 0.4s ease;
+  outline: none;
+  border: 0; */
+
+  /* @include media-queries.table {
+    width: 216px;
+    font-size: 22px;
+    left: 860px;
+    height: 47px;
+  }
+  @include media-queries.phone2 {
+    left: 695px;
+    width: 206px;
+    font-size: 21px;
+    height: 46px;
+  }
+  @include media-queries.phone {
+    width: 180px;
+    left: 585px;
+    font-size: 18px;
+    top: 713px;
+    height: 45px;
+  }
+  @include media-queries.mobile {
+    width: 160px;
+    left: 517px;
+    font-size: 16px;
+    top: 691px;
+    height: 43px;
+  }
+  @include media-queries.tablet {
+    width: 160px;
+    left: 517px;
+    font-size: 16px;
+    top: 691px;
+    height: 43px;
+  }
+  @include media-queries.tablett {
+    width: 140px;
+    left: 415px;
+    font-size: 13px;
+    top: 640px;
+    height: 40px;
+  }
+  @include media-queries.big-phone {
+    max-width: 140px;
+    left: 65%;
+    font-size: 13px;
+    top: 490px;
+    height: 40px;
+  }
+  @include media-queries.phoness {
+    max-width: 140px;
+    left: 55%;
+    font-size: 13px;
+    top: 490px;
+    height: 40px;
+  } */
 
   color: #ffffff;
   &:hover {
@@ -255,176 +643,454 @@
     border: 1px solid; */
   }
 }
-.cancel-student{
+.cancel-student {
   position: absolute;
-  width: 170px;
-  height: 48px;
+  width: 120px;
+  height: 35px;
   left: 25px;
-  top: 726px;
-  background:white ;
+  top: 585px;
+  background: white;
   font-family: Arial;
   font-style: normal;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 18px;
   border-radius: 20px;
-  border: 0.5px solid  rgb(150, 148, 148); 
+  border: 0.5px solid rgb(150, 148, 148);
   transition: all 0.4s ease;
- 
+
+  @include media-queries.tablet {
+    width: 100px;
+    top: 580px;
+  }
+
+  @include media-queries.big-phone {
+    font-size: 15px;
+    width: 100px;
+    top: 520px;
+    height: 30px;
+    left: 17px;
+  }
+  @include media-queries.phoness {
+    width: 90px;
+    font-size: 14px;
+    top: 500px;
+    height: 30px;
+    left: 10px;
+  }
+
   &:hover {
     background: rgb(238, 238, 238);
-    
   }
 }
-.font-title-student {
-  position: absolute;
-  width: 278px;
-  height: 39px;
-  left: 30px;
-  top: 11px;
-
-  font-family: Arial;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 130%;
-  /* identical to box height, or 39px */
-
-  color: #000000;
-}
 
 .font-title-student {
   position: absolute;
-  width: 400px;
   height: 39px;
-  left: 30px;
+  left: 28px;
   top: 11px;
-
   font-family: Arial;
   font-style: normal;
   font-weight: 600;
-  font-size: 28px;
+  font-size: 20px;
   line-height: 130%;
+
+  @include media-queries.tablet {
+    font-size: 19px;
+  }
+  @include media-queries.tablett {
+    font-size: 19px;
+  }
+  @include media-queries.big-phone {
+    font-size: 18px;
+  }
+  @include media-queries.phoness {
+    font-size: 17px;
+  }
 }
-
-
 
 /*----------------------------- Section Table---------------------- */
 
 .cont-tables-student {
-  //@include mixingfunc.measures(1051px, 594px, 344px, 142px);
-  margin: 142px 45px 288px 424px;
-  width: 1251px;
-  height: 594px;
+  margin: auto;
+  margin-top: 120px;
+  max-width: 1251px;
+  width: 70%;
+  height: 460px;
   background: #8eaaff;
-  border-radius: 20px;
-  position: absolute;
+  border-radius: 15px;
   box-shadow: 5px 10px 10px 10px rgba(0, 0, 0, 0.25);
+  position: relative;
+
+  @include media-queries.tablett {
+    width: 85%;
+  }
+  @include media-queries.tablet {
+    width: 75%;
+  }
+  @include media-queries.big-phone {
+    width: 88%;
+    height: 330px;
+    margin-top: 80px;
+  }
+  @include media-queries.phoness {
+    width: 90%;
+    height: 340px;
+    margin-top: 80px;
+  }
+  @include media-queries.big-vertical {
+    height: 505px;
+    margin-top: 100px;
+  }
 
   .cont-table-student_blue {
     overflow-y: auto;
-    width: 1251px;
-    height: 529px;
-    border-radius: 18px;
+    width: 100%;
+    max-width: 1251px;
+    height: 400px;
+    margin-top: 5px;
+
+    @include media-queries.big-phone {
+      height: 280px;
+    }
+    @include media-queries.phoness {
+      height: 295px;
+    }
+    @include media-queries.big-vertical {
+      height: 455px;
+    }
+
+    /*   @include media-queries.tablett {
+      height: 415px;
+    }
+
+    @include media-queries.phoness { 
+      height: 450px;
+   
+    } */
   }
 
   .table-student {
-    width: 1251px;
-    height: 529px;
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
     background: #ffffff;
-    border-radius: 20px;
+    border-radius: 12px;
     border-collapse: collapse;
+
+    @include media-queries.tablet {
+      width: 100%;
+    }
+    @include media-queries.tablett {
+      width: 100%;
+    }
+    @include media-queries.big-phone {
+      width: 98.8%;
+      margin-left: 6px;
+      margin-top: 3px;
+    }
+    @include media-queries.phoness {
+      width: 98.5%;
+      margin-left: 4px;
+
+      /*     margin-left: 3px;
+        margin-top: px;
+        background-color: #ffa5d3; */
+    }
+
+    @include media-queries.big-vertical {
+      height: 455px;
+    }
+
     th {
-      @include mixingfunc.font-style(
-        arial,
-        normal,
-        600,
-        30px,
-        130%,
-        center
-      );
+      @include mixingfunc.font-style(arial, normal, 600, 19px, 100%, center);
       font-family: Arial;
       border: solid 1px black;
-      height: 60px;
-      border-top:none
+      height: 40px;
+      border-top: none;
+
+      @include media-queries.tablet {
+        font-size: 16px;
+      }
+      @include media-queries.tablett {
+        font-size: 16px;
+      }
     }
     td {
-      @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, left);
- 
+      @include mixingfunc.font-style(Arial, normal, 400, 17px, 130%, left);
       border: solid 1px black;
       padding-left: 17px;
       padding-right: 17px;
       white-space: nowrap;
-      overflow: hidden; 
-      text-overflow:ellipsis;
-      max-height: 39px;
-      max-width: 400px;
-     min-width: 60px;
+      overflow: auto;
+      height: 32px;
+      max-width: 310px;
+      min-width: 60px;
       text-align: justify;
       border-bottom: none;
-      
-      
+
+      @include media-queries.tablet {
+        font-size: 14px;
+        height: 30px;
+        max-width: 190px;
+        min-width: 28px;
+      }
+      @include media-queries.tablett {
+        font-size: 13px;
+        height: 30px;
+        max-width: 170px;
+        min-width: 20px;
+      }
+      /*       @include media-queries.tablett {
+        font-size: 12px;
+        height: 24px;
+        max-width: 150px;
+        min-width: 15px;
+        background-color: #1a63f5;
+      } */
+      @include media-queries.big-phone {
+        display: block;
+        margin: auto;
+        max-width: 100%;
+        height: 40px;
+        font-size: 14px;
+        text-align: right;
+        align-items: center;
+        padding-top: 12px;
+        border: 1px solid #ddd;
+        overflow: auto;
+      }
+      @include media-queries.phoness {
+        display: block;
+        margin: auto;
+        max-width: 100%;
+        height: 35px;
+        font-size: 12px;
+        text-align: right;
+        align-items: center;
+        padding-top: 12px;
+        border: 1px solid #ddd;
+        padding-left: 8px;
+        padding-right: 8px;
+        overflow: auto;
+      }
+    }
+    td:last-child {
+      @include media-queries.big-phone {
+        border-bottom: 0;
+      }
+    }
+    td:first-child {
+      @include media-queries.big-phone {
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        text-align: right;
+      }
+      @include media-queries.phoness {
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        text-align: right;
+      }
+
+      text-align: center;
+    }
+
+    td::-webkit-scrollbar {
+      width: 8px;
+      border-radius: 20px;
+      height: 3px;
+    }
+
+    td::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 20px;
+    }
+
+    td:before {
+      @include media-queries.big-phone {
+        content: attr(data-label);
+        font-weight: bold;
+        float: left;
+        margin-right: 10px;
+      }
+      @include media-queries.phoness {
+        content: attr(data-label);
+        font-weight: bold;
+        float: left;
+        margin-right: 10px;
+        /*  border-radius: 5px;
+        background-color: #c1}d8f5;
+        padding-left: 4px;
+        padding-right: 4px;
+        text-align: left;
+        height: 18px;
+        display: flex;
+        align-items: center; */
+      }
     }
   }
 }
+
+thead {
+  @include media-queries.big-phone {
+    display: none;
+  }
+  @include media-queries.phoness {
+    display: none;
+  }
+}
+
+tr {
+  @include media-queries.big-phone {
+    background-color: #f7f7f7;
+    display: block;
+    margin-bottom: 10px;
+    border-bottom: 4px solid #ddd;
+    border-radius: 10px;
+  }
+  @include media-queries.phoness {
+    background-color: #f7f7f7;
+    display: block;
+    margin-bottom: 10px;
+    border-bottom: 4px solid #ddd;
+    border-radius: 10px;
+  }
+}
+
 .up-table-student {
   transform: translateY(-200%);
 }
 
 .btn-student {
-  @include mixingfunc.measures(256px, 48px, 980px, 539px);
-  @include mixingfunc.font-style(Arial, normal, 600, 25px, 130%, center);
+  @include mixingfunc.font-style(Arial, normal, 600, 19px, 130%, center);
+  width: 195px;
+  height: 35px;
   background: #338af3;
-  border-radius: 20px;
-  position: absolute;
+  border-radius: 15px;
   color: #ffffff;
   transition: all 0.5s ease;
-  padding-top: 5px;
+  margin-top: 10px;
+  margin-left: 785px;
   border: 0.5px solid #1a63f5;
+  position: absolute;
+  top: 88.5%;
+  right: 1%;
+  text-decoration: none;
 
   &:hover {
     background: #fff;
     color: #000;
     transition: all 0.4s ease;
   }
-  color: #ffffff;
-  text-decoration: none;
+
+  @include media-queries.tablet {
+    font-size: 18px;
+    width: 175px;
+    height: 32px;
+  }
+  @include media-queries.tablett {
+    font-size: 17px;
+    width: 170px;
+    height: 32px;
+  }
+
+  @include media-queries.big-phone {
+    font-size: 15px;
+    width: 150px;
+    height: 28px;
+    top: 86%;
+    right: 1.8%;
+  }
+  @include media-queries.phoness {
+    font-size: 14px;
+    width: 135px;
+    height: 27px;
+    top: 87.5%;
+    right: 2.5%;
+  }
+  @include media-queries.big-vertical {
+    top: 91%;
+  }
 }
 
 /*------------------Section Modal-----------*/
 
 #modal-container-student {
-   opacity: 0;
-  visibility: hidden;  
-  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
   z-index: 1000;
   @include mixingfunc.measures(100%, 100%, 0, 0);
   background-color: rgba(143, 143, 143, 0.65);
 }
 
-
 .modal-student {
   position: relative;
-  width: 1094px;
-  height: 941px;
-  left: 329px;
-  top: 41px;
+  width: 70%;
+  height: 550px;
+  margin: auto;
+  margin-top: 50px;
   border-radius: 10px;
- background-color: #ffffff;
+  background-color: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  transition: transform 1s;
+  transition: transform 1.3s;
   transform: translateY(0%);
+
+  @include media-queries.tablet {
+    width: 80%;
+    height: 50%;
+    margin-top: 80px;
+  }
+  @include media-queries.tablett {
+    background-color: #0057ff;
+    width: 80%;
+    height: 50%;
+  }
+  @include media-queries.big-phone {
+    width: 80%;
+    height: 90%;
+    margin-top: 30px;
+  }
+  @include media-queries.phoness {
+    width: 94%;
+    height: 92%;
+    margin-top: 15px;
+  }
+  @include media-queries.lands {
+    height: 80%;
+  }
 
   .close-student {
     position: absolute;
-    left:1035px;
-    right: 1.72%;
-    top: 20px;
-    bottom: 93.65%;
+    right: 1.4%;
+    top: 8px;
     color: #000;
     z-index: 1000;
     i {
-      font-size: 35px;
+      font-size: 22px;
+
+      @include media-queries.tablett {
+        font-size: 21px;
+      }
+      @include media-queries.big-phone {
+        font-size: 20px;
+      }
+      @include media-queries.phoness {
+        font-size: 19px;
+      }
+    }
+   
+    @include media-queries.tablet {
+      right: 1.3%;
+    }
+    @include media-queries.tablett {
+      right: 1.3%;
+    }
+    @include media-queries.big-phone {
+      right: 1.5%;
+    }
+    @include media-queries.phoness {
+      right: 1.7%;
     }
   }
 
@@ -439,224 +1105,149 @@
     overflow: auto;
     padding: 20px 40px 20px 20px;
   }
-  .hola{
+  .hola {
     position: absolute;
     width: 483px;
     height: 40px;
     left: 540px;
     top: 107px;
-    background: #038C33;
+    background: #038c33;
     border-radius: 20px;
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 300;
     font-size: 20px;
     line-height: 30px;
     padding-left: 0px;
-text-align: center;
-color: #FFFFFF;
-
-    }
-  .hola1{
+    text-align: center;
+    color: #ffffff;
+  }
+  .hola1 {
     position: absolute;
     width: 483px;
     height: 40px;
     left: 540px;
     top: 160px;
-    background: #8F8F8F;
+    background: #8f8f8f;
     border-radius: 20px;
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 300;
     font-size: 20px;
     line-height: 30px;
     padding-left: 0px;
-text-align: center;
-color: #FFFFFF;
-
-    }
-  .hola2{
+    text-align: center;
+    color: #ffffff;
+  }
+  .hola2 {
     position: absolute;
     width: 483px;
     height: 40px;
     left: 540px;
     top: 213px;
-    background: #8F8F8F;
+    background: #8f8f8f;
     border-radius: 20px;
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 300;
     font-size: 20px;
     line-height: 30px;
     padding-left: 0px;
-text-align: center;
-color: #FFFFFF;
-
-    }
-    .hello{
-      position: absolute;
-width: 235px;
-height: 32px;
-left: 519px;
-top: 55px;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 25px;
-line-height: 130%;
-/* or 32px */
-color: #000000;
-    }
-}
-    .hello2{
-      
-      position: absolute;
-      width: 221px;
-      height: 32px;
-      left: 437px;
-      top: 569px;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 25px;
-line-height: 130%;
-/* or 32px */
-color: #000000;
-    }
-.succes-student{
-position: absolute;
-left: 50.27%;
-right: 47.44%;
-top: 12.5%;
-bottom: 85.23%;
-font-size: 25px;
-color: #FFFFFF;
-}
-.succes-student2{
-position: absolute;
-left: 50.27%;
-right: 47.44%;
-top: 17.9%;
-bottom: 85.23%;
-font-size: 25px;
-color: #FFFFFF;
-}
-.succes-student23{
-position: absolute;
-left: 50.27%;
-right: 47.44%;
-top: 23.9%;
-bottom: 85.23%;
-font-size: 25px;
-color: #FFFFFF;
-}
-.dowload1{
-position: absolute;
-width: 221px;
-height: 45px;
-left: 100px;
-top: 481px;
-border: 1px solid #8F8F8F;
-border-radius: 20px;
-font-family: Arial;
-font-style: normal;
-font-weight: 400;
-font-size: 25px;
-line-height: 130%;
-text-align: center;
-padding-top: 5px;
-color: #0057FF;
-}
-.dowload2{
-position: absolute;
-width: 221px;
-height: 45px;
-left: 100px;
-top: 829px;
-border: 1px solid #8F8F8F;
-border-radius: 20px;
-font-family: Arial;
-font-style: normal;
-font-weight: 400;
-font-size: 25px;
-line-height: 130%;
-text-align: center;
-padding-top: 5px;
-color: #0057FF;
-}
-.modal-clos {
-  transform: translateY(-200%); 
- }
-
-
-
-
-/*-------------Modal delete --------------------------*/
-
-
-/*modal-container*/
-#modal-container-dr {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  z-index: 1000;
-  @include mixingfunc.measures(100%, 100%, 0, 0);
-  background-color: rgba(143, 143, 143, 0.65);
-}
-
-.modal-dr {
-  box-sizing: border-box;
-  position: absolute;
-  @include mixingfunc.measures(898px, 305px, 25%, 381px);
-  bottom: 338px;
-  background: rgba(255, 255, 255, 0.65);
-  border: 3px solid #0057ff;
-  box-shadow: 0px 4px 6px 3px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  transition: transform 1s;
-  transform: translateY(0%);
-  /*modal resource*/
-
-  h3 {
+    text-align: center;
+    color: #ffffff;
+  }
+  .hello {
     position: absolute;
-    @include mixingfunc.measures(166px, 39px, 366px, 21px);
-    @include mixingfunc.font-style(Arial, normal, 600, 30px, 130%, center);
+    width: 235px;
+    height: 32px;
+    left: 519px;
+    top: 55px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 130%;
+    /* or 32px */
     color: #000000;
   }
 }
-#text-dr {
-  box-sizing: border-box;
+.hello2 {
   position: absolute;
-  @include mixingfunc.measures(808px, 129px, 45px, 82px);
-  @include mixingfunc.font-style(Arial, normal, 300, 20px, 130%, center);
-  border: 1px solid #8f8f8f;
-  border-radius: 10px;
-  resize: none;
+  width: 221px;
+  height: 32px;
+  left: 437px;
+  top: 569px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 130%;
+  /* or 32px */
   color: #000000;
-  padding-left: 18px;
-  padding-top: 12px;
 }
-
-.bnt-dr {
+.succes-student {
   position: absolute;
-  /*   @include mixingfunc.measures(186px, 48px, 667px, 237px); */
-  @include mixingfunc.measures(137px, 32px, 692px, 245px);
-  @include mixingfunc.font-style(Arial, normal, 700, 25px, 130%, center);
-  background: #d80027;
-  border-radius: 20px;
-  position: absolute;
+  left: 50.27%;
+  right: 47.44%;
+  top: 12.5%;
+  bottom: 85.23%;
+  font-size: 25px;
   color: #ffffff;
 }
-
-.btn-dr2 {
+.succes-student2 {
   position: absolute;
-  @include mixingfunc.measures(84px, 32px, 45px, 245px);
-  @include mixingfunc.font-style(Arial, normal, 600, 25px, 130%, center);
-  color: #000000;
+  left: 50.27%;
+  right: 47.44%;
+  top: 17.9%;
+  bottom: 85.23%;
+  font-size: 25px;
+  color: #ffffff;
 }
-.modal-close-dr {
+.succes-student23 {
+  position: absolute;
+  left: 50.27%;
+  right: 47.44%;
+  top: 23.9%;
+  bottom: 85.23%;
+  font-size: 25px;
+  color: #ffffff;
+}
+.dowload1 {
+  position: absolute;
+  width: 221px;
+  height: 45px;
+  left: 100px;
+  top: 481px;
+  border: 1px solid #8f8f8f;
+  border-radius: 20px;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 130%;
+  text-align: center;
+  padding-top: 5px;
+  color: #0057ff;
+}
+.dowload2 {
+  position: absolute;
+  width: 221px;
+  height: 45px;
+  left: 100px;
+  top: 829px;
+  border: 1px solid #8f8f8f;
+  border-radius: 20px;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 130%;
+  text-align: center;
+  padding-top: 5px;
+  color: #0057ff;
+}
+.modal-clos {
   transform: translateY(-200%);
-  /*modal close*/
 }
 
 
@@ -666,38 +1257,97 @@ color: #0057FF;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   i {
     width: 35px;
-    height: 43px;
-    padding-top: 3px;
     transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .edit-student {
-    font-size: 30px;
+    font-size: 19px;
     color: #ff9811;
+    transition: all 0.4s ease;
     &:hover {
       color: #6e7f8f;
     }
+
+    @include media-queries.tablet {
+      font-size: 17px;
+    }
+    @include media-queries.tablett {
+      font-size: 16px;
+    }
+    @include media-queries.big-phone {
+      font-size: 18px;
+    }
+    @include media-queries.phoness {
+      font-size: 16px;
+    }
   }
   .remove-student {
-    font-size: 30px;
+    font-size: 19px;
     color: red;
-     &:hover {
+    transition: all 0.4s ease;
+    &:hover {
       color: #6e7f8f;
+    }
+
+    @include media-queries.tablet {
+      font-size: 17px;
+    }
+    @include media-queries.tablett {
+      font-size: 16px;
+    }
+    @include media-queries.big-phone {
+      font-size: 18px;
+    }
+    @include media-queries.phoness {
+      font-size: 16px;
     }
   }
 
   .read-student {
-    font-size: 30px;
+    font-size: 19px;
     color: #0057ff;
-     &:hover {
+    transition: all 0.4s ease;
+    &:hover {
       color: #6e7f8f;
     }
+
+    @include media-queries.tablet {
+      font-size: 17px;
+    }
+    @include media-queries.tablett {
+      font-size: 16px;
+    }
+    @include media-queries.big-phone {
+      font-size: 18px;
+    }
+    @include media-queries.phoness {
+      font-size: 16px;
+    }
+  }
+
+  @include media-queries.big-phone {
+    justify-content: flex-end;
+    grid-gap: 18px;
+    align-items: center;
+    height: 10px;
+    padding-top: 7px;
+  }
+  @include media-queries.phoness {
+    justify-content: flex-end;
+    grid-gap: 18px;
+    align-items: center;
+    height: 10px;
+    padding-top: 2px;
   }
 }
 
-.refname{
+.refname {
   display: flex;
   font-size: 25px;
   font-weight: 700;
@@ -707,38 +1357,236 @@ color: #0057FF;
   margin-top: 25px;
 }
 
-
-#myChart{
+#myChart {
   position: absolute;
   background-color: #0057ff;
 }
 
-.card-info-students{
+.card-info-students {
   box-sizing: border-box;
-position: absolute;
-width: 357px;
-height: 192px;
-left: 72px;
-top: 51px;
-border: 1px solid rgba(143, 143, 143, 0.65);
-border-radius: 20px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-font-family: Arial;
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 30px;
+  position: absolute;
+  width: 357px;
+  height: 192px;
+  left: 72px;
+  top: 51px;
+  border: 1px solid rgba(143, 143, 143, 0.65);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  overflow: auto;
+  color: #000;
+}
 
+.fa-bars {
+  position: absolute;
+  font-size: 31px;
+  margin-left: 4%;
+  margin-top: 4%;
+  color: #fff;
+  visibility: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  &:hover {
+    color: #dedcdc;
+  }
+  /*   @include media-queries.tablet {
+    visibility: visible;
+    z-index: 101;
+  } */
+  @include media-queries.tablett {
+    visibility: visible;
+    z-index: 101;
+  }
+  @include media-queries.big-phone {
+    visibility: visible;
+    z-index: 101;
+    font-size: 26px;
+    margin-top: 5%;
+  }
+  @include media-queries.phoness {
+    visibility: visible;
+    z-index: 101;
+    font-size: 24px;
+    margin-top: 5%;
+  }
+  @include media-queries.lands {
+    margin-top: 3.5%;
+  }
+}
 
-overflow: auto;
-color: #000;
+.changeColor {
+  color: #575757;
+  transition: all 0.4s ease;
+  opacity: 0.9;
+  &:hover {
+    color: #898989;
+  }
+}
+/* @media screen and (max-width: 1600px) {
+  .cont-tables-student.cont-tables-student{
+    width: 1150px;
+  }
+  .cont-tables-student.cont-tables-student .table-student{
+    font-size: 10px
+  }
+  .cont-tables-student.cont-tables-student .table-student td{
+    font-size: 21px;
+    max-width: 300px;
+    min-width: 60px;
+  }
+}
 
-/* or 32px */
+  */
+  
 
+.cont-table-student_blue::-webkit-scrollbar {
+  width: 7.9px;
+  border-radius: 20px;
+  height: 8px;
+}
 
-color: #000000;
+.cont-table-student_blue::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  &:hover {
+    background: rgba(255, 255, 255, 0.4);
+  }
+}
+.nada {
+  color: #000;
+  font-size: 40px;
+}
 
+/*Tooltip*/
+
+.tooltip {
+  width: 230px;
+  height: 255px;
+  background: #4457b9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  position: absolute;
+  top: 70px;
+  padding: 23px;
+  padding-right: 10px;
+  padding-left: 18px;
+  right: 30.4%;
+  display: none;
+  z-index: 1000;
+}
+
+.tooltip:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-bottom: 18px solid #4457b9;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  left: 72.5%;
+  bottom: 255px;
+}
+
+.show_tooltip {
+  display: inline;
+}
+.see_courses {
+  display: flex;
+  gap: 7px;
+  transition: all 0.3s ease;
+  user-select: none;
+  &:hover {
+    background-color: #4f67e0;
+    border-radius: 10px;
+    width: 100%;
+    transform: scale(1.02);
+  }
+}
+
+.subscription-img {
+  width: 25px;
+  height: 25px;
+}
+
+.resources {
+  display: flex;
+  gap: 7px;
+  transition: all 0.3s ease;
+  user-select: none;
+  &:hover {
+    background-color: #4f67e0;
+    border-radius: 10px;
+    width: 100%;
+    transform: scale(1.02);
+  }
+}
+
+.subs {
+  display: flex;
+  gap: 7px;
+  transition: all 0.4s ease;
+  user-select: none;
+  &:hover {
+    background-color: #4f67e0;
+    border-radius: 10px;
+    width: 100%;
+    transform: scale(1.02);
+  }
+}
+
+.customer_service {
+  display: flex;
+  gap: 7px;
+  transition: all 0.4s ease;
+  user-select: none;
+  &:hover {
+    background-color: #4f67e0;
+    border-radius: 10px;
+    width: 100%;
+    transform: scale(1.02);
+  }
+}
+
+.section_medium {
+  margin-top: 28px;
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.section_final {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.logout {
+  display: flex;
+  gap: 7px;
+  transition: all 0.4s ease;
+  user-select: none;
+  &:hover {
+    background-color: #4f67e0;
+    border-radius: 10px;
+    width: 100%;
+    transform: scale(1.02);
+  }
+}
+.profile_user {
+  display: flex;
+  gap: 7px;
+  transition: all 0.4s ease;
+  user-select: none;
+  &:hover {
+    background-color: #4f67e0;
+    border-radius: 10px;
+    width: 100%;
+    transform: scale(1.02);
+  }
 }

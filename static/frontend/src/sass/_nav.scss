@@ -1,4 +1,5 @@
 @use "mixingfunc";
+@use "media-queries";
 
 @mixin fa-btn-style($left, $right, $top, $bottom) {
   position: absolute;
@@ -47,34 +48,109 @@
   }
 }
 
-/* .nav__icon {
+.nav__icon {
   position: absolute;
-  left: 700px;
-  top: 35px;
-  width: 700px;
+  right: 9%;
+  top: 30px;
+  width: 50%;
   height: 60px;
   display: flex;
   justify-content: flex-end;
-  background-color: aqua;
+  gap: 40px;
+  align-items: center;
+
+
+  @include media-queries.big-phone {
+    top: 20px;
+    height: 40px;
+    gap: 30px;
+    width: 70%;
+    }
+    @include media-queries.phoness {
+      top: 20px;
+      height: 40px;
+      gap: 30px;
+      width: 70%;
+    }
+  
+  
 }
- */
+
 .fa-bell {
-  @include fa-btn-style(75.5%, 19.58%, 5.08%, 90.04%);
+  /* @include fa-btn-style(75.5%, 19.58%, 5.08%, 90.04%); */
+  transition: all .4s ease;
+  font-size: 35px;
+  color: #fff;
   &:hover {
-    color: rgba(230, 218, 218, 0.5);
+    transform: scale(1.1);
   }
-}
+
+  @include media-queries.tablet {
+    font-size: 33px;
+ 
+
+  }
+  @include media-queries.tablett {
+  font-size: 30px;
+
+  }
+  @include media-queries.big-phone {
+  font-size: 28px;
+  
+  }
+  @include media-queries.phoness {
+  font-size: 25px;
+
+  }
+  }
+
 .fa-envelope {
   margin-left: 50px;
-  @include fa-btn-style(79.5%, 12.5%, 5.08%, 90.04%);
+  font-size: 35px;
+  color: #fff;
+
+  @include media-queries.tablet {
+    font-size: 33px; 
+  }
+  @include media-queries.tablett {
+    font-size: 30px;
+  }
+  @include media-queries.big-phone {
+    font-size: 28px;
+  }
+  @include media-queries.phoness {
+    font-size: 25px; 
+  }
 }
 
 .profile {
-  @include mixingfunc.measures(83px, 83px, 1590px, 35px);
-  position: absolute;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: url("/src/public/perfil2.jpg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  margin-left: 5%;
+
+
+  @include media-queries.tablet {
+    width: 44px;
+    height: 44px;
+  }
+  @include media-queries.tablett {
+    width: 40px;
+    height: 40px;
+  }
+  @include media-queries.big-phone {
+    width: 35px;
+    height: 35px;
+    margin-left: 8%;
+  }
+  @include media-queries.phoness {
+    width: 33px;
+    height: 33px;
+    margin-left: 10%;
+  }
+ 
 }

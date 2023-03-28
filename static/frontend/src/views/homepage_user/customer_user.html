@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/homepage_user/homepage_user.css">
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <title>Profile User</title>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <img src="/src/public/logo-charlotte.png" class="logo">
+            <ul class="navbar__menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">Dashboard</a></li>
+                <div class="user">
+                    <i class="far fa-user-circle"></i>
+                   <p>Alberto B.</p>
+                   <i class="fas fa-chevron-down open_tooltip"></i>
+                   <div class="tooltip">
+                       <div class="profile">
+                        <i class="fas fa-user-circle"></i>
+                        <p>See my profile</p>
+                       </div>
+                       <div class="section_medium">
+                           <div class="see_courses">
+                             <img src="/src/public/homepageUser/course.png" alt="">
+                             <p>See all my courses</p>
+                           </div>
+                           <div class="resources">
+                             <img src="/src/public/homepageUser/resource.png" alt="">
+                             <p>Resources</p>
+                           </div>
+                           <div class="subs">
+                             <img src="/src/public/homepageUser/subscription.png" alt="" class="subscription-img">
+                             <p>My subscription</p>
+                           </div>
+                        </div>
+                        <div class="section_final">
+                            <div class="customer_service">
+                              <img src="/src/public/homepageUser/customer.png" alt="">
+                              <p>Customer service</p>
+                            </div>
+                          <div class="logout">
+                            <img src="/src/public/homepageUser/logout.png" alt="">
+                            <p>Log out</p>
+                          </div>
+                        </div>
+                   </div>
+                </div>
+                <div class="user_notification">
+                    <img src="/src/public/homepageUser/notificacion (1).png" class="notifications">
+                    <div class="tooltip_message">
+                        <div class="notify_content">
+                            <div class="notify">
+                              <div class="notify_section">
+                                  <label class="notify_circle" id="color1"></label>
+                                  <h2 class="notify_title">Notify</h2>
+                              </div>
+                              <p class="notify_subject">Subject: "Welcome lorem ipsum"</p>
+                            </div>
+                            <div class="notify">
+                              <div class="notify_section">
+                                  <label class="notify_circle" id="color2"></label>
+                                  <h2 class="notify_title">Receive new Certify</h2>
+                              </div>
+                              <p class="notify_subject">Subject: "Congratulations"</p>
+                            </div>
+                            <div class="notify">
+                              <div class="notify_section">
+                                  <label class="notify_circle"></label>
+                                  <h2 class="notify_title">Renew your membership</h2>
+                              </div>
+                              <p class="notify_subject">Subject: "Welcome lorem ipsum"</p>
+                            </div>
+                            <div class="notify">
+                              <div class="notify_section">
+                                  <label class="notify_circle"></label>
+                                  <h2 class="notify_title">Lvl 1 Completed</h2>
+                              </div>
+                              <p class="notify_subject">Subject: "Welcome lorem ipsum"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="selectbox">
+                    <div class="select" id="select">
+                        <div class="content-select">
+                            <img src="/src/public/homepage/united_states-icon.png" class="country-icon">
+                        </div>
+                        <i class="fas fa-angle-down down"></i>
+                    </div>
+            <div class="options" id="options">
+                <div class="option">
+                    <div class="content-option">
+                        <img src="/src/public/hompage/brazil-icon.png" class="country-icon" id="brasil">
+                        <p class="title">PT</p>
+                    </div>
+                </div>
+                <div class="option">
+                    <div class="content-option">
+                        <img src="/src/public/hompage/spain-icon.png" class="country-icon" id="spain">
+                        <p class="title">ES</p>
+                    </div>
+                </div>
+                <div class="option">
+                    <div class="content-option">
+                        <img src="/src/public/hompage/france-icon.png" class="country-icon" id="japan">
+                        <p class="title">FR</p>
+                    </div>
+                </div>
+                <div class="option">
+                    <div class="content-option">
+                        <img src="/src/public/hompage/united_states-icon.png" class="country-icon" id="eeuu">
+                        <p class="title">EN</p>
+                    </div>
+                </div>
+            </div>
+                 </div>
+                <input type="hidden" name="pais"id="inputSelect" value="">
+            </ul>
+    </div>
+
+    <div class="profile-user">
+        <img src="/src/public/homepageUser/profile-user.png"  class="profile_picture-user">
+        <div class="content_descrption-user">
+            <h1 class="name-user">Jeffrey Collins Ipsum</h1>
+            <p class="description-user">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam modi suscipit reiciendis nesciunt hic. Maxime pariatur mollitia illo eveniet, nihil architecto reprehenderit vitae, ipsum unde tenetur explicabo. Veritatis, amet! Architecto.</p>
+            <div ><a href="./edit_user.html" class="edit_profile-user">Edit Profile</a></div>
+        </div>
+    </div>
+
+    <div class="cards_courses">
+        <div class="card_courses-user">
+            <h1 class="title-card">Enrolled Courses</h1>
+            <div class="card-section">
+                <p class="card-text">[Free] English courses for restarants</p>
+                <button class="btn-resume">Resume</button>
+            </div>
+            <div class="card-section">
+                <p class="card-text">[Basic] English courses General</p>  
+            </div>
+            <div class="card-section">
+                <p class="card-text">[Pro] English courses for restarants</p>
+               
+            </div>
+            <div class="card-section">
+                <p class="card-text">[Pro+] English courses for restarants</p>
+          
+            </div>
+            
+        </div>
+        <div class="card_courses-user">
+            <h1 class="title-card">Completed Courses</h1>
+            <div class="card-section">
+                <p class="card-text">[Free] English courses for restarants</p>
+                <button class="btn-certificate">Certificate</button>
+            </div>
+            <div class="card-section">
+                <p class="card-text">[Free] English courses for restarants</p>
+                <button class="btn-certificate">Certificate</button>
+            </div>
+            <div class="card-section">
+                <p class="card-text">[Free] English courses for restarants</p>
+                <button class="btn-certificate">Certificate</button>
+            </div>
+            <div class="card-section">
+                <p class="card-text">[Free] English courses for restarants</p>
+                <button class="btn-certificate">Certificate</button>
+            </div>
+        
+
+        </div>
+
+    </div>
+    <div class="badges">
+        <h1 class="insignias">Insignias</h1>
+         <img src="/src/public/homepageUser/insignia.png" class="img-insignias">
+        
+    </div>
+
+    <div class="information">
+        <div class="information-contact">
+            <div class="contact">
+                <div class="link_call">
+                        <p class="">Call us: (01) 569 784 4578 </p>
+                        <i class="fas fa-phone-alt phone-icon"></i>
+                    </div>
+                    <a href="" class="text-color">Click here to CALL</a>
+            </div>
+
+            <div class="contact-icons">
+                <a class="text-white">Contact us through</a>
+                <div class="icons">
+                    <img src="/src/public/homepage/telegram-icon.png" class="telegram-icon">
+                    <img src="/src/public/homepage/whatsap-icon.png" class="whatsapp-icon">
+                </div>
+            </div>
+
+            <div class="customer-service">
+                <a href="" class="text-color">Customer service</a>
+                <img src="/src/public/homepage/headphone-icon.png" class="headphone-icon">
+            </div>
+
+        </div>
+        <div class="logo-contact">
+            <img src="/src/public/charlotte-logo.png" class="logoo">
+
+        </div>
+
+    </div>
+
+    <div>
+        <p class="copy"> 2023 Charlotte Language Center. All rights reserved <i class="far fa-copyright"></i> </p>
+    </div>
+    <div class="container_enrolled">
+        <div class="enrolled_course move_modal-certificate">
+            <img src="/src/public/logo-charlotte.png" class="logo_modal">
+            <h1 >[Free] English Course for Restaurants</h1>
+            <div class="section-certificate">
+                <img src="/src/public/homepageUser/paper.png" alt="">
+                <div>
+                    <a href="./certificate.html">
+                        <div class="btn_view-certificate" id="btn-certificate">View Certificate Online</div>
+                    </a> 
+                    <div class="btn_dowload-certificate" id="btn-certificate">Dowload Certificate Online</div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    </div>
+
+    <script src="/src/js/homepage_user/homepage_user.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous"> </script>
+   
+</body>
+</html>

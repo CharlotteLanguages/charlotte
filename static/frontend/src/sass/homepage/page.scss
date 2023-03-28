@@ -11,6 +11,14 @@
 html {
   scroll-behavior: smooth;
   position: relative;
+  min-height: 100vh;
+}
+body{
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: 1fr auto;
+  background-color: #eeeeee;
+
 }
 
 .navbar__social-medias {
@@ -18,24 +26,13 @@ html {
   display: flex;
   justify-content: space-between;
   background: #e8e8e8;
-  height: 45px;
+  height: 38px;
   position: sticky;
   z-index: 1000;
   border-top: solid 3px #2345a1;
   align-items: center;
   position: relative;
-  @include media-queries.table {
-    height: 44px;
-  }
-  @include media-queries.phone2 {
-    height: 43px;
-  }
-  @include media-queries.phone {
-    height: 42px;
-  }
-  @include media-queries.mobile {
-    height: 41px;
-  }
+
   @include media-queries.tablet {
     height: 40px;
   }
@@ -58,24 +55,13 @@ html {
 }
 
 .btn__social-medias {
-  font-size: 33px;
+  font-size: 26px;
   margin-left: 15px;
   transition: all 0.3s ease;
   &:hover {
     transform: scale(1.04);
   }
-  @include media-queries.table {
-    font-size: px;
-  }
-  @include media-queries.phone2 {
-    font-size: 30px;
-  }
-  @include media-queries.phone {
-    font-size: 28px;
-  }
-  @include media-queries.mobile {
-    font-size: 27px;
-  }
+  
   @include media-queries.tablet {
     font-size: 26px;
   }
@@ -123,7 +109,7 @@ html {
 
 .navbar {
   width: 100%;
-  height: 120px;
+  height: 5%;
   background-color: #393939;
   display: flex;
   justify-content: space-between;
@@ -132,32 +118,20 @@ html {
   z-index: 998;
   top: 0px;
   transition: all 0.4s ease;
-  /* opacity: .930; */
   padding-bottom: 2.5px;
   border-bottom: solid 2.5px #2345a1;
-  @include media-queries.table {
-    height: 115px;
-  }
-  @include media-queries.phone2 {
-    height: 110px;
-  }
-  @include media-queries.phone {
-    height: 105px;
-  }
-  @include media-queries.mobile {
-    height: 100px;
-  }
+  
   @include media-queries.tablet {
-    height: 80px;
+ 
   }
   @include media-queries.tablett {
-    height: 76px;
+    height: 72px;
   }
   @include media-queries.big-phone {
     height: 65px;
   }
   @include media-queries.phoness {
-    height: 65px;
+    height: 63px;
   }
 }
 .navbar__menu {
@@ -167,10 +141,18 @@ html {
   justify-content: space-between;
   margin-right: 20px;
 
+
+
+
   li {
     list-style: none;
     transition: all 0.4s ease;
+    cursor: pointer;
+    user-select: none;
+    
+
     @include media-queries.big-phone {
+
       margin-bottom: 100px;
       transition: all 0.5s ease;
       width: 90%;
@@ -179,6 +161,7 @@ html {
       display: flex;
       justify-content: center;
       align-items: center;
+   
 
       &:hover {
         background-color: #4457b9;
@@ -187,15 +170,14 @@ html {
       }
     }
     @include media-queries.phoness {
-      margin-bottom: 100px;
+      margin-bottom: 18%;
       transition: all 0.5s ease;
       width: 90%;
       text-align: center;
-      height: 50px;
+      height: 38px;
       display: flex;
       justify-content: center;
       align-items: center;
-
       &:hover {
         background-color: #4457b9;
         border-radius: 20px;
@@ -203,12 +185,17 @@ html {
       }
     }
 
+    @include media-queries.landi {
+      margin-bottom: 8%;
+    }
+  
+
     a {
       text-decoration: none;
       font-family: "Roboto", sans-serif;
       font-style: normal;
       font-weight: 600;
-      font-size: 26px;
+      font-size: 21px;
       line-height: 30px;
       color: #e8e8e8;
       transition: all 0.4s ease;
@@ -217,30 +204,20 @@ html {
         color: #ffffff;
       }
 
-      @include media-queries.table {
-        font-size: 25px;
-      }
-      @include media-queries.phone2 {
-        font-size: 24px;
-      }
-      @include media-queries.phone {
-        font-size: 23px;
-      }
-      @include media-queries.mobile {
-        font-size: 21px;
-      }
+      
       @include media-queries.tablet {
-        font-size: 19px;
+        font-size: 20px;
       }
       @include media-queries.tablett {
         font-size: 17px;
       }
       @include media-queries.big-phone {
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 500;
+
       }
       @include media-queries.phoness {
-        font-size: 21px;
+        font-size: 19px;
         font-weight: 500;
       }
     }
@@ -250,18 +227,7 @@ html {
     }
   }
 
-  @include media-queries.table {
-    width: 63%;
-  }
-  @include media-queries.phone2 {
-    width: 62%;
-  }
-  @include media-queries.phone {
-    width: 65%;
-  }
-  @include media-queries.mobile {
-    width: 65%;
-  }
+ 
   @include media-queries.tablet {
     width: 67%;
     margin-right: 10px;
@@ -281,11 +247,12 @@ html {
     top: 0px;
     justify-content: start;
     margin-right: 0;
-    padding-top: 12%;
+    padding-top: 10%;
     margin-top: 102px;
     transform: translateX(150%);
     transition: transform 1s;
     overflow: auto;
+    padding-bottom: 40px;
   }
   @include media-queries.phoness {
     transition: all 0.4s ease;
@@ -298,45 +265,40 @@ html {
     top: 0px;
     justify-content: start;
     margin-right: 0;
-    padding-top: 12%;
+    padding-top: 10%;
     margin-top: 102px;
     transform: translateX(150%);
     transition: transform 1s;
     overflow: auto;
     padding-bottom: 40px;
   }
+  @include media-queries.landi {
+    padding-top: 4%;
+    padding-bottom: 90px;
+  }
+
 
   #login {
-    width: 151px;
-    height: 50px;
+    width: 135px;
+    height: 40px;
     background: #4457b9;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 50px;
-    text-align: center;
-    padding-top: 12px;
     color: #ffffff;
     font-family: Arial;
     font-style: normal;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 22px;
     line-height: 30px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: all 0.4s ease;
     &:hover {
       background: #4f66da;
     }
-    @include media-queries.table {
-      font-size: 25px;
-    }
-    @include media-queries.phone2 {
-      font-size: 24px;
-    }
-    @include media-queries.phone {
-      font-size: 23px;
-    }
-    @include media-queries.mobile {
-      font-size: 21px;
-    }
+  
     @include media-queries.tablet {
       font-size: 19px;
       width: 125px;
@@ -350,12 +312,14 @@ html {
       padding-top: 5px;
     }
     @include media-queries.big-phone {
-      font-size: 24px;
+      font-size: 20px;
       background: none;
       box-shadow: none;
       width: 90%;
       padding-top: 3px;
       font-weight: 500;
+      height: 50px;
+      font-weight: 0;
     }
     @include media-queries.phoness {
       background: none;
@@ -363,8 +327,13 @@ html {
       width: 90%;
       padding-top: 3px;
       font-weight: 500;
-      font-size: 21px;
+      font-size: 19px;
       font-weight: 500;
+      margin-bottom: 20px;
+      height: 38px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
@@ -386,11 +355,13 @@ html {
   margin-right: 3%;
   display: none;
 
+
   @include media-queries.big-phone {
     display: inline-flex;
   }
   @include media-queries.phoness {
     display: inline-flex;
+    margin-right: 3.5%;
   }
 }
 
@@ -399,56 +370,39 @@ ul.show {
 }
 
 .logo {
-  width: 250px;
-  height: 97px;
+  width: 150px;
+  height: 65px;
   margin-left: 30px;
-
-  @include media-queries.table {
-    width: 242px;
-    height: 90px;
-  }
-  @include media-queries.phone2 {
-    width: 230px;
-    height: 88px;
-  }
-  @include media-queries.phone {
-    width: 220px;
-    height: 84px;
-    margin-left: 25px;
-  }
-  @include media-queries.mobile {
-    width: 210px;
-    height: 80px;
-    margin-left: 25px;
-  }
   @include media-queries.tablet {
-    width: 175px;
+    width: 150px;
     height: 65px;
     margin-left: 18px;
   }
   @include media-queries.tablett {
-    width: 155px;
+    width: 140px;
     height: 58px;
     margin-left: 12px;
   }
   @include media-queries.big-phone {
-    width: 155px;
-    height: 58px;
+    width: 120px;
+    height: 55px;
     margin-left: 12px;
   }
   @include media-queries.phoness {
-    width: 125px;
-    height: 50px;
+    width: 110px;
+    height: 45px;
     margin-left: 9px;
+    padding-top: 1px;
   }
 }
 .logo-charlotte {
   width: 100%;
-  max-width: 464px;
-  max-height: 200px;
+  max-width: 350px;
+  max-height: 160px;
   height: auto;
   margin-top: 61px;
   margin: auto;
+
 
   @include media-queries.big-phone {
     width: 40%;
@@ -464,28 +418,12 @@ ul.show {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-size: 22px;
+  font-size: 20px;
   text-align: left;
   justify-content: space-around;
-  padding-left: 80px;
+  padding-left: 40px;
   width: 100%;
-  @include media-queries.table {
-    font-size: 19px;
-    padding-left: 28px;
-  }
-
-  @include media-queries.phone2 {
-    font-size: 18px;
-    padding-left: 26px;
-  }
-  @include media-queries.phone {
-    font-size: 17px;
-    padding-left: 24px;
-  }
-  @include media-queries.mobile {
-    font-size: 16px;
-    padding-left: 22px;
-  }
+ 
   @include media-queries.tablet {
     font-size: 15px;
     padding-left: 22px;
@@ -501,10 +439,11 @@ ul.show {
     top: 130px;
   }
   @include media-queries.phoness {
-    font-size: 12.5px;
-    padding-left: 8px;
+    font-size: 8px;
+    padding-left: 12px;
     position: absolute;
-    top: 100px;
+    top: 80px;
+    width: 45%;
   }
 }
 .phone {
@@ -520,26 +459,12 @@ ul.show {
 .phone-icon {
   position: absolute;
   top: 55%;
-  left: 32.6%;
-  width: 40px;
-  height: 40px;
-  color: #000;
-  font-size: 25px;
+  left: 180px;
+  width: 28px;
+  height: 28px;
+  color: #acacac;
+  font-size: 23px;
 
-  @include media-queries.table {
-    left: 171px;
-  }
-  @include media-queries.phone2 {
-    left: 166px;
-  }
-  @include media-queries.phone {
-    left: 156px;
-    font-size: 22px;
-  }
-  @include media-queries.mobile {
-    left: 145px;
-    font-size: 21px;
-  }
   @include media-queries.tablet {
     left: 135px;
     font-size: 21px;
@@ -549,18 +474,23 @@ ul.show {
     font-size: 21px;
   }
   @include media-queries.big-phone {
-    font-size: 20px;
-    left: 128px;
+    font-size: 18px;
+    left: 134px;
   }
   @include media-queries.phoness {
     font-size: 16px;
-    left: 118px;
+    left: 18%;
+    top: 126%;
   }
 }
 .contact-icons {
   position: relative;
   margin-left: 10px;
   margin-bottom: 30px;
+  @include media-queries.phoness {
+    margin-top: 10px;
+  }
+
 
   .icons {
     position: absolute;
@@ -569,37 +499,24 @@ ul.show {
     left: 30px;
     @include media-queries.phoness {
       top: 0;
-      left: 20px;
+      left: 5px;
     }
   }
   @include media-queries.big-phone {
   }
   @include media-queries.phoness {
+    margin-left: 5px;
+ 
   }
 }
 .telegram-icon {
   margin-top: 16px;
-
-  @include media-queries.table {
-    width: 31px;
-    height: 31px;
-  }
-  @include media-queries.phone2 {
-    width: 29px;
-    height: 29px;
-  }
-
-  @include media-queries.phone {
-    width: 27px;
-    height: 27px;
-  }
-  @include media-queries.mobile {
-    width: 26px;
-    height: 26px;
-  }
+  width: 26px;
+  height: 26px;
+ 
   @include media-queries.tablet {
-    width: 25px;
-    height: 25px;
+    width: 22px;
+    height: 22px;
   }
   @include media-queries.tablett {
     width: 24px;
@@ -615,25 +532,11 @@ ul.show {
   }
 }
 .whatsapp-icon {
-  @include media-queries.table {
-    width: 32px;
-    height: 32px;
-  }
-  @include media-queries.phone2 {
-    width: 29px;
-    height: 29px;
-  }
-  @include media-queries.phone {
-    width: 27px;
-    height: 27px;
-  }
-  @include media-queries.mobile {
-    width: 26px;
-    height: 26px;
-  }
+  width: 26px;
+  height: 26px;
   @include media-queries.tablet {
-    width: 25px;
-    height: 25px;
+    width: 22px;
+    height: 22px;
   }
   @include media-queries.tablett {
     width: 24px;
@@ -653,31 +556,15 @@ ul.show {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-size: 22px;
+  font-size: 20px;
   text-align: right;
   justify-content: space-around;
-  padding-right: 80px;
+  padding-right: 40px;
   /*padding-top: 80px;
   padding-bottom: 81px; */
   color: #fff;
 
-  @include media-queries.table {
-    font-size: 19px;
-    padding-right: 28px;
-  }
-
-  @include media-queries.phone2 {
-    font-size: 18px;
-    padding-right: 26px;
-  }
-  @include media-queries.phone {
-    font-size: 17px;
-    padding-right: 24px;
-  }
-  @include media-queries.mobile {
-    font-size: 16px;
-    padding-right: 22px;
-  }
+ 
   @include media-queries.tablet {
     font-size: 15px;
     padding-right: 22px;
@@ -694,8 +581,8 @@ ul.show {
     top: 145px;
   }
   @include media-queries.phoness {
-    font-size: 12px;
-    padding-right: 8px;
+    font-size: 10px;
+    padding-right: 12px;
     position: absolute;
     right: 0px;
     top: 100px;
@@ -703,6 +590,8 @@ ul.show {
 }
 
 .email-charlotte {
+
+
   @include media-queries.big-phone {
     margin-top: 50px;
   }
@@ -710,6 +599,8 @@ ul.show {
     margin-top: 50px;
   }
 }
+
+
 .text-white {
   color: #fff;
 }
@@ -721,62 +612,46 @@ ul.show {
 .customer-service {
   position: relative;
   top: 11px;
-  /*   background-color: #0099ff; */
-  /* width: 250px; */
+
   @include media-queries.big-phone {
     margin-top: 20px;
   }
   @include media-queries.phoness {
     margin-top: 10px;
+
+    width: 50%;
   }
 }
 
 .headphone-icon {
   position: absolute;
   top: 3px;
-  width: 30px;
-  height: 30px;
-  left: 175px;
+  width: 28px;
+  height: 28px;
+  left: 165px;
+  font-size: 24px;
+  color: #acacac;
 
-  @include media-queries.table {
-    left: 150px;
-  }
-  @include media-queries.phone2 {
-    left: 145px;
-    width: 28px;
-    height: 28px;
-  }
-  @include media-queries.phone {
-    left: 142px;
-    width: 26px;
-    height: 26px;
-  }
-
-  @include media-queries.mobile {
-    left: 135px;
-    width: 25px;
-    height: 25px;
-  }
-
+ 
   @include media-queries.tablet {
+    font-size: 22px;
     left: 125px;
-    width: 24px;
-    height: 24px;
+ 
   }
   @include media-queries.tablett {
     left: 125px;
-    width: 23px;
-    height: 23px;
+    font-size: 22px;
+  
   }
   @include media-queries.big-phone {
-    width: 22px;
-    height: 22px;
-    left: 110px;
+    font-size: 21px;
+    left: 122px;
   }
   @include media-queries.phoness {
-    width: 17px;
-    height: 17px;
-    left: 100px;
+    font-size: 20px;
+    left: 18%;
+    top: 16px;
+
   }
 }
 /*----------------- responsive slider--------------------*/
@@ -784,6 +659,7 @@ ul.show {
   position: relative;
   width: 100%;
   text-align: center;
+
 
   i {
     width: 40px;
@@ -796,22 +672,6 @@ ul.show {
     transition: all 0.4s ease;
     display: block;
     background-color: #919090;
-
-    @include media-queries.phone2 {
-      width: 39px;
-      height: 39px;
-      font-size: 24px;
-    }
-    @include media-queries.phone {
-      width: 38px;
-      height: 38px;
-      font-size: 23px;
-    }
-    @include media-queries.mobile {
-      width: 36px;
-      height: 36px;
-      font-size: 22px;
-    }
 
     @include media-queries.tablet {
       width: 35px;
@@ -830,10 +690,10 @@ ul.show {
       padding-top: 6px;
     }
     @include media-queries.phoness {
-      width: 19px;
-      height: 19px;
+      width: 22px;
+      height: 22px;
       font-size: 12px;
-      padding-top: 4px;
+      padding-top: 5px;
     }
 
     &:hover {
@@ -850,6 +710,7 @@ ul.show {
   width: inherit;
   padding-left: 10px;
   padding-right: 10px;
+
   @include media-queries.phoness {
     top: 38%;
     padding-left: 5px;
@@ -859,23 +720,12 @@ ul.show {
 }
 .slider-slides {
   position: relative;
-  height: 400px;
+  height: 355px;
   background-color: #eeeeee;
 
   /*   background-color: #002593; */
 
-  @include media-queries.table {
-    height: 390px;
-  }
-  @include media-queries.phone2 {
-    height: 370px;
-  }
-  @include media-queries.phone {
-    height: 335px;
-  }
-  @include media-queries.mobile {
-    height: 313px;
-  }
+  
   @include media-queries.tablet {
     height: 270px;
   }
@@ -886,7 +736,8 @@ ul.show {
     height: 189px;
   }
   @include media-queries.phoness {
-    height: 126px;
+    height: 115px;
+
   }
 }
 
@@ -899,62 +750,95 @@ ul.show {
   opacity: 0;
   visibility: hidden;
   transition: all 1.2s linear;
+  
+  
 }
 .img1 {
   background-image: url("/src/public/homepage/Slayer_pagweb_1.jpg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
   width: 100%;
   height: 100%;
+  @include media-queries.big-phone{
+    margin-top: -10px;
+    background-size: contain;
+    
+  }
   @include media-queries.phoness {
-    margin-top: -20px;
+    margin-top: -10px;
+    background-size: contain;
+    
   }
 }
 .img2 {
   background-image: url("/src/public/homepage/Slayer_pagweb_2.jpg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
   width: 100%;
   height: 100%;
+  @include media-queries.big-phone{
+    margin-top: -10px;
+    background-size: contain;
+    
+  }
   @include media-queries.phoness {
-    margin-top: -20px;
+    margin-top: -10px;
+    background-size: contain;
   }
 }
 .img3 {
   background-image: url("/src/public/homepage/Slayer_pagweb_3.jpg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
   width: 100%;
   height: 100%;
+  @include media-queries.big-phone{
+    margin-top: -10px;
+    background-size: contain;
+    
+  }
   @include media-queries.phoness {
-    margin-top: -20px;
+    margin-top: -10px;
+    background-size: contain;
   }
 }
 .img4 {
   background-image: url("/src/public/homepage/Slayer_pagweb_4.jpg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
   width: 100%;
   height: 100%;
+  @include media-queries.big-phone{
+    margin-top: -10px;
+    background-size: contain;
+    
+  }
   @include media-queries.phoness {
-    margin-top: -20px;
+    margin-top: -10px;
+    background-size: contain;
   }
 }
 .img5 {
   background-image: url("/src/public/homepage/Slayer_pagweb_5.jpg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
   width: 100%;
   height: 100%;
-  @include media-queries.big-phone {
+  @include media-queries.big-phone{
+    margin-top: -10px;
+    background-size: contain;
+    
   }
   @include media-queries.phoness {
-    margin-top: -20px;
+    margin-top: -10px;
+    background-size: contain;
+
+    
   }
 }
 
@@ -971,19 +855,8 @@ ul.show {
   grid-gap: 70px;
   justify-content: center;
 
-  background-color: #eeeeee;
 
-  @include media-queries.table {
-  }
-  @include media-queries.phone2 {
-  }
-  @include media-queries.phone {
-    grid-gap: 55px;
-  }
-  @include media-queries.mobile {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 50px;
-  }
+  
   @include media-queries.tablet {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 40px;
@@ -1008,22 +881,23 @@ ul.show {
 /*--------------------Cards------------------------*/
 
 .card-news {
-  width: 100%;
+  width: 85%; /*PROVICIONAL ESTABA AL 100%*/
   border-radius: 20px;
   transition: all 0.3s ease;
+  margin: auto; /*PROVICIONAL*/
+  
 
   &:hover {
     transform: scale(1.02);
   }
-  @include media-queries.phone2 {
-  }
-  @include media-queries.phone {
-  }
-  @include media-queries.mobile {
-  }
+
   @include media-queries.tablet {
+    width: 88%;
+    margin: auto;
   }
   @include media-queries.tablett {
+    width: 88%;
+    margin: auto;
   }
   @include media-queries.big-phone {
     width: 88%;
@@ -1041,19 +915,7 @@ ul.show {
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
-  @include media-queries.table {
-    height: 245px;
-  }
-
-  @include media-queries.phone2 {
-    height: 240px;
-  }
-  @include media-queries.phone {
-    height: 235px;
-  }
-  @include media-queries.mobile {
-    height: 230px;
-  }
+ 
   @include media-queries.tablet {
     height: 225px;
   }
@@ -1070,19 +932,11 @@ ul.show {
 }
 .card-title {
   font-family: sans-serif;
-  font-size: 26px;
+  font-size: 22px;
   font-weight: bold;
   text-align: justify;
 
-  @include media-queries.phone2 {
-    font-size: 27px;
-  }
-  @include media-queries.phone {
-    font-size: 26px;
-  }
-  @include media-queries.mobile {
-    font-size: 25px;
-  }
+
   @include media-queries.tablet {
     font-size: 24px;
   }
@@ -1101,7 +955,12 @@ ul.show {
   margin: 10px 0 20px;
   line-height: 30px;
   text-align: justify;
-  font-size: 35px;
+  font-size: 22px;
+ 
+
+  p{
+    font-size: 10px;
+  }
   @include media-queries.big-phone {
     left: 10%;
   }
@@ -1129,15 +988,7 @@ ul.show {
     background-color: #485fd4;
   }
 
-  @include media-queries.phone2 {
-    font-size: 17px;
-  }
-  @include media-queries.phone {
-    font-size: 16px;
-  }
-  @include media-queries.mobile {
-    font-size: 19px;
-  }
+
   @include media-queries.tablet {
     font-size: 18px;
   }
@@ -1157,16 +1008,6 @@ ul.show {
   background-color: #eeeeee;
   height: 420px;
   
-  @include media-queries.phone2 {
-    height: 400px;
-  }
-  @include media-queries.phone {
-    height: 395px;
-  }
-  @include media-queries.mobile {
-    height: 395px;
-    
-  }
   @include media-queries.tablet {
     height: 365px;
    
@@ -1186,23 +1027,12 @@ ul.show {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 600;
-    font-size: 55px;
+    font-size: 50px;
     line-height: 67px;
     text-align: center;
     color: #000000;
 
-    @include media-queries.table {
-      font-size: 50px;
-    }
-    @include media-queries.phone2 {
-      font-size: 46px;
-    }
-    @include media-queries.phone {
-      font-size: 44px;
-    }
-    @include media-queries.mobile {
-      font-size: 42px;
-    }
+   
     @include media-queries.tablet {
       font-size: 40px;
     }
@@ -1238,20 +1068,7 @@ ul.show {
   transition: all 0.4s ease;
   border-radius: 10px;
    
-  @include media-queries.table {
-    margin-top: 51px;
-  }
-  @include media-queries.phone2 {
-    margin-top: 49px;
-  }
-  @include media-queries.phone {
-    margin-top: 45px;
-
-  }
-  @include media-queries.mobile {
-    margin-top: 42px;
-
-  }
+  
   @include media-queries.tablet {
     margin-top: 20px;
   }
@@ -1284,22 +1101,7 @@ ul.show {
     line-height: 67px;
     color: #fff;
     text-align: center;
-    @include media-queries.table {
-      font-size: 51px;
-      margin-top: 18px;
-    }
-    @include media-queries.phone2 {
-      font-size: 49px;
-      margin-top: 16px;
-    }
-    @include media-queries.phone {
-      font-size: 46px;
-      margin-top: 14px;
-    }
-    @include media-queries.mobile {
-      font-size: 43px;
-      margin-top: 12px;
-    }
+   
     @include media-queries.tablet {
       font-size: 40px;
       margin-top: 10px;
@@ -1344,19 +1146,7 @@ ul.show {
     line-height: 67px;
     color: #fff;
     text-align: center;
-    @include media-queries.table {
-      font-size: 33px;
-
-    }
-    @include media-queries.phone2 {
-      font-size: 31px;
-    }
-    @include media-queries.phone {
-      font-size: 29px;
-    }
-    @include media-queries.mobile {
-      font-size: 27px;
-    }
+   
     @include media-queries.tablet {
       font-size: 25px;
      
@@ -1393,23 +1183,7 @@ ul.show {
     border: 0;
     padding-right: 60px;
     outline: none;
-    @include media-queries.table {
-      font-size: 24px;
-      height: 63px;
-
-    }
-    @include media-queries.phone2 {
-      font-size: 23px;
-      height: 60px;
-    }
-    @include media-queries.phone {
-      font-size: 22px;
-      height: 58px;
-    }
-    @include media-queries.mobile {
-      font-size: 21px;
-      height: 56px;
-    }
+   
     @include media-queries.tablet {
       font-size: 20px;
       height: 53px;
@@ -1426,6 +1200,7 @@ ul.show {
       height: 47px;
       width: 90%;
       margin-left: 15px;
+      padding-right: 50px;
 
     }
     @include media-queries.phoness {
@@ -1433,6 +1208,7 @@ ul.show {
       width: 90%;
       height: 40px;
       margin-left: 0px;
+      padding-right: 40px;
     }
   }
   .envelope {
@@ -1441,18 +1217,7 @@ ul.show {
     top: 85px;
     right: 24%;
     transition: all 0.4s ease;
-    @include media-queries.table {
-      font-size: 34px;
-    }
-    @include media-queries.phone2 {
-      font-size: 33px;
-    }
-    @include media-queries.phone {
-      font-size: 32px;
-    }
-    @include media-queries.mobile {
-      font-size: 31px;
-    }
+    
     @include media-queries.tablet {
       font-size: 30px;
       height: 53px;
@@ -1461,17 +1226,17 @@ ul.show {
     }
     @include media-queries.tablett {
       font-size: 25px;
-      top: 66px;
+      top: 56px;
       right: 7%;
     }
     @include media-queries.big-phone {
       font-size: 21px;
-      top: 61px;
+      top: 60px;
       right: 7%;
     }
     @include media-queries.phoness {
       font-size: 19px;
-      top: 47px;
+      top: 45px;
       right: 8%;
     }
     &:hover {
@@ -1482,22 +1247,14 @@ ul.show {
 
 .footer {
   width: 100%;
-  height: 310px;
-  opacity: 0.9;
-  background-color: #555555;
+  height: 290px;
+  background-color: #323232;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding-bottom: 10px;
 
-  @include media-queries.phone2 {
-    height: 275px;
-  }
-  @include media-queries.phone {
-    height: 260px;
-  }
-  @include media-queries.mobile {
-    height: 255px;
-  }
+
+ 
   @include media-queries.tablet {
     height: 250px;
   }
@@ -1507,12 +1264,23 @@ ul.show {
   @include media-queries.big-phone {
     grid-template-columns: repeat(1, 1fr);
     position: relative;
+    height: 312px;
   }
   @include media-queries.phoness {
     height: 255px;
     grid-template-columns: repeat(1, 1fr);
     position: relative;
   }
+}
+.modal-news::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 20px;
+  height: 3px;
+}
+
+.modal-news::-webkit-scrollbar-thumb {
+  background: rgba(155, 155, 155, 0.7);
+  border-radius: 20px;
 }
 
 #modal-container-news {
@@ -1522,13 +1290,23 @@ ul.show {
   z-index: 1000;
   @include mixingfunc.measures(100%, 100%, 0, 0);
   background-color: rgba(143, 143, 143, 0.65);
-  position: fixed;
+
+}
+
+.fondo{
+  position: absolute;
+  margin: auto;
+  left: 30%;
+  z-index: 100;
+  top: 35%;
+  width: 35%;
+  opacity: .1;
 }
 
 .modal-news {
-  position: relative;
-  width: 55%;
-  height: 800px;
+  width: 70%;
+  height: 20px;
+  height: 80%;
   margin: auto;
   margin-top: 50px;
   border-radius: 10px;
@@ -1537,89 +1315,60 @@ ul.show {
   border-radius: 20px;
   transition: transform 1.2s;
   transform: translateY(0%);
+  position: relative;
+  
 
-  @include media-queries.table {
-    width: 60%;
-    height: 780px;
-    margin-top: 20px;
-  }
-  @include media-queries.phone2 {
-    width: 60%;
-    height: 760px;
-    margin-top: 20px;
-  }
-  @include media-queries.phone {
-    width: 60%;
-    height: 740px;
-    margin-top: 20px;
-  }
-
-  @include media-queries.mobile {
-    width: 65%;
-    height: 720px;
-    margin-top: 20px;
-  }
-
+  
   @include media-queries.tablet {
     width: 80%;
-    height: 700px;
-    margin-top: 20px;
+    height: 80%;
+    margin-top: 50px;
   }
   @include media-queries.tablett {
     width: 85%;
-    height: 660px;
-    margin-top: 20px;
+    height: 80%;
+    margin-top: 50px;
+
   }
   @include media-queries.big-phone {
-    width: 95%;
-    height: 94%;
+    width: 90%;
+    height: 90%;
     margin-top: 20px;
+
   }
   @include media-queries.phoness {
-    /*  width: 380px; */
     width: 95%;
-    max-height: 95%;
-    margin-top: -30px;
+    height: 93%;
+    margin-top: 25px;
   }
+  
 
   .close-news {
     position: absolute;
     right: 3.5%;
     top: 1%;
     bottom: 93.65%;
-    color: #000;
     z-index: 1000;
     i {
-      font-size: 27px;
+      font-size: 23px;
 
       @include media-queries.phoness {
         font-size: 20px;
       }
+      @include media-queries.tablett {
+        font-size: 22px;
+      }
+      @include media-queries.big-phone {
+        font-size: 21px;
+      }
     }
-    @include media-queries.table {
-      right: 4%;
-      top: 1%;
-    }
-    @include media-queries.phone2 {
-      right: 4%;
-      top: 1%;
-    }
-    @include media-queries.phone {
-      right: 4%;
-      top: 1%;
-    }
-
-    @include media-queries.mobile {
-      right: 4%;
-      top: 1%;
-    }
-
+    
     @include media-queries.tablet {
-      right: 5%;
+      right: 3%;
       top: 1%;
     }
     @include media-queries.tablett {
-      right: 5%;
+      right: 4.5%;
       top: 1%;
     }
     @include media-queries.big-phone {
@@ -1627,44 +1376,21 @@ ul.show {
       top: 1%;
     }
     @include media-queries.phoness {
-      right: 8%;
+      right: 9%;
       top: 1%;
     }
   }
 
   .cont-p-news {
     position: absolute;
-    width: 98%;
-    height: 785px;
+    width: 99%;
     top: 10px;
     bottom: 10px;
     left: 10px;
     right: 10px;
-    overflow: auto;
     padding: 0px 10px 10px 10px;
     margin-top: 28px;
-
-    @include media-queries.table {
-      width: 98.5%;
-      max-height: 94%;
-    }
-    @include media-queries.phone2 {
-      width: 98.5%;
-      max-height: 94%;
-      margin-top: 25px;
-    }
-    @include media-queries.phone {
-      width: 98.5%;
-      max-height: 94%;
-      margin-top: 25px;
-    }
-
-    @include media-queries.mobile {
-      width: 98.5%;
-      max-height: 94%;
-      margin-top: 26px;
-    }
-
+    overflow: auto;  
     @include media-queries.tablet {
       width: 98.5%;
       max-height: 94%;
@@ -1676,13 +1402,10 @@ ul.show {
       margin-top: 26px;
     }
     @include media-queries.big-phone {
-      width: 97%;
-      max-height: 94%;
-      margin-top: 25px;
+      width: 98%;
     }
     @include media-queries.phoness {
       width: 96.5%;
-      max-height: 94%;
       padding-right: 5px;
       padding-left: 2px;
       padding-top: 2px;
@@ -1698,7 +1421,7 @@ ul.show {
   width: 100%;
   background-color: #fccb4f;
   display: flex;
-  height: 66px;
+  height: 50px;
   align-items: center;
   justify-content: center;
   opacity: 0.9;
@@ -1706,19 +1429,11 @@ ul.show {
   transition: all 0.6s ease;
   position: relative;
 
-  @include media-queries.phone2 {
-  }
-  @include media-queries.phone {
-    height: 63px;
-  }
-  @include media-queries.mobile {
-    height: 61px;
-  }
   @include media-queries.tablet {
     height: 60px;
   }
   @include media-queries.tablett {
-    height: 59px;
+    height: 55px;
   }
   @include media-queries.big-phone {
     height: 56px;
@@ -1734,18 +1449,11 @@ ul.show {
   p {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 23px;
+    font-size: 19px;
     line-height: 30px;
     text-align: center;
     color: #000;
-    @include media-queries.phone2 {
-    }
-    @include media-queries.phone {
-      font-size: 21px;
-    }
-    @include media-queries.mobile {
-      font-size: 20px;
-    }
+  
     @include media-queries.tablet {
       font-size: 19px;
     }
@@ -1754,11 +1462,15 @@ ul.show {
     }
     @include media-queries.big-phone {
       font-size: 14px;
+      font-weight: 550;
     }
     @include media-queries.phoness {
-      font-size: 12px;
-      text-align: left;
+      font-size: 11.5px;
+      width: 50%;
       font-weight: 10;
+      line-height: 15px;
+      font-weight: 550;
+ 
     }
   }
 
@@ -1766,11 +1478,11 @@ ul.show {
     background: #2940a9;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 50px;
-    max-width: 250px;
+    max-width: 190px;
     width: 88%;
-    height: 50px;
+    height: 35px;
     color: #fff;
-    font-size: 24px;
+    font-size: 19px;
     border: none;
     margin-left: 20px;
     font-weight: bold;
@@ -1782,30 +1494,18 @@ ul.show {
       transform: scale(1.03);
     }
 
-    @include media-queries.phone2 {
-      font-size: 22px;
-      max-width: 210px;
-      height: 48px;
-    }
-    @include media-queries.phone {
-      font-size: 22px;
-      max-width: 200px;
-      height: 47px;
-    }
-    @include media-queries.mobile {
-      font-size: 21px;
-      max-width: 190px;
-      height: 44px;
-    }
+   
     @include media-queries.tablet {
       font-size: 20px;
       max-width: 180px;
       height: 41px;
+      height: 32px;
+
     }
     @include media-queries.tablett {
       font-size: 18px;
       max-width: 170px;
-      height: 38px;
+      height: 37px;
     }
     @include media-queries.big-phone {
       font-size: 14px;
@@ -1816,15 +1516,15 @@ ul.show {
       font-size: 11px;
       max-width: 95px;
       height: 25px;
-      margin-right: 15px;
-      margin-left: 8px;
+      margin-right: 50px;
+      margin-left: 10px;
     }
   }
 }
 
 .cont-p-news::-webkit-scrollbar {
-  width: 10px;
-  height: 8px;
+  width: 7px;
+  height: 5px;
   background: #ffffff;
   border-radius: 20px;
   @include media-queries.phoness {
@@ -1839,7 +1539,7 @@ ul.show {
   }
 }
 body::-webkit-scrollbar {
-  width: 16px;
+  width: 9px;
   background: #c9c9c9;
 }
 
@@ -1966,27 +1666,20 @@ body::-webkit-scrollbar-thumb {
   right: 1%;
   left: 98%;
   color: #5f5e5e;
-  @include media-queries.phone2 {
-    left: 97%;
-  }
-  @include media-queries.phone {
-    left: 97%;
-  }
-  @include media-queries.mobile {
-    left: 97%;
-  }
+ 
   @include media-queries.tablet {
     left: 96%;
   }
   @include media-queries.tablett {
     left: 96%;
+    
   }
   @include media-queries.big-phone {
     left: 95%;
     font-size: 18px;
   }
   @include media-queries.phoness {
-    left: 94.5%;
+    left: 93.5%;
     font-size: 16px;
   }
 }
@@ -1996,27 +1689,14 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   top: 3px;
   right: 0;
+
 }
 
 .country-icon {
-  width: 28px;
-  height: 28px;
-  @include media-queries.table {
-    width: 27px;
-    height: 27px;
-  }
-  @include media-queries.phone2 {
-    width: 26px;
-    height: 26px;
-  }
-  @include media-queries.phone {
-    width: 25px;
-    height: 25px;
-  }
-  @include media-queries.mobile {
-    width: 24px;
-    height: 24px;
-  }
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+ 
   @include media-queries.tablet {
     width: 23px;
     height: 23px;
@@ -2038,9 +1718,9 @@ body::-webkit-scrollbar-thumb {
 .select {
   display: flex;
   justify-content: space-between;
-  width: 72px;
-  height: 36px;
-  margin-right: 10px;
+  width: 64px;
+  height: 29px;
+  margin-right: 3px;
   padding-left: 5px;
   padding-top: 2px;
   padding-right: 7px;
@@ -2051,22 +1731,7 @@ body::-webkit-scrollbar-thumb {
   &:hover {
     background: #cecece;
   }
-  @include media-queries.table {
-    width: 71px;
-    height: 35px;
-  }
-  @include media-queries.phone2 {
-    width: 71px;
-    height: 35px;
-  }
-  @include media-queries.phone {
-    width: 70px;
-    height: 34px;
-  }
-  @include media-queries.mobile {
-    width: 69px;
-    height: 32px;
-  }
+  
   @include media-queries.tablet {
     width: 68px;
     height: 31px;
@@ -2088,13 +1753,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .down {
-  font-size: 24px;
+  font-size: 22px;
   margin-top: 3px;
   margin-left: 10px;
+  cursor: pointer;
 
-  @include media-queries.mobile {
-    font-size: 22px;
-  }
+
   @include media-queries.tablet {
     font-size: 22px;
     margin-top: 1px;
@@ -2113,14 +1777,13 @@ body::-webkit-scrollbar-thumb {
   }
 }
 .up {
-  font-size: 24px;
+  font-size: 22px;
   margin-top: 3px;
   display: none;
   visibility: hidden;
+  cursor: pointer;
 
-  @include media-queries.mobile {
-    font-size: 22px;
-  }
+ 
   @include media-queries.tablet {
     font-size: 22px;
     margin-top: 1px;
@@ -2143,8 +1806,8 @@ body::-webkit-scrollbar-thumb {
   justify-content: space-between;
 }
 .options {
-  width: 72px;
-  height: 80px;
+  width: 66px;
+  height: 66px;
   padding-left: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -2186,5 +1849,29 @@ body::-webkit-scrollbar-thumb {
   p {
     padding-top: 9px;
     font-size: 14px;
+  }
+}
+
+.new-noticia{
+  p{
+    font-size: 19px;
+    text-align: justify;
+    margin-bottom: 10px;
+
+    color: #000;
+
+    @include media-queries.tablet {
+      font-size: 18px;
+    }
+    @include media-queries.tablett {
+      font-size: 17px;
+    }
+    @include media-queries.big-phone {
+      font-size: 15px;
+    }
+    @include media-queries.phoness {
+      font-size: 14px;
+    }
+
   }
 }

@@ -99,11 +99,11 @@ const renderResources = (resource) => {
     codigo = `
     <tbody class = "body">
     <tr class = "tr">
-    <td>${ele.id}</td>
-    <td>${ele.resourceTitle}</td>
-    <td>${ele.category}</td>
-    <td>${ele.tags}</td>
-    <td>
+    <td data-label = "ID">${ele.id}</td>
+    <td data-label = "Resources">${ele.resourceTitle}</td>
+    <td data-label = "Category">${ele.category}</td>
+    <td data-label = "Tags">${ele.tags}</td>
+    <td data-label = "Actions">
         <div class="icons-resource">
         <i class="fas fa-dot-circle read-resource" data-ids = ${ele.id} ></i>
         <i class="fas fa-pen edit-resource" data-id = ${ele.id}></i> 
@@ -422,3 +422,11 @@ sr.reveal($tableResource, {
   origin: "bottom",
   distance: "-50px",
 }); */
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".fa-bars")) {
+    setTimeout(() => {
+      e.target.classList.toggle("changeColor");
+    }, 500);
+    d.querySelector(".menu").classList.toggle("move-menu");
+  }
+});

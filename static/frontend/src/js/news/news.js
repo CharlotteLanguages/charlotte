@@ -51,11 +51,11 @@ function CodeTh() {
 
 /* -----------------------------------------------------Main Fetch----------------------------- */
 
+let news = [];
 export const getNewsData = async () => {
   try {
     let res = await fetch(API_URL),
-      json = await res.json(),
-      news = [];
+      json = await res.json()
     if (json.length <= 0) {
       const tables = d.querySelector(".crud-table-news");
       tables.innerHTML = `<div class = "no-activities">NO NEWS YET</div>`;
@@ -80,16 +80,16 @@ function passInformation(news) {
 }
 
 const printNewsData = (news) => {
-  news.forEach((ele) => {
+  news.reverse().forEach((ele) => {
     const $tr = d.createElement("tr"),
       codigo = `
     <tbody class = "body">
     <tr class = "tr">
-    <td>${ele.id}</td>
-    <td>${ele.titleNews}</td>
-    <td>${ele.categoryNews}</td>
-    <td>${ele.tagsNews}</td>
-    <td>
+    <td data-label = "ID">${ele.id}</td>
+    <td data-label = "News">${ele.titleNews}</td>
+    <td data-label = "Category">${ele.categoryNews}</td>
+    <td data-label = "Tags">${ele.tagsNews}</td>
+    <td data-label = "Actions">
         <div class="icons-news">
         <i class="fas fa-dot-circle read-news" data-ids=${ele.id}></i>
         <i class="fas fa-pen edit-news" data-id = ${ele.id}></i> 
@@ -107,7 +107,83 @@ const printNewsData = (news) => {
 
 /*---------------------------------------------------------------Method Post-------------------------------*/
 
-function getDataFromForm() {
+d.addEventListener("submit", async (e) => {
+  if (e.target === $formNews) {
+    e.preventDefault();
+    if (!e.target.idi.value) {
+      ///CREATE POST
+      try {
+        let options = {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              titleNews: e.target.titleNews.value,
+              categoryNews: e.target.categoryNews.value,
+              tagsNews: e.target.tagsNews.value,
+              editorNews: editor.getContents(),
+            }),
+          },
+          res = await fetch(API_URL, options),
+          json = await res.json();
+
+        if (!res.ok) throw { status: res.status, statusText: res.statusText };
+          load();
+          getNewsData();
+          alertManager("success", "Created Successfully");
+          $formNews.reset();
+      } catch (err) {
+        let message = err.statusText || "ocurrió un Error";
+        /*  $formActivity.insertAdjacentHTML(
+            "afterend",
+            `<p><b>Error ${err.status}:${message}</p></b>`
+          ); */
+      }
+    } else {
+      //UPDATE -PUT
+      try {
+        let options = {
+            method: "PUT",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              titleNews: e.target.titleNews.value,
+              categoryNews: e.target.categoryNews.value,
+              tagsNews: e.target.tagsNews.value,
+              editorNews: editor.getContents(),
+            }),
+          },
+          res = await fetch(
+            `${API_URL}/${e.target.idi.value}`,
+            options
+          ),
+          json = await res.json();
+        if (!res.ok) throw { status: res.status, statusText: res.statusText };
+        /*  location.reload(); */
+        load();
+        getNewsData();
+        alertManager("update", "Edit Successfully");
+        openEditingForm("Create new news", "Add New news");
+        $formNews.reset();
+      } catch (err) {
+        let message = err.statusText || "ocurrió un Error";
+        /* $formActivity.insertAdjacentHTML(
+            "afterend",
+            `<p><b>Error ${err.status}:${message}</p></b>`
+          ); */
+      }
+    }
+  }
+});
+
+
+
+
+
+
+
+
+
+
+/* function getDataFromForm() {
   return {
     id: $formNews.idi.value,
     titleNews: $formNews.titleNews.value,
@@ -116,9 +192,9 @@ function getDataFromForm() {
     editorNews: editor.getContents(),
   };
 }
-
-export const addNews = () => {
-  d.addEventListener("click", (e) => {
+ */
+export const addNews = (datos) => {
+/*   d.addEventListener("click", (e) => {
     if (e.target.matches(".btn-submit")) {
       if (!$formNews.titleNews.value.length) {
         const value = $formNews.titleNews.value;
@@ -152,10 +228,10 @@ export const addNews = () => {
           getNewsData();
           alertManager("success", "Created Successfully");
           $formNews.reset();
-          editor.setContents(`hola mundo`);
+        
         });
     }
-  });
+  }); */
 };
 
 /*-----------------------------------------------------Btn Read show------------------------------------------- */
@@ -199,14 +275,15 @@ export function closeWindowModal(btn, container, modal, toggle) {
 function openEditingForm(title, btn) {
   $titleNews.textContent = title;
   $btnNews.value = btn;
-  $btnNews.classList.toggle("edit-two");
-  $btnNews.classList.toggle("btn-submit");
+/*   $btnNews.classList.toggle("edit-two");
+  $btnNews.classList.toggle("btn-submit") */;
 }
 
-function loadDataForEditing(news) {
+
   d.addEventListener("click", (e) => {
     if (e.target.matches(".edit-news")) {
-      openEditingForm("Modify news", "Save Changes");
+      $titleNews.textContent = "Modify news";
+      $btnNews.value = "Save Changes";
       let id = e.target.dataset.id,
         cours = {};
       news.filter((el) => {
@@ -221,12 +298,12 @@ function loadDataForEditing(news) {
       load();
     }
   });
-}
+
 
 /*--------------------------------------------------------Put Method ---------------------------- */
 
 export function editNews() {
-  d.addEventListener("click", (e) => {
+ /*  d.addEventListener("click", (e) => {
     if (e.target.matches(".edit-two")) {
       fetch(`${API_URL}/${getDataFromForm().id}`, {
         method: "PUT",
@@ -250,7 +327,7 @@ export function editNews() {
           }, 1500);
         });
     }
-  });
+  }); */
 }
 
 /*----------------------------------------------Method Delete----------------------------------------- */
@@ -349,15 +426,30 @@ const editor = SUNEDITOR.create(document.querySelector(".txtarea-news"), {
     ["save", "template", "codeView"],
     ["dir", "dir_ltr", "dir_rtl"],
   ],
-  height: 435,
+  Height: "100%",
+  minHeight: "190px",
+  width: "100%",
+  maxWidth: "1200px",
   lang: SUNEDITOR_LANG["en"],
 });
 editor.setDefaultStyle("font-family: Arial; font-size: 20px;");
-const vc = d.querySelector(".cont-table-course_blue");
+const vc = d.querySelector(".cont-table-news_blue");
 
 window.sr = ScrollReveal();
 sr.reveal(vc, {
   duration: 2500,
   origin: "bottom",
   distance: "-5px",
+});
+
+/* window.addEventListener("load", ()=>{
+  document.getElementById("loader").classList.toggle("loader2");
+}) */
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".fa-bars")) {
+    setTimeout(() => {
+      e.target.classList.toggle("changeColor");
+    }, 500);
+    d.querySelector(".menu").classList.toggle("move-menu");
+  }
 });

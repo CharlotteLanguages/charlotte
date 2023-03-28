@@ -20,11 +20,10 @@
 
 <body>
     <div id="container">
-
-        <section class="cont-new-review open-form-input">
+         <i class="fas fa-bars" id="bars"></i>
+        <section class="cont-new-activitie open-form-activitie">
             <section class=" crud" id="list-select">
-
-                <p class="crud-title p1">Create activity</p>
+                <p class="crud-title font-title-activitie">Create activity</p>
                 <form class="crud-form">
                     <input type="hidden" name="idi">
                     <input class="title" type="text" name="activitiName" placeholder="Activity Name" required>
@@ -59,8 +58,8 @@
                         <textarea name="description" class="txtarea" cols="30" rows="10"> </textarea>
                     </div>
                 </form>
-                <input id="create-review" type="submit" value="Create Activity" class="btn-submit">
-                <input class="cancel-form" type="button" value="Cancel">
+                <input id="create-activitie" type="submit" value="Create Activity" class="btn-submit">
+                <input class="cancel-activitie" type="button" value="Cancel">
             </section>
         </section>
 
@@ -88,7 +87,6 @@
         </div>
 
         <section id="nav">
-
             <div class="nav__icon">
                 <i class="fas fa-bell"></i>
                 <i class="far fa-envelope"></i>
@@ -96,15 +94,14 @@
             </div>
         </section>
 
-        <section class="container__tables ">
-            <div class="container__table--blue">
-                <h1 id="tiempoCarga"></h1>
-                <table class="crud-table table">
+        <section class="cont-tables-activities">
+            <div class="cont-table-activities_blue">
+                <table class="crud-table-activities table-activities">
                 </table>
             </div>
-            <button class="btn__activities">Add new activity</button>
+            <button class="btn-activities">Add new activity</button>
         </section>
-
+        
         <section id="modal-container-activity">
             <div class="modal-activity modal-cla">
                 <div class="close-activity"><i class="fas fa-times-circle poi"></i></div>
@@ -115,15 +112,15 @@
 
 
 
-        <form class="form-delete" action="">
-            <section id="modal-container-de">
-                <div class="modal-de modal-close-de">
+        <form class="form-delete-dr" action="">
+            <section id="modal-container-dr">
+                <div class="modal-dr modal-close-dr">
                     <h3>Delete item</h3>
-                    <textarea name="cuadro" id="text-de" cols="30" rows="10" placeholder="Reason..."
-                        required></textarea>
-                    <button type="submit" class="close-de bnt-de">Yes, Delete</button>
-                    <button class="close-de btn-de2">Cancel</button>
-
+                    <textarea name="reasonDelete" id="text-dr"  placeholder="Reason..." required></textarea>
+                        <div class="buttons_delete">
+                            <button class="close-dr btn-dr2">Cancel</button>
+                            <input type="submit" class="close-dr bnt-dr" value="Yes, Delete"></input>
+                      </div>
                 </div>
             </section>
         </form>

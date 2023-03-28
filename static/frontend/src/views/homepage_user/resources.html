@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/src/css/homepage_user/resources.css">
+    <link rel="shortcut icon" href="/src/public/logo-shortcut.png">
+    <title>Document</title>
+</head>
+<body>
+    <div class="navbar">
+        <img src="/src/public/logo-charlotte.png" class="logo">
+        <ul class="navbar__menu">
+            <li><a href="">Home</a></li>
+            <li><a href="">Dashboard</a></li>
+            <div class="user">
+                <i class="far fa-user-circle"></i>
+               <p>Alberto B.</p>
+               <i class="fas fa-chevron-down open_tooltip"></i>
+               <div class="tooltip">
+                   <div class="profile">
+                    <i class="fas fa-user-circle"></i>
+                    <p>See my profile</p>
+                   </div>
+                   <div class="section_medium">
+                       <div class="see_courses">
+                         <img src="/src/public/homepageUser/course.png" alt="">
+                         <p>See all my courses</p>
+                       </div>
+                       <div class="resources">
+                         <img src="/src/public/homepageUser/resource.png" alt="">
+                         <p>Resources</p>
+                       </div>
+                       <div class="subs">
+                         <img src="/src/public/homepageUser/subscription.png" alt="" class="subscription-img">
+                         <p>My subscription</p>
+                       </div>
+                    </div>
+                    <div class="section_final">
+                        <div class="customer_service">
+                          <img src="/src/public/homepageUser/customer.png" alt="">
+                          <p>Customer service</p>
+                        </div>
+                      <div class="logout">
+                        <img src="/src/public/homepageUser/logout.png" alt="">
+                        <p>Log out</p>
+                      </div>
+                    </div>
+               </div>
+            </div>
+            <div class="user_notification">
+                <img src="/src/public/homepageUser/campana.png" class="notifications">
+                <div class="tooltip_message">
+                    <div class="notify_content">
+                        <div class="notify">
+                          <div class="notify_section">
+                              <label class="notify_circle" id="color1"></label>
+                              <h2 class="notify_title">Notify</h2>
+                          </div>
+                          <p class="notify_subject">Subject: "Welcome lorem ipsum"</p>
+                        </div>
+                        <div class="notify">
+                          <div class="notify_section">
+                              <label class="notify_circle" id="color2"></label>
+                              <h2 class="notify_title">Receive new Certify</h2>
+                          </div>
+                          <p class="notify_subject">Subject: "Congratulations"</p>
+                        </div>
+                        <div class="notify">
+                          <div class="notify_section">
+                              <label class="notify_circle"></label>
+                              <h2 class="notify_title">Renew your membership</h2>
+                          </div>
+                          <p class="notify_subject">Subject: "Welcome lorem ipsum"</p>
+                        </div>
+                        <div class="notify">
+                          <div class="notify_section">
+                              <label class="notify_circle"></label>
+                              <h2 class="notify_title">Lvl 1 Completed</h2>
+                          </div>
+                          <p class="notify_subject">Subject: "Welcome lorem ipsum"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="selectbox">
+                <div class="select" id="select">
+                    <div class="content-select">
+                        <img src="/src/public/homepage/united_states-icon.png" class="country-icon">
+                    </div>
+                    <i class="fas fa-angle-down down"></i>
+                </div>
+        <div class="options" id="options">
+            <div class="option">
+                <div class="content-option">
+                    <img src="/src/public/hompage/brazil-icon.png" class="country-icon" id="brasil">
+                    <p class="title">PT</p>
+                </div>
+            </div>
+            <div class="option">
+                <div class="content-option">
+                    <img src="/src/public/hompage/spain-icon.png" class="country-icon" id="spain">
+                    <p class="title">ES</p>
+                </div>
+            </div>
+            <div class="option">
+                <div class="content-option">
+                    <img src="/src/public/hompage/france-icon.png" class="country-icon" id="japan">
+                    <p class="title">FR</p>
+                </div>
+            </div>
+            <div class="option">
+                <div class="content-option">
+                    <img src="/src/public/hompage/united_states-icon.png" class="country-icon" id="eeuu">
+                    <p class="title">EN</p>
+                </div>
+            </div>
+        </div>
+             </div>
+            <input type="hidden" name="pais"id="inputSelect" value="">
+        </ul>
+</div>
+
+    <div class="section_search">
+        <h1 class="title">Material Search Options</h1>
+        <div class="search">
+            <input type="text" class="input_search" placeholder="Start your search here...">
+            <i class="fas fa-search"></i>
+        </div>
+    </div>
+
+    <div class="links">
+        <p href="">Home /</p>
+        <p href="">Resources</p>
+    </div>
+
+    <section id="tranding">
+        <div class="container">
+          <h3 class="text-center section-subheading">Most Seen...</h3>
+          <!-- <h1 class="text-center section-heading">Tranding food</h1> -->
+        </div>
+        <div class="container">
+          <div class="swiper tranding-slider">
+            <div class="swiper-wrapper">
+              <!-- Slide-start -->
+              <div class="swiper-slide tranding-slide">
+                <div class="tranding-slide-img">
+                  <img src="https://raw.githubusercontent.com/emetdas/Youtube-code/master/web%20components/Swiper-Slider-3D-Coverflow/images/tranding-food-1.png" alt="Tranding">
+                </div>
+                <div class="tranding-slide-content">
+                  <!-- <h1 class="food-price">$20</h1> -->
+                  <div class="tranding-slide-content-bottom">
+                    <h2 class="food-name">
+                      Videos
+                    </h2>
+                 <!--    <h3 class="food-rating">
+                      <span>4.5</span>
+                      <div class="rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    </h3> -->
+                  </div>
+                </div>
+              </div>
+              <!-- Slide-end -->
+              <!-- Slide-start -->
+              <div class="swiper-slide tranding-slide">
+                <div class="tranding-slide-img">
+                  <img src="https://raw.githubusercontent.com/emetdas/Youtube-code/master/web%20components/Swiper-Slider-3D-Coverflow/images/tranding-food-2.png" alt="Tranding">
+                </div>
+                <div class="tranding-slide-content">
+                  <!-- <h1 class="food-price">$20</h1> -->
+                  <div class="tranding-slide-content-bottom">
+                    <h2 class="food-name">
+                      English Business 
+                    </h2>
+                    <!-- <h3 class="food-rating">
+                      <span>4.5</span>
+                      <div class="rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    </h3> -->
+                  </div>
+                </div>
+              </div>
+              <!-- Slide-end -->
+              <!-- Slide-start -->
+              <div class="swiper-slide tranding-slide">
+                <div class="tranding-slide-img">
+                  <img src="https://raw.githubusercontent.com/emetdas/Youtube-code/master/web%20components/Swiper-Slider-3D-Coverflow/images/tranding-food-3.png" alt="Tranding">
+                </div>
+                <div class="tranding-slide-content">
+                 <!--  <h1 class="food-price">$40</h1> -->
+                  <div class="tranding-slide-content-bottom">
+                    <h2 class="food-name">
+                      Series
+                    </h2>
+                  <!--   <h3 class="food-rating">
+                      <span>4.5</span>
+                      <div class="rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    </h3> -->
+                  </div>
+                </div>
+              </div>
+              <!-- Slide-end -->
+              <!-- Slide-start -->
+              <div class="swiper-slide tranding-slide">
+                <div class="tranding-slide-img">
+                  <img src="https://raw.githubusercontent.com/emetdas/Youtube-code/master/web%20components/Swiper-Slider-3D-Coverflow/images/tranding-food-4.png" alt="Tranding">
+                </div>
+                <div class="tranding-slide-content">
+                  <!-- <h1 class="food-price">$15</h1> -->
+                  <div class="tranding-slide-content-bottom">
+                    <h2 class="food-name">
+                      Books
+                    </h2>
+                   <!--  <h3 class="food-rating">
+                      <span>4.5</span>
+                      <div class="rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    </h3> -->
+                  </div>
+                </div>
+              </div>
+              <!-- Slide-end -->
+              <!-- Slide-start -->
+              <div class="swiper-slide tranding-slide">
+                <div class="tranding-slide-img">
+                  <img src="https://raw.githubusercontent.com/emetdas/Youtube-code/master/web%20components/Swiper-Slider-3D-Coverflow/images/tranding-food-5.png" alt="Tranding">
+                </div>
+                <div class="tranding-slide-content">
+                  <!-- <h1 class="food-price">$15</h1> -->
+                  <div class="tranding-slide-content-bottom">
+                    <h2 class="food-name">
+                     Challenge
+                    </h2>
+                   <!--  <h3 class="food-rating">
+                      <span>4.5</span>
+                      <div class="rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    </h3> -->
+                  </div>
+                </div>
+              </div>
+              <!-- Slide-end -->
+              <!-- Slide-start -->
+              <div class="swiper-slide tranding-slide">
+                <div class="tranding-slide-img">
+                  <img src="https://raw.githubusercontent.com/emetdas/Youtube-code/master/web%20components/Swiper-Slider-3D-Coverflow/images/tranding-food-6.png" alt="Tranding">
+                </div>
+                <div class="tranding-slide-content">
+                  <!-- <h1 class="food-price">$20</h1> -->
+                  <div class="tranding-slide-content-bottom">
+                    <h2 class="food-name">
+                     Training
+                    </h2>
+                    <!-- <h3 class="food-rating">
+                      <span>4.5</span>
+                      <div class="rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    </h3> -->
+                  </div>
+                </div>
+              </div>
+              <!-- Slide-end -->
+              <!-- Slide-start -->
+              <div class="swiper-slide tranding-slide">
+                <div class="tranding-slide-img">
+                  <img src="https://raw.githubusercontent.com/emetdas/Youtube-code/master/web%20components/Swiper-Slider-3D-Coverflow/images/tranding-food-7.png" alt="Tranding">
+                </div>
+                <div class="tranding-slide-content">
+                 <!--  <h1 class="food-price">$8</h1> -->
+                  <div class="tranding-slide-content-bottom">
+                    <h2 class="food-name">
+                      Most
+                    </h2>
+                   <!--  <h3 class="food-rating">
+                      <span>4.5</span>
+                      <div class="rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    </h3> -->
+                  </div>
+                </div>
+              </div>
+              <!-- Slide-end -->
+            </div>
+      
+            <div class="tranding-slider-control">
+              <div class="swiper-button-prev slider-arrow">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+              </div>
+              <div class="swiper-button-next slider-arrow">
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+      
+          </div>
+        </div>
+      </section>
+
+    <div class="general">
+        <div class="column_one">
+            <h1 class="column_one-title">Articles of genreal interest...</h1>
+            <div class="card_article">
+                <img src="/src/public/homepageUser/article_img1.png"class="card_article-img">
+                <div class="card_article-section">
+                    <h1 class="card_article-title">Lorem Ipsum</h1>
+                    <p class="card_article-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. repellendus doloremque illum repellat cumque? Similique eaque nemo commodi eligendi. Error impedit est beatae similique vitae corrupti facilis necessitatibus?</p>
+                    <i class="fas fa-chevron-right next"></i>                    
+                </div>
+            </div>
+            <div class="card_article">
+                <img src="/src/public/homepageUser/article_img4.png"class="card_article-img">
+                <div class="card_article-section">
+                    <h1 class="card_article-title">Lorem Ipsum</h1>
+                    <p class="card_article-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam fac Similique eaque nemo commodi eligendi. Error impedit est beatae similique vitae corrupti facilis necessitatibus?</p>
+                    <i class="fas fa-chevron-right next"></i>                    
+                </div>
+            </div>
+            <div class="card_article">
+                <img src="/src/public/homepageUser/article_img2.png"class="card_article-img">
+                <div class="card_article-section">
+                    <h1 class="card_article-title">Lorem Ipsum</h1>
+                    <p class="card_article-description">Lorem, ipsum dolor sit amete illum repellat cumque? Similique eaque nemo commodi eligendi. Error impedit est beatae similique vitae corrupti facilis necessitatibus?</p>
+                    <i class="fas fa-chevron-right next"></i>                    
+                </div>
+            </div>
+            <div class="card_article">
+                <img src="/src/public/homepageUser/article_img3.png"class="card_article-img">
+                <div class="card_article-section">
+                    <h1 class="card_article-title">Lorem Ipsum</h1>
+                    <p class="card_article-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        <i class="fas fa-chevron-right next"></i>                    
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="column-two">
+            <div class="view">
+                <p>Media view</p>
+                <div class="media_view">
+                    <img src="/src/public/homepageUser/youtube-img.png" alt="" class="media_view-img">
+                    <p class="media_view-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut similique praesentium dolorum odio </p>
+                </div>
+                <div class="media_view">
+                    <img src="/src/public/homepageUser/youtube-img.png" alt="" class="media_view-img">
+                    <p class="media_view-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut similique praesentium dolorum odio </p>
+                </div>
+                <div class="media_view">
+                    <img src="/src/public/homepageUser/youtube-img.png" alt="" class="media_view-img">
+                    <p class="media_view-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut similique praesentium dolorum odio.</p>
+                </div>
+
+            </div>
+            <div class="keywords">
+                <h1>Keywords</h1>
+                <div class="row">
+                    <div class="keyword" id="books">
+                        <input type="checkbox" class="keywor_checkbox">
+                        <p class="keyword_text">Books</p>
+                    </div>
+                    <div class="keyword" id="training">
+                        <input type="checkbox" class="keywor_checkbox">
+                        <p class="keyword_text">Training</p>
+                    </div>
+                    <div class="keyword" id="chanllenge">
+                        <input type="checkbox" class="keywor_checkbox">
+                        <p class="keyword_text">Challenge</p>
+                    </div>
+                    <div class="keyword" id="books">
+                        <input type="checkbox" class="keywor_checkbox">
+                        <p class="keyword_text">Books</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="keyword" id="series">
+                        <input type="checkbox" class="keywor_checkbox">
+                        <p class="keyword_text">Series</p>
+                    </div>
+                    <div class="keyword" id="chanllenge">
+                        <input type="checkbox" class="keywor_checkbox">
+                        <p class="keyword_text">Chanllenge</p>
+                    </div>
+                    <div class="keyword" id="training">
+                        <input type="checkbox" class="keywor_checkbox">
+                        <p class="keyword_text">Training</p>
+                    </div>
+                    <div class="keyword" id="books">
+                        <input type="checkbox" class="keywor_checkbox">
+                        <p class="keyword_text">Books</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="keyword" id="videos">
+                        <input type="checkbox" class="keywor_checkbox">
+                        <p class="keyword_text">Videos</p>
+                    </div>
+                    <div class="keyword" id="series">
+                        <input type="checkbox" class="keywor_checkbox">
+                        <p class="keyword_text">Series</p>
+                    </div>
+                    <div class="keyword" id="chanllenge">
+                        <input type="checkbox" class="keywor_checkbox">
+                        <p class="keyword_text">Chanllenge</p>
+                    </div>
+                    <div class="keyword" id="training">
+                        <input type="checkbox" class="keywor_checkbox">
+                        <p class="keyword_text">Training</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous"> </script>
+    <script src="/src/js/homepage_user/homepage_user.js"></script>
+</body>
+</html>

@@ -9,18 +9,18 @@
     <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/en.js"></script>
+    
     <title>News</title>
 </head>
 
 <body>
     <div id="container">
-
+        <i class="fas fa-bars" id="bars"></i>
         <section class="cont-new-news open-form-news ">
             <section class=" crud-news" id="cont-form-news">
                 <article>
                     <p class="crud-title-news font-title-news">Create new news</p>
                     <form action="" class="crud-form-news">
-
                         <input type="hidden" name="idi">
                         <input class="title-news" type="text" name="titleNews" placeholder="Title new" required>
                         <select class="input-category-news" name="categoryNews">
@@ -29,8 +29,9 @@
                             <option>Noticia 2</option>
                             <option>Noticia 3</option>
                         </select>
-                        <select class="input-price-news" name="tagsNews">
-                            <option selected disabled="">Optional tags</option>
+                        <select class="input-tags-news" name="tagsNews">
+                            <option selected disabled=""></option>
+                           <!--  <option>Optional Tags</option> -->
                             <option>Agent</option>
                             <option>Liaison</option>
                             <option>Analiyt</option>
@@ -41,13 +42,26 @@
                             <option>Assistant</option>
                         </select>
 
+                        <div>
+
+                            <input type="file" accept="image/*" multiple name="sponsorImage"
+                                placeholder="Profille image..." id="imgSponsor">
+                            <label for="imgSponsor" class="file-sponsor">
+                                <span class="file-sponsor-btn"><i class="fas fa-upload"></i></span>
+                                <span class="file-sponsor-text">Profile image...</span>
+                                <!--   BUSCAR UN ARCHIVO QUE ES MUY IMPORTANTE PARA
+                                    LASOCIEDAD Y
+                                    EL ESTADO CIVIL COLOMBIANO DADO A LA FALTA DE COSAS
+                                </span> -->
+                            </label>
+                        </div>
 
                         <div id="area-news">
                             <textarea name="description" class="txtarea-news" cols="30" rows="10"> </textarea>
                         </div>
+                        <input id="create-news" type="submit" value="Create news" class="btn-submit">
+                        <input class="cancel-news" type="button" value="Cancel">
                     </form>
-                    <input id="create-news" type="submit" value="Create news" class="btn-submit">
-                    <input class="cancel-form" type="button" value="Cancel">
                 </article>
 
             </section>
@@ -78,7 +92,40 @@
 
         <section id="nav">
             <div class="nav__icon">
-                <i class="fas fa-bell"></i>
+                <div>
+                    <i class="fas fa-bell"></i>
+                    <div class="tooltip">
+                        <div class="profile">
+                         <i class="fas fa-user-circle"></i>
+                         <p>See my profile</p>
+                        </div>
+                        <div class="section_medium">
+                            <div class="see_courses">
+                              <img src="/src/public/homepageUser/course.png" alt="">
+                              <p>See all my courses</p>
+                            </div>
+                            <div class="resources">
+                              <img src="/src/public/homepageUser/resource.png" alt="">
+                              <p>Resources</p>
+                            </div>
+                            <div class="subs">
+                              <img src="/src/public/homepageUser/subscription.png" alt="" class="subscription-img">
+                              <p>My subscription</p>
+                            </div>
+                         </div>
+                         <div class="section_final">
+                             <div class="customer_service">
+                               <img src="/src/public/homepageUser/customer.png" alt="">
+                               <p>Customer service</p>
+                             </div>
+                           <div class="logout">
+                             <img src="/src/public/homepageUser/logout.png" alt="">
+                             <p>Log out</p>
+                           </div>
+                         </div>
+                    </div>
+
+                </div>
                 <i class="far fa-envelope"></i>
                 <a href="" class="profile"></a>
             </div>
@@ -100,19 +147,20 @@
 
         </section>
 
-        <form class="form-delete" action="">
+        <form class="form-delete-dr" action="">
             <section id="modal-container-dr">
                 <div class="modal-dr modal-close-dr">
                     <h3>Delete item</h3>
-                    <textarea name="cuadro" id="text-dr" cols="30" rows="10" placeholder="Reason..."
-                        required></textarea>
-                    <button type="submit" class="close-dr bnt-dr">Yes, Delete</button>
-                    <button class="close-dr btn-dr2">Cancel</button>
-
+                    <textarea name="reasonDelete" id="text-dr"  placeholder="Reason..." required></textarea>
+                        <div class="buttons_delete">
+                            <button class="close-dr btn-dr2">Cancel</button>
+                            <input type="submit" class="close-dr bnt-dr" value="Yes, Delete"></input>
+                      </div>
                 </div>
             </section>
-
         </form>
+
+
         <section class="container-notify-succes sucesx alert" id="alert">
             <i class="fas fa-check-circle close-notify-succes"></i>
             <p class="parrafo-succes"></p>

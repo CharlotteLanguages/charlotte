@@ -1,4 +1,4 @@
-package main
+/*package main
 
 import (
 	"log"
@@ -7,7 +7,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-func main() {
+func main1() {
 	app := fiber.New()
 
 	app.Static("/", "./static/frontend")
@@ -24,3 +24,4 @@ func main() {
 
 	log.Fatal(app.Listen("0.0.0.0:" + port))
 }
+*/

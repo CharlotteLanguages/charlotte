@@ -1,21 +1,57 @@
 @use "mixingfunc";
+@use "media-queries";
 /* ----------------------Section Form---------------------------- */
 .cont-new-certificate {
-  @include mixingfunc.measures(1251px, 342px, 424px, 184px);
+  width: 63%;
+  height: 590px;
+  left: 25%;
+  top: 17%;
+  margin-right: 20px;
   position: absolute;
-  background: #ffffff;
+  background: #fff;
   border-radius: 20px;
+
+  @include media-queries.tablet {
+    width: 65%;
+    left: 26%;
+    height: 630px;
+  }
+  @include media-queries.tablett {
+    width: 77%;
+    left: 12%;
+    height: 630px;
+    top: 120px;
+  }
+  @include media-queries.big-phone {
+    width: 85%;
+    left: 7.5%;
+    height: 560px;
+    background-color: #ffb3cb;
+    top: 90px;
+  }
+  @include media-queries.phoness {
+    width: 90%;
+    left: 5%;
+    height: 85%;
+    top: 80px;
+    background-color: #c2d1ff;
+  }
 
   .title-certificate {
     box-sizing: border-box;
     padding-left: 19px;
     padding-right: 10px;
     position: absolute;
-    @include mixingfunc.measures(1194px, 51px, 29px, 65px);
+    width: 93.6%;
+    height: 30px;
+    left: 29px;
+    top: 55px;
     color: #000;
     border: 1px solid #8f8f8f;
     border-radius: 10px;
-    font-size: 25px;
+    font-size: 1rem;
+    outline: none;
+
   }
 
   .file-certificate {
@@ -80,35 +116,96 @@
 
 #create-certificate {
   position: absolute;
-  @include mixingfunc.measures(236px, 48px, 987px, 273px);
-  @include mixingfunc.font-style(Arial, normal, 600, 25px, 130%, center);
+  width: 170px;
+  height: 35px;
+  right: 3%;
+  top: 585px;
   background: #338af3;
   border-radius: 20px;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
   transition: all 0.4s ease;
   outline: none;
   border: 0;
-  color: #ffffff;
+
+  @include media-queries.tablet {
+    top: 580px;
+    font-size: 17px;
+    width: 155px;
+  }
+
+  @include media-queries.big-phone {
+    max-width: 130px;
+    font-size: 15px;
+    top: 520px;
+    height: 30px;
+  }
+  @include media-queries.phoness {
+    max-width: 125px;
+    font-size: 14px;
+    top: 500px;
+    height: 30px;
+  }
+
+  color: #fff;
   &:hover {
     background: rgb(140, 168, 250);
   }
 }
+
+
 .cancel-certificate {
   position: absolute;
-  @include mixingfunc.measures(170px, 48px, 25px, 273px);
-  @include mixingfunc.font-style(Arial, normal, 600, 25px, 0, center);
+  width: 120px;
+  height: 35px;
+  left: 25px;
+  top: 585px;
   background: white;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
   border-radius: 20px;
   border: 0.5px solid rgb(150, 148, 148);
   transition: all 0.4s ease;
+
+  @include media-queries.tablet {
+    width: 100px;
+    top: 580px;
+  }
+
+  @include media-queries.big-phone {
+    font-size: 15px;
+    width: 100px;
+    top: 520px;
+    height: 30px;
+    left: 17px;
+  }
+  @include media-queries.phoness {
+    width: 90px;
+    font-size: 14px;
+    top: 500px;
+    height: 30px;
+    left: 10px;
+  }
+
   &:hover {
     background: rgb(238, 238, 238);
   }
 }
 .font-title-certificate {
   position: absolute;
-  @include mixingfunc.measures(278px, 39px, 30px, 11px);
-  @include mixingfunc.font-style(Arial, normal, 600, 25px, 130%, center);
-  color: #000000;
+  height: 39px;
+  left: 28px;
+  top: 11px;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 130%;
 }
 
 .font-title-certificate {
@@ -315,68 +412,7 @@
 /*-------------Modal delete --------------------------*/
 
 /*modal-container*/
-#modal-container-dr {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  z-index: 1000;
-  @include mixingfunc.measures(100%, 100%, 0, 0);
-  background-color: rgba(143, 143, 143, 0.65);
-}
 
-.modal-dr {
-  box-sizing: border-box;
-  position: absolute;
-  @include mixingfunc.measures(898px, 305px, 25%, 381px);
-  bottom: 338px;
-  background: rgba(255, 255, 255, 0.65);
-  border: 3px solid #0057ff;
-  box-shadow: 0px 4px 6px 3px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  transition: transform 1s;
-  transform: translateY(0%);
-
-  h3 {
-    position: absolute;
-    @include mixingfunc.measures(166px, 39px, 366px, 21px);
-    @include mixingfunc.font-style(Arial, normal, 600, 30px, 130%, center);
-    color: #000000;
-  }
-}
-#text-dr {
-  box-sizing: border-box;
-  position: absolute;
-  @include mixingfunc.measures(808px, 129px, 45px, 82px);
-  @include mixingfunc.font-style(Arial, normal, 300, 20px, 130%, center);
-  border: 1px solid #8f8f8f;
-  border-radius: 10px;
-  resize: none;
-  color: #000000;
-  padding-left: 18px;
-  padding-top: 12px;
-}
-
-.bnt-dr {
-  position: absolute;
-  /*   @include mixingfunc.measures(186px, 48px, 667px, 237px); */
-  @include mixingfunc.measures(137px, 32px, 692px, 245px);
-  @include mixingfunc.font-style(Arial, normal, 700, 25px, 130%, center);
-  background: #d80027;
-  border-radius: 20px;
-  position: absolute;
-  color: #ffffff;
-}
-
-.btn-dr2 {
-  position: absolute;
-  @include mixingfunc.measures(84px, 32px, 45px, 245px);
-  @include mixingfunc.font-style(Arial, normal, 600, 25px, 130%, center);
-  color: #000000;
-}
-.modal-close-dr {
-  transform: translateY(-200%);
-  /*modal close*/
-}
 
 /*----------------buttons admin------------------*/
 .icons-certificate {
