@@ -454,32 +454,94 @@
   position: absolute;
   background-color: #ffffff;
   color: #000;
-  @include mixingfunc.measures(286px, 47px, 420px, 53px);
+  @include mixingfunc.measures(210px, 37px, 23%, 47px);
   display: flex;
   border-radius: 20px;
   justify-content: center;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 550;
   cursor: pointer;
   box-shadow: 0px 4px 6px 3px rgba(0, 0, 0, 0.25);
+  transition: all .4s ease;
+  user-select: none;
+  &:hover{
+    box-shadow: 0px 4px 6px 3px rgba(0, 0, 0, 0.25);
+   
+  }
+  @include media-queries.tablet {
+    width: 16.5%;
+    height: 34px;
+    font-size: 19px;
+    left: 22%;
+ 
+  }
+  @include media-queries.tablett {
+    width: 17%;
+    height: 34px;
+    font-size: 18px;
+    left: 10%;
+  }
+  @include media-queries.big-phone {
+    /* width: 16%;
+    height: 27px;
+    font-size: 15px;
+    top: 26px;
+    left: 11%; */
+    display: none;
+  }
+  @include media-queries.phoness {
+   /*  width: 14%; */
+   display: none;
+  }
 }
 
 .btn-search {
   position: absolute;
   display: flex;
-  @include mixingfunc.measures(264px, 47px, 754px, 53px);
+  @include mixingfunc.measures(210px, 37px, 43%, 47px);
   border-radius: 20px;
   background-color: #8eaaff;
   color: #fff;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 550;
   font-family: Arial, Helvetica, sans-serif;
   justify-content: center;
   align-items: center;
   box-shadow: 0px 4px 6px 3px rgba(0, 0, 0, 0.06);
   cursor: pointer;
+  user-select: none;
+  transition: all .4s ease;
+  &:hover{
+    box-shadow: 0px 4px 6px 3px rgba(0, 0, 0, 0.25);
+  
+  }
+
+  @include media-queries.tablet {
+    width: 16.5%;
+    height: 35px;
+    font-size: 19px;
+    left: 42%;
+  }
+  @include media-queries.tablett {
+    width: 17%;
+    height: 34px;
+    font-size: 18px;
+    left: 30%;
+  }
+  @include media-queries.big-phone {
+/*     width: 16%;
+    height: 27px;
+    font-size: 15px;
+    left: 30%;
+    top: 26px; */
+    display: none;
+  }
+  @include media-queries.phoness {
+  display: none;
+  }
+
 
 }
 .lupa {

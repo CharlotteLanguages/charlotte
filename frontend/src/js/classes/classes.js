@@ -9,58 +9,50 @@ const d = document,
   $formDelete = d.querySelector(".form-delete"),
   $fragmentClasses = d.createDocumentFragment();
 
-export function ModalRemoveClasses(btnshow, btnclose, modalContainer, modal) {
-  d.addEventListener("click", (e) => {
-    if (e.target.matches(btnshow)) {
-      console.log(e.target);
-      d.querySelector(modalContainer).style.visibility = "visible";
-      d.querySelector(modal).classList.toggle("modal-close-d");
-    }
-    if (e.target.matches(btnclose)) {
-      d.querySelector(modalContainer).style.visibility = "hidden";
-      d.querySelector(modal).classList.toggle("modal-close-d");
-    }
-  });
-}
+/*------------------------------------------------------------------------------------------- */
 
-export function ModalShowClasses(btnshow, btnclose, modalContainer, modal) {
-  d.addEventListener("click", (e) => {
-    if (e.target.matches(btnshow)) {
-      d.querySelector(modalContainer).style.visibility = "visible";
-      d.querySelector(modal).classList.toggle("modal-close-classes");
-    }
-    if (e.target.matches(btnclose)) {
-      d.querySelector(modalContainer).style.visibility = "hidden";
-      d.querySelector(modal).classList.toggle("modal-close-classes");
-    }
-  });
-}
 
 export function openFormClasses(btnshow, btnclose, modal, table) {
   d.addEventListener("click", (e) => {
     if (e.target.matches(btnshow)) {
       editor.setContents(``);
       load();
-      let currentDate = new Date(),
-        currentDay = currentDate.getDate(),
-        monthNumber = currentDate.getMonth() + 1,
-        currentYear = currentDate.getFullYear();
-
-      if (monthNumber < 10) {
-        monthNumber = `0${monthNumber}`;
-      }
-      d.querySelector(".input-DateStart-classes").setAttribute(
-        "min",
-        `${currentYear}-${monthNumber}-${currentDay}`
-      );
+      $formClasses.reset();
+      setCurrentDate();
+      d.querySelector("#alert").style.display = "none";
+      d.querySelector(".btn-certificates-badges").classList.toggle("btn-class-visible")
+      d.querySelector(".btn-search").classList.toggle("btn-calendar-visible")
+      d.getElementById("calendar-icon").style.display = "none";
     }
     if (e.target.matches(btnclose)) {
       load();
       $formClasses.reset();
+      d.querySelector(".btn-certificates-badges").classList.remove("btn-class-visible")
+      d.querySelector(".btn-search").classList.remove("btn-calendar-visible")
+      d.getElementById("calendar-icon").style.display = "inline";
     }
   });
 }
-/* const activity = d.querySelector(".table-promotion"); */
+
+/*------------------------------------------------------------------------------------------------- */
+
+
+function setCurrentDate(){
+  let currentDate = new Date(),
+        currentDay = currentDate.getDate(),
+        monthNumber = currentDate.getMonth() + 1,
+        currentYear = currentDate.getFullYear()
+        /* año = currentDate.toLocaleString(),
+        año1 = currentDate.toLocaleDateString(),
+        año2 = currentDate.toLocaleTimeString(); */
+      if (monthNumber < 10 || currentDay <10 )  monthNumber = `0${monthNumber}`;
+     if(currentDay <10)  currentDay = `0${currentDay}`
+      d.querySelector(".input-DateStart-classes").setAttribute("min",`${currentYear}-${monthNumber}-${currentDay}`);
+
+}
+
+/*------------------------------------------------------------------------------------------------------------- */
+
 
 function CodeTh() {
   let code = `
@@ -77,12 +69,14 @@ function CodeTh() {
   return code;
 }
 
+/*-------------------------------------------------------------------------------------------------------------- */
+
+
 let clase = [];
-export const Classes = async () => {
+export const getClassesData = async () => {
   try {
     let res = await fetch(API_URL),
       json = await res.json();
-    /*  if (!res.ok) throw { status: res.status, statusText: res.statusText }; */
     if (json.length <= 0) {
       const table = d.querySelector(".crud-table-classes");
       table.innerHTML = `<div class = "no-activities">NO CLASSES YET</div>`;
@@ -94,22 +88,28 @@ export const Classes = async () => {
       renderClasses(clase);
     }
   } catch (err) {
-    let message = err.statusText || "ocurrió un Error";
+    const table = d.querySelector(".crud-table-classes");
+    table.innerHTML = `<div class = "no-activities">COULD NOT ESTABLISH CONNECTION TO SERVER</div>`;
   }
 };
 
+
+
+/*---------------------------------------------------------------------------------------------------- */
+
+
 const renderClasses = (clase) => {
   let codigo = "";
-  clase.forEach((ele) => {
+  clase.reverse().forEach((ele) => {
     const $tr = d.createElement("tr");
     codigo = `
     <tbody class = "body">
     <tr class = "tr">
-    <td>${ele.id}</td>
-    <td>${ele.classeTitle}</td>
-    <td>${ele.classePrice}</td>
-    <td>${ele.classeDateEnd}</td>
-    <td>
+    <td data-label = "ID">${ele.id}</td>
+    <td data-label = "Class">${ele.classTitle}</td>
+    <td data-label = "Student">${ele.classStudentName}</td>
+    <td data-label = "Date">${ele.classSetData.split("-").reverse().join("-")} ${ele.classSetTime}</td>
+    <td data-label = "Actions">
         <div class="icons-classes">
         <i class="fas fa-dot-circle read-classes" data-ids = ${ele.id}></i>
         <i class="fas fa-pen edit-classes" data-id = ${ele.id}></i> 
@@ -125,41 +125,15 @@ const renderClasses = (clase) => {
   $tableClasses.appendChild($fragmentClasses);
 };
 
-d.addEventListener("click", (e) => {
-  if (e.target.matches(".btn-submit")) {
-    e.preventDefault();
-    /* const formData = new FormData($formResource); */
-    const activity = {
-      classeTitle: $formClasses["classeTitle"].value,
-      classePrice: $formClasses["classePrice"].value,
-      classeOffer: $formClasses["classeOffer"].value,
-      classeDateStart: $formClasses["classeDateStart"].value,
-      classeDateEnd: $formClasses["classeDateEnd"].value,
-      classeCategory: $formClasses["classeCategory"].value,
-      classeDescription: editor.getContents(),
-    };
-    fetch(API_URL, {
-      method: "POST",
-      body: JSON.stringify(activity),
-      headers: { "content-Type": "application/json" },
-    })
-      .then((res) => {
-        res.json();
-      })
-      .catch((error) => {
-        alertManager("error", error);
-      })
-      .then((res) => {
-        Classes();
 
-        document.querySelector(".crud-form-classes").reset();
-        load();
-        alertManager("success", "Created Successfully");
-      });
-  }
-});
+/*------------------------------------------------------------------------------------------------------- */
 
-d.addEventListener("click", (e) => {
+
+
+
+
+
+const removeClasess = (e)=>{
   if (e.target.matches(".remove-classes")) {
     d.querySelector("#modal-container-dr").style.opacity = "1";
     d.querySelector("#modal-container-dr").style.visibility = "visible";
@@ -168,7 +142,7 @@ d.addEventListener("click", (e) => {
     d.addEventListener("submit", (e) => {
       if (e.target === $formDelete) {
         e.preventDefault();
-
+  
         fetch(`${API_URL}/${id}`, {
           method: "DELETE",
         })
@@ -183,7 +157,7 @@ d.addEventListener("click", (e) => {
               d.querySelector("#modal-container-dr").style.visibility =
                 "hidden";
             }, 700);
-            Classes();
+            getClassesData();
             alertManager("deleted", "Deleted Successfully");
             $formDelete.reset();
             setTimeout(() => {
@@ -193,7 +167,10 @@ d.addEventListener("click", (e) => {
       }
     });
   }
-});
+
+}
+
+
 
 function alertManager(typeMsg, message) {
   const alert = document.querySelector("#alert"),
@@ -206,98 +183,69 @@ function alertManager(typeMsg, message) {
   setTimeout(() => {
     alert.style.display = "none";
     alert.classList.remove(typeMsg);
-  }, 2000);
+  }, 2500);
 }
 
-d.addEventListener("click", (e) => {
+/*-------------------------------------------------------------------------------------- */
+
+const openClassesEditForm = (e)=>{
   if (e.target.matches(".edit-classes")) {
     $titleClasses.textContent = "Modify classes";
     $btnClasses.value = "Save Changes";
-    $btnClasses.classList.toggle("edit-two");
-    $btnClasses.classList.toggle("btn-submit");
+    d.querySelector("#alert").style.display = "none";
+    d.querySelector(".btn-certificates-badges").classList.toggle("btn-class-visible")
+    d.querySelector(".btn-search").classList.toggle("btn-calendar-visible")
+    d.getElementById("calendar-icon").style.display = "none";
+   
     let id = e.target.dataset.id,
-      promo = {};
-    clase.filter((prom) => {
-      if (prom.id == id) {
-        promo = prom;
-      }
+      clases = {};
+    clase.filter((ele) => {
+      if (ele.id == id) clases = ele;
+      
     });
-
+  
     $formClasses.idi.value = id;
-    $formClasses.classeTitle.value = promo.classeTitle;
-    $formClasses.classePrice.value = promo.classePrice;
-    $formClasses.classeOffer.value = promo.classeOffer;
-    $formClasses.classeDateStart.value = promo.classeDateStart;
-    $formClasses.classeDateEnd.value = promo.classeDateEnd;
-    $formClasses.classeCategory.value = promo.classeCategory;
-    editor.setContents(`${promo.classeDescription}`);
+    $formClasses.classTitle.value = clases.classTitle;
+    $formClasses.classCategory.value = clases.classCategory;
+    $formClasses.classStudentName.value = clases.classStudentName;
+    $formClasses.classSetTime.value = clases.classSetTime;
+    $formClasses.classSetData.value = clases.classSetData;
+    $formClasses.classType.value = clases.classType;
+    editor.setContents(`${clases.classeDescription}`);
     load();
   }
-});
 
-d.addEventListener("click", (e) => {
-  if (e.target.matches(".edit-two")) {
-    const activity = {
-      id: $formClasses.idi.value,
-      classeTitle: $formClasses.classeTitle.value,
-      classePrice: $formClasses.classePrice.value,
-      classeOffer: $formClasses.classeOffer.value,
-      classeDateStart: $formClasses.classeDateStart.value,
-      classeDateEnd: $formClasses.classeDateEnd.value,
-      classeCategory: $formClasses.classeCategory.value,
-      classeDescription: editor.getContents(),
-    };
+}
 
-    fetch(`${API_URL}/${activity.id}`, {
-      method: "PUT",
-      body: JSON.stringify(activity),
-      headers: {
-        "content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .catch((error) => {
-        alertManager("error", error);
-      })
-      .then((response) => {
-        Classes();
-        load();
-        alertManager("update", "Edit Successfully");
-        $btnClasses.classList.toggle("edit-two");
-        $btnClasses.classList.toggle("btn-submit");
-        $btnClasses.value = "Add New Offer";
-        $titleClasses.textContent = "Create new class";
-        $formClasses.reset();
 
-        /*   document.querySelector(".crud-form-resource").reset(); */
-      });
-  }
-});
 
 /*-----------------------------------------------------Btn Read show------------------------------------------- */
-
-d.addEventListener("click", (e) => {
+const openWindowModal = (e)=>{
   if (e.target.matches(".read-classes")) {
     d.querySelector("#modal-container-classes").style.opacity = "1";
     d.querySelector("#modal-container-classes").style.visibility = "visible";
     d.querySelector(".modal-classes").classList.toggle("modal-clp");
     let id = e.target.dataset.ids,
-      clase = {};
+      clases = {};
     clase.filter((prom) => {
       if (prom.id == id) {
-        clase = prom;
+        clases = prom;
       }
     });
-
-    if (clase.classeDescription == "<p><br></p>") {
+  
+    if (clases.classeDescription == "<p><br></p>") {
       let c = `<div class = "no-description">Empty section</div>`;
       $modal.innerHTML = c;
     } else {
       let codigo = `
-      <div>${clase.classeDescription}</div>`;
+      <div>${clases.classeDescription}</div>`;
       $modal.innerHTML = codigo;
     }
   }
+
+}
+
+const closeWindowModal = (e)=>{
   if (e.target.matches(".poi")) {
     d.querySelector(".modal-classes").classList.toggle("modal-clp");
     setTimeout(() => {
@@ -306,7 +254,105 @@ d.addEventListener("click", (e) => {
     }, 700);
     /* d.querySelector(".modal-resource").classList.toggle("close-resource"); */
   }
+
+}
+
+
+
+/*---------------------------------------------------------------Method Post-------------------------------*/
+
+
+d.addEventListener("submit", async (e) => {
+  if (e.target === $formClasses) {
+    e.preventDefault();
+    if (!e.target.idi.value) {
+      ///CREATE POST
+      try {
+        let options = {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              classTitle: e.target.classTitle.value,
+              classCategory: e.target.classCategory.value,
+              classStudentName: e.target.classStudentName.value,
+              classSetTime: e.target.classSetTime.value,
+              classSetData: e.target.classSetData.value,
+              classType: e.target.classType.value,
+              classeDescription: editor.getContents(),
+            }),
+          },
+          res = await fetch(API_URL, options),
+          json = await res.json();
+
+        if (!res.ok) throw { status: res.status, statusText: res.statusText };
+          getClassesData();
+          load();
+          alertManager("success", "Created Successfully");
+          $formClasses.reset();
+          d.querySelector(".btn-certificates-badges").classList.toggle("btn-class-visible")
+          d.querySelector(".btn-search").classList.toggle("btn-calendar-visible")
+          d.getElementById("calendar-icon").style.display = "inline";
+      } catch (err) {
+        let message = err.statusText || "ocurrió un Error";
+    
+      }
+    } else {
+      //UPDATE -PUT
+      try {
+        let options = {
+            method: "PUT",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              classTitle: e.target.classTitle.value,
+              classCategory: e.target.classCategory.value,
+              classStudentName: e.target.classStudentName.value,
+              classSetTime: e.target.classSetTime.value,
+              classSetData: e.target.classSetData.value,
+              classType: e.target.classType.value,
+              classeDescription: editor.getContents(),
+            }),
+          },
+          res = await fetch(
+            `${API_URL}/${e.target.idi.value}`,
+            options
+          ),
+          json = await res.json();
+        if (!res.ok) throw { status: res.status, statusText: res.statusText };
+            restartFormValues(e)
+      } catch (err) {
+        let message = err.statusText || "ocurrió un Error";
+       
+      }
+    }
+  }
 });
+
+
+
+
+function restartFormValues(e) {
+  load();
+  getClassesData();
+  alertManager("update", "Edit Successfully");
+  openEditingForm("Create new class", "Create class");
+  $formClasses.reset();
+  e.target.idi.value = "";
+  d.querySelector(".btn-certificates-badges").classList.toggle("btn-class-visible")
+  d.querySelector(".btn-search").classList.toggle("btn-calendar-visible")
+  d.getElementById("calendar-icon").style.display = "inline";
+  
+}
+
+function openEditingForm(title, btn) {
+  $titleClasses.textContent = title;
+  $btnClasses.value = btn;
+
+}
+
+
+
+
+
 
 /* -------------------------------load -----------------------------*/
 
@@ -316,29 +362,69 @@ function load() {
   d.querySelector("#container-noti").classList.toggle("noticia");
 }
 
+
+
+/* ---------------------------------------------- Editor -------------------------------------------------------- */
+
+
 const editor = SUNEDITOR.create(document.querySelector(".txtarea-classes"), {
+  value: "Comments...",
+  codeMirror: CodeMirror,
+  katex: katex,
   buttonList: [
-    ["undo", "redo"],
-    ["font", "fontSize", "formatBlock"],
-    ["paragraphStyle", "blockquote"],
-    ["bold", "underline", "italic", "strike", "subscript", "superscript"],
-    ["fontColor", "hiliteColor", "textStyle"],
-    ["removeFormat"],
-    "/", // Line break
-    ["outdent", "indent"],
-    ["align", "horizontalRule", "list", "lineHeight"],
-    ["table", "link", "image", "video", "audio"], // You must add the 'katex' library at options to use the 'math' plugin.
-    ["imageGallery"],
-    ["fullScreen", "showBlocks", "codeView"],
-    ["preview", "print"],
-    ["save", "template"],
-    ["codeView"],
-    ["dir", "dir_ltr", "dir_rtl"],
-  ],
-  height: 380,
+    // default
+    ['undo', 'redo'],
+    [':p-More Paragraph-default.more_paragraph', 'font', 'fontSize', 'formatBlock', 'paragraphStyle', 'blockquote'],
+    ['bold', 'underline', 'italic', 'strike', 'subscript', 'superscript'],
+    ['fontColor', 'hiliteColor', 'textStyle'],
+    ['removeFormat'],
+    ['outdent', 'indent'],
+    ['align', 'horizontalRule', 'list', 'lineHeight'],
+    ['-right', ':i-More Misc-default.more_vertical', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save', 'template'],
+    ['-right', ':r-More Rich-default.more_plus', 'table', 'math', 'imageGallery'],
+    ['-right', 'image', 'video', 'audio', 'link'],
+    // (min-width: 992)
+    ['%992', [
+        ['undo', 'redo'],
+        ['bold', 'underline', 'italic', 'strike'],
+        [':t-More Text-default.more_text', 'subscript', 'superscript', 'fontColor', 'hiliteColor', 'textStyle'],
+        ['removeFormat'],
+        ['outdent', 'indent'],
+        ['align', 'horizontalRule', 'list', 'lineHeight'],
+        [':p-More Paragraph-default.more_paragraph', 'font', 'fontSize', 'formatBlock', 'paragraphStyle', 'blockquote'],
+        ['-right', ':i-More Misc-default.more_vertical', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save', 'template'],
+        ['-right', ':r-More Rich-default.more_plus', 'table', 'link', 'image', 'video', 'audio', 'math', 'imageGallery']
+    ]],
+    // (min-width: 767)
+    ['%767', [
+        ['undo', 'redo'],
+        [':p-More Paragraph-default.more_paragraph', 'font', 'fontSize', 'formatBlock', 'paragraphStyle', 'blockquote'],
+        [':t-More Text-default.more_text', 'bold', 'underline', 'italic', 'strike', 'subscript', 'superscript', 'fontColor', 'hiliteColor', 'textStyle'],
+        ['removeFormat'],
+        ['outdent', 'indent'],
+        [':e-More Line-default.more_horizontal', 'align', 'horizontalRule', 'list', 'lineHeight'],
+        [':r-More Rich-default.more_plus', 'table', 'link', 'image', 'video', 'audio', 'math', 'imageGallery'],
+        ['-right', ':i-More Misc-default.more_vertical', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save', 'template']
+    ]],
+    // (min-width: 480)
+    ['%480', [
+        [':p-More Paragraph-default.more_paragraph', 'font', 'fontSize', 'formatBlock', 'paragraphStyle'],
+        [':t-More Text-default.more_text', 'bold', 'underline', 'italic', 'strike', 'subscript', 'superscript', 'fontColor', 'hiliteColor', 'textStyle', 'removeFormat'],
+        [':e-More Line-default.more_horizontal', 'outdent', 'indent', 'align', 'horizontalRule', 'list', 'lineHeight'],
+        [':r-More Rich-default.more_plus', 'table', 'link', 'image', 'video', 'audio', 'math', 'imageGallery'],
+        ['-right', ':i-More Misc-default.more_vertical', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save', 'template']
+    ]]
+],
+
+  width: "100%",
 
   lang: SUNEDITOR_LANG["en"],
 });
+
+editor.setDefaultStyle("font-family: Arial; font-size: 13px;");
+
+
+
 
 const vc = d.querySelector(".cont-table-classes_blue");
 
@@ -362,6 +448,7 @@ let monthNames = [
   "November",
   "December",
 ];
+
 let currentDate = new Date(),
   currentDay = currentDate.getDate(),
   monthNumber = currentDate.getMonth(),
@@ -491,6 +578,27 @@ d.addEventListener("click", (e) => {
     );
   }
 });
+d.addEventListener("click", (e) => {
+  if (e.target.matches("#back")) {
+  
+    d.querySelector(".cont-tables-classes").classList.remove("up-table-classes");
+    d.querySelector(".calendar").classList.add("up-calendar");
+      e.target.style.display= "none"
+      d.getElementById("calendar-icon").style.display = "inline";
+
+  }
+
+  if (e.target.matches("#calendar-icon")) {
+    d.querySelector(".cont-tables-classes").classList.add("up-table-classes");
+    d.querySelector(".calendar").classList.remove("up-calendar");
+    e.target.style.display = "none"
+    d.getElementById("back").style.display = "inline";
+
+  }
+});
+
+
+
 
 d.addEventListener("click", (e) => {
   if (e.target.matches(".fa-bars")) {
@@ -499,4 +607,11 @@ d.addEventListener("click", (e) => {
     }, 500);
     d.querySelector(".menu").classList.toggle("move-menu");
   }
+});
+
+d.addEventListener("click", (e) => {
+  removeClasess(e);
+  openWindowModal(e);
+  closeWindowModal(e);
+  openClassesEditForm(e);
 });

@@ -2,13 +2,14 @@ const d = document;
 const API_URL = `http://localhost:3000/activities`,
   $formActivity = d.querySelector(".crud-form"),
   $titleActivity = d.querySelector(".crud-title"),
-  $tbnActivity = d.getElementById("create-activitie"),
-  $tableActivity = d.querySelector(".crud-table"),
+  $btnActivity = d.getElementById("create-activitie"),
+  $tableActivity = d.querySelector(".crud-table-activities"),
   $fragment = d.createDocumentFragment(),
-  $formDelete = d.querySelector(".form-delete"),
+  $formDelete = d.querySelector(".form-delete-dr"),
   $modal = document.querySelector(".cont-p-activity");
 
-/* const activity = d.querySelector(".table"); */
+
+/*--------------------------------------------------------------------------------------------------------------------- */
 
 export function escrollBehavor(id1, id2, id3, id4) {
   window.sr = ScrollReveal();
@@ -33,42 +34,18 @@ export function escrollBehavor(id1, id2, id3, id4) {
     distance: "-5px",
   });
 }
-export function ModalRemoveActivities(
-  btnshow,
-  btnclose,
-  modalContainer,
-  modal
-) {
-  d.addEventListener("click", async (e) => {
-    /*  if (e.target.matches(btnshow)) {
-      d.querySelector(modalContainer).style.visibility = "visible";
-      d.querySelector(modal).classList.toggle("modal-close-d");
-    } */
-    if (e.target.matches(btnclose)) {
-      /*  d.querySelector(modalContainer).style.visibility = "hidden";
-      d.querySelector(modal).classList.toggle("modal-close-d"); */
-    }
-  });
-}
 
-export function ModalShowActivities(btnshow, btnclose, modalContainer, modal) {
-  d.addEventListener("click", (e) => {
-    if (e.target.matches(btnshow)) {
-      d.querySelector(modalContainer).style.visibility = "visible";
-      d.querySelector(modal).classList.toggle("modal-close");
-    }
-    if (e.target.matches(btnclose)) {
-      d.querySelector(modalContainer).style.visibility = "hidden";
-      d.querySelector(modal).classList.toggle("modal-close");
-    }
-  });
-}
+
+
+
+/*-------------------------------------open form---------------------------------- */
 
 export function openFormActivities(btnshow, btnclose, modal, table, noti) {
   d.addEventListener("click", (e) => {
     if (e.target.matches(btnshow)) {
       editor.setContents(``);
       load();
+      d.querySelector("#alert").style.display = "none";
     }
     if (e.target.matches(btnclose)) {
       load();
@@ -92,6 +69,11 @@ function CodeTh() {
   return code;
 }
 
+
+/*---------------------------------------------------------------------------------------------- */
+
+
+
 let activity = [];
 export const activitiesp = async () => {
   try {
@@ -99,7 +81,7 @@ export const activitiesp = async () => {
       json = await res.json();
     /*  if (!res.ok) throw { status: res.status, statusText: res.statusText }; */
     if (json.length <= 0) {
-      const table = d.querySelector(".crud-table");
+      const table = d.querySelector(".crud-table-activities");
       table.innerHTML = `<div class = "no-activities">NO ACTIVITIES YET</div>`;
       setTimeout(() => {
         table.innerHTML = `<div class = "no-activities add">ADD A ACTIVITY</div`;
@@ -107,24 +89,30 @@ export const activitiesp = async () => {
     } else {
       activity = json;
       renderActivities(activity);
+      addColorsTags();
+ 
     }
   } catch (err) {
-    let message = err.statusText || "ocurrió un Error";
+    const table = d.querySelector(".crud-table-activities");
+    table.innerHTML = `<div class = "no-activities">COULD NOT ESTABLISH CONNECTION TO SERVER</div>`;
+  
   }
 };
 
+/*--------------------------------------------Render Resources-------------------------------- */
+
 const renderActivities = (activitie) => {
   let codigo = "";
-  activitie.forEach((ele) => {
+  activitie.reverse().forEach((ele) => {
     const $tr = d.createElement("tr");
     codigo = `
     <tbody class = "body">
     <tr class = "tr">
-    <td>${ele.id}</td>
-    <td>${ele.activitiName}</td>
-    <td>[${ele.category}] ${ele.level}</td>
-    <td>${ele.tags}</td>
-    <td>
+    <td data-label = "ID">${ele.id}</td>
+    <td data-label = "Activity title">${ele.activitiName}</td>
+    <td data-label = "Category" class = "category">[ ${ele.category} ] ${ele.level}</td>
+    <td data-label = "Tags" class = "tags">${ele.tags}</td>
+    <td data-label = "Actions">
         <div class="icons-activity">
         <i class="fas fa-dot-circle read-activity" data-ids = ${ele.id}></i>
         <i class="fas fa-pen edit-activity" data-id = ${ele.id}></i> 
@@ -133,134 +121,38 @@ const renderActivities = (activitie) => {
     </td>
     </tr>
     </tbody>`;
+
     $tr.innerHTML = codigo;
     $fragment.appendChild($tr);
+
   });
   $tableActivity.innerHTML = CodeTh();
   $tableActivity.appendChild($fragment);
 };
 
-function getDataFromForm() {
-  return {
-    id: $formActivity.idi.value,
-    activitiName: $formActivity.activitiName,
-    category: $formActivity.category,
-    level: $formActivity.level,
-    author: $formActivity.author,
-    tags: $formActivity.tags,
-    description: editor.getContents(),
-  };
+
+
+/*----------------------------------------------------------------------------------------- */
+
+const addStyles =()=>{
+  d.querySelector("#modal-container-activity").style.opacity = "1";
+  d.querySelector("#modal-container-activity").style.visibility = "visible";
+  d.querySelector(".modal-activity").classList.toggle("modal-cla");
 }
 
-d.addEventListener("click", (e) => {
-  if (e.target.matches(".btn-submit")) {
-    const formData = new FormData($formActivity);
-    const activity = {
-      activitiName: formData.get("activitiName"),
-      category: formData.get("category"),
-      level: formData.get("level"),
-      author: formData.get("author"),
-      tags: formData.get("tags"),
-      description: editor.getContents(),
-    };
-    fetch(API_URL, {
-      method: "POST",
-      body: JSON.stringify(activity),
-      headers: { "content-Type": "application/json" },
-    })
-      .then((res) => {
-        res.json();
-      })
-      .catch((error) => {
-        alertManager("error", error);
-      })
-      .then((res) => {
-        activitiesp();
-        alertManager("success", "Created Successfully");
-        $formActivity.reset();
-        load();
-      });
-  }
-});
-d.addEventListener("click", (e) => {
-  if (e.target.matches(".edit-activity")) {
-    e.preventDefault();
-    $titleActivity.textContent = "Modify activity";
-    $tbnActivity.value = "Save Changes";
-    $tbnActivity.classList.toggle("edit-two");
-    $tbnActivity.classList.toggle("btn-submit");
 
-    let id = e.target.dataset.id,
-      actividades = {};
-    activity.filter((acti) => {
-      if (acti.id == id) {
-        actividades = acti;
-      }
-    });
-
-    $formActivity.idi.value = id;
-    $formActivity.activitiName.value = actividades.activitiName;
-    $formActivity.category.value = actividades.category;
-    $formActivity.level.value = actividades.level;
-    $formActivity.author.value = actividades.author;
-    $formActivity.tags.value = actividades.tags;
-    editor.setContents(`${actividades.description}`);
-    load();
-  }
-});
-
-d.addEventListener("click", (e) => {
-  if (e.target.matches(".edit-two")) {
-    e.preventDefault();
-    const activity = {
-      id: $formActivity.idi.value,
-      activitiName: $formActivity.activitiName.value,
-      category: $formActivity.category.value,
-      level: $formActivity.level.value,
-      author: $formActivity.author.value,
-      tags: $formActivity.tags.value,
-      description: editor.getContents(),
-    };
-
-    fetch(`${API_URL}/${activity.id}`, {
-      method: "PUT",
-      body: JSON.stringify(activity),
-      headers: {
-        "content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .catch((error) => {
-        alertManager("error", error);
-      })
-      .then((response) => {
-        activitiesp();
-        load();
-        $tbnActivity.classList.toggle("edit-two");
-        $tbnActivity.classList.toggle("btn-submit");
-        $tbnActivity.value = "Add new activity";
-        $titleActivity.textContent = "Create new activity";
-        alertManager("update", "Edit Successfully");
-        $formActivity.reset();
-      });
-  }
-});
 
 /*-----------------------------------------------------Btn Read show------------------------------------------- */
 
-d.addEventListener("click", (e) => {
+const openModalEditor = (e)=>{
   if (e.target.matches(".read-activity")) {
-    d.querySelector("#modal-container-activity").style.opacity = "1";
-    d.querySelector("#modal-container-activity").style.visibility = "visible";
-    d.querySelector(".modal-activity").classList.toggle("modal-cla");
     let id = e.target.dataset.ids,
       acti = {};
+      addStyles();
     activity.filter((el) => {
-      if (el.id == id) {
-        acti = el;
-      }
-    });
-    console.log(acti.description);
+      if (el.id == id)  acti = el;
+      
+    }); 
     if (acti.description == "<p><br></p>") {
       let c = `<div class = "no-description">Empty section</div>`;
       $modal.innerHTML = c;
@@ -270,47 +162,172 @@ d.addEventListener("click", (e) => {
       $modal.innerHTML = codigo;
     }
   }
-  if (e.target.matches(".poi")) {
+
+}
+
+
+/*--------------------------------------------------------------------------------- */
+
+const closeModalEditor =(e)=>{
+  if (e.target.matches(".close")) {
     d.querySelector(".modal-activity").classList.toggle("modal-cla");
     setTimeout(() => {
       d.querySelector("#modal-container-activity").style.opacity = "0";
       d.querySelector("#modal-container-activity").style.visibility = "hidden";
     }, 700);
-    /* d.querySelector(".modal-resource").classList.toggle("close-resource"); */
+  }
+
+}
+
+
+/*-----------------------------Btn Edit ---------------------------------- */
+
+const openActivityEditForm = (e)=>{
+  if (e.target.matches(".edit-activity")) {
+    e.preventDefault();
+    $titleActivity.textContent = "Modify activity";
+    $btnActivity.value = "Save Changes";
+     d.querySelector("#alert").style.display = "none";
+    let id = e.target.dataset.id,
+      actividades = {};
+    activity.filter((acti) => {
+      if (acti.id == id) actividades = acti;
+      
+    });
+  
+    $formActivity.idi.value = id;
+    $formActivity.activitiName.value = actividades.activitiName;
+    $formActivity.category.value = actividades.category;
+    $formActivity.level.value = actividades.level;
+    $formActivity.author.value = actividades.author;
+    $formActivity.tags.value = actividades.tags;
+    editor.setContents(`${actividades.description}`);
+    load();
+  }
+}
+
+
+
+
+/*----------------------------------------------------------------------------------- */
+
+
+function addColorsTags(){
+      d.querySelectorAll(".tags").forEach(element => {
+        element.style.fontWeight = "600";
+
+        if(element.textContent === "Speak"){
+          element.style.color = "#fe2323";
+        }
+
+        if(element.textContent === "Listen"){
+          element.style.color = "#33b3f3";
+        }
+
+        if(element.textContent === "Write"){
+          element.style.color = "#00bd42";
+        }
+        if(element.textContent === "Read"){
+          element.style.color = "#0052B4";
+        }  
+      });
+
+
+}
+
+
+
+
+
+
+/*-------------------------POST -------------------------------------- */
+
+d.addEventListener("submit", async (e) => {
+  if (e.target === $formActivity) {
+    e.preventDefault();
+    if (!e.target.idi.value) {
+      ///CREATE POST
+      try {
+        let options = {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              activitiName: e.target.activitiName.value,
+              category:  e.target.category.value,
+              level: e.target.level.value,
+              author: e.target.author.value,
+              tags:  e.target.tags.value,
+              description: editor.getContents(),
+            }),
+          },
+          res = await fetch("http://localhost:3000/activities", options),
+          json = await res.json();
+
+        if (!res.ok) throw { status: res.status, statusText: res.statusText };
+        activitiesp();
+        load();
+        $formActivity.reset();
+        alertManager("success", "Created Successfully");
+
+      } catch (err) {
+        let message = err.statusText || "ocurrió un Error";
+      }
+    } else {
+      //UPDATE -PUT
+      try {
+        let options = {
+            method: "PUT",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              activitiName: e.target.activitiName.value,
+              category:  e.target.category.value,
+              level: e.target.level.value,
+              author: e.target.author.value,
+              tags:  e.target.tags.value,
+              description: editor.getContents(),
+            }),
+          },
+          res = await fetch(
+            `http://localhost:3000/activities/${e.target.idi.value}`,
+            options
+          ),
+          json = await res.json();
+        if (!res.ok) throw { status: res.status, statusText: res.statusText };
+        $btnActivity.value = "Create activity";
+        $titleActivity.textContent = "Create new activity";
+        load();
+        alertManager("update", "Edit Successfully");
+        $formActivity.reset();
+        activitiesp();
+        e.target.idi.value = "";
+      } catch (err) {
+        let message = err.statusText || "ocurrió un Error";
+     
+      }
+    }
   }
 });
 
-/*------------------------------------------------load-----------------------------*/
-function load() {
-  d.querySelector(".cont-new-activitie").classList.toggle("open-form-input");
-  d.querySelector(".container__tables").classList.toggle("up-table");
-  d.querySelector("#container-noti").classList.toggle("noticia");
-}
 
-const alertManager = (typeMsg, message) => {
-  const alert = document.querySelector("#alert"),
-    me = document.querySelector(".parrafo-succes");
 
-  me.innerHTML = message || "Se produjo cambios";
-  alert.classList.add(typeMsg);
-  alert.style.display = "block";
 
-  setTimeout(() => {
-    alert.style.display = "none";
-    alert.classList.remove(typeMsg);
-  }, 2000);
-};
 
-d.addEventListener("click", (e) => {
+
+
+
+
+/*--------------------------------------- Btn delete---------------------------------------*/
+
+const removeActivity = (e)=>{
   if (e.target.matches(".remove-activity")) {
-    d.querySelector("#modal-container-de").style.opacity = "1";
-    d.querySelector("#modal-container-de").style.visibility = "visible";
-    d.querySelector(".modal-de").classList.toggle("modal-close-de");
+    d.querySelector("#modal-container-dr").style.opacity = "1";
+    d.querySelector("#modal-container-dr").style.visibility = "visible";
+    d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
     let id = e.target.dataset.idr;
     d.addEventListener("submit", (e) => {
       if (e.target === $formDelete) {
         e.preventDefault();
-
+  
         fetch(`${API_URL}/${id}`, {
           method: "DELETE",
         })
@@ -319,10 +336,10 @@ d.addEventListener("click", (e) => {
             alertManager("error", error);
           })
           .then((res) => {
-            d.querySelector(".modal-de").classList.toggle("modal-close-de");
+            d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
             setTimeout(() => {
-              d.querySelector("#modal-container-de").style.opacity = "0";
-              d.querySelector("#modal-container-de").style.visibility =
+              d.querySelector("#modal-container-dr").style.opacity = "0";
+              d.querySelector("#modal-container-dr").style.visibility =
                 "hidden";
             }, 700);
             activitiesp();
@@ -335,35 +352,102 @@ d.addEventListener("click", (e) => {
       }
     });
   }
-});
+
+}
+
+
+
+
+/*------------------------------------------------load-----------------------------*/
+
+function load() {
+  d.querySelector(".cont-new-activitie").classList.toggle("open-form-activitie");
+  d.querySelector(".cont-tables-activities").classList.toggle("up-table");
+  d.querySelector("#container-noti").classList.toggle("noticia");
+}
+
+
+/*------------------------------------------------------------------------------------------------------ */
+
+
+const alertManager = (typeMsg, message) => {
+  const alert = document.querySelector("#alert"),
+    me = document.querySelector(".parrafo-succes");
+
+  me.innerHTML = message || "Se produjo cambios";
+  alert.classList.add(typeMsg);
+  alert.style.display = "block";
+
+  setTimeout(() => {
+    alert.style.display = "none";
+    alert.classList.remove(typeMsg);
+  }, 2500);
+};
+
+
+
+/* ---------------------------------------------- Editor -------------------------------------------------------- */
+
 
 const editor = SUNEDITOR.create(document.querySelector(".txtarea"), {
+  value: "Comments...",
   codeMirror: CodeMirror,
+  katex: katex,
   buttonList: [
-    ["undo", "redo"],
-    ["font", "fontSize", "formatBlock"],
-    ["paragraphStyle", "blockquote"],
-    ["bold", "underline", "italic", "strike", "subscript", "superscript"],
-    ["fontColor", "hiliteColor", "textStyle"],
-    ["removeFormat"],
-    "/", // Line break
-    ["outdent", "indent"],
-    ["align", "horizontalRule", "list", "lineHeight"],
-    ["table", "link", "image", "video", "audio" /** ,'math' */], // You must add the 'katex' library at options to use the 'math' plugin.
-    ["imageGallery"],
-    ["fullScreen", "showBlocks", "codeView"],
-    ["preview", "print"],
-    ["save", "template"],
-    ["codeView"],
-    ["dir", "dir_ltr", "dir_rtl"],
-  ],
-  height: 390,
+    // default
+    ['undo', 'redo'],
+    [':p-More Paragraph-default.more_paragraph', 'font', 'fontSize', 'formatBlock', 'paragraphStyle', 'blockquote'],
+    ['bold', 'underline', 'italic', 'strike', 'subscript', 'superscript'],
+    ['fontColor', 'hiliteColor', 'textStyle'],
+    ['removeFormat'],
+    ['outdent', 'indent'],
+    ['align', 'horizontalRule', 'list', 'lineHeight'],
+    ['-right', ':i-More Misc-default.more_vertical', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save', 'template'],
+    ['-right', ':r-More Rich-default.more_plus', 'table', 'math', 'imageGallery'],
+    ['-right', 'image', 'video', 'audio', 'link'],
+    // (min-width: 992)
+    ['%992', [
+        ['undo', 'redo'],
+        ['bold', 'underline', 'italic', 'strike'],
+        [':t-More Text-default.more_text', 'subscript', 'superscript', 'fontColor', 'hiliteColor', 'textStyle'],
+        ['removeFormat'],
+        ['outdent', 'indent'],
+        ['align', 'horizontalRule', 'list', 'lineHeight'],
+        [':p-More Paragraph-default.more_paragraph', 'font', 'fontSize', 'formatBlock', 'paragraphStyle', 'blockquote'],
+        ['-right', ':i-More Misc-default.more_vertical', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save', 'template'],
+        ['-right', ':r-More Rich-default.more_plus', 'table', 'link', 'image', 'video', 'audio', 'math', 'imageGallery']
+    ]],
+    // (min-width: 767)
+    ['%767', [
+        ['undo', 'redo'],
+        [':p-More Paragraph-default.more_paragraph', 'font', 'fontSize', 'formatBlock', 'paragraphStyle', 'blockquote'],
+        [':t-More Text-default.more_text', 'bold', 'underline', 'italic', 'strike', 'subscript', 'superscript', 'fontColor', 'hiliteColor', 'textStyle'],
+        ['removeFormat'],
+        ['outdent', 'indent'],
+        [':e-More Line-default.more_horizontal', 'align', 'horizontalRule', 'list', 'lineHeight'],
+        [':r-More Rich-default.more_plus', 'table', 'link', 'image', 'video', 'audio', 'math', 'imageGallery'],
+        ['-right', ':i-More Misc-default.more_vertical', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save', 'template']
+    ]],
+    // (min-width: 480)
+    ['%480', [
+        [':p-More Paragraph-default.more_paragraph', 'font', 'fontSize', 'formatBlock', 'paragraphStyle'],
+        [':t-More Text-default.more_text', 'bold', 'underline', 'italic', 'strike', 'subscript', 'superscript', 'fontColor', 'hiliteColor', 'textStyle', 'removeFormat'],
+        [':e-More Line-default.more_horizontal', 'outdent', 'indent', 'align', 'horizontalRule', 'list', 'lineHeight'],
+        [':r-More Rich-default.more_plus', 'table', 'link', 'image', 'video', 'audio', 'math', 'imageGallery'],
+        ['-right', ':i-More Misc-default.more_vertical', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save', 'template']
+    ]]
+],
 
+  width: "100%",
   lang: SUNEDITOR_LANG["en"],
 });
 
-const vc = d.querySelector(".container__table--blue");
+editor.setDefaultStyle("font-family: Arial; font-size: 13px;");
 
+
+/*----------------------------------------------------------------------------------------------------------- */
+
+const vc = d.querySelector(".cont-table-activities_blue");
 window.sr = ScrollReveal();
 sr.reveal(vc, {
   duration: 2500,
@@ -371,8 +455,9 @@ sr.reveal(vc, {
   distance: "-5px",
 });
 
-var inicio = new Date();
+/*------------------------------------------------------------------------------------- */
 
+var inicio = new Date();
 export function tiempo_carga() {
   var fin = new Date();
   var segundos = (fin - inicio) / 1000;
@@ -380,11 +465,24 @@ export function tiempo_carga() {
   document.getElementById("tiempoCarga").innerHTML = salida;
 }
 
-d.addEventListener("click", (e) => {
+/*----------------------------------------------------------------------------------------------------------- */
+
+const showSideBar = (e) => {
   if (e.target.matches(".fa-bars")) {
     setTimeout(() => {
       e.target.classList.toggle("changeColor");
     }, 500);
     d.querySelector(".menu").classList.toggle("move-menu");
   }
+};
+
+
+/*----------------------------------------------------------------------------------------- */
+
+d.addEventListener("click", (e) => {
+  openModalEditor(e);
+  closeModalEditor(e);
+  openActivityEditForm(e);
+  showSideBar(e);
+  removeActivity(e);
 });

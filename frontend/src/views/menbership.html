@@ -6,15 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/en.js"></script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/htmlmixed/htmlmixed.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/xml/xml.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/css/css.js"></script>
+      <!------------------------------ Sun Editor--------------------------------------->
+      <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/en.js"></script>
+      <!------------------------------ Codemirrorx--------------------------------------->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/htmlmixed/htmlmixed.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/xml/xml.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/css/css.js"></script>
+      <!------------------------------ Katex--------------------------------------->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
+  
     <title>Memberships</title>
 </head>
 
@@ -28,32 +33,30 @@
                     <form action="" class="crud-form-member">
                         <input type="hidden" name="idi">
 
-                        <input class="title-member" type="text" name="memberName" placeholder="Membership name"
-                            required>
+                            <select class="title-member" name="memberName" required>
+                                <option selected disabled="">Membership name</option>
+                                <option>Free</option>
+                                <option>Basic</option>
+                                <option>Pro</option>
+                                <option>Pro +</option>
+                           </select>
 
-                        <select class="input-category-member" name="memberCategory">
+                        <select class="input-category-member" name="memberCategory" required>
                             <option selected disabled="">Category</option>
-                            <option>Paid</option>
-                            <option>Program</option>
-                            <option>Accounts</option>
-                            <option>Intranet</option>
-                            <option>Brandingr</option>
-                            <option>Applocations</option>
-                            <option>Interactions</option>
-                            <option>Functionality</option>
-
+                            <option>Contain</option>
+                            <option>No Contain</option>
                         </select>
 
-                        <input class="input-price-member" type="number" name="memberPrice" placeholder="Price*">
+                        <input class="input-price-member" type="number" name="memberPrice" placeholder="Price*" required>
                         <div>
 
                             <div id="area-member">
                                 <textarea name="memberDescription" class="txtarea-member" cols="30"
                                     rows="10"> </textarea>
                             </div>
+                            <input id="create-member" type="submit" value="Create membership" class="btn-submit">
+                            <input class="cancel-member" type="button" value="Cancel">
                     </form>
-                    <input id="create-member" type="submit" value="Create membership" class="btn-submit">
-                    <input class="cancel-member" type="button" value="Cancel">
                 </article>
 
             </section>
@@ -65,12 +68,12 @@
                 <li><a href="/src/views/student.html">Students</a></li>
                 <li><a href="/src/views/news.html">News</a></li>
                 <li><a href="/src/views/courses.html">Courses</a></li>
-                <li><a href="/src/views/actividades.html">Activities</a></li>
+                <li><a href="/src/views/activities.html">Activities</a></li>
                 <li><a href="/src/views/resource.html">Resources</a></li>
                 <li><a href="/src/views/certificates.html">Certificates</a></li>
                 <li><a href="/src/views/classes.html" class="space">Private Classes</a></li>
                 <div class="space-top">
-                    <li><a href="/src/views/promotions.html">Offers</a></li>
+                    <li><a href="/src/views/offers.html">Offers</a></li>
                     <li class=" press"><a href="/src/views/menbership.html">Memberships</a></li>
                     <li><a href="/src/views/referrals.html">Referrals</a></li>
                     <li><a href="/src/views/sponsors.html">Sponsors</a></li>
@@ -91,21 +94,19 @@
             </div>
         </section>
 
-        <section class="cont-tables-member ">
+        <section class="cont-tables-member">
             <div class="cont-table-member_blue">
                 <table class="crud-table-member table-member">
 
                 </table>
             </div>
-
-
             <button class="btn-member">Add new membership</button>
 
         </section>
 
         <section id="modal-container-member">
             <div class="modal-member modal-clm">
-                <div class="close-member"><i class="fas fa-times-circle poi"></i></div>
+                <div class="close-member"><i class="fas fa-times-circle close"></i></div>
                 <div class="cont-p-member">
                 </div>
         </section>
@@ -123,7 +124,7 @@
             </section>
         </form>
 
-        <section class="container-notify-succes sucesx alert " id="alert">
+        <section class="container-notify-succes sucesx alert" id="alert">
             <i class="fas fa-check-circle close-notify-succes"></i>
             <p class="parrafo-succes"></p>
         </section>

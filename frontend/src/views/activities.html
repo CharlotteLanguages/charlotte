@@ -7,14 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="/src/css/style.css">
+    <!------------------------------ Sun Editor--------------------------------------->
     <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/en.js"></script>
+    <!------------------------------ Codemirrorx--------------------------------------->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.css">
     <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/htmlmixed/htmlmixed.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/xml/xml.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/css/css.js"></script>
+    <!------------------------------ Katex--------------------------------------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
     <title>Activities</title>
 </head>
 
@@ -23,19 +28,20 @@
          <i class="fas fa-bars" id="bars"></i>
         <section class="cont-new-activitie open-form-activitie">
             <section class=" crud" id="list-select">
+
                 <p class="crud-title font-title-activitie">Create activity</p>
                 <form class="crud-form">
                     <input type="hidden" name="idi">
-                    <input class="title" type="text" name="activitiName" placeholder="Activity Name" required>
-                    <select class="list-one" name="category">
+                    <input class="title-activity" type="text" name="activitiName" placeholder="Activity Name" required>
+                    <select class="category-activity" name="category" required>
                         <option selected disabled="">Category</option>
-                        <option>FREE</option>
-                        <option>BASIC</option>
-                        <option>PRO</option>
-                        <option>PRO +</option>
+                        <option>Free</option>
+                        <option>Basic</option>
+                        <option>Pro</option>
+                        <option>Pro +</option>
                     </select>
 
-                    <select class="list-two" name="tags">
+                    <select class="tags-activity" name="tags">
                         <option selected disabled="">Optional Tags</option>
                         <option>Read</option>
                         <option>Write</option>
@@ -43,23 +49,25 @@
                         <option>Listen</option>
                     </select>
 
-                    <input class="author" type="text" name="author" placeholder="Author" required>
+                    <input class="author-activity" type="text" name="author" placeholder="Author" required>
 
-                    <select class="level" name="level" required>
+                    <select class="level-activity" name="level" required>
                         <option selected disabled="">Level</option>
-                        <option>Level 1</option>
-                        <option>Level 2</option>
-                        <option>Level 3</option>
-                        <option>Level 4</option>
-                        <option>Level 5</option>
+                        <option>Basic l</option>
+                        <option>Basic ll</option>
+                        <option>Intermediate l</option>
+                        <option>Intermediate ll</option>
+                        <option>Upper Intermediate l</option>
+                        <option>Upper Intermediate ll</option>
+                        <option>Advanced</option>
                     </select>
 
                     <div id="area">
                         <textarea name="description" class="txtarea" cols="30" rows="10"> </textarea>
                     </div>
+                    <input id="create-activitie" type="submit" value="Create Activity" class="btn-submit">
+                    <input class="cancel-activitie" type="button" value="Cancel">
                 </form>
-                <input id="create-activitie" type="submit" value="Create Activity" class="btn-submit">
-                <input class="cancel-activitie" type="button" value="Cancel">
             </section>
         </section>
 
@@ -69,12 +77,12 @@
                 <li><a href="/src/views/student.html">Students</a></li>
                 <li><a href="/src/views/news.html">News</a></li>
                 <li><a href="/src/views/courses.html">Courses</a></li>
-                <li class="press"><a href="/src/views/actividades.html">Activities</a></li>
+                <li class="press"><a href="/src/views/activities.html">Activities</a></li>
                 <li><a href="/src/views/resource.html">Resources</a></li>
                 <li><a href="/src/views/certificates.html">Certificates</a></li>
                 <li><a href="/src/views/classes.html" class="space">Private Classes</a></li>
                 <div class="space-top">
-                    <li class="space2"><a href="/src/views/promotions.html">Offers</a></li>
+                    <li class="space2"><a href="/src/views/offers.html">Offers</a></li>
                     <li><a href="/src/views/menbership.html">Memberships</a></li>
                     <li><a href="/src/views/referrals.html">Referrals</a></li>
                     <li><a href="/src/views/sponsors.html">Sponsors</a></li>
@@ -104,7 +112,7 @@
         
         <section id="modal-container-activity">
             <div class="modal-activity modal-cla">
-                <div class="close-activity"><i class="fas fa-times-circle poi"></i></div>
+                <div class="close-activity"><i class="fas fa-times-circle close"></i></div>
                 <div class="cont-p-activity">
                 </div>
             </div>

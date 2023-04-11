@@ -4,41 +4,15 @@ const d = document,
   API_URL = `http://localhost:3000/resource`,
   $formResource = d.querySelector(".crud-form-resource"),
   $titleResource = d.querySelector(".crud-title-resource"),
-  $tbnResource = d.getElementById("create-resource"),
+  $btnResource = d.getElementById("create-resource"),
   $tableResource = d.querySelector(".crud-table-resource"),
   $fragment = d.createDocumentFragment(),
   $formDelete = d.querySelector(".form-delete-dr"),
   $modal = document.querySelector(".cont-p-resource");
 const news = d.querySelector("#container-noti");
 
-export function ModalRemoveResources(btnshow, btnclose, modalContainer, modal) {
-  d.addEventListener("click", (e) => {
-    /* if (e.target.matches(btnshow)) {
-      console.log(e.target);
-      d.querySelector(modalContainer).style.visibility = "visible";
-      d.querySelector(modal).classList.toggle("modal-close-d");
-    }
-    if (e.target.matches(btnclose)) {
-      d.querySelector(modalContainer).style.visibility = "hidden";
-      d.querySelector(modal).classList.toggle("modal-close-d");
-    } */
-  });
-}
 
-/*--------------------------------------------show-----------------------*/
 
-export function ModalShowResources(btnshow, btnclose, modalContainer, modal) {
-  d.addEventListener("click", (e) => {
-    /*  if (e.target.matches(btnshow)) {
-      d.querySelector(modalContainer).style.visibility = "visible";
-      d.querySelector(modal).classList.toggle("close-resource");
-    }
-    if (e.target.matches(btnclose)) {
-      d.querySelector(modalContainer).style.visibility = "hidden";
-      d.querySelector(modal).classList.toggle("close-resource");
-    } */
-  });
-}
 
 /*-------------------------------------open form---------------------------------- */
 
@@ -47,6 +21,8 @@ export function openFormResources(btnshow, btnclose, modal, table) {
     if (e.target.matches(btnshow)) {
       editor.setContents(``);
       load();
+      $formResource.reset();
+      d.querySelector("#alert").style.display = "none";
     }
     if (e.target.matches(btnclose)) {
       load();
@@ -54,6 +30,10 @@ export function openFormResources(btnshow, btnclose, modal, table) {
     }
   });
 }
+
+/*----------------------------------------------------------------------------------------- */
+
+
 
 function CodeTh() {
   let code = `
@@ -70,12 +50,17 @@ function CodeTh() {
   return code;
 }
 
+
+
+
+/*-------------------------------------------------------------------------------------- */
+
+
 let resource = [];
-export const resourcep = async () => {
+export const getResourceData = async () => {
   try {
     let res = await fetch(API_URL),
       json = await res.json();
-    /*  if (!res.ok) throw { status: res.status, statusText: res.statusText }; */
     if (json.length <= 0) {
       const table = d.querySelector(".crud-table-resource");
       table.innerHTML = `<div class = "no-activities">NO RESOURCES YET</div>`;
@@ -87,11 +72,14 @@ export const resourcep = async () => {
       renderResources(resource);
     }
   } catch (err) {
-    let message = err.statusText || "ocurrió un Error";
+    const table = d.querySelector(".crud-table-resource");
+    table.innerHTML = `<div class = "no-activities">COULD NOT ESTABLISH CONNECTION TO SERVER</div>`;
   }
 };
 
 /*--------------------------------------------Render Resources-------------------------------- */
+
+
 const renderResources = (resource) => {
   let codigo = "";
   resource.forEach((ele, i) => {
@@ -114,8 +102,6 @@ const renderResources = (resource) => {
     </tbody>`;
     $tr.innerHTML = codigo;
     $fragment.appendChild($tr);
-    if ((ele[i] = typeof Number)) console.log("es un numero", ele[i].category);
-    console.log(resource[i].category);
   });
   $tableResource.innerHTML = CodeTh();
   $tableResource.appendChild($fragment);
@@ -123,7 +109,7 @@ const renderResources = (resource) => {
 
 /*-----------------------------------------------------Btn Read show------------------------------------------- */
 
-d.addEventListener("click", (e) => {
+const opeModalEditor = (e)=>{
   if (e.target.matches(".read-resource")) {
     d.querySelector("#modal-container-resource").style.opacity = "1";
     d.querySelector("#modal-container-resource").style.visibility = "visible";
@@ -135,7 +121,7 @@ d.addEventListener("click", (e) => {
         resources = resourc;
       }
     });
-    console.log(resources.description);
+
     if (resources.description == "<p><br></p>") {
       let c = `<div class = "no-description">Empty section</div>`;
       $modal.innerHTML = c;
@@ -145,7 +131,12 @@ d.addEventListener("click", (e) => {
       $modal.innerHTML = codigo;
     }
   }
-  if (e.target.matches(".poi")) {
+
+}
+
+
+const closeModalEditor = (e)=>{
+  if (e.target.matches(".close")) {
     d.querySelector(".modal-resource").classList.toggle("modal-clos");
     setTimeout(() => {
       d.querySelector("#modal-container-resource").style.opacity = "0";
@@ -153,11 +144,20 @@ d.addEventListener("click", (e) => {
     }, 700);
     /* d.querySelector(".modal-resource").classList.toggle("close-resource"); */
   }
-});
+
+}
+
+/*-------------------------------------------------------------------------------------- */
+
+function openEditingForm(title, btn) {
+  $titleResource.textContent = title;
+  $btnResource.value = btn;
+
+}
 
 /*--------------------------------------------------POST Method----------------------------------------- */
 
-d.addEventListener("click", (e) => {
+/* d.addEventListener("click", (e) => {
   if (e.target.matches(".btn-submit")) {
     if (
       !$formResource["resourceTitle"].value.length ||
@@ -194,13 +194,13 @@ d.addEventListener("click", (e) => {
         alertManager("error", error);
       })
       .then((res) => {
-        resourcep();
+        getResourceData();
         load();
         $formResource.reset();
         alertManager("success", "Created Successfully");
       });
   }
-});
+}); */
 
 /*---------------------------------------------------AlertManager------------------------------------------ */
 
@@ -215,78 +215,108 @@ function alertManager(typeMsg, message) {
   setTimeout(() => {
     alert.style.display = "none";
     alert.classList.remove(typeMsg);
-  }, 1500);
+  }, 2500);
 
-  /*  setTimeout(() => {
-    location.reload();
 
-  }, 2000); */
 }
 
 /*-----------------------------------------------------Btn Edit Up Modify----------------------------------------- */
 
-d.addEventListener("click", (e) => {
-  if (e.target.matches(".edit-resource")) {
-    $titleResource.textContent = "Modify Resources";
-    $tbnResource.value = "Save Changes";
-    $tbnResource.classList.toggle("edit-two");
-    $tbnResource.classList.toggle("btn-submit");
-    let id = e.target.dataset.id,
-      resources = {};
-    resource.filter((resourc) => {
-      if (resourc.id == id) {
-        resources = resourc;
+ const openResourceEditForm = (e)=>{
+   if (e.target.matches(".edit-resource")) {
+     $titleResource.textContent = "Modify Resources";
+     $btnResource.value = "Save Changes";
+     d.querySelector("#alert").style.display = "none";
+     let id = e.target.dataset.id,
+       resources = {};
+     resource.filter((resourc) => {
+       if (resourc.id == id) resources = resourc;   
+     });
+  
+     $formResource.idi.value = id;
+     $formResource.resourceTitle.value = resources.resourceTitle;
+     $formResource.category.value = resources.category;
+     $formResource.tags.value = resources.tags;
+     editor.setContents(`${resources.description}`);
+     load();
+   }
+ }
+
+
+
+/*---------------------------------------------------------------Method Post-------------------------------*/
+
+
+d.addEventListener("submit", async (e) => {
+  if (e.target === $formResource) {
+    e.preventDefault();
+    if (!e.target.idi.value) {
+      ///CREATE POST
+      try {
+        let options = {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              resourceTitle: e.target.resourceTitle.value,
+              category: e.target.category.value,
+              tags: e.target.tags.value,
+              description: editor.getContents(),
+            }),
+          },
+          res = await fetch(API_URL, options),
+          json = await res.json();
+
+          getResourceData();
+          load();
+          alertManager("success", "Created Successfully");
+          $formResource.reset();
+      } catch (err) {
+        let message = err.statusText || "ocurrió un Error";
       }
-    });
-
-    $formResource.idi.value = id;
-    $formResource.resourceTitle.value = resources.resourceTitle;
-    $formResource.category.value = resources.category;
-    $formResource.tags.value = resources.tags;
-    editor.setContents(`${resources.description}`);
-    load();
+    } else {
+      //UPDATE -PUT
+      try {
+        let options = {
+            method: "PUT",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              resourceTitle: e.target.resourceTitle.value,
+              category: e.target.category.value,
+              tags: e.target.tags.value,
+              description: editor.getContents(),
+            }),
+          },
+          res = await fetch(
+            `${API_URL}/${e.target.idi.value}`,
+            options
+          ),
+          json = await res.json();
+        if (!res.ok) throw { status: res.status, statusText: res.statusText };
+            restartFormValues(e)
+      } catch (err) {
+        let message = err.statusText || "ocurrió un Error";
+       
+      }
+    }
   }
 });
 
-/*---------------------------------------------------PUT Method---------------------------------- */
 
-d.addEventListener("click", (e) => {
-  if (e.target.matches(".edit-two")) {
-    const activity = {
-      id: $formResource.idi.value,
-      resourceTitle: $formResource.resourceTitle.value,
-      category: $formResource.category.value,
-      tags: $formResource.tags.value,
-      description: editor.getContents(),
-    };
+function restartFormValues(e) {
+  load();
+  getResourceData();
+  alertManager("update", "Edit Successfully");
+  openEditingForm("Create new resource", "Create resource");
+  $formResource.reset();
+  e.target.idi.value = "";
+  
+}
 
-    fetch(`${API_URL}/${activity.id}`, {
-      method: "PUT",
-      body: JSON.stringify(activity),
-      headers: {
-        "content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .catch((error) => {
-        alertManager("error", error);
-      })
-      .then((response) => {
-        $tbnResource.value = "Add new resource";
-        load();
-        alertManager("update", "Edit Successfully");
-        document.querySelector(".crud-form-resource").reset();
-        $titleResource.textContent = "Create new resource";
-        $tbnResource.classList.toggle("edit-two");
-        $tbnResource.classList.toggle("btn-submit");
-      });
-  }
-});
 
 /*--------------------------------------------Load----------------------------------- */
 
 function load() {
-  resourcep();
+  getResourceData();
   d.querySelector(".cont-new-resource").classList.toggle("open-form-resource");
   d.querySelector(".cont-tables-resource").classList.toggle(
     "up-table-resource"
@@ -295,7 +325,8 @@ function load() {
 }
 /* -------------------------------------------------DELETE Method-------------------------------- */
 
-d.addEventListener("click", (e) => {
+
+const removeResource = (e) =>{
   if (e.target.matches(".remove-resource")) {
     d.querySelector("#modal-container-dr").style.opacity = "1";
     d.querySelector("#modal-container-dr").style.visibility = "visible";
@@ -304,7 +335,7 @@ d.addEventListener("click", (e) => {
     d.addEventListener("submit", (e) => {
       if (e.target === $formDelete) {
         e.preventDefault();
-
+  
         fetch(`${API_URL}/${id}`, {
           method: "DELETE",
         })
@@ -319,7 +350,7 @@ d.addEventListener("click", (e) => {
               d.querySelector("#modal-container-dr").style.visibility =
                 "hidden";
             }, 700);
-            resourcep();
+            getResourceData();
             alertManager("deleted", "Deleted Successfully");
             $formDelete.reset();
             setTimeout(() => {
@@ -329,9 +360,12 @@ d.addEventListener("click", (e) => {
       }
     });
   }
-});
 
-function deleted(id) {
+}
+
+
+
+/* function deleted(id) {
   d.addEventListener("click", (e) => {
     if (e.target.matches(".bnt-dr")) {
       fetch(`${API_URL}/${id}`, {
@@ -347,15 +381,15 @@ function deleted(id) {
             d.querySelector("#modal-container-dr").style.opacity = "0";
             d.querySelector("#modal-container-dr").style.visibility = "hidden";
           }, 700);
-          resourcep();
+          getResourceData();
           alertManager("deleted", "Deleted Successfully");
           $formDelete.reset();
         });
     }
   });
 }
-
-function remove(id) {
+ */
+/* function remove(id) {
   d.addEventListener("submit", (e) => {
     if (e.target === $formDelete) {
       e.preventDefault();
@@ -373,7 +407,7 @@ function remove(id) {
             d.querySelector("#modal-container-dr").style.opacity = "0";
             d.querySelector("#modal-container-dr").style.visibility = "hidden";
           }, 700);
-          resourcep();
+          getResourceData();
           alertManager("deleted", "Deleted Successfully");
           $formDelete.reset();
         });
@@ -381,26 +415,70 @@ function remove(id) {
   });
 }
 
-const editor = SUNEDITOR.create(document.querySelector(".txtarea-resource"), {
-  buttonList: [
-    ["undo", "redo", "font", "fontSize", "formatBlock"],
-    ["paragraphStyle", "blockquote"],
-    ["bold", "underline", "italic", "strike", "subscript", "superscript"],
-    ["fontColor", "hiliteColor", "textStyle"],
-    ["removeFormat", "outdent", "indent"],
-    ["align", "horizontalRule", "list", "lineHeight"],
-    ["link", "image", "video", "audio" /** ,'math' */], // You must add the 'katex' library at options to use the 'math' plugin.
+ */
 
-    ["fullScreen", "showBlocks", "codeView", "table"],
-    ["preview", "print"],
-    ["save", "template"],
-    ["codeView"],
-    ["dir", "dir_ltr", "dir_rtl"],
-  ],
-  height: 450,
+/*------------------------------------------------------------------------------------------------------- */
+
+const editor = SUNEDITOR.create(document.querySelector(".txtarea-resource"), {
+  value: "Comments...",
+  codeMirror: CodeMirror,
+  katex: katex,
+  buttonList: [
+    // default
+    ['undo', 'redo'],
+    [':p-More Paragraph-default.more_paragraph', 'font', 'fontSize', 'formatBlock', 'paragraphStyle', 'blockquote'],
+    ['bold', 'underline', 'italic', 'strike', 'subscript', 'superscript'],
+    ['fontColor', 'hiliteColor', 'textStyle'],
+    ['removeFormat'],
+    ['outdent', 'indent'],
+    ['align', 'horizontalRule', 'list', 'lineHeight'],
+    ['-right', ':i-More Misc-default.more_vertical', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save', 'template'],
+    ['-right', ':r-More Rich-default.more_plus', 'table', 'math', 'imageGallery'],
+    ['-right', 'image', 'video', 'audio', 'link'],
+    // (min-width: 992)
+    ['%992', [
+        ['undo', 'redo'],
+        ['bold', 'underline', 'italic', 'strike'],
+        [':t-More Text-default.more_text', 'subscript', 'superscript', 'fontColor', 'hiliteColor', 'textStyle'],
+        ['removeFormat'],
+        ['outdent', 'indent'],
+        ['align', 'horizontalRule', 'list', 'lineHeight'],
+        [':p-More Paragraph-default.more_paragraph', 'font', 'fontSize', 'formatBlock', 'paragraphStyle', 'blockquote'],
+        ['-right', ':i-More Misc-default.more_vertical', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save', 'template'],
+        ['-right', ':r-More Rich-default.more_plus', 'table', 'link', 'image', 'video', 'audio', 'math', 'imageGallery']
+    ]],
+    // (min-width: 767)
+    ['%767', [
+        ['undo', 'redo'],
+        [':p-More Paragraph-default.more_paragraph', 'font', 'fontSize', 'formatBlock', 'paragraphStyle', 'blockquote'],
+        [':t-More Text-default.more_text', 'bold', 'underline', 'italic', 'strike', 'subscript', 'superscript', 'fontColor', 'hiliteColor', 'textStyle'],
+        ['removeFormat'],
+        ['outdent', 'indent'],
+        [':e-More Line-default.more_horizontal', 'align', 'horizontalRule', 'list', 'lineHeight'],
+        [':r-More Rich-default.more_plus', 'table', 'link', 'image', 'video', 'audio', 'math', 'imageGallery'],
+        ['-right', ':i-More Misc-default.more_vertical', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save', 'template']
+    ]],
+    // (min-width: 480)
+    ['%480', [
+        [':p-More Paragraph-default.more_paragraph', 'font', 'fontSize', 'formatBlock', 'paragraphStyle'],
+        [':t-More Text-default.more_text', 'bold', 'underline', 'italic', 'strike', 'subscript', 'superscript', 'fontColor', 'hiliteColor', 'textStyle', 'removeFormat'],
+        [':e-More Line-default.more_horizontal', 'outdent', 'indent', 'align', 'horizontalRule', 'list', 'lineHeight'],
+        [':r-More Rich-default.more_plus', 'table', 'link', 'image', 'video', 'audio', 'math', 'imageGallery'],
+        ['-right', ':i-More Misc-default.more_vertical', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save', 'template']
+    ]]
+],
+
+  width: "100%",
 
   lang: SUNEDITOR_LANG["en"],
 });
+
+editor.setDefaultStyle("font-family: Arial; font-size: 13px;");
+
+
+
+/*------------------------------------------------------------------------------------- */
+
 
 const vc = d.querySelector(".cont-table-resource_blue"),
   vd = d.querySelector(".cont-tables-resource");
@@ -422,11 +500,27 @@ sr.reveal($tableResource, {
   origin: "bottom",
   distance: "-50px",
 }); */
-d.addEventListener("click", (e) => {
+
+
+/*------------------------------------------------------------------------------------- */
+
+const showSideBar = (e) => {
   if (e.target.matches(".fa-bars")) {
     setTimeout(() => {
       e.target.classList.toggle("changeColor");
     }, 500);
     d.querySelector(".menu").classList.toggle("move-menu");
   }
+};
+
+
+/*----------------------------------------------------------------------------------- */
+
+
+d.addEventListener("click", (e) => {
+  opeModalEditor(e);
+  closeModalEditor(e);
+  openResourceEditForm(e);
+  showSideBar(e);
+  removeResource(e);
 });

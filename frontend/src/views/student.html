@@ -6,15 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/css/style.css">
+     <!------------------------------ Sun Editor--------------------------------------->
     <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/en.js"></script>
+    <!------------------------------ Codemirrorx--------------------------------------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/xml/xml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/css/css.js"></script>
+    <!------------------------------ Katex--------------------------------------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
+
     <title>Students</title>
 </head>
 
 <body>
 
     <div id="container">
+        <!-- <div class="lds-ring loader" id="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div> -->
         <i class="fas fa-bars" id="bars"></i>
         <section class="cont-new-student open-form-student">
             <section class=" crud-student" id="cont-form-student">
@@ -23,23 +40,23 @@
                     <form class="crud-form-student">
                         <input type="hidden" name="idi">
                         <div>
-                            <!-- <label for="">*</label> -->
+        
                             <input type="text" class="first-name-student form__input" name="studentName" placeholder="First name" required>
                         </div>
                         <div>
                             <input type="text" class="last-name-student form__input" name="lastNameStudent" placeholder="Last name" required>
-                          <!--   <label for="">*</label> -->
+                      
                         </div>
                         <div>
                             <input type="email" class="email-student" name="emailStudent" placeholder="Email" required>
-                           <!--  <label for="">*</label> -->
+                          
                         </div>
                         <div>
 
                             <label for="birthdayStudent" class="text-birth-day">Date of Birth</label>
                             <input type="date" class="birth-day-student form__input" name="birthdayStudent" id="birthdayStudent" required>
                         </div>
-                       <!--  <input type="text" class="gender-student" name="genderStudent" placeholder="Gender"> -->
+                      
                         <select class="gender-student form__input" name="genderStudent" id="genderStudent">
                             <option selected disabled=""></option>
                             <option>Male</option>
@@ -74,12 +91,12 @@
                 <li class="press"><a href="/src/views/student.html">Students</a></li>
                 <li><a href="/src/views/news.html">News</a></li>
                 <li><a href="/src/views/courses.html">Courses</a></li>
-                <li><a href="/src/views/actividades.html">Activities</a></li>
+                <li><a href="/src/views/activities.html">Activities</a></li>
                 <li><a href="/src/views/resource.html">Resources</a></li>
                 <li><a href="/src/views/certificates.html">Certificates</a></li>
                 <li><a href="/src/views/classes.html" class="space">Private classes</a></li>
                 <div class="space-top">
-                    <li><a href="/src/views/promotions.html">Offers</a></li>
+                    <li><a href="/src/views/offers.html">Offers</a></li>
                     <li><a href="/src/views/menbership.html">Memberships</a></li>
                     <li><a href="/src/views/referrals.html">Referrals</a></li>
                     <li><a href="/src/views/sponsors.html">Sponsors</a></li>
@@ -139,7 +156,7 @@
 
          <section id="modal-container-student">
             <div class="modal-student modal-clos">
-                <div class="close-student"><i class="fas fa-times-circle poi"></i></div>
+                <div class="close-student"><i class="fas fa-times-circle close"></i></div>
                 <div class="cont-p-student">
                 </div>
         </section>

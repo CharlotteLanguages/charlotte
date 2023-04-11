@@ -11,6 +11,7 @@
   position: absolute;
   background: #fff;
   border-radius: 20px;
+  box-shadow: 5px 10px 10px 10px rgba(0, 0, 0, 0.25);
 
   @include media-queries.tablet {
     width: 65%;
@@ -27,22 +28,16 @@
     width: 85%;
     left: 7.5%;
     height: 560px;
-    background-color: #ffb3cb;
     top: 90px;
   }
   @include media-queries.phoness {
-    width: 90%;
-    left: 5%;
+    width: 88%;
+    left: 6%;
     height: 85%;
-    top: 80px;
-    background-color: #c2d1ff;
+    top: 75px;
+    margin-right: 0px;
   }
-
-  /*   @include media-queries.lands {
-    top: 80px;
-  background-color: #9b008e;
-    
-  } */
+ 
   /* 
   .title-student {
     box-sizing: border-box;
@@ -81,9 +76,6 @@
     left: 22px;
   }
   @include media-queries.tablett {
-    /* top: 48px;
-    height: 30px;
-    font-size: .9rem; */
     left: 22px;
     font-size: 0.9rem;
     height: 31px;
@@ -150,8 +142,8 @@
   padding-left: 19px;
   padding-right: 10px;
   position: absolute;
-  width: 93.3%;
-  height: 30px;
+  width: 93.4%;
+  height: 33px;
   left: 29px;
   top: 97px;
   color: #000;
@@ -164,9 +156,7 @@
     left: 22px;
   }
   @include media-queries.tablett {
-    /* top: 88px;
-    height: 30px;
-    font-size: .9rem; */
+
     left: 22px;
     font-size: 0.9rem;
     height: 31px;
@@ -186,14 +176,14 @@
     height: 27px;
     font-size: 0.8rem;
     top: 157px;
-    width: 92.7%;
+    width: 93.5%;
   }
 }
 
 .birth-day-student {
   box-sizing: border-box;
   position: absolute;
-  @include mixingfunc.measures(46%, 33px, 29px, 136px);
+  @include mixingfunc.measures(46%, 33px, 29px, 139px);
   @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
   border: 1px solid #8f8f8f;
   border-radius: 10px;
@@ -233,7 +223,7 @@
     height: 27px;
     font-size: 0.8rem;
     top: 89px;
-    width: 92.9%;
+    width: 93.5%;
   }
 }
 
@@ -244,8 +234,8 @@
   position: absolute;
   font-size: 25px;
   color: rgb(113, 112, 112);
-  margin-top: 143px;
-  margin-left: 6%;
+  margin-top: 146px;
+  margin-left: 50px;
   z-index: 10;
   @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
 
@@ -269,7 +259,7 @@
 .gender-student {
   box-sizing: border-box;
   position: absolute;
-  @include mixingfunc.measures(46%, 33px, 48.5%, 136px);
+  @include mixingfunc.measures(46%, 33px, 48.5%, 139px);
   @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
   border: 1px solid #8f8f8f;
   border-radius: 10px;
@@ -308,7 +298,7 @@
   position: absolute;
   font-size: 25px;
   color: rgb(113, 112, 112);
-  margin-top: 144px;
+  margin-top: 147px;
   margin-left: 53%;
   z-index: 10;
   @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
@@ -334,7 +324,7 @@
 .username-student {
   box-sizing: border-box;
   position: absolute;
-  @include mixingfunc.measures(46%, 33px, 29px, 178px);
+  @include mixingfunc.measures(46%, 33px, 29px, 181px);
   @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
   border: 1px solid #8f8f8f;
   border-radius: 10px;
@@ -371,7 +361,7 @@
 .password-student {
   box-sizing: border-box;
   position: absolute;
-  @include mixingfunc.measures(46%, 33px, 48.5%, 178px);
+  @include mixingfunc.measures(46%, 33px, 48.5%, 181px);
   @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
   border: 1px solid #8f8f8f;
   border-radius: 10px;
@@ -411,10 +401,10 @@
   padding-left: 19px;
   padding-right: 10px;
   position: absolute;
-  width: 93.3%;
+  width: 93.4%;
   height: 33px;
   left: 29px;
-  top: 220px;
+  top: 223px;
   color: #000;
   border: 1px solid #8f8f8f;
   border-radius: 10px;
@@ -451,7 +441,7 @@
   position: absolute;
   font-size: 25px;
   color: rgb(113, 112, 112);
-  margin-top: 227px;
+  margin-top: 230px;
   margin-left: 50px;
   z-index: 10;
   @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
@@ -477,18 +467,17 @@
   box-sizing: border-box;
   position: absolute;
   width: 93.2%;
-  max-width: 1100px;
   left: 29px;
-  top: 260px;
+  top: 265px;
   border-radius: 10px;
 
   @include media-queries.tablet {
     left: 22px;
-    top: 262px;
+    top: 265px;
   }
   @include media-queries.tablett {
     left: 22px;
-    top: 262px;
+    top: 265px;
   }
   @include media-queries.big-phone {
     left: 17px;
@@ -496,7 +485,8 @@
   }
   @include media-queries.phoness {
     left: 10px;
-    top: 225px;
+    top: 228px;
+    width: 90.9%;
   }
 
   .editor-student {
@@ -504,17 +494,23 @@
     border-radius: 10px;
     max-width: 1200px;
     width: 100%;
-    height: 205px;
+    height: 15em;
+
     @include media-queries.tablet {
-      height: 200px;
+    
     }
     @include media-queries.tablett {
     }
     @include media-queries.big-phone {
-      height: 177px;
+      height: 13.8em;
     }
     @include media-queries.phoness {
-      height: 90px;
+      height: 11.5em;
+     
+    }
+
+    @include media-queries.portrait-long {
+      height: 20em;
     }
     /*   @include media-queries.lands {
        height: 185px;
@@ -552,10 +548,10 @@
     height: 30px;
   }
   @include media-queries.phoness {
-    max-width: 125px;
-    font-size: 14px;
-    top: 500px;
-    height: 30px;
+    max-width: 115px;
+    font-size: 13.5px;
+    top: 94%;
+    height: 25px;
   }
 
   color: #fff;
@@ -671,10 +667,10 @@
     left: 17px;
   }
   @include media-queries.phoness {
-    width: 90px;
-    font-size: 14px;
-    top: 500px;
-    height: 30px;
+    width: 70px;
+    font-size: 13.5px;
+    top: 94%;
+    height: 25px;
     left: 10px;
   }
 
@@ -705,6 +701,10 @@
   }
   @include media-queries.phoness {
     font-size: 17px;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    height: 30px;
   }
 }
 
@@ -802,11 +802,12 @@
     }
 
     th {
-      @include mixingfunc.font-style(arial, normal, 600, 19px, 100%, center);
+      @include mixingfunc.font-style(arial, normal, 600, 18px, 100%, center);
       font-family: Arial;
       border: solid 1px black;
       height: 40px;
       border-top: none;
+
 
       @include media-queries.tablet {
         font-size: 16px;
@@ -827,6 +828,7 @@
       min-width: 60px;
       text-align: justify;
       border-bottom: none;
+
 
       @include media-queries.tablet {
         font-size: 14px;
@@ -1590,3 +1592,25 @@ tr {
     transform: scale(1.02);
   }
 }
+
+/* .loader {
+  background-color: #242424;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 100000;
+  display: flex;
+  top: 0;
+  left: 0;
+  clip-path: circle(150% at 100% 0);
+  transition: all 1s ease;
+  opacity: 0.7;
+}
+
+.loader2 {
+  clip-path: circle(0% at 100% 0%);
+}
+ */

@@ -1,8 +1,8 @@
-import { ModalShowReferral, openFormReferral, referralp } from "./referrals.js";
+import { openFormReferral, getReferralData } from "./referrals.js";
 
 const d = document;
 d.addEventListener("DOMContentLoaded", (e) => {
-  referralp();
+  getReferralData();
 });
 /* editor(); */
 
@@ -13,9 +13,3 @@ openFormReferral(
   ".cont-tables-referral"
 );
 
-ModalShowReferral(
-  ".fa-dot-circle",
-  ".close-referral",
-  "#modal-container-referral",
-  ".modal-referral"
-);

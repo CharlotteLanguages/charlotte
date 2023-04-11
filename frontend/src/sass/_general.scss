@@ -1,5 +1,8 @@
 @use "media-queries";
 @use "mixingfunc";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -31,7 +34,8 @@
 
 }
  @include media-queries.phoness {
-  min-height: 100vh;
+  min-height: 104vh;
+
 
 }
 
@@ -56,15 +60,37 @@
 
 .no-activities {
   background-color: rgba(230, 230, 230, 0.65);
-  @include mixingfunc.font-style(Cambria, normal, 550, 45px, 130%, center);
+  @include mixingfunc.font-style(Cambria, normal, 550, 40px, 130%, center);
   width: 90%;
-  height: 340px;
+  height: 85%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
   margin-top: 30px;
   border-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  @include media-queries.tablet {
+ 
+    font-size: 40px;
+   }
+   @include media-queries.tablett {
+
+    font-size: 35px;
+  
+   }
+   @include media-queries.big-phone {
+     font-size: 25px;
+     height: 55%;
+
+
+   }
+   @include media-queries.phoness {
+     font-size: 20px;
+     height: 60%;
+  
+   }
 }
 
 .no-description{
@@ -613,3 +639,23 @@
   /* display: none; */
   /*  transform: translateY(200%); */
 }
+
+body::-webkit-scrollbar{
+  width: 8px;
+  background: #2355a4;
+  height: 4px;
+  @include media-queries.phoness {
+   width: 4px;
+  }
+}
+
+body::-webkit-scrollbar-thumb{
+  background: rgba(255, 255, 255,.7);
+  border-radius: 20px;
+  border-right: 1px solid #002593;
+  
+  &:hover{
+    background: rgba(255, 255, 255,.45);
+
+  }
+ }

@@ -2,13 +2,14 @@
 @use "media-queries";
 .cont-new-activitie {
   width: 63%;
-  height: 590px;
+  height: 640px;
   left: 25%;
-  top: 17%;
+  top: 110px;
   margin-right: 20px;
   position: absolute;
   background: #fff;
   border-radius: 20px;
+  box-shadow: 5px 10px 10px 10px rgba(0, 0, 0, 0.25);
 
   @include media-queries.tablet {
     width: 65%;
@@ -25,7 +26,6 @@
     width: 85%;
     left: 7.5%;
     height: 560px;
-    background-color: #ffb3cb;
     top: 90px;
   }
   @include media-queries.phoness {
@@ -33,23 +33,52 @@
     left: 5%;
     height: 85%;
     top: 80px;
-    background-color: #c2d1ff;
   }
 
 
-  .title {
+  .title-activity {
     box-sizing: border-box;
     padding-left: 19px;
     padding-right: 10px;
     position: absolute;
-    width: 1194px;
-    height: 51px;
+    width: 93.3%;
+    height: 33px;
     left: 29px;
-    top: 65px;
+    top: 55px;
     color: #000;
     border: 1px solid #8f8f8f;
     border-radius: 10px;
-    font-size: 25px;
+    font-size: 1rem;
+    outline: none;
+  
+    @include media-queries.tablet {
+      left: 22px;
+    }
+    @include media-queries.tablett {
+      /* top: 88px;
+      height: 30px;
+      font-size: .9rem; */
+      left: 22px;
+      font-size: 0.9rem;
+      height: 31px;
+    }
+    @include media-queries.big-phone {
+      top: 47px;
+      height: 28px;
+      font-size: 0.8rem;
+      left: 17px;
+      padding-left: 10px;
+      padding-right: 5px;
+    }
+    @include media-queries.phoness {
+      left: 10px;
+      padding-left: 10px;
+      padding-right: 5px;
+      height: 27px;
+      font-size: 0.8rem;
+/*       top: 157px; */
+      width: 92.7%;
+    }
   }
 }
 #cont-new-review {
@@ -77,84 +106,216 @@
   transform: translateY(-200%);
 }
 #list-select {
-  .list-one {
+  .category-activity {
     box-sizing: border-box;
     position: absolute;
-    @include mixingfunc.measures(590px, 51px, 29px, 131px);
-    @include mixingfunc.font-style(Arial, normal, 400, 25px, 130%, justify);
-    border: 1px solid #8f8f8f;
-    border-radius: 10px;
-    padding-left: 19px;
-    color: #000000;
-  }
-
-  .list-two {
-    box-sizing: border-box;
-    position: absolute;
-    @include mixingfunc.measures(590px, 51px, 633px, 131px);
-    border: 1px solid #8f8f8f;
-    border-radius: 10px;
-    font-family: Arial;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
-    line-height: 130%;
-    color: #000000;
-    padding-left: 19px;
-  }
-
-  .level {
-    box-sizing: border-box;
-    position: absolute;
-    @include mixingfunc.measures(590px, 51px, 633px, 197px);
-    border: 1px solid #8f8f8f;
-    border-radius: 10px;
-    font-family: Arial;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
-    line-height: 130%;
-    color: #000000;
-    padding-left: 19px;
-  }
-
-  .author {
-    box-sizing: border-box;
-
-    position: absolute;
-    width: 590px;
-    height: 51px;
+    top: 97px;
     left: 29px;
-    top: 197px;
+    @include mixingfunc.font-style(Arial, normal, 400, 1rem, 100%, justify);
+    width: 46%;
+    height: 33px;
     border: 1px solid #8f8f8f;
     border-radius: 10px;
-    font-family: Arial;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
-    line-height: 130%;
     padding-left: 19px;
-    padding-right: 10px;
-    /* or 32px */
-
     color: #000000;
+    outline: none;
+  
+    @include media-queries.tablet {
+      left: 22px;
+    }
+    @include media-queries.tablett {
+      /* top: 48px;
+      height: 30px;
+      font-size: .9rem; */
+      left: 22px;
+      font-size: 0.9rem;
+      height: 31px;
+    }
+    @include media-queries.big-phone {
+      top: 82px;
+      height: 28px;
+      font-size: 0.8rem;
+      left: 17px;
+      padding-left: 10px;
+      padding-right: 5px;
+    }
+    @include media-queries.phoness {
+      left: 10px;
+      padding-left: 10px;
+      padding-right: 5px;
+      height: 27px;
+      font-size: 0.8rem;
+      top: 123px;
+    }
+  }
+
+  .tags-activity {
+    box-sizing: border-box;
+    position: absolute;
+    @include mixingfunc.measures(46%, 33px, 48.5%, 97px);
+    @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    padding-left: 19px;
+    color: #000000;
+    outline: none;
+    margin-left: 18px;
+  
+    @include media-queries.tablet {
+      left: 48%;
+    }
+    @include media-queries.tablett {
+      /*  top: 48px;
+      height: 30px;
+      font-size: .9rem; */
+      left: 48%;
+      font-size: 0.9rem;
+      height: 31px;
+    }
+    @include media-queries.big-phone {
+      top: 82px;
+      height: 28px;
+      font-size: 0.8rem;
+      left: 47%;
+      padding-left: 10px;
+      padding-right: 5px;
+    }
+    @include media-queries.phoness {
+      left: 45%;
+      padding-left: 10px;
+      padding-right: 5px;
+      height: 27px;
+      font-size: 0.8rem;
+      top: 123px;
+    }
+  }
+
+  .level-activity {
+   box-sizing: border-box;
+  position: absolute;
+  top: 136px;
+  left: 29px;
+  @include mixingfunc.font-style(Arial, normal, 400, 1rem, 100%, justify);
+  width: 46%;
+  height: 33px;
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  padding-left: 19px;
+  color: #000000;
+  outline: none;
+
+  @include media-queries.tablet {
+    left: 22px;
+  }
+  @include media-queries.tablett {
+    /* top: 48px;
+    height: 30px;
+    font-size: .9rem; */
+    left: 22px;
+    font-size: 0.9rem;
+    height: 31px;
+  }
+  @include media-queries.big-phone {
+    top: 117px;
+    height: 28px;
+    font-size: 0.8rem;
+    left: 17px;
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+  @include media-queries.phoness {
+    left: 10px;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 89px;
+  }
+  }
+
+  .author-activity {
+    box-sizing: border-box;
+  position: absolute;
+  @include mixingfunc.measures(46%, 33px, 48.5%, 136px);
+  @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  padding-left: 19px;
+  color: #000000;
+  outline: none;
+  margin-left: 18px;
+
+  @include media-queries.tablet {
+    left: 48%;
+  }
+  @include media-queries.tablett {
+    /*  top: 48px;
+    height: 30px;
+    font-size: .9rem; */
+    left: 48%;
+    font-size: 0.9rem;
+    height: 31px;
+  }
+  @include media-queries.big-phone {
+    top: 117px;
+    height: 28px;
+    font-size: 0.8rem;
+    left: 47%;
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+  @include media-queries.phoness {
+    left: 45%;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 89px;
+  }
   }
 
   #area {
     box-sizing: border-box;
-
     position: absolute;
-    width: 1194px;
-    height: 443px;
+    width: 93.2%;
+    max-width: 1100px;
     left: 29px;
-    top: 263px;
+    top: 180px;
     border-radius: 10px;
+  
+    @include media-queries.tablet {
+      left: 22px;
+      top: 180px;
+    }
+    @include media-queries.tablett {
+      left: 22px;
+      top: 180px;
+    }
+    @include media-queries.big-phone {
+      left: 17px;
+      top: 155px;
+    }
+    @include media-queries.phoness {
+      left: 10px;
+      top: 160px;
+    }
     .txtarea {
-      margin-top: 10px;
       resize: none;
       border-radius: 10px;
-      width: 1194px;
-      height: 483px;
+      max-width: 1200px;
+      width: 100%;
+      height: 21.5em;
+      @include media-queries.tablet {
+        height: 200px;
+      }
+      @include media-queries.tablett {
+      }
+      @include media-queries.big-phone {
+        height: 19em;
+      }
+      @include media-queries.phoness {
+       height: 18em;
+      }
     }
   }
 }
@@ -189,10 +350,10 @@
     height: 30px;
   }
   @include media-queries.phoness {
-    max-width: 125px;
-    font-size: 14px;
-    top: 500px;
-    height: 30px;
+    max-width: 105px;
+    font-size: 13.5px;
+    top: 94%;
+    height: 25px;
   }
 
   color: #fff;
@@ -229,10 +390,10 @@
     left: 17px;
   }
   @include media-queries.phoness {
-    width: 90px;
-    font-size: 14px;
-    top: 500px;
-    height: 30px;
+    width: 70px;
+    font-size: 13.5px;
+    top: 94%;
+    height: 25px;
     left: 10px;
   }
 
@@ -251,6 +412,22 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 130%;
+  @include media-queries.tablet {
+    font-size: 19px;
+  }
+  @include media-queries.tablett {
+    font-size: 19px;
+  }
+  @include media-queries.big-phone {
+    font-size: 18px;
+  }
+  @include media-queries.phoness {
+    font-size: 17px;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    height: 30px;
+  }
 }
 
 .none {
@@ -447,12 +624,14 @@
         font-weight: bold;
         float: left;
         margin-right: 10px;
+        color: #000;
       }
       @include media-queries.phoness {
         content: attr(data-label);
         font-weight: bold;
         float: left;
         margin-right: 10px;
+        color: #000;
       }
     }
   }
@@ -569,10 +748,10 @@ tr {
 
 .modal-activity {
   position: relative;
-  width: 60%;
-  height: 500px;
+  width: 70%;
+  height: 550px;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 50px;
   border-radius: 10px;
   background-color: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -606,32 +785,70 @@ tr {
   }
 
  .close-activity {
-   position: absolute;
-   left: 94.2%;
-   right: 1.72%;
-   top: 2.50%;
-   bottom: 93.65%;
-   color: #000;
-   z-index: 1000;
-   i {
-     font-size: 30px;
-   }
+  position: absolute;
+  right: 1.4%;
+  top: 8px;
+  color: #000;
+  z-index: 1000;
+  i {
+    font-size: 22px;
+
+    @include media-queries.tablett {
+      font-size: 21px;
+    }
+    @include media-queries.big-phone {
+      font-size: 20px;
+    }
+    @include media-queries.phoness {
+      font-size: 19px;
+    }
+  }
+ 
+  @include media-queries.tablet {
+    right: 1.3%;
+  }
+  @include media-queries.tablett {
+    right: 1.3%;
+  }
+  @include media-queries.big-phone {
+    right: 1.5%;
+  }
+  @include media-queries.phoness {
+    right: 1.7%;
+  }
  }
 
  .cont-p-activity {
-   position: absolute;
-   width: 920px;
-   max-height: 785px;
-   top: 10px;
-   bottom: 10px;
-   left: 10px;
-   right: 10px;
-   overflow: auto;
-   padding: 20px 40px 20px 20px;
+  position: absolute;
+  width: 97%;
+  max-height: 785px;
+  top: 25px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  overflow: auto;
+  padding: 20px 20px 20px 20px;
+  @include media-queries.tablet {
+    width: 98%;
+    height: 92%;       
+   }
+  @include media-queries.tablett {
+    width: 97%;
+    height: 92%;     
+   }
+  @include media-queries.big-phone {
+    width: 97%;
+    height: 90%;     
+    top: 20px;
+   }
+  @include media-queries.phoness {
+    width: 97%;
+    height: 92%;     
+   }
  }
 
 }
-.modal-cl {
+.modal-cla {
  transform: translateY(-200%); 
 }
 
