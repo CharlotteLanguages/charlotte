@@ -8,24 +8,16 @@ const d = document,
   $formDelete = d.querySelector(".form-delete"),
   $modal = document.querySelector(".cont-p-course");
 
-export function ShowCourses(btnOpen, btnClose, modalContainer, modal) {
-  d.addEventListener("click", (e) => {
-    if (e.target.matches(btnOpen)) {
-      d.querySelector(modalContainer).style.visibility = "visible";
-      d.querySelector(modal).classList.toggle("modal-close-course");
-    }
-    if (e.target.matches(btnClose)) {
-      d.querySelector(modalContainer).style.visibility = "hidden";
-      d.querySelector(modal).classList.toggle("modal-close-course");
-    }
-  });
-}
+
+/*--------------------------------------------------------------------------------------------- */
 
 export function openFormCourses(btnOpen, btnClose) {
   d.addEventListener("click", (e) => {
     if (e.target.matches(btnOpen)) {
       editor.setContents(``);
       load();
+      $formCourse.reset();
+      d.querySelector("#alert").style.display = "none";
     }
     if (e.target.matches(btnClose)) {
       load();
@@ -33,6 +25,11 @@ export function openFormCourses(btnOpen, btnClose) {
     }
   });
 }
+
+
+/*--------------------------------------------------------------------------------------------- */
+
+
 
 function CodeTh() {
   let code = `
@@ -51,11 +48,11 @@ function CodeTh() {
 
 /* -----------------------------------------------------Main Fetch----------------------------- */
 
+let course = []
 export const getCourseData = async () => {
   try {
     let res = await fetch(API_URL),
-      json = await res.json(),
-      course = [];
+      json = await res.json()
     if (json.length <= 0) {
       const tables = d.querySelector(".crud-table-course");
       tables.innerHTML = `<div class = "no-activities">NO COURSES YET</div>`;
@@ -63,24 +60,24 @@ export const getCourseData = async () => {
         tables.innerHTML = `<div class = "no-activities add">ADD A COURSE</div`;
       }, 4000);
       return;
+    }else{
+      course = json;
+      renderCoursesData(course);
     }
-    course = json;
-    passInformation(course);
-    /*     if (!res.ok) throw { status: res.status, statusText: res.statusText }; */
+   
   } catch (err) {
-    let message = err.statusText || "ocurrió un Error";
+    const table = d.querySelector(".crud-table-course");
+    table.innerHTML = `<div class = "no-activities">COULD NOT ESTABLISH CONNECTION TO SERVER</div>`;
   }
 };
 
-/* -------------------------------------------render courses------------------------------------------ */
-function passInformation(course) {
-  printCoursesData(course);
-  openWindowModal(course);
-  loadDataForEditing(course);
-}
 
-const printCoursesData = (course) => {
-  course.forEach((ele) => {
+/* -------------------------------------------render courses------------------------------------------ */
+
+
+
+const renderCoursesData = (course) => {
+  course.reverse().forEach((ele) => {
     const $tr = d.createElement("tr"),
       codigo = `
     <tbody class = "body">
@@ -105,47 +102,7 @@ const printCoursesData = (course) => {
   $tableCourse.appendChild($fragmentCourse);
 };
 
-/*---------------------------------------------------------------Method Post-------------------------------*/
 
-function getDataFromForm() {
-  return {
-    id: $formCourse.idi.value,
-    courseTitle: $formCourse.courseTitle.value,
-    category: $formCourse.category.value,
-    price: $formCourse.price.value,
-    description: editor.getContents(),
-  };
-}
-
-export const addCourse = () => {
-  d.addEventListener("click", (e) => {
-    if (e.target.matches(".btn-submit")) {
-      const cour = {
-        courseTitle: $formCourse.courseTitle.value,
-        category: $formCourse.category.value,
-        price: $formCourse.price.value,
-        description: editor.getContents(),
-      };
-      fetch(API_URL, {
-        method: "POST",
-        body: JSON.stringify(cour),
-        headers: { "content-Type": "application/json" },
-      })
-        .then((res) => {
-          res.json();
-        })
-        .catch((error) => {
-          alertManager("error", error);
-        })
-        .then((res) => {
-          load();
-          getCourseData();
-          alertManager("success", "Created Successfully");
-          $formCourse.reset();
-        });
-    }
-  });
-};
 
 /*-----------------------------------------------------Btn Read show------------------------------------------- */
 const addStyles = () => {
@@ -154,22 +111,27 @@ const addStyles = () => {
   d.querySelector(".modal-course").classList.toggle("modal-cl");
 };
 
-function openWindowModal(course) {
-  d.addEventListener("click", (e) => {
-    if (e.target.matches(".read-course")) {
-      let id = e.target.dataset.ids,
-        courses = {};
-      addStyles();
-      course.filter((el) => {
-        if (el.id == id) courses = el;
-      });
 
-      courses.description == "<p><br></p>"
-        ? ($modal.innerHTML = `<div class = "no-description">Empty section</div>`)
-        : ($modal.innerHTML = `<div>${courses.description}</div>`);
-    }
-  });
+
+/*------------------------------------------------------------------------------------------------------- */
+function openWindowModal(e) {
+  if (e.target.matches(".read-course")) {
+    let id = e.target.dataset.ids,
+      courses = {};
+    addStyles();
+    course.filter((el) => {
+      if (el.id == id) courses = el;
+    });
+
+    courses.description == "<p><br></p>"
+      ? ($modal.innerHTML = `<div class = "no-description">Empty section</div>`)
+      : ($modal.innerHTML = `<div>${courses.description}</div>`);
+  }
+
 }
+
+
+/*------------------------------------------------------------------------ */
 
 export function closeWindowModal(btn, container, modal, toggle) {
   d.addEventListener("click", (e) => {
@@ -183,69 +145,117 @@ export function closeWindowModal(btn, container, modal, toggle) {
   });
 }
 
+
+
 /*-------------------------------------------Btn Edit --------------------------------------------- */
 
 function openEditingForm(title, btn) {
   $titleCourse.textContent = title;
   $tbnCourse.value = btn;
-  $tbnCourse.classList.toggle("edit-two");
-  $tbnCourse.classList.toggle("btn-submit");
+
 }
 
-function loadDataForEditing(course) {
-  d.addEventListener("click", (e) => {
-    if (e.target.matches(".edit-course")) {
-      openEditingForm("Modify Courses", "Save Changes");
-      let id = e.target.dataset.id,
-        cours = {};
-      course.filter((el) => {
-        if (el.id == id) cours = el;
-      });
+function openCoursesEditForm(e) {
+  if (e.target.matches(".edit-course")) {
+    openEditingForm("Modify Courses", "Save Changes");
+    d.querySelector("#alert").style.display = "none";
+    let id = e.target.dataset.id,
+      cours = {};
+    course.filter((el) => {
+      if (el.id == id) cours = el;
+    });
 
-      $formCourse.idi.value = id;
-      $formCourse.courseTitle.value = cours.courseTitle;
-      $formCourse.category.value = cours.category;
-      $formCourse.price.value = cours.price;
-      editor.setContents(`${cours.description}`);
-      load();
-    }
-  });
+    $formCourse.idi.value = id;
+    $formCourse.courseTitle.value = cours.courseTitle;
+    $formCourse.category.value = cours.category;
+    $formCourse.price.value = cours.price;
+    editor.setContents(`${cours.description}`);
+    load();
+  }
+
 }
 
-/*--------------------------------------------------------Put Method ---------------------------- */
 
-export function editCourse() {
-  d.addEventListener("click", (e) => {
-    if (e.target.matches(".edit-two")) {
-      fetch(`${API_URL}/${getDataFromForm().id}`, {
-        method: "PUT",
-        body: JSON.stringify(getDataFromForm()),
-        headers: {
-          "content-Type": "application/json",
-        },
-      })
-        .then((res) => res.json())
-        .catch((error) => {
-          alertManager("error", error);
-        })
-        .then((response) => {
-          load();
+/*---------------------------------------------------------------Method Post-------------------------------*/
+
+
+
+
+d.addEventListener("submit", async (e) => {
+  if (e.target === $formCourse) {
+    e.preventDefault();
+    if (!e.target.idi.value) {
+      ///CREATE POST
+      try {
+        let options = {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              courseTitle: e.target.courseTitle.value,
+              category: e.target.category.value,
+              price: e.target.price.value,
+              description: editor.getContents(),
+            }),
+          },
+          res = await fetch(API_URL, options),
+          json = await res.json();
+
+        if (!res.ok) throw { status: res.status, statusText: res.statusText };
           getCourseData();
-          alertManager("update", "Edit Successfully");
-          openEditingForm("Create new course", "Add New Course");
+          load();
+          alertManager("success", "Created Successfully");
           $formCourse.reset();
-          $titleCourse.textContent = "Create new course";
-          setTimeout(() => {
-            location.reload();
-          }, 1500);
-        });
+      } catch (err) {
+        let message = err.statusText || "ocurrió un Error";
+    
+      }
+    } else {
+      //UPDATE -PUT
+      try {
+        let options = {
+            method: "PUT",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              courseTitle: e.target.courseTitle.value,
+              category: e.target.category.value,
+              price: e.target.price.value,
+              description: editor.getContents(),
+            }),
+          },
+          res = await fetch(
+            `${API_URL}/${e.target.idi.value}`,
+            options
+          ),
+          json = await res.json();
+        if (!res.ok) throw { status: res.status, statusText: res.statusText };
+            restartFormValues(e)
+      } catch (err) {
+        let message = err.statusText || "ocurrió un Error";
+       
+      }
     }
-  });
+  }
+});
+
+
+
+
+/*---------------------------------------------------------------------------------------------------------- */
+
+
+function restartFormValues(e) {
+  load();
+  getCourseData();
+  alertManager("update", "Edit Successfully");
+  openEditingForm("Create new news", "Create course");
+  $formCourse.reset();
+  e.target.idi.value = "";
 }
+
+
 
 /*----------------------------------------------Method Delete----------------------------------------- */
-
-d.addEventListener("click", (e) => {
+const removeCourse = (e)=>{
   if (e.target.matches(".remove-course")) {
     d.querySelector("#modal-container-dr").style.opacity = "1";
     d.querySelector("#modal-container-dr").style.visibility = "visible";
@@ -254,7 +264,7 @@ d.addEventListener("click", (e) => {
     d.addEventListener("submit", (e) => {
       if (e.target === $formDelete) {
         e.preventDefault();
-
+  
         fetch(`${API_URL}/${id}`, {
           method: "DELETE",
         })
@@ -279,7 +289,10 @@ d.addEventListener("click", (e) => {
       }
     });
   }
-});
+
+}
+
+
 
 function load() {
   d.querySelector(".cont-tables-course").classList.toggle("up-table-course");
@@ -297,54 +310,72 @@ function alertManager(typeMsg, message) {
   setTimeout(() => {
     alert.style.display = "none";
     alert.classList.remove(typeMsg);
-  }, 2000);
+  }, 2500);
 }
 
 /* ---------------------------------------------- Editor -------------------------------------------------------- */
 
+
 const editor = SUNEDITOR.create(document.querySelector(".txtarea-course"), {
+  value: "Comments...",
+  codeMirror: CodeMirror,
+  katex: katex,
   buttonList: [
-    [
-      "undo",
-      "redo",
-      "font",
-      "fontSize",
-      "formatBlock",
-      "paragraphStyle",
-      "blockquote",
-    ],
-    [
-      "bold",
-      "underline",
-      "italic",
-      "strike",
-      "subscript",
-      "superscript",
-      "fontColor",
-      "hiliteColor",
-      "textStyle",
-    ],
-    [
-      "removeFormat",
-      "outdent",
-      "indent",
-      "align",
-      "horizontalRule",
-      "list",
-      "lineHeight",
-    ],
-    ["link", "image", "video", "audio" /** ,'math' */], // You must add the 'katex' library at options to use the 'math' plugin.
-    ["fullScreen", "showBlocks", "codeView", "table"],
-    ["preview", "print"],
-    ["save", "template", "codeView"],
-    ["dir", "dir_ltr", "dir_rtl"],
-  ],
-  height: 435,
+    // default
+    ['undo', 'redo'],
+    [':p-More Paragraph-default.more_paragraph', 'font', 'fontSize', 'formatBlock', 'paragraphStyle', 'blockquote'],
+    ['bold', 'underline', 'italic', 'strike', 'subscript', 'superscript'],
+    ['fontColor', 'hiliteColor', 'textStyle'],
+    ['removeFormat'],
+    ['outdent', 'indent'],
+    ['align', 'horizontalRule', 'list', 'lineHeight'],
+    ['-right', ':i-More Misc-default.more_vertical', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save', 'template'],
+    ['-right', ':r-More Rich-default.more_plus', 'table', 'math', 'imageGallery'],
+    ['-right', 'image', 'video', 'audio', 'link'],
+    // (min-width: 992)
+    ['%992', [
+        ['undo', 'redo'],
+        ['bold', 'underline', 'italic', 'strike'],
+        [':t-More Text-default.more_text', 'subscript', 'superscript', 'fontColor', 'hiliteColor', 'textStyle'],
+        ['removeFormat'],
+        ['outdent', 'indent'],
+        ['align', 'horizontalRule', 'list', 'lineHeight'],
+        [':p-More Paragraph-default.more_paragraph', 'font', 'fontSize', 'formatBlock', 'paragraphStyle', 'blockquote'],
+        ['-right', ':i-More Misc-default.more_vertical', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save', 'template'],
+        ['-right', ':r-More Rich-default.more_plus', 'table', 'link', 'image', 'video', 'audio', 'math', 'imageGallery']
+    ]],
+    // (min-width: 767)
+    ['%767', [
+        ['undo', 'redo'],
+        [':p-More Paragraph-default.more_paragraph', 'font', 'fontSize', 'formatBlock', 'paragraphStyle', 'blockquote'],
+        [':t-More Text-default.more_text', 'bold', 'underline', 'italic', 'strike', 'subscript', 'superscript', 'fontColor', 'hiliteColor', 'textStyle'],
+        ['removeFormat'],
+        ['outdent', 'indent'],
+        [':e-More Line-default.more_horizontal', 'align', 'horizontalRule', 'list', 'lineHeight'],
+        [':r-More Rich-default.more_plus', 'table', 'link', 'image', 'video', 'audio', 'math', 'imageGallery'],
+        ['-right', ':i-More Misc-default.more_vertical', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save', 'template']
+    ]],
+    // (min-width: 480)
+    ['%480', [
+        [':p-More Paragraph-default.more_paragraph', 'font', 'fontSize', 'formatBlock', 'paragraphStyle'],
+        [':t-More Text-default.more_text', 'bold', 'underline', 'italic', 'strike', 'subscript', 'superscript', 'fontColor', 'hiliteColor', 'textStyle', 'removeFormat'],
+        [':e-More Line-default.more_horizontal', 'outdent', 'indent', 'align', 'horizontalRule', 'list', 'lineHeight'],
+        [':r-More Rich-default.more_plus', 'table', 'link', 'image', 'video', 'audio', 'math', 'imageGallery'],
+        ['-right', ':i-More Misc-default.more_vertical', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save', 'template']
+    ]]
+],
+
+  width: "100%",
+  
   lang: SUNEDITOR_LANG["en"],
 });
-editor.setDefaultStyle("font-family: Arial; font-size: 20px;");
-const vc = d.querySelector(".cont-table-course_blue");
 
+editor.setDefaultStyle("font-family: Arial; font-size: 13px;");
+
+/*-------------------------------------------------------------------------------------------------------------- */
+
+
+const vc = d.querySelector(".cont-table-course_blue");
 window.sr = ScrollReveal();
 sr.reveal(vc, {
   duration: 2500,
@@ -353,11 +384,23 @@ sr.reveal(vc, {
 });
 
 
-d.addEventListener("click", (e) => {
+/*---------------------------------------------------------------------------------------------------------- */
+
+const showSideBar = (e) => {
   if (e.target.matches(".fa-bars")) {
     setTimeout(() => {
       e.target.classList.toggle("changeColor");
     }, 500);
     d.querySelector(".menu").classList.toggle("move-menu");
   }
+};
+
+
+/*-------------------------------------------------------------------------------------------------------------------- */
+
+d.addEventListener("click", (e) => {
+  openWindowModal(e);
+  openCoursesEditForm(e);
+  showSideBar(e);
+  removeCourse(e);
 });

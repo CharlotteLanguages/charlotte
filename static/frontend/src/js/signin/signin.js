@@ -37,44 +37,56 @@ d.addEventListener("click", (e) => {
   }
 });
 
-const signup = async () => {
-  const d = document;
-  try {
-    const res = await fetch(API_URL),
-      data = await res.json();
-    let cont = 0;
-    data.map((ele) => {
-      if (ele.userName == form.userName.value) {
-        console.log("existe");
-      } else if (!ele.userName) {
-        console.log("no existe");
-      } else {
-        console.log("no existe");
-      }
-    });
 
-    if (!res.ok) throw { status: res.status, statusText: res.statusText };
+
+const loadData = async () => {
+  try {
+    let res = await fetch(API_URL),
+      json = await res.json();
+      validateUser(json)
   } catch (err) {
-    /*     const message = err.statusText || "An error occurred";
-    let table;
-      table.insertAdjacentHTML("afterend", `<p></p> ${err.status}: ${err:message}`);  */
+    let message = err.statusText || "ocurrió un Error";
   }
 };
 
-d.addEventListener("DOMContentLoaded", (e) => {});
-
-d.addEventListener("submit", async (e) => {
-  if (e.target.matches(".form")) {
-    e.preventDefault();
-    signup();
-
-    try {
-    } catch (error) {
-      let message = err.statusText || "ocurrió un Error";
-      /*   $formActivity.insertAdjacentHTML(
-            "afterend",
-            `<p><b>Error ${err.status}:${message}</p></b>`
-          ); */
-    }
-  }
+d.addEventListener("DOMContentLoaded", (e) => {
+  loadData();
 });
+
+
+
+
+function validateUser(user){
+  d.addEventListener("submit", (e) =>{
+    e.preventDefault();
+     const usuario = user.filter(user=>{
+      if(user.userName === form.userName.value && user.password === form.password.value){
+        window.location.href = "/src/views/homepage_user/homepage_user.html"
+       return true
+
+      }
+    })
+
+  })
+  
+}
+
+
+/* export const usert =  form.userName.value; */
+
+
+function user(user){
+  const usuario = user.filter(user=>{
+    if(user.userName === form.userName.value && user.password === form.password.value){
+     /*  window.location.href = "/src/views/homepage_free/homepage_free.html" */
+     return true
+
+    }
+  })
+
+  console.log(usuario)
+
+}
+
+
+

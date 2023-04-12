@@ -11,34 +11,7 @@ const d = document,
   $modal = document.querySelector(".cont-p-sponsor");
 const news = d.querySelector("#container-noti");
 
-export function ModalRemoveSponsor(btnshow, btnclose, modalContainer, modal) {
-  d.addEventListener("click", (e) => {
-    /* if (e.target.matches(btnshow)) {
-      console.log(e.target);
-      d.querySelector(modalContainer).style.visibility = "visible";
-      d.querySelector(modal).classList.toggle("modal-close-d");
-    }
-    if (e.target.matches(btnclose)) {
-      d.querySelector(modalContainer).style.visibility = "hidden";
-      d.querySelector(modal).classList.toggle("modal-close-d");
-    } */
-  });
-}
 
-/*--------------------------------------------show-----------------------*/
-
-export function ModalShowSponsor(btnshow, btnclose, modalContainer, modal) {
-  d.addEventListener("click", (e) => {
-    if (e.target.matches(btnshow)) {
-      d.querySelector(modalContainer).style.visibility = "visible";
-      d.querySelector(modal).classList.toggle("modal-close-sponsor");
-    }
-    if (e.target.matches(btnclose)) {
-      d.querySelector(modalContainer).style.visibility = "hidden";
-      d.querySelector(modal).classList.toggle("modal-close-sponsor");
-    }
-  });
-}
 
 /*-------------------------------------open form---------------------------------- */
 
@@ -47,6 +20,7 @@ export function openFormSponsor(btnshow, btnclose, modal, table) {
     if (e.target.matches(btnshow)) {
       load();
       $formSponsor.reset();
+      d.querySelector("#alert").style.display = "none";
     }
     if (e.target.matches(btnclose)) {
       load();
@@ -55,6 +29,10 @@ export function openFormSponsor(btnshow, btnclose, modal, table) {
     }
   });
 }
+
+
+
+/*---------------------------------------------------------------------------------------------------------------- */
 
 function CodeTh() {
   let code = `
@@ -71,12 +49,16 @@ function CodeTh() {
   return code;
 }
 
+
+
+/*------------------------------------------------------------------------------------------------- */
+
+
 let sponsor = [];
-export const sponsorp = async () => {
+export const getSponsorData = async () => {
   try {
     let res = await fetch(API_URL),
       json = await res.json();
-    /*  if (!res.ok) throw { status: res.status, statusText: res.statusText }; */
     if (json.length <= 0) {
       const table = d.querySelector(".crud-table-sponsor");
       table.innerHTML = `<div class = "no-activities">NO SPONSORS YET</div>`;
@@ -88,23 +70,24 @@ export const sponsorp = async () => {
       renderSponsor(sponsor);
     }
   } catch (err) {
-    let message = err.statusText || "ocurrió un Error";
+    const table = d.querySelector(".crud-table-sponsor");
+    table.innerHTML = `<div class = "no-activities">COULD NOT ESTABLISH CONNECTION TO SERVER</div>`;
   }
 };
 
 /*--------------------------------------------Render Resources-------------------------------- */
 const renderSponsor = (sponsor) => {
   let codigo = "";
-  sponsor.forEach((ele, i) => {
+  sponsor.reverse().forEach((ele) => {
     const $tr = d.createElement("tr");
     codigo = `
     <tbody class = "body">
     <tr class = "tr">
-    <td>${ele.id}</td>
-    <td>${ele.sponsorName}</td>
-    <td>${ele.sponsorAddress}</td>
-    <td>${ele.sponsorWebsite}</td>
-    <td>
+    <td  data-label = "ID">${ele.id}</td>
+    <td  data-label = "Sponsors">${ele.sponsorName}</td>
+    <td  data-label = "Address">${ele.sponsorAddress}</td>
+    <td  data-label = "Website">${ele.sponsorWebsite}</td>
+    <td  data-label = "Actions">
         <div class="icons-sponsor">
         <i class="fas fa-dot-circle read-sponsor" data-ids = ${ele.id} ></i>
         <i class="fas fa-pen edit-sponsor" data-id = ${ele.id}></i> 
@@ -115,8 +98,6 @@ const renderSponsor = (sponsor) => {
     </tbody>`;
     $tr.innerHTML = codigo;
     $fragment.appendChild($tr);
-    /* if ((ele[i] = typeof Number)) console.log("es un numero", ele[i].category);
-    console.log(referral[i].category); */
   });
   $tableSponsor.innerHTML = CodeTh();
   $tableSponsor.appendChild($fragment);
@@ -124,7 +105,7 @@ const renderSponsor = (sponsor) => {
 
 /*-----------------------------------------------------Btn Read show------------------------------------------- */
 
-d.addEventListener("click", (e) => {
+const openModalEditor = (e)=>{
   if (e.target.matches(".read-sponsor")) {
     d.querySelector("#modal-container-sponsor").style.opacity = "1";
     d.querySelector("#modal-container-sponsor").style.visibility = "visible";
@@ -136,16 +117,20 @@ d.addEventListener("click", (e) => {
         sponsors = el;
       }
     });
-
+  
     let code = `
       <div class = "refname">${sponsors.sponsorName}</div>
       <div class = "refemail">${sponsors.sponsorAddress}</div>
       <a href="http://${sponsors.sponsorWebsite}" target = "_blank" class = "refphone">${sponsors.sponsorWebsite}</a>
-      <div class = "truck"></div>
+      <div></div>
       `;
     $modal.innerHTML = code;
   }
-  if (e.target.matches(".poi")) {
+
+}
+
+const closeModalEditor = (e)=>{
+  if (e.target.matches(".close")) {
     d.querySelector(".modal-sponsor").classList.toggle("modal-clos");
     setTimeout(() => {
       d.querySelector("#modal-container-sponsor").style.opacity = "0";
@@ -153,12 +138,37 @@ d.addEventListener("click", (e) => {
     }, 700);
     d.querySelector(".modal-resource").classList.toggle("close-resource");
   }
-});
+
+}
+
+const openSponsorEditForm = (e)=>{
+  if (e.target.matches(".edit-sponsor")) {
+    $titleSponsor.textContent = "Modify sponsors";
+    $btnSponsor.value = "Save Changes";
+    d.querySelector("#alert").style.display = "none";
+  
+    let id = e.target.dataset.id,
+      sponsors = {};
+    sponsor.filter((el) => {
+      if (el.id == id)sponsors = el;
+  
+    });
+  
+    $formSponsor.idi.value = id;
+    $formSponsor.sponsorName.value = sponsors.sponsorName;
+    $formSponsor.sponsorAddress.value = sponsors.sponsorAddress;
+    $formSponsor.sponsorWebsite.value = sponsors.sponsorWebsite;
+   d.querySelector(".file-sponsor-text").textContent = sponsors.sponsorImage;
+    load();
+  }
+}
+
+
 
 /*--------------------------------------------------POST Method----------------------------------------- */
 
-d.addEventListener("click", (e) => {
-  /*   const email = d.querySelector(".email-referral"); */
+/* d.addEventListener("click", (e) => {
+  
   if (e.target.matches(".btn-submit")) {
     if (
       !$formSponsor["sponsorName"].value.length ||
@@ -195,7 +205,7 @@ d.addEventListener("click", (e) => {
         alertManager("error", error);
       })
       .then((res) => {
-        sponsorp();
+        getSponsorData();
         load();
         $formSponsor.reset();
         alertManager("success", "Created Successfully");
@@ -203,7 +213,7 @@ d.addEventListener("click", (e) => {
       });
   }
 });
-
+ */
 /*---------------------------------------------------AlertManager------------------------------------------ */
 
 function alertManager(typeMsg, message) {
@@ -217,42 +227,80 @@ function alertManager(typeMsg, message) {
   setTimeout(() => {
     alert.style.display = "none";
     alert.classList.remove(typeMsg);
-  }, 1500);
+  }, 2500);
 
-  /*  setTimeout(() => {
-    location.reload();
-
-  }, 2000); */
 }
 
 /*-----------------------------------------------------Btn Edit Up Modify----------------------------------------- */
 
-d.addEventListener("click", (e) => {
-  if (e.target.matches(".edit-sponsor")) {
-    $titleSponsor.textContent = "Modify sponsors";
-    $btnSponsor.value = "Save Changes";
-    $btnSponsor.classList.toggle("edit-two");
-    $btnSponsor.classList.toggle("btn-submit");
-    let id = e.target.dataset.id,
-      sponsors = {};
-    sponsor.filter((el) => {
-      if (el.id == id) {
-        sponsors = el;
+d.addEventListener("submit", async (e) => {
+  if (e.target === $formSponsor) {
+    e.preventDefault();
+    if (!e.target.idi.value) {
+      ///CREATE POST
+      try {
+        let options = {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              sponsorName: e.target.sponsorName.value,
+              sponsorAddress: e.target.sponsorAddress.value,
+              sponsorWebsite: e.target.sponsorWebsite.value,
+              sponsorImage: e.target.sponsorImage.value,
+            }),
+          },
+          res = await fetch(API_URL, options),
+          json = await res.json();
+        getSponsorData();
+        load();
+        $formSponsor.reset();
+        alertManager("success", "Created Successfully");
+        d.querySelector(".file-sponsor-text").textContent = "Profile image...";
+      } catch (err) {
+        let message = err.statusText || "ocurrió un Error";
       }
-    });
-
-    $formSponsor.idi.value = id;
-    $formSponsor.sponsorName.value = sponsors.sponsorName;
-    $formSponsor.sponsorAddress.value = sponsors.sponsorAddress;
-    $formSponsor.sponsorWebsite.value = sponsors.sponsorWebsite;
-   d.querySelector(".file-sponsor-text").textContent = sponsors.sponsorImage;
-    load();
+    } else {
+      //UPDATE -PUT
+      try {
+        let options = {
+            method: "PUT",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              sponsorName: e.target.sponsorName.value,
+              sponsorAddress: e.target.sponsorAddress.value,
+              sponsorWebsite: e.target.sponsorWebsite.value,
+              sponsorImage: e.target.sponsorImage.value,
+            }),
+          },
+          res = await fetch(
+            `http://localhost:3000/sponsor/${e.target.idi.value}`,
+            options
+          ),
+          json = await res.json();
+        if (!res.ok) throw { status: res.status, statusText: res.statusText };
+        restartFormValues(e);
+      } catch (err) {
+        let message = err.statusText || "ocurrió un Error";
+      }
+    }
   }
 });
 
+
+
+function restartFormValues(e) {
+  $btnSponsor.value = "Create sponsor";
+  $titleSponsor.textContent = "Create new sponsor";
+  load();
+  alertManager("update", "Edit Successfully");
+  $formSponsor.reset();
+  e.target.idi.value = "";
+ 
+}
+
 /*---------------------------------------------------PUT Method---------------------------------- */
 
-d.addEventListener("click", (e) => {
+/* d.addEventListener("click", (e) => {
   if (e.target.matches(".edit-two")) {
     const spon = {
       id: $formSponsor.idi.value,
@@ -302,52 +350,53 @@ d.addEventListener("click", (e) => {
       });
   }
 });
-
+ */
 /*--------------------------------------------Load----------------------------------- */
 
 function load() {
-  sponsorp();
+  getSponsorData();
   d.querySelector(".cont-new-sponsor").classList.toggle("open-form-sponsor");
   d.querySelector(".cont-tables-sponsor").classList.toggle("up-table-sponsor");
   news.classList.toggle("noticia");
 }
 /* -------------------------------------------------DELETE Method-------------------------------- */
+ const removeSponsor = (e)=>{
+   if (e.target.matches(".remove-sponsor")) {
+     d.querySelector("#modal-container-dr").style.opacity = "1";
+     d.querySelector("#modal-container-dr").style.visibility = "visible";
+     d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
+     let id = e.target.dataset.idr;
+     d.addEventListener("submit", (e) => {
+       if (e.target === $formDelete) {
+         e.preventDefault();
+  
+         fetch(`${API_URL}/${id}`, {
+           method: "DELETE",
+         })
+           .then((res) => res.json())
+           .catch((error) => {
+             alertManager("error", error);
+           })
+           .then((res) => {
+             d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
+             setTimeout(() => {
+               d.querySelector("#modal-container-dr").style.opacity = "0";
+               d.querySelector("#modal-container-dr").style.visibility =
+                 "hidden";
+             }, 700);
+             getSponsorData();
+             alertManager("deleted", "Deleted Successfully");
+             $formDelete.reset();
+             setTimeout(() => {
+               location.reload();
+             }, 1500);
+           });
+       }
+     });
+   }
 
-d.addEventListener("click", (e) => {
-  if (e.target.matches(".remove-sponsor")) {
-    d.querySelector("#modal-container-dr").style.opacity = "1";
-    d.querySelector("#modal-container-dr").style.visibility = "visible";
-    d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
-    let id = e.target.dataset.idr;
-    d.addEventListener("submit", (e) => {
-      if (e.target === $formDelete) {
-        e.preventDefault();
+ }
 
-        fetch(`${API_URL}/${id}`, {
-          method: "DELETE",
-        })
-          .then((res) => res.json())
-          .catch((error) => {
-            alertManager("error", error);
-          })
-          .then((res) => {
-            d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
-            setTimeout(() => {
-              d.querySelector("#modal-container-dr").style.opacity = "0";
-              d.querySelector("#modal-container-dr").style.visibility =
-                "hidden";
-            }, 700);
-            sponsorp();
-            alertManager("deleted", "Deleted Successfully");
-            $formDelete.reset();
-            setTimeout(() => {
-              location.reload();
-            }, 1500);
-          });
-      }
-    });
-  }
-});
 
 const vc = d.querySelector(".cont-table-sponsor_blue"),
   vd = d.querySelector(".cont-tables-sponsor");
@@ -372,4 +421,23 @@ Array.from(files).forEach((file) => {
       span.innerHTML = file.files[0].name;
     }
   });
+});
+
+
+const showSideBar = (e) => {
+  if (e.target.matches(".fa-bars")) {
+    setTimeout(() => {
+      e.target.classList.toggle("changeColor");
+    }, 500);
+    d.querySelector(".menu").classList.toggle("move-menu");
+  }
+};
+
+
+d.addEventListener("click", (e) => {
+  openModalEditor(e);
+  closeModalEditor(e);
+  showSideBar(e);
+  openSponsorEditForm(e);
+  removeSponsor(e);
 });

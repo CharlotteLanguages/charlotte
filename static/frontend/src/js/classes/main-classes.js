@@ -1,26 +1,19 @@
 import {
   calendar,
-  ModalRemoveClasses,
-  ModalShowClasses,
   openFormClasses,
-  Classes,
+  getClassesData,
 } from "./classes.js";
 
 const d = document;
 d.addEventListener("DOMContentLoaded", (e) => {
-  Classes();
+  getClassesData();
 });
 
-ModalShowClasses(
-  ".fa-dot-circle",
-  ".close-classes",
-  "#modal-container-classes",
-  ".modal-classes"
-);
-ModalRemoveClasses(".remove", ".close-d", "#modal-container-d", ".modal-d");
+
+
 openFormClasses(
   ".btn-classes",
-  ".cancel-form",
+  ".cancel-classes",
   ".cont-new-classes",
   ".cont-tables-classes"
 );

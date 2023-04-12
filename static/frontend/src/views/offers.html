@@ -6,15 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/en.js"></script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/htmlmixed/htmlmixed.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/xml/xml.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/css/css.js"></script>
+     <!------------------------------ Sun Editor--------------------------------------->
+     <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
+     <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/en.js"></script>
+     <!------------------------------ Codemirrorx--------------------------------------->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.css">
+     <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/htmlmixed/htmlmixed.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/xml/xml.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/css/css.js"></script>
+     <!------------------------------ Katex--------------------------------------->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+     <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
     <title>Offers</title>
 </head>
 
@@ -24,7 +28,7 @@
         <section class="cont-new-promotion open-form-promotion">
             <section class=" crud-promotion" id="cont-form-promotion">
                 <article>
-                    <p class="crud-title-promotion font-title-promotion">Create new promotion</p>
+                    <p class="crud-title-promotion font-title-promotion">Create new offer</p>
                     <form action="" class="crud-form-promotion">
                         <input type="hidden" name="idi">
 
@@ -44,7 +48,7 @@
                             <option>Assistant</option>
                         </select>
                         <input class="input-DateStart-promotion" type="datetime-local" name="promotionDateStart"
-                            placeholder="Start Date*">
+                            placeholder="Start Date*" min="2023-04-01">
                             <input class="input-DateEnd-promotion" type="datetime-local" name="promotionDateEnd"
                                 placeholder="Final Date*">
                         <input class="input-price-promotion" type="number" name="promotionPrice" placeholder="Price*">
@@ -58,9 +62,9 @@
                                 rows="10"> </textarea>
                         </div>
 
+                        <input id="create-promotion" type="submit" value="Create offer" class="btn-submit">
+                        <input class="cancel-offer" type="button" value="Cancel">
                     </form>
-                    <input id="create-promotion" type="submit" value="Create offer" class="btn-submit">
-                    <input class="cancel-offer" type="button" value="Cancel">
                 </article>
 
             </section>
@@ -72,12 +76,12 @@
                 <li><a href="/src/views/student.html">Students</a></li>
                 <li><a href="/src/views/news.html">News</a></li>
                 <li><a href="/src/views/courses.html">Courses</a></li>
-                <li><a href="/src/views/actividades.html">Activities</a></li>
+                <li><a href="/src/views/activities.html">Activities</a></li>
                 <li><a href="/src/views/resource.html">Resources</a></li>
                 <li><a href="/src/views/certificates.html">Certificates</a></li>
                 <li><a href="/src/views/classes.html" class="space">Private Classes</a></li>
                 <div class="space-top">
-                    <li class=" press"><a href="">Offers</a></li>
+                    <li class=" press"><a href="/src/views/offers.html">Offers</a></li>
                     <li><a href="/src/views/menbership.html">Memberships</a></li>
                     <li><a href=" /src/views/referrals.html">Referrals</a></li>
                     <li><a href="/src/views/sponsors.html">Sponsors</a></li>
@@ -112,7 +116,7 @@
 
         <section id="modal-container-promotion">
             <div class="modal-promotion modal-clp">
-                <div class="close-promotion"><i class="fas fa-times-circle poi"></i></div>
+                <div class="close-promotion"><i class="fas fa-times-circle close"></i></div>
                 <div class="cont-p-promotion">
                 </div>
         </section>

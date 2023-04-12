@@ -50,23 +50,23 @@
     @content;
   }
 }
-@mixin min {
+/* @mixin min {
   @media all and (min-width: 100px) and (max-width: 280px){
     @content;
   }
-}
+} */
 
 
-@mixin menu {
+/* @mixin menu {
   @media  screen and (min-width: 1000px) and (max-width: 1225px) {
     @content;
   }
-}
-@mixin menus {
+} */
+/* @mixin menus {
     @media screen and (orientation:portrait){
     @content;
   }
-}
+} */
 @mixin lands {
   @media only screen and (min-width: 330px)  and (orientation:landscape){
     @content;
@@ -89,11 +89,6 @@
 }
 
 
-@mixin defect {
-  @media all and (min-width: 1024px) and (max-width: 1280px){
-    @content;
-  }
-}
 
 
 
@@ -103,8 +98,8 @@
     @content;
   }
 }
-@mixin iphone-horizontal {
-  @media screen and (max-device-width: 480px) and (orientation:landscape){
+@mixin portrait-long {
+  @media screen and (max-device-width: 480px) and (min-height:800px) and (orientation:portrait){
     @content;
   }
 }

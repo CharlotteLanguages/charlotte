@@ -1,8 +1,8 @@
-import { ModalShowSponsor, openFormSponsor, sponsorp } from "./review.js";
+import { openFormSponsor, getReviewData } from "./review.js";
 
 const d = document;
 d.addEventListener("DOMContentLoaded", (e) => {
-  sponsorp();
+  getReviewData();
 });
 /* editor(); */
 
@@ -13,9 +13,3 @@ openFormSponsor(
   ".cont-tables-review"
 );
 
-ModalShowSponsor(
-  ".fa-dot-circle",
-  ".close-review",
-  "#modal-container-review",
-  ".modal-review"
-);

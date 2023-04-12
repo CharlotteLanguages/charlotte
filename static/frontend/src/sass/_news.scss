@@ -1,15 +1,18 @@
 @use "mixingfunc";
 @use "media-queries";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
+
 /* ----------------------Section Form---------------------------- */
 .cont-new-news {
   width: 63%;
-  height: 590px;
+  height: 640px;
   left: 25%;
   top: 17%;
   margin-right: 20px;
   position: absolute;
   background: #fff;
   border-radius: 20px;
+  box-shadow: 5px 10px 10px 10px rgba(0, 0, 0, 0.25);
 
   @include media-queries.tablet {
     width: 65%;
@@ -26,7 +29,7 @@
     width: 85%;
     left: 7.5%;
     height: 560px;
-    background-color: #ffb3cb;
+  
     top: 90px;
   }
   @include media-queries.phoness {
@@ -34,74 +37,55 @@
     left: 5%;
     height: 85%;
     top: 80px;
-    background-color: #c2d1ff;
   }
 
-  .title-news {
-    box-sizing: border-box;
-    padding-left: 19px;
-    padding-right: 10px;
-    position: absolute;
-    width: 93.6%;
-    height: 30px;
-    left: 29px;
-    top: 55px;
-    color: #000;
-    border: 1px solid #8f8f8f;
-    border-radius: 10px;
-    font-size: 1rem;
-    outline: none;
+}
 
-    /* 
-    
-  @include media-queries.table {
-    width: 1050px;
-    font-size: 22px;
+.title-news {
+  box-sizing: border-box;
+  padding-left: 19px;
+  padding-right: 10px;
+  position: absolute;
+  width: 93.3%;
+  height: 33px;
+  left: 29px;
+  top: 55px;
+  color: #000;
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
 
-  }
-
-  @include media-queries.phone2 {
-    width: 885px;
-    font-size: 20px;
-    height: 48px;
-
-  }
-  @include media-queries.phone {
-    width: 731px;
-    font-size: 18px;
-    height: 46px;
-   
-  }
-  @include media-queries.mobile {
-    width: 650px;
-    font-size: 16px;
-    height: 42px;
-  }
   @include media-queries.tablet {
-    width: 650px;
-    font-size: 16px;
-    height: 42px;
+    left: 22px;
   }
   @include media-queries.tablett {
-    width: 525px;
-    font-size: 13px;
-    height: 35px;
 
+    left: 22px;
+    font-size: 0.9rem;
+    height: 31px;
   }
   @include media-queries.big-phone {
-    width: 92.5%;
-    font-size: 15px;
-    height: 35px;
-    left: 4%;
+    top: 47px;
+    height: 28px;
+    font-size: 0.8rem;
+    left: 17px;
+    padding-left: 10px;
+    padding-right: 5px;
   }
   @include media-queries.phoness {
-    width: 92.5%;
-    font-size: 15px;
-    height: 35px;
-    left: 4%;
-  } */
+    left: 10px;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 55px;
+    width: 93.5%;
   }
 }
+
+
+
 .open-form-news {
   transform: translateY(-200%);
 }
@@ -109,163 +93,108 @@
 #cont-form-news {
   .input-category-news {
     box-sizing: border-box;
-    position: absolute;
-    top: 97px;
-    left: 29px;
-    @include mixingfunc.font-style(Arial, normal, 400, 1rem, 100%, justify);
-    width: 46%;
-    height: 33px;
-    border: 1px solid #8f8f8f;
-    border-radius: 10px;
-    padding-left: 19px;
-    color: #000000;
-    outline: none;
-    /* @include media-queries.table {
-      width: 520px;
-      font-size: 22px;
-      padding-left: 320px;
-    }
-  
-    @include media-queries.phone2 {
-      width: 435px;
-      font-size: 20px;
-      padding-left: 240px;
-      height: 48px;
-    }
-  
-    @include media-queries.phone {
-      width: 360px;
-      font-size: 18px;
-      padding-left: 180px;
-      height: 46px;
-    }
-    @include media-queries.mobile {
-      width: 320px;
-      font-size: 16px;
-      height: 42px;
-     padding-left: 170px;
-   
-    }
-    @include media-queries.tablet {
-      width: 320px;
-      font-size: 16px;
-      height: 42px;
-      padding-left: 170px;
-    }
-    @include media-queries.tablett {
-      width: 258px;
-      font-size: 13px;
-      height: 35px;
-      padding-left: 140px;
-    }
-    @include media-queries.big-phone {
-      width: 45.5%;
-      font-size: 14px;
-      height: 35px;
-      left: 4%;
-      padding-left: 25%;
-      padding-top: 2px;
-    }
-    @include media-queries.phoness {
-      width: 45.5%;
-      font-size: 14px;
-      height: 35px;
-      left: 4%;
-      padding-left: 25%;
-      padding-top: 2px;
-    }
- */
+  position: absolute;
+  top: 97px;
+  left: 29px;
+  @include mixingfunc.font-style(Arial, normal, 400, 1rem, 100%, justify);
+  width: 46%;
+  height: 33px;
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  padding-left: 19px;
+  color: #000000;
+  outline: none;
+
+  @include media-queries.tablet {
+    left: 22px;
+  }
+  @include media-queries.tablett {
+    left: 22px;
+    font-size: 0.9rem;
+    height: 31px;
+  }
+  @include media-queries.big-phone {
+    top: 82px;
+    height: 28px;
+    font-size: 0.8rem;
+    left: 17px;
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+  @include media-queries.phoness {
+    left: 10px;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 89px;
+  }
   }
 
   .input-tags-news {
     box-sizing: border-box;
-    position: absolute;
-    @include mixingfunc.measures(46%, 33px, 49%, 97px);
-    @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
-    border: 1px solid #8f8f8f;
-    border-radius: 10px;
-    padding-left: 19px;
-    color: #000000;
-    outline: none;
-    margin-left: 18px;
+  position: absolute;
+  @include mixingfunc.measures(46%, 33px, 48.5%, 97px);
+  @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  padding-left: 19px;
+  color: #000000;
+  outline: none;
+  margin-left: 18px;
 
-    /* 
-  @include media-queries.table {
-    width: 520px;
-    left: 560px;
-    font-size: 22px;
-  }
-
-  @include media-queries.phone2 {
-    width: 435px;
-    left: 480px;
-    font-size: 20px;
-    height: 48px;
-  }
-  @include media-queries.phone {
-    width: 360px;
-    left: 400px;
-    font-size: 18px;
-    height: 46px;
-  }
-  @include media-queries.mobile {
-    width: 320px;
-    font-size: 16px;
-    height: 42px;
-    left: 360px;
-  }
   @include media-queries.tablet {
-    width: 320px;
-    font-size: 16px;
-    height: 42px;
-    left: 360px;
+    left: 48%;
   }
   @include media-queries.tablett {
-    width: 258px;
-    font-size: 13px;
-    height: 35px;
-    left: 296px;
+    left: 48%;
+    font-size: 0.9rem;
+    height: 31px;
   }
   @include media-queries.big-phone {
-    width: 45.5%;
-    font-size: 15px;
-    height: 35px;
-    left: 51%;
+    top: 82px;
+    height: 28px;
+    font-size: 0.8rem;
+    left: 47%;
+    padding-left: 10px;
+    padding-right: 5px;
   }
   @include media-queries.phoness {
-    width: 45.5%;
-    font-size: 15px;
-    height: 35px;
-    left: 51%;
-  } */
+    left: 45%;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 89px;
+  }
   }
 
   #area-news {
     box-sizing: border-box;
     position: absolute;
     width: 93.5%;
-    height: 200px;
     left: 29px;
     top: 185px;
     border-radius: 10px;
 
     @include media-queries.tablet {
       left: 22px;
-      top: 262px;
+ 
     }
     @include media-queries.tablett {
       left: 22px;
-      top: 262px;
+      top: 180px;
     }
     @include media-queries.big-phone {
       left: 17px;
-      top: 225px;
-      display: none;
+      top: 155px;
+    
     }
     @include media-queries.phoness {
       left: 10px;
-      top: 225px;
-      display: none;
+      width: 90.9%;
+      top: 160px;
+      
     }
 
     .txtarea-news {
@@ -273,17 +202,21 @@
       resize: none;
       border-radius: 10px;
       width: 1194px;
-      height: 200px;
+      height: 21em;
       @include media-queries.tablet {
-        height: 200px;
+       
       }
       @include media-queries.tablett {
+
       }
       @include media-queries.big-phone {
-        height: 177px;
+        height: 18.8em;
       }
       @include media-queries.phoness {
-        height: 90px;
+        height: 17.4em;
+      }
+      @include media-queries.portrait-long {
+        height: 24.5em;
       }
     }
   }
@@ -318,10 +251,10 @@
     height: 30px;
   }
   @include media-queries.phoness {
-    max-width: 125px;
-    font-size: 14px;
-    top: 500px;
-    height: 30px;
+    max-width: 105px;
+    font-size: 13.5px;
+    top: 94%;
+    height: 25px;
   }
 
   color: #fff;
@@ -358,10 +291,10 @@
     left: 17px;
   }
   @include media-queries.phoness {
-    width: 90px;
-    font-size: 14px;
-    top: 500px;
-    height: 30px;
+    width: 70px;
+    font-size: 13.5px;
+    top: 94%;
+    height: 25px;
     left: 10px;
   }
 
@@ -380,39 +313,24 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 130%;
-  /* 
-  @include media-queries.table {
-    font-size: 26px;
-  }
-
-  @include media-queries.phone2 {
-    font-size: 24px;
-    top: 15px;
-  }
-  @include media-queries.phone {
-    font-size: 23px;
-    top: 17px;
-  }
-  @include media-queries.mobile {
-    font-size: 23px;
-    top: 17px;
-  }
   @include media-queries.tablet {
-    font-size: 21px;
-    top: 19px;
+    font-size: 19px;
   }
   @include media-queries.tablett {
     font-size: 19px;
-    top: 21px;
   }
   @include media-queries.big-phone {
-    font-size: 19px;
-    top: 21px;
+    font-size: 18px;
   }
   @include media-queries.phoness {
-    font-size: 19px;
-    top: 21px;
-  } */
+    font-size: 17px;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    height: 30px;
+  }
+
+  
 }
 
 .none-news {
@@ -500,7 +418,7 @@
     }
 
     th {
-      @include mixingfunc.font-style(arial, normal, 600, 19px, 100%, center);
+      @include mixingfunc.font-style(arial, normal, 600, 18px, 100%, center);
       font-family: Arial;
       border: solid 1px black;
       height: 40px;
@@ -538,13 +456,7 @@
         max-width: 170px;
         min-width: 20px;
       }
-      /*       @include media-queries.tablett {
-        font-size: 12px;
-        height: 24px;
-        max-width: 150px;
-        min-width: 15px;
-        background-color: #1a63f5;
-      } */
+    
       @include media-queries.big-phone {
         display: block;
         margin: auto;
@@ -594,6 +506,7 @@
       width: 8px;
       border-radius: 20px;
       height: 3px;
+      
     }
 
     td::-webkit-scrollbar-thumb {
@@ -804,7 +717,6 @@ tr {
     @include media-queries.big-phone {
       width: 97%;
       height: 90%;     
-      background-color: #ffc3f5;
       top: 20px;
      }
     @include media-queries.phoness {
@@ -949,16 +861,41 @@ tr {
   padding-left: 19px;
   padding-right: 10px;
   position: absolute;
-  width: 93.6%;
+  width: 93.3%;
   height: 33px;
   left: 29px;
-  top: 142px;
+  top: 139px;
   color: #000;
   border: 1px solid #8f8f8f;
   border-radius: 10px;
   font-size: 1rem;
   outline: none;
   align-items: center;
+  @include media-queries.tablet {
+    left: 22px;
+  }
+  @include media-queries.tablett {
+    left: 22px;
+    font-size: 0.9rem;
+    height: 31px;
+  }
+  @include media-queries.big-phone {
+    top: 118px;
+    height: 28px;
+    font-size: 0.8rem;
+    left: 17px;
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+  @include media-queries.phoness {
+    left: 10px;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 124px;
+    width: 93.3%;
+  }
 }
 .file-sponsor-btn {
   position: absolute;
@@ -966,6 +903,15 @@ tr {
   right: 2%;
   font-size: 20px;
   color: #000;
+  @include media-queries.tablett {
+    font-size: 18px;
+  }
+  @include media-queries.big-phone {
+    font-size: 17px;
+  }
+  @include media-queries.phoness {
+    font-size: 16px;
+  }
 }
 
 .file-sponsor-text {
@@ -975,6 +921,16 @@ tr {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   color: rgb(97, 97, 97);
+  
+  @include media-queries.tablett {
+    font-size: 0.9rem;
+  }
+  @include media-queries.big-phone {
+    font-size: 0.8rem;
+  }
+  @include media-queries.phoness {
+    font-size: 0.8rem;
+  }
 }
 
 #imgSponsor {

@@ -1,5 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap");
+/* @mixin min {
+  @media all and (min-width: 100px) and (max-width: 280px){
+    @content;
+  }
+} */
+/* @mixin menu {
+  @media  screen and (min-width: 1000px) and (max-width: 1225px) {
+    @content;
+  }
+} */
+/* @mixin menus {
+    @media screen and (orientation:portrait){
+    @content;
+  }
+} */
 * {
   margin: 0;
   padding: 0;
@@ -230,12 +246,14 @@ background-color: aqua; */
   .navbar__menu li a {
     font-size: 20px;
     font-weight: 500;
+    color: #ffffff;
   }
 }
 @media all and (min-width: 280px) and (max-width: 549px) {
   .navbar__menu li a {
     font-size: 19px;
     font-weight: 500;
+    color: #ffffff;
   }
 }
 .navbar__menu li:hover {
@@ -286,7 +304,7 @@ background-color: aqua; */
     justify-content: start;
     margin-right: 0;
     padding-top: 10%;
-    margin-top: 102px;
+    margin-top: 101px;
     transform: translateX(150%);
     transition: transform 1s;
     overflow: auto;
@@ -346,6 +364,7 @@ background-color: aqua; */
     font-weight: 500;
     height: 50px;
     font-weight: 0;
+    font-family: "Roboto", sans-serif;
   }
 }
 @media all and (min-width: 280px) and (max-width: 549px) {
@@ -362,6 +381,7 @@ background-color: aqua; */
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Roboto", sans-serif;
   }
 }
 

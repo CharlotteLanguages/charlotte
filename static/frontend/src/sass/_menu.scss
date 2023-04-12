@@ -11,16 +11,23 @@
   &::after {
     content: "";
     position: absolute;
-    @include mixingfunc.measures(11%, 0px, 2%, 415px);
-    border: 1px solid #000000;
+    @include mixingfunc.measures(11%, 0px, 2%, 418px);
+    border: 1px solid #5d5c5c;
     @include media-queries.phoness {
-      display: none; 
+      width: 50%;
+      margin-left: 22.5%;
+      top: 408px;
+    
     }
     @include media-queries.big-phone {
-      display: none;
+      width: 45%;
+      margin-left: 25.5%;
+      top: 494px;
     }
     @include media-queries.tablett {
-      display: none;
+      width: 40%;
+      margin-left: 27.5%;
+      top: 535px;
     }
     @include media-queries.tablet {
      width: 12%;
@@ -62,15 +69,6 @@
 
   }
     
-/*   @include media-queries.mobile {
-    width: 190px;
-    max-height: 100%;
-    
-  }
-  @include media-queries.phone {
-    width: 229px;
-    max-height: 100%;
-  } */
 
 
   .menu__logo {
@@ -126,7 +124,7 @@
       list-style: none;
       margin-bottom: 12px;
       height: 27px;
-      transition: all 0.3s linear;
+      transition: all .4s ease-in;
     
       @include media-queries.tablett {
         width: 90%;
@@ -146,30 +144,24 @@
         margin: auto;
         height: 30px;
         margin-bottom: 13px;
-
       }
       
       &:hover {
-        transform: scale(1.04);
         background: #8eaaff;
         border-radius: 50px 0px 0px 50px;
       
-        @include media-queries.tablet {
-        width: 90%;
-        transform: scale(1.01);
+ /*        @include media-queries.tablet {
+        transform: scale(1.02);
         }
         @include media-queries.tablett {
-        width: 90%;
         transform: scale(1.01);
         }
         @include media-queries.big-phone {
-        width: 90%;
         transform: scale(1.01);
         }
         @include media-queries.phoness {
-        width: 90%;
         transform: scale(1.01);
-        }
+        } */
       }
 
       a {
@@ -181,7 +173,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-      
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .1s ease;
      
         @include media-queries.tablett{
          width: 90%;    
@@ -204,10 +199,6 @@
   transform: translateX(0%);
 
 }
-.space2 {
-  padding-top: 12px;
-  
-}
 
 .press {
   height: 46px;
@@ -219,14 +210,13 @@
 }
 .space-top {
   margin-top: 35px;
- 
   @include media-queries.tablett{
-   margin-top: 0px; 
+    margin-top: 35px; 
    }
   @include media-queries.big-phone{
-   margin-top: 0px; 
+    margin-top: 35px; 
    }
   @include media-queries.phoness{
-   margin-top: 0px; 
+   margin-top: 35px; 
    }
 }

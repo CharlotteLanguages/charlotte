@@ -5,7 +5,7 @@ import "github.com/jinzhu/gorm"
 type Persona struct {
 	gorm.Model
 
-	IDPerson  int64  `json:"idPerson"`
+	ID        int64  `json:"idPerson" gorm:"primary_key; auto_increment"`
 	Nombre    string `json:"name"`
 	LastName  string `json:"lastname"`
 	Birthdate string `json:"birthdate"`

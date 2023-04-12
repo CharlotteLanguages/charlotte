@@ -1,23 +1,18 @@
 import {
-  /*   ModalShowResources, */
+
   openFormResources,
-  resourcep,
+  getResourceData,
 } from "./resource.js";
 
 const d = document;
 d.addEventListener("DOMContentLoaded", (e) => {
-  resourcep();
+  getResourceData();
 });
 /* editor(); */
 openFormResources(
   ".btn-resource",
-  ".cancel-form",
+  ".cancel-resource",
   ".cont-new-resource",
   ".cont-tables-resource"
 );
-/* ModalShowResources(
-  ".read-resource",
-  ".close-resource",
-  "#modal-container-resource",
-  ".modal-resource"
-); */
+

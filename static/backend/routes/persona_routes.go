@@ -7,7 +7,7 @@ import (
 )
 
 func setPersonaRoutes(router *mux.Router) {
-	subRoute := router.PathPrefix("/persona/api").Subrouter()
+	subRoute := router.PathPrefix("/Persona/api").Subrouter()
 
 	subRoute.HandleFunc("/all", controllers.GetAll).Methods("GET")
 	subRoute.HandleFunc("/save", controllers.Save).Methods("POST")

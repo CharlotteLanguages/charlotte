@@ -1,13 +1,12 @@
 import {
-  ModalRemovePromotions,
   ModalShowPromotions,
   openFormPromotions,
-  promotionp,
+  getOfferData,
 } from "./offers.js";
 
 const d = document;
 d.addEventListener("DOMContentLoaded", (e) => {
-  promotionp();
+  getOfferData();
 });
 
 ModalShowPromotions(
@@ -16,10 +15,10 @@ ModalShowPromotions(
   "#modal-container-promotion",
   ".modal-promotion"
 );
-ModalRemovePromotions(".remove", ".close-d", "#modal-container-d", ".modal-d");
+
 openFormPromotions(
   ".btn-promotion",
-  ".cancel-form",
+  ".cancel-offer",
   ".cont-new-promotion",
   ".cont-tables-promotion"
 );

@@ -11,6 +11,7 @@
 <body>
 
     <div id="container">
+        <i class="fas fa-bars" id="bars"></i>
         <section class="cont-new-sponsor open-form-sponsor">
             <section class=" crud-sponsor" id="cont-form-sponsor">
                 <article>
@@ -18,7 +19,7 @@
                     <p class="crud-title-sponsor font-title-sponsor">Create new sponsor</p>
                     <form class="crud-form-sponsor">
                         <input type="hidden" name="idi">
-                        <input class="title-sponsor" type="text" name="sponsorName" placeholder="Sponsor Name">
+                        <input class="title-sponsor" type="text" name="sponsorName" placeholder="Sponsor Name" required>
                         <input type="email" class="address-sponsor" name="sponsorAddress" placeholder="Address">
                         <input type="text" class="web-sponsor" name="sponsorWebsite" placeholder="Website">
                         <div>
@@ -35,9 +36,9 @@
                             </label>
                         </div>
 
+                        <input id="create-sponsor" type="submit" value="Create sponsor" class="btn-submit">
+                        <input class="cancel-sponsor" type="button" value="Cancel">
                     </form>
-                    <input id="create-sponsor" type="submit" value="Create sponsor" class="btn-submit">
-                    <input class="cancel-sponsor" type="button" value="Cancel">
                 </article>
 
             </section>
@@ -54,7 +55,7 @@
                 <li><a href="/src/views/certificates.html">Certificates</a></li>
                 <li><a href="/src/views/classes.html" class="space">Private classes</a></li>
                 <div class="space-top">
-                    <li><a href="/src/views/promotions.html">Offers</a></li>
+                    <li><a href="/src/views/offers.html">Offers</a></li>
                     <li><a href="/src/views/menbership.html">Memberships</a></li>
                     <li><a href="/src/views/referrals.html">Referrals</a></li>
                     <li class="press"><a href="/src/views/sponsors.html">Sponsors</a></li>
@@ -81,7 +82,7 @@
 
         <section id="modal-container-sponsor">
             <div class="modal-sponsor modal-clos">
-                <div class="close-sponsor"><i class="fas fa-times-circle poi"></i></div>
+                <div class="close-sponsor"><i class="fas fa-times-circle close"></i></div>
                 <div class="cont-p-sponsor">
 
                 </div>
@@ -91,13 +92,14 @@
             <section id="modal-container-dr">
                 <div class="modal-dr modal-close-dr">
                     <h3>Delete item</h3>
-                    <textarea name="cuadro" id="text-dr" cols="30" rows="10" placeholder="Reason..."
-                        required></textarea>
-                    <input type="submit" class="close-dr bnt-dr" value="Yes, Delete"></input>
-                    <button class="close-dr btn-dr2">Cancel</button>
-                </div>
-            </section>
-        </form>
+                    <textarea name="reasonDelete" id="text-dr"  placeholder="Reason..." required></textarea>
+                        <div class="buttons_delete">
+                            <div class="btn-dr2">Cancel</div>
+                            <input type="submit" class="bnt-dr" value="Yes, Delete"></input>
+                        </div>
+                    </div>
+                </section>
+            </form>
 
         <section class="container-notify-succes alert" id="alert">
             <i class="fas fa-check-circle close-notify-succes"></i>

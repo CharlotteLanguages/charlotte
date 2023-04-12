@@ -1,8 +1,8 @@
-import { ModalShowSponsor, openFormSponsor, sponsorp } from "./sponsor.js";
+import {openFormSponsor, getSponsorData } from "./sponsor.js";
 
 const d = document;
 d.addEventListener("DOMContentLoaded", (e) => {
-  sponsorp();
+  getSponsorData();
 });
 /* editor(); */
 
@@ -13,9 +13,3 @@ openFormSponsor(
   ".cont-tables-sponsor"
 );
 
-ModalShowSponsor(
-  ".fa-dot-circle",
-  ".close-sponsor",
-  "#modal-container-sponsor",
-  ".modal-sponsor"
-);

@@ -6,15 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/en.js"></script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/htmlmixed/htmlmixed.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/xml/xml.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/css/css.js"></script>
+     <!------------------------------ Sun Editor--------------------------------------->
+     <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
+     <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/en.js"></script>
+     <!------------------------------ Codemirrorx--------------------------------------->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.css">
+     <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/htmlmixed/htmlmixed.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/xml/xml.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/css/css.js"></script>
+     <!------------------------------ Katex--------------------------------------->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+     <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
     <title>Courses</title>
 </head>
 
@@ -29,7 +33,7 @@
 
                         <input type="hidden" name="idi">
                         <input class="title-course" type="text" name="courseTitle" placeholder="Course Title" required>
-                        <select class="input-category-course" name="category">
+                        <select class="input-category-course" name="category" required>
                             <option selected disabled="">Category</option>
                             <option>Bussiness</option>
                             <option>Engineer</option>
@@ -42,13 +46,13 @@
                             <option>Assistant</option>
                         </select>
 
-                        <input class="input-price-course" type="number" name="price" placeholder="Price*">
+                        <input class="input-price-course" type="number" name="price" placeholder="Price*" required>
                         <div id="area-courses">
                             <textarea name="description" class="txtarea-course" cols="30" rows="10"> </textarea>
                         </div>
+                        <input id="create-course" type="submit" value="Create course" class="btn-submit">
+                        <input class="cancel-course" type="button" value="Cancel">
                     </form>
-                    <input id="create-course" type="submit" value="Create course" class="btn-submit">
-                    <input class="cancel-course" type="button" value="Cancel">
                 </article>
 
             </section>
@@ -61,14 +65,14 @@
                     <li><a href="/src/views/student.html">Students</a></li>
                     <li><a href="/src/views/news.html">News</a></li>
                     <li class="press"><a href="/src/views/courses.html">Courses</a></li>
-                    <li><a href="/src/views/actividades.html">Activities</a></li>
+                    <li><a href="/src/views/activities.html">Activities</a></li>
                     <li><a href="/src/views/resource.html">Resources</a></li>
                     <li><a href="/src/views/certificates.html">Certificates</a></li>
                     <li><a href="/src/views/classes.html" class="space">Private Classes</a></li>
 
                 </div>
                 <div class="space-top">
-                    <li class="space2"><a href="/src/views/promotions.html">Offers</a></li>
+                    <li class="space2"><a href="/src/views/offers.html">Offers</a></li>
                     <li><a href="/src/views/menbership.html">Memberships</a></li>
                     <li><a href=" /src/views/referrals.html">Referrals</a>
                     </li>

@@ -2,6 +2,8 @@
 @use "../media-queries";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap");
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -142,8 +144,6 @@ body{
   margin-right: 20px;
 
 
-
-
   li {
     list-style: none;
     transition: all 0.4s ease;
@@ -214,11 +214,14 @@ body{
       @include media-queries.big-phone {
         font-size: 20px;
         font-weight: 500;
+        color: #ffffff;
+
 
       }
       @include media-queries.phoness {
         font-size: 19px;
         font-weight: 500;
+        color: #ffffff;
       }
     }
 
@@ -266,7 +269,7 @@ body{
     justify-content: start;
     margin-right: 0;
     padding-top: 10%;
-    margin-top: 102px;
+    margin-top: 101px;
     transform: translateX(150%);
     transition: transform 1s;
     overflow: auto;
@@ -320,6 +323,7 @@ body{
       font-weight: 500;
       height: 50px;
       font-weight: 0;
+      font-family: "Roboto", sans-serif;
     }
     @include media-queries.phoness {
       background: none;
@@ -334,6 +338,7 @@ body{
       display: flex;
       justify-content: center;
       align-items: center;
+      font-family: "Roboto", sans-serif;
     }
   }
 }

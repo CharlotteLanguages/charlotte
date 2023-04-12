@@ -8,24 +8,18 @@ const d = document,
   $formDelete = d.querySelector(".form-delete"),
   $modal = document.querySelector(".cont-p-news");
 
-export function ShowNews(btnOpen, btnClose, modalContainer, modal) {
-  d.addEventListener("click", (e) => {
-    if (e.target.matches(btnOpen)) {
-      d.querySelector(modalContainer).style.visibility = "visible";
-      d.querySelector(modal).classList.toggle("modal-close-news");
-    }
-    if (e.target.matches(btnClose)) {
-      d.querySelector(modalContainer).style.visibility = "hidden";
-      d.querySelector(modal).classList.toggle("modal-close-news");
-    }
-  });
-}
+
+
+/*------------------------------------------------------------------------------------------ */
+
 
 export function openFormNews(btnOpen, btnClose) {
   d.addEventListener("click", (e) => {
     if (e.target.matches(btnOpen)) {
       editor.setContents(``);
+      $formNews.reset();
       load();
+       d.querySelector("#alert").style.display = "none";
     }
     if (e.target.matches(btnClose)) {
       load();
@@ -33,6 +27,11 @@ export function openFormNews(btnOpen, btnClose) {
     }
   });
 }
+
+
+/*------------------------------------------------------------------------------------------ */
+
+
 
 function CodeTh() {
   let code = `
@@ -49,7 +48,9 @@ function CodeTh() {
   return code;
 }
 
+
 /* -----------------------------------------------------Main Fetch----------------------------- */
+
 
 let news = [];
 export const getNewsData = async () => {
@@ -63,23 +64,22 @@ export const getNewsData = async () => {
         tables.innerHTML = `<div class = "no-activities add">ADD A NEW</div`;
       }, 4000);
       return;
+    }else{
+      news = json;
+      renderNewsData(news);
     }
-    news = json;
-    passInformation(news);
-    /*     if (!res.ok) throw { status: res.status, statusText: res.statusText }; */
+
   } catch (err) {
-    let message = err.statusText || "ocurrió un Error";
+    const tables = d.querySelector(".crud-table-news");
+    tables.innerHTML = `<div class = "no-activities">COULD NOT ESTABLISH CONNECTION TO SERVER</div>`;
   }
 };
 
-/* -------------------------------------------render courses------------------------------------------ */
-function passInformation(news) {
-  printNewsData(news);
-  openWindowModal(news);
-  loadDataForEditing(news);
-}
 
-const printNewsData = (news) => {
+/*------------------------------------------------------------------------------------------ */
+
+
+const renderNewsData = (news) => {
   news.reverse().forEach((ele) => {
     const $tr = d.createElement("tr"),
       codigo = `
@@ -105,7 +105,91 @@ const printNewsData = (news) => {
   $tableNews.appendChild($fragmentNews);
 };
 
+
+
+/*-----------------------------------------------------Btn Read show------------------------------------------- */
+
+
+const addStyles = () => {
+  d.querySelector("#modal-container-news").style.opacity = "1";
+  d.querySelector("#modal-container-news").style.visibility = "visible";
+  d.querySelector(".modal-news").classList.toggle("modal-cl");
+};
+
+
+/*------------------------------------------------------------------------------------------ */
+
+
+function openWindowModal(e) {
+  if (e.target.matches(".read-news")) {
+    let id = e.target.dataset.ids,
+      courses = {};
+    addStyles();
+    news.filter((el) => {
+      if (el.id == id) courses = el;
+    });
+
+    courses.editorNews == "<p><br></p>"
+      ? ($modal.innerHTML = `<div class = "no-description">Empty section</div>`)
+      : ($modal.innerHTML = `<div>${courses.editorNews}</div>`);
+  }
+  
+}
+
+
+/*------------------------------------------------------------------------------------------ */
+
+
+export function closeWindowModal(btn, container, modal, toggle) {
+  d.addEventListener("click", (e) => {
+    if (e.target.matches(btn)) {
+      d.querySelector(modal).classList.toggle(toggle);
+      setTimeout(() => {
+        d.querySelector(container).style.opacity = "0";
+        d.querySelector(container).style.visibility = "hidden";
+      }, 700);
+    }
+  });
+}
+
+
+/*-------------------------------------------Btn Edit --------------------------------------------- */
+
+function openEditingForm(title, btn) {
+  $titleNews.textContent = title;
+  $btnNews.value = btn;
+
+}
+
+/*------------------------------------------------------------------------------------------ */
+
+const openNewsEditForm  = (e)=>{
+  if (e.target.matches(".edit-news")) {
+    $titleNews.textContent = "Modify news";
+    $btnNews.value = "Save Changes";
+    d.querySelector("#alert").style.display = "none";
+    let id = e.target.dataset.id,
+      Nnews = {};
+    news.filter((el) => {
+      if (el.id == id) Nnews = el;
+    });
+
+    $formNews.idi.value = id;
+    $formNews.titleNews.value = Nnews.titleNews;
+    $formNews.categoryNews.value = Nnews.categoryNews;
+    $formNews.tagsNews.value = Nnews.tagsNews;
+    editor.setContents(`${Nnews.editorNews}`);
+    load();
+  }
+}
+
+
+
+
+
+
 /*---------------------------------------------------------------Method Post-------------------------------*/
+
 
 d.addEventListener("submit", async (e) => {
   if (e.target === $formNews) {
@@ -127,16 +211,13 @@ d.addEventListener("submit", async (e) => {
           json = await res.json();
 
         if (!res.ok) throw { status: res.status, statusText: res.statusText };
-          load();
           getNewsData();
+          load();
           alertManager("success", "Created Successfully");
           $formNews.reset();
       } catch (err) {
         let message = err.statusText || "ocurrió un Error";
-        /*  $formActivity.insertAdjacentHTML(
-            "afterend",
-            `<p><b>Error ${err.status}:${message}</p></b>`
-          ); */
+    
       }
     } else {
       //UPDATE -PUT
@@ -157,178 +238,32 @@ d.addEventListener("submit", async (e) => {
           ),
           json = await res.json();
         if (!res.ok) throw { status: res.status, statusText: res.statusText };
-        /*  location.reload(); */
-        load();
-        getNewsData();
-        alertManager("update", "Edit Successfully");
-        openEditingForm("Create new news", "Add New news");
-        $formNews.reset();
+            restartFormValues(e)
       } catch (err) {
         let message = err.statusText || "ocurrió un Error";
-        /* $formActivity.insertAdjacentHTML(
-            "afterend",
-            `<p><b>Error ${err.status}:${message}</p></b>`
-          ); */
+       
       }
     }
   }
 });
 
 
+/*---------------------------------------------------------------------------- */
 
-
-
-
-
-
-
-
-/* function getDataFromForm() {
-  return {
-    id: $formNews.idi.value,
-    titleNews: $formNews.titleNews.value,
-    categoryNews: $formNews.categoryNews.value,
-    tagsNews: $formNews.tagsNews.value,
-    editorNews: editor.getContents(),
-  };
-}
- */
-export const addNews = (datos) => {
-/*   d.addEventListener("click", (e) => {
-    if (e.target.matches(".btn-submit")) {
-      if (!$formNews.titleNews.value.length) {
-        const value = $formNews.titleNews.value;
-        $formNews.titleNews.value = "* Enter news name";
-        setTimeout(() => {
-          $formNews.$titleNews.value = value;
-        }, 1500);
-        return;
-      }
-
-      const newa = {
-        titleNews: $formNews.titleNews.value,
-        categoryNews: $formNews.categoryNews.value,
-        tagsNews: $formNews.tagsNews.value,
-        editorNews: editor.getContents(),
-      };
-
-      fetch(API_URL, {
-        method: "POST",
-        body: JSON.stringify(newa),
-        headers: { "content-Type": "application/json" },
-      })
-        .then((res) => {
-          res.json();
-        })
-        .catch((error) => {
-          alertManager("error", error);
-        })
-        .then((res) => {
-          load();
-          getNewsData();
-          alertManager("success", "Created Successfully");
-          $formNews.reset();
-        
-        });
-    }
-  }); */
-};
-
-/*-----------------------------------------------------Btn Read show------------------------------------------- */
-const addStyles = () => {
-  d.querySelector("#modal-container-news").style.opacity = "1";
-  d.querySelector("#modal-container-news").style.visibility = "visible";
-  d.querySelector(".modal-news").classList.toggle("modal-cl");
-};
-
-function openWindowModal(news) {
-  d.addEventListener("click", (e) => {
-    if (e.target.matches(".read-news")) {
-      let id = e.target.dataset.ids,
-        courses = {};
-      addStyles();
-      news.filter((el) => {
-        if (el.id == id) courses = el;
-      });
-
-      courses.editorNews == "<p><br></p>"
-        ? ($modal.innerHTML = `<div class = "no-description">Empty section</div>`)
-        : ($modal.innerHTML = `<div>${courses.editorNews}</div>`);
-    }
-  });
-}
-
-export function closeWindowModal(btn, container, modal, toggle) {
-  d.addEventListener("click", (e) => {
-    if (e.target.matches(btn)) {
-      d.querySelector(modal).classList.toggle(toggle);
-      setTimeout(() => {
-        d.querySelector(container).style.opacity = "0";
-        d.querySelector(container).style.visibility = "hidden";
-      }, 700);
-    }
-  });
-}
-
-/*-------------------------------------------Btn Edit --------------------------------------------- */
-
-function openEditingForm(title, btn) {
-  $titleNews.textContent = title;
-  $btnNews.value = btn;
-/*   $btnNews.classList.toggle("edit-two");
-  $btnNews.classList.toggle("btn-submit") */;
+function restartFormValues(e) {
+  load();
+  getNewsData();
+  alertManager("update", "Edit Successfully");
+  openEditingForm("Create new news", "Create news");
+  $formNews.reset();
+  e.target.idi.value = "";
+  
 }
 
 
-  d.addEventListener("click", (e) => {
-    if (e.target.matches(".edit-news")) {
-      $titleNews.textContent = "Modify news";
-      $btnNews.value = "Save Changes";
-      let id = e.target.dataset.id,
-        cours = {};
-      news.filter((el) => {
-        if (el.id == id) cours = el;
-      });
-
-      $formNews.idi.value = id;
-      $formNews.titleNews.value = cours.titleNews;
-      $formNews.categoryNews.value = cours.categoryNews;
-      $formNews.tagsNews.value = cours.tagsNews;
-      editor.setContents(`${cours.editorNews}`);
-      load();
-    }
-  });
 
 
-/*--------------------------------------------------------Put Method ---------------------------- */
 
-export function editNews() {
- /*  d.addEventListener("click", (e) => {
-    if (e.target.matches(".edit-two")) {
-      fetch(`${API_URL}/${getDataFromForm().id}`, {
-        method: "PUT",
-        body: JSON.stringify(getDataFromForm()),
-        headers: {
-          "content-Type": "application/json",
-        },
-      })
-        .then((res) => res.json())
-        .catch((error) => {
-          alertManager("error", error);
-        })
-        .then((response) => {
-          load();
-          getNewsData();
-          alertManager("update", "Edit Successfully");
-          openEditingForm("Create new news", "Add New news");
-          $formNews.reset();
-          setTimeout(() => {
-            location.reload();
-          }, 1500);
-        });
-    }
-  }); */
-}
 
 /*----------------------------------------------Method Delete----------------------------------------- */
 
@@ -368,12 +303,16 @@ d.addEventListener("click", (e) => {
   }
 });
 
+
+/*------------------------------------------------------------------------------------------ */
+
 function load() {
   d.querySelector(".cont-tables-news").classList.toggle("up-table-news");
   d.querySelector(".cont-new-news").classList.toggle("open-form-news");
   d.querySelector("#container-noti").classList.toggle("noticia");
 }
 /*---------------------------------------------- Alert Manager--------------------------------------- */
+
 
 function alertManager(typeMsg, message) {
   const alert = document.querySelector("#alert"),
@@ -384,57 +323,71 @@ function alertManager(typeMsg, message) {
   setTimeout(() => {
     alert.style.display = "none";
     alert.classList.remove(typeMsg);
-  }, 2000);
+  }, 2500);
 }
 
 /* ---------------------------------------------- Editor -------------------------------------------------------- */
 
+
 const editor = SUNEDITOR.create(document.querySelector(".txtarea-news"), {
+  value: "Comments...",
+  codeMirror: CodeMirror,
+  katex: katex,
   buttonList: [
-    [
-      "undo",
-      "redo",
-      "font",
-      "fontSize",
-      "formatBlock",
-      "paragraphStyle",
-      "blockquote",
-    ],
-    [
-      "bold",
-      "underline",
-      "italic",
-      "strike",
-      "subscript",
-      "superscript",
-      "fontColor",
-      "hiliteColor",
-      "textStyle",
-    ],
-    [
-      "removeFormat",
-      "outdent",
-      "indent",
-      "align",
-      "horizontalRule",
-      "list",
-      "lineHeight",
-    ],
-    ["link", "image", "video", "audio" /** ,'math' */], // You must add the 'katex' library at options to use the 'math' plugin.
-    ["fullScreen", "showBlocks", "codeView", "table"],
-    ["preview", "print"],
-    ["save", "template", "codeView"],
-    ["dir", "dir_ltr", "dir_rtl"],
-  ],
-  Height: "100%",
-  minHeight: "190px",
+    // default
+    ['undo', 'redo'],
+    [':p-More Paragraph-default.more_paragraph', 'font', 'fontSize', 'formatBlock', 'paragraphStyle', 'blockquote'],
+    ['bold', 'underline', 'italic', 'strike', 'subscript', 'superscript'],
+    ['fontColor', 'hiliteColor', 'textStyle'],
+    ['removeFormat'],
+    ['outdent', 'indent'],
+    ['align', 'horizontalRule', 'list', 'lineHeight'],
+    ['-right', ':i-More Misc-default.more_vertical', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save', 'template'],
+    ['-right', ':r-More Rich-default.more_plus', 'table', 'math', 'imageGallery'],
+    ['-right', 'image', 'video', 'audio', 'link'],
+    // (min-width: 992)
+    ['%992', [
+        ['undo', 'redo'],
+        ['bold', 'underline', 'italic', 'strike'],
+        [':t-More Text-default.more_text', 'subscript', 'superscript', 'fontColor', 'hiliteColor', 'textStyle'],
+        ['removeFormat'],
+        ['outdent', 'indent'],
+        ['align', 'horizontalRule', 'list', 'lineHeight'],
+        [':p-More Paragraph-default.more_paragraph', 'font', 'fontSize', 'formatBlock', 'paragraphStyle', 'blockquote'],
+        ['-right', ':i-More Misc-default.more_vertical', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save', 'template'],
+        ['-right', ':r-More Rich-default.more_plus', 'table', 'link', 'image', 'video', 'audio', 'math', 'imageGallery']
+    ]],
+    // (min-width: 767)
+    ['%767', [
+        ['undo', 'redo'],
+        [':p-More Paragraph-default.more_paragraph', 'font', 'fontSize', 'formatBlock', 'paragraphStyle', 'blockquote'],
+        [':t-More Text-default.more_text', 'bold', 'underline', 'italic', 'strike', 'subscript', 'superscript', 'fontColor', 'hiliteColor', 'textStyle'],
+        ['removeFormat'],
+        ['outdent', 'indent'],
+        [':e-More Line-default.more_horizontal', 'align', 'horizontalRule', 'list', 'lineHeight'],
+        [':r-More Rich-default.more_plus', 'table', 'link', 'image', 'video', 'audio', 'math', 'imageGallery'],
+        ['-right', ':i-More Misc-default.more_vertical', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save', 'template']
+    ]],
+    // (min-width: 480)
+    ['%480', [
+        [':p-More Paragraph-default.more_paragraph', 'font', 'fontSize', 'formatBlock', 'paragraphStyle'],
+        [':t-More Text-default.more_text', 'bold', 'underline', 'italic', 'strike', 'subscript', 'superscript', 'fontColor', 'hiliteColor', 'textStyle', 'removeFormat'],
+        [':e-More Line-default.more_horizontal', 'outdent', 'indent', 'align', 'horizontalRule', 'list', 'lineHeight'],
+        [':r-More Rich-default.more_plus', 'table', 'link', 'image', 'video', 'audio', 'math', 'imageGallery'],
+        ['-right', ':i-More Misc-default.more_vertical', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save', 'template']
+    ]]
+],
+
   width: "100%",
-  maxWidth: "1200px",
+
   lang: SUNEDITOR_LANG["en"],
 });
-editor.setDefaultStyle("font-family: Arial; font-size: 20px;");
-const vc = d.querySelector(".cont-table-news_blue");
 
+editor.setDefaultStyle("font-family: Arial; font-size: 13px;");
+
+/*------------------------------------------------------------------------------------------ */
+
+const vc = d.querySelector(".cont-table-news_blue");
 window.sr = ScrollReveal();
 sr.reveal(vc, {
   duration: 2500,
@@ -442,14 +395,45 @@ sr.reveal(vc, {
   distance: "-5px",
 });
 
-/* window.addEventListener("load", ()=>{
-  document.getElementById("loader").classList.toggle("loader2");
-}) */
-d.addEventListener("click", (e) => {
+
+
+/*-------------------------------------------------------------------------- */
+
+/* const closeModalDelete = (e) => {
+  if (e.target.matches(".btn-dr2")) {
+    $formDelete.reset();
+    d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
+    d.querySelector(".remove-student").dataset.idr = null;
+    setTimeout(() => {
+      d.querySelector("#modal-container-dr").style.opacity = "0";
+      d.querySelector("#modal-container-dr").style.visibility = "hidden";
+    }, 700);
+  }
+};
+ */
+
+
+
+
+
+/*------------------------------------------------------------------------------------------ */
+
+
+
+
+
+const showSideBar = (e) => {
   if (e.target.matches(".fa-bars")) {
     setTimeout(() => {
       e.target.classList.toggle("changeColor");
     }, 500);
     d.querySelector(".menu").classList.toggle("move-menu");
   }
+};
+
+d.addEventListener("click", (e) => {
+  openNewsEditForm(e);
+  openWindowModal(e);
+  showSideBar(e);
+/*   closeModalDelete(e) */
 });

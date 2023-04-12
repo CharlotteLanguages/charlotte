@@ -1,0 +1,95 @@
+.landscape {
+    height: 400px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom right, #00bfff, #32cd32, #228b22);
+  }
+  
+  .river {
+    height: 150px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+    animation: river-flow 6s infinite linear;
+  }
+  
+  .animals {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .animal {
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: animal-move 10s infinite alternate;
+  }
+  
+  .jaguar {
+    top: 50%;
+    left: 10%;
+    background-image: url("https://image.flaticon.com/icons/png/512/552/552281.png");
+  }
+  
+  .monkey {
+    top: 30%;
+    left: 60%;
+    background-image: url("https://image.flaticon.com/icons/png/512/2990/2990296.png");
+  }
+  
+  .toucan {
+    top: 70%;
+    left: 80%;
+    background-image: url("https://image.flaticon.com/icons/png/512/410/410674.png");
+  }
+  
+  .trees {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .tree {
+    height: 200px;
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .tree:nth-child(1) {
+    left: 20%;
+    background-image: url("https://image.flaticon.com/icons/png/512/1817/1817863.png");
+  }
+  
+  .tree:nth-child(2) {
+    left: 50%;
+    background-image: url("https://image.flaticon.com/icons/png/512/174/174342.png");
+  }
+  
+  .tree:nth-child(3) {
+    right: 20%;
+    background-image: url("https://image.flaticon.com/icons/png/512/1817/1817875.png");
+  }
+  
+  @keyframes river-flow {
+    0% { transform: translateX(-100%) }}
