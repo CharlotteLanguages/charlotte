@@ -22,11 +22,13 @@ export function openFormReferral(btnshow, btnclose, modal, table) {
       load();
       $formReferral.reset();
       d.querySelector("#alert").style.display = "none";
+      d.querySelector(".tooltip").classList.remove("show_tooltip");
 
     }
     if (e.target.matches(btnclose)) {
       load();
       $formReferral.reset();
+      d.querySelector(".tooltip").classList.remove("show_tooltip");
     }
   });
 }
@@ -103,6 +105,7 @@ const openWindowModal = (e)=>{
     d.querySelector("#modal-container-referral").style.opacity = "1";
     d.querySelector("#modal-container-referral").style.visibility = "visible";
     d.querySelector(".modal-referral").classList.toggle("modal-clos");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.ids,
       referrals = {};
     referral.filter((el) => {
@@ -139,6 +142,7 @@ const openReferralEditForm = (e)=>{
     $titleReferral.textContent = "Modify Referrals";
     $btnReferral.value = "Save Changes";
     d.querySelector("#alert").style.display = "none";
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.id,
       referrals = {};
     referral.filter((ref) => {
@@ -177,12 +181,11 @@ d.addEventListener("submit", async (e) => {
           },
           res = await fetch(API_URL, options),
           json = await res.json();
-
-    
           getReferralData();
           load();
           alertManager("success", "Created Successfully");
           $formReferral.reset();
+          d.querySelector(".tooltip").classList.remove("show_tooltip");
       } catch (err) {
         let message = err.statusText || "ocurrió un Error";
     
@@ -220,6 +223,7 @@ function restartFormValues(e) {
   openEditingForm("Create new referral", "Create referral");
   $formReferral.reset();
   e.target.idi.value = "";
+  d.querySelector(".tooltip").classList.remove("show_tooltip");
   
 }
 
@@ -230,9 +234,6 @@ function openEditingForm(title, btn) {
   $btnReferral.value = btn;
 
 }
-
-/*--------------------------------------------------POST Method----------------------------------------- */
-
 
 
 /*---------------------------------------------------AlertManager------------------------------------------ */
@@ -271,6 +272,7 @@ const removeReferral = (e)=>{
     d.querySelector("#modal-container-dr").style.opacity = "1";
     d.querySelector("#modal-container-dr").style.visibility = "visible";
     d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.idr;
     d.addEventListener("submit", (e) => {
       if (e.target === $formDelete) {
@@ -325,7 +327,21 @@ const showSideBar = (e) => {
   }
 };
 
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".fa-bell") ){
+    d.querySelector(".tooltip").classList.toggle("show_tooltip");
+  }
+  if (e.target.matches(".nav__icon") || e.target.matches("#container") ) {
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+  }
 
+  if (e.target.matches(".notifications")) {
+    d.querySelector(".tooltip_message").classList.toggle("show_notifications");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+    d.querySelector(".open_tooltip").classList.add("fa-chevron-down");
+    d.querySelector(".open_tooltip").classList.remove("fa-chevron-up");
+  }
+});
 
 
 d.addEventListener("click", (e) => {

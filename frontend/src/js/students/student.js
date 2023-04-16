@@ -25,10 +25,12 @@ export function openFormStudent(btnshow, btnclose, modal, table) {
       d.querySelector("#alert").style.display = "none";
       d.querySelector(".text-membership").style.display = "inline";
         d.querySelector(".text-gender").style.display = "inline";
+        d.querySelector(".tooltip").classList.remove("show_tooltip");
     }
     if (e.target.matches(btnclose)) {
       load();
       $formStudent.reset();
+      d.querySelector(".tooltip").classList.remove("show_tooltip");
     }
   });
 }
@@ -126,6 +128,7 @@ const addStyles = ()=>{
 
 const openModalEditor = (e) => {
   if (e.target.matches(".read-student")) {
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.ids,
       students = {};
       addStyles();
@@ -163,6 +166,7 @@ const openStudentEditForm = (e) => {
     d.querySelector(".text-membership").style.display = "none";
     d.querySelector(".text-gender").style.display = "none";
     d.querySelector("#alert").style.display = "none";
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.id,
       students = {};
     student.filter((el) => {
@@ -218,6 +222,7 @@ d.addEventListener("submit", async (e) => {
         alertManager("success", "Created Successfully");
         d.querySelector(".text-membership").style.display = "inline";
         d.querySelector(".text-gender").style.display = "inline";
+        d.querySelector(".tooltip").classList.remove("show_tooltip");
       } catch (err) {
         let message = err.statusText || "ocurrió un Error";
       }
@@ -265,6 +270,7 @@ function restartFormValues(e) {
   e.target.idi.value = "";
   d.querySelector(".text-membership").style.display = "inline";
   d.querySelector(".text-gender").style.display = "inline";
+  d.querySelector(".tooltip").classList.remove("show_tooltip");
 }
 
 
@@ -322,8 +328,7 @@ const removeStudent = (e) => {
   if (e.target.matches(".remove-student")) {
     openModalDelete()
     let id = e.target.dataset.idr;
-
-    
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     d.addEventListener("submit", async (e) => {
       if (e.target === $formDelete) {
         e.preventDefault();
@@ -509,4 +514,20 @@ d.addEventListener("click", (e) => {
   openModalEditor(e);
   closeModalEditor(e);
   removeStudent(e);
+});
+
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".fa-bell") ){
+    d.querySelector(".tooltip").classList.toggle("show_tooltip");
+  }
+  if (e.target.matches(".nav__icon") || e.target.matches("#container") ) {
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+  }
+
+  if (e.target.matches(".notifications")) {
+    d.querySelector(".tooltip_message").classList.toggle("show_notifications");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+    d.querySelector(".open_tooltip").classList.add("fa-chevron-down");
+    d.querySelector(".open_tooltip").classList.remove("fa-chevron-up");
+  }
 });

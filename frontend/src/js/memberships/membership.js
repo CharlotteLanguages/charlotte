@@ -19,10 +19,12 @@ export function openFormMember(btnshow, btnclose, modal, table) {
       load();
       $formMember.reset();
       d.querySelector("#alert").style.display = "none";
+      d.querySelector(".tooltip").classList.remove("show_tooltip");
     }
     if (e.target.matches(btnclose)) {
       load();
       $formMember.reset();
+      d.querySelector(".tooltip").classList.remove("show_tooltip");
     }
   });
 }
@@ -109,6 +111,7 @@ const openModalEditor = (e)=>{
     d.querySelector("#modal-container-member").style.opacity = "1";
     d.querySelector("#modal-container-member").style.visibility = "visible";
     d.querySelector(".modal-member").classList.toggle("modal-clm");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.ids,
       members = {};
     membership.filter((el) => {
@@ -145,6 +148,7 @@ const openMembershipEditForm=(e)=>{
     $titleMember.textContent = "Modify Membership";
     $btnMember.value = "Save Changes";
     d.querySelector("#alert").style.display = "none";
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
 
     let id = e.target.dataset.id,
       member = {};
@@ -194,6 +198,7 @@ d.addEventListener("submit", async (e) => {
         load();
         $formMember.reset();
         alertManager("success", "Created Successfully");
+        d.querySelector(".tooltip").classList.remove("show_tooltip");
       } catch (err) {
         let message = err.statusText || "ocurrió un Error";
     
@@ -236,6 +241,7 @@ function restartFormValues(e){
   $formMember.reset();
   e.target.idi.value = "";
   getMembershipData();
+  d.querySelector(".tooltip").classList.remove("show_tooltip");
 }
 
 
@@ -351,6 +357,28 @@ const showSideBar = (e)=>{
     d.querySelector(".menu").classList.toggle("move-menu");
   }
 }
+
+
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".fa-bell") ){
+    d.querySelector(".tooltip").classList.toggle("show_tooltip");
+  }
+  if (e.target.matches(".nav__icon") || e.target.matches("#container") ) {
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+  }
+
+  if (e.target.matches(".notifications")) {
+    d.querySelector(".tooltip_message").classList.toggle("show_notifications");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+    d.querySelector(".open_tooltip").classList.add("fa-chevron-down");
+    d.querySelector(".open_tooltip").classList.remove("fa-chevron-up");
+  }
+});
+
+
+
+
+
 
 
 /*-------------------------------------------------------------------------------- */

@@ -34,12 +34,14 @@ export function openFormPromotions(btnshow, btnclose, modal, table) {
       load();
       setCurrentDate();
       d.querySelector("#alert").style.display = "none";
+      d.querySelector(".tooltip").classList.remove("show_tooltip");
       
     }
    
     if (e.target.matches(btnclose)) {
       load();
       $formOffer.reset();
+      d.querySelector(".tooltip").classList.remove("show_tooltip");
     }
   });
 }
@@ -58,10 +60,6 @@ function setCurrentDate(){
         año2 = currentDate.toLocaleTimeString(); */
       if (monthNumber < 10 )  monthNumber = `0${monthNumber}`;  
       if(currentDay <10)  currentDay = `0${currentDay}`
-        
-      
-     
-      console.log(currentDay)
       d.querySelector(".input-DateEnd-promotion").setAttribute("min",`${currentYear}-${monthNumber}-${currentDay}T00:00`);
       d.querySelector(".input-DateStart-promotion").setAttribute("min",`${currentYear}-${monthNumber}-${currentDay}T00:00`);
 
@@ -164,6 +162,7 @@ const openModalEditor = (e) =>{
     d.querySelector("#modal-container-promotion").style.opacity = "1";
     d.querySelector("#modal-container-promotion").style.visibility = "visible";
     d.querySelector(".modal-promotion").classList.toggle("modal-clp");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.ids,
       promo = {};
     offer.filter((prom) => {
@@ -205,6 +204,7 @@ const openOfferEditForm = (e)=>{
     $titleOffer.textContent = "Modify Offer";
     $btnOffer.value = "Save Changes";
     d.querySelector("#alert").style.display = "none";
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     setCurrentDate();
   
     let id = e.target.dataset.id,
@@ -255,6 +255,7 @@ d.addEventListener("submit", async (e) => {
         load();
         $formOffer.reset();
         alertManager("success", "Created Successfully");
+        d.querySelector(".tooltip").classList.remove("show_tooltip");
       } catch (err) {
         let message = err.statusText || "ocurrió un Error";
       }
@@ -300,6 +301,7 @@ function restartFormValues(e) {
   openEditingForm("Create new offer", "Create offer");
   $formOffer.reset();
   e.target.idi.value = "";
+  d.querySelector(".tooltip").classList.remove("show_tooltip");
   
 }
 
@@ -318,6 +320,7 @@ const removeOffer = (e)=>{
     d.querySelector("#modal-container-dr").style.opacity = "1";
     d.querySelector("#modal-container-dr").style.visibility = "visible";
     d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.idr;
     d.addEventListener("submit", (e) => {
       if (e.target === $formDelete) {
@@ -461,6 +464,22 @@ const showSideBar = (e) => {
   }
 };
 
+
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".fa-bell") ){
+    d.querySelector(".tooltip").classList.toggle("show_tooltip");
+  }
+  if (e.target.matches(".nav__icon") || e.target.matches("#container") ) {
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+  }
+
+  if (e.target.matches(".notifications")) {
+    d.querySelector(".tooltip_message").classList.toggle("show_notifications");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+    d.querySelector(".open_tooltip").classList.add("fa-chevron-down");
+    d.querySelector(".open_tooltip").classList.remove("fa-chevron-up");
+  }
+});
 
 
 

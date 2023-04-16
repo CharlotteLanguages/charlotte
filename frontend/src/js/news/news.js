@@ -20,6 +20,7 @@ export function openFormNews(btnOpen, btnClose) {
       $formNews.reset();
       load();
        d.querySelector("#alert").style.display = "none";
+       d.querySelector(".tooltip").classList.remove("show_tooltip");
     }
     if (e.target.matches(btnClose)) {
       load();
@@ -122,6 +123,7 @@ const addStyles = () => {
 
 function openWindowModal(e) {
   if (e.target.matches(".read-news")) {
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.ids,
       courses = {};
     addStyles();
@@ -168,6 +170,7 @@ const openNewsEditForm  = (e)=>{
     $titleNews.textContent = "Modify news";
     $btnNews.value = "Save Changes";
     d.querySelector("#alert").style.display = "none";
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.id,
       Nnews = {};
     news.filter((el) => {
@@ -215,6 +218,7 @@ d.addEventListener("submit", async (e) => {
           load();
           alertManager("success", "Created Successfully");
           $formNews.reset();
+          d.querySelector(".tooltip").classList.remove("show_tooltip");
       } catch (err) {
         let message = err.statusText || "ocurrió un Error";
     
@@ -257,6 +261,7 @@ function restartFormValues(e) {
   openEditingForm("Create new news", "Create news");
   $formNews.reset();
   e.target.idi.value = "";
+  d.querySelector(".tooltip").classList.remove("show_tooltip");
   
 }
 
@@ -272,6 +277,7 @@ d.addEventListener("click", (e) => {
     d.querySelector("#modal-container-dr").style.opacity = "1";
     d.querySelector("#modal-container-dr").style.visibility = "visible";
     d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.idr;
     d.addEventListener("submit", (e) => {
       if (e.target === $formDelete) {
@@ -436,4 +442,20 @@ d.addEventListener("click", (e) => {
   openWindowModal(e);
   showSideBar(e);
 /*   closeModalDelete(e) */
+});
+
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".fa-bell") ){
+    d.querySelector(".tooltip").classList.toggle("show_tooltip");
+  }
+  if (e.target.matches(".nav__icon") || e.target.matches("#container") ) {
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+  }
+
+  if (e.target.matches(".notifications")) {
+    d.querySelector(".tooltip_message").classList.toggle("show_notifications");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+    d.querySelector(".open_tooltip").classList.add("fa-chevron-down");
+    d.querySelector(".open_tooltip").classList.remove("fa-chevron-up");
+  }
 });

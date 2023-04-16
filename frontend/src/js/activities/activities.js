@@ -46,6 +46,7 @@ export function openFormActivities(btnshow, btnclose, modal, table, noti) {
       editor.setContents(``);
       load();
       d.querySelector("#alert").style.display = "none";
+      d.querySelector(".tooltip").classList.remove("show_tooltip");
     }
     if (e.target.matches(btnclose)) {
       load();
@@ -146,6 +147,7 @@ const addStyles =()=>{
 
 const openModalEditor = (e)=>{
   if (e.target.matches(".read-activity")) {
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.ids,
       acti = {};
       addStyles();
@@ -188,6 +190,7 @@ const openActivityEditForm = (e)=>{
     $titleActivity.textContent = "Modify activity";
     $btnActivity.value = "Save Changes";
      d.querySelector("#alert").style.display = "none";
+     d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.id,
       actividades = {};
     activity.filter((acti) => {
@@ -268,6 +271,7 @@ d.addEventListener("submit", async (e) => {
         load();
         $formActivity.reset();
         alertManager("success", "Created Successfully");
+        d.querySelector(".tooltip").classList.remove("show_tooltip");
 
       } catch (err) {
         let message = err.statusText || "ocurrió un Error";
@@ -300,6 +304,7 @@ d.addEventListener("submit", async (e) => {
         $formActivity.reset();
         activitiesp();
         e.target.idi.value = "";
+        d.querySelector(".tooltip").classList.remove("show_tooltip");
       } catch (err) {
         let message = err.statusText || "ocurrió un Error";
      
@@ -323,6 +328,7 @@ const removeActivity = (e)=>{
     d.querySelector("#modal-container-dr").style.opacity = "1";
     d.querySelector("#modal-container-dr").style.visibility = "visible";
     d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.idr;
     d.addEventListener("submit", (e) => {
       if (e.target === $formDelete) {
@@ -475,6 +481,23 @@ const showSideBar = (e) => {
     d.querySelector(".menu").classList.toggle("move-menu");
   }
 };
+
+
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".fa-bell") ){
+    d.querySelector(".tooltip").classList.toggle("show_tooltip");
+  }
+  if (e.target.matches(".nav__icon") || e.target.matches("#container") ) {
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+  }
+
+  if (e.target.matches(".notifications")) {
+    d.querySelector(".tooltip_message").classList.toggle("show_notifications");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+    d.querySelector(".open_tooltip").classList.add("fa-chevron-down");
+    d.querySelector(".open_tooltip").classList.remove("fa-chevron-up");
+  }
+});
 
 
 /*----------------------------------------------------------------------------------------- */

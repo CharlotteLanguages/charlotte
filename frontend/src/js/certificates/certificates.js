@@ -13,24 +13,6 @@ const d = document,
   $modal = document.querySelector(".cont-p-certificate");
 const news = d.querySelector("#container-noti");
 
-export function ModalRemoveCertificate(
-  btnshow,
-  btnclose,
-  modalContainer,
-  modal
-) {
-  d.addEventListener("click", (e) => {
-    /* if (e.target.matches(btnshow)) {
-      console.log(e.target);
-      d.querySelector(modalContainer).style.visibility = "visible";
-      d.querySelector(modal).classList.toggle("modal-close-d");
-    }
-    if (e.target.matches(btnclose)) {
-      d.querySelector(modalContainer).style.visibility = "hidden";
-      d.querySelector(modal).classList.toggle("modal-close-d");
-    } */
-  });
-}
 
 /*--------------------------------------------show-----------------------*/
 
@@ -54,15 +36,27 @@ export function openFormCertificate(btnshow, btnclose, modal, table) {
     if (e.target.matches(btnshow)) {
       load();
       $formCertificate.reset();
+      d.querySelector("#alert").style.display = "none";
+      d.querySelector(".btn-certificates-badges").classList.add("btn-certificates-visible")
+      d.querySelector(".btn-search").classList.add("btn-search-visible")
+      d.querySelector(".file-certificate-text").textContent ="Certificate template...";
+      d.querySelector(".tooltip").classList.remove("show_tooltip");
+
+
     }
     if (e.target.matches(btnclose)) {
       load();
       $formCertificate.reset();
       d.querySelector(".file-certificate-text").textContent =
         "Certificate template...";
+        d.querySelector(".btn-certificates-badges").classList.remove("btn-certificates-visible")
+        d.querySelector(".btn-search").classList.remove("btn-search-visible")
+        d.querySelector(".tooltip").classList.remove("show_tooltip");
     }
   });
 }
+/*--------------------------------------------------------------------- */
+
 
 function CodeTh() {
   let code = `
@@ -76,6 +70,9 @@ function CodeTh() {
     `;
   return code;
 }
+
+/*-------------------------------------------------------------------------------- */
+
 function searchp() {
   let code = `
     <thead class ="head">
@@ -91,12 +88,14 @@ function searchp() {
   return code;
 }
 
+
+/*------------------------------------------------------------------- */
+
 let certificate = [];
 export const getCertificateData = async () => {
   try {
     let res = await fetch(API_URL),
       json = await res.json();
-    /*  if (!res.ok) throw { status: res.status, statusText: res.statusText }; */
     if (json.length <= 0) {
       const table = d.querySelector(".crud-table-certificate");
       table.innerHTML = `<div class = "no-activities">NO CERTIFICATES YET</div>`;
@@ -109,24 +108,27 @@ export const getCertificateData = async () => {
       search(certificate);
     }
   } catch (err) {
-    let message = err.statusText || "ocurrió un Error";
+    const table = d.querySelector(".crud-table-certificate");
+    table.innerHTML = `<div class = "no-activities">COULD NOT ESTABLISH CONNECTION TO SERVER</div>`;
+    
+    
   }
 };
 
 /*--------------------------------------------Render Resources-------------------------------- */
 const renderCertificate = (certificate) => {
   let codigo = "";
-  certificate.forEach((ele, i) => {
+  certificate.reverse().forEach((ele, i) => {
     const $tr = d.createElement("tr");
     codigo = `
     <tbody>
     <tr>
-    <td>${ele.id}</td>
-    <td>
+    <td data-label = "ID">${ele.id}</td>
+    <td data-label = "Certificates and Badges">
     <div class = "cert-title" >${ele.certificateName}</div>
     <div class = "cert-text">${ele.certificateCategory}</div>
     </td>
-    <td>
+    <td data-label = "Actions">
         <div class="icons-certificate">
         <i class="fas fa-dot-circle read-certificate" data-ids = ${ele.id} ></i>
         <i class="fas fa-pen edit-certificate" data-id = ${ele.id}></i> 
@@ -144,16 +146,16 @@ const renderCertificate = (certificate) => {
 
 function search(certificate) {
   let codigo = "";
-  certificate.forEach((ele) => {
+  certificate.reverse().forEach((ele) => {
     const $tr = d.createElement("tr");
     codigo = `
 
     <tr>
-    <td class ="fgh">${ele.id}</td>
-    <td class ="fgh">${ele.certificateName}</td>
-    <td class ="fgh">${ele.certificateCategory}</td>
-    <td class ="fgh">${ele.certificateType}</td>
-    <td class ="fgh">
+    <td class ="fgh" data-label = "ID">${ele.id}</td>
+    <td class ="fgh" data-label = "Name">${ele.certificateName}</td>
+    <td class ="fgh" data-label = "Category">${ele.certificateCategory}</td>
+    <td class ="fgh" data-label = "Type">${ele.certificateType}</td>
+    <td class ="fgh" data-label = "Actions">
         <div class="icons-certificate">
         <i class="fas fa-dot-circle read-certificate" data-ids = ${ele.id} ></i>
         <i class="fas fa-times-circle remove-certificate" data-idr =${ele.id}></i>
@@ -184,111 +186,202 @@ d.addEventListener("click", (e) => {
   if (e.target.matches(".btn-certificates-badges")) {
     //AGREGA EL COLOR BLANCO
     e.target.classList.add("style-badges2");
-    //REMOVER EL COLOR AZUL
-    e.target.classList.remove(".style-btn-badges");
+
+    // eliminar azul del contrario
+    d.querySelector(".btn-search").classList.remove("style-badges2");
+  
     //REMOVER LA TABLA SIGUIENTE
     d.querySelector(".cont-tables-certificate").classList.remove(
       "up-table-certificate"
     );
-    // eliminar azul del contrario
-    d.querySelector(".btn-search").classList.remove("style-badges2");
     //agregar table principal
     d.querySelector(".cont-certificate2").classList.add("up-certificate2");
   }
-  if (e.target.matches(".btn-search")) {
-    d.querySelector(".cont-tables-certificate").classList.add(
-      "up-table-certificate"
-    );
 
+
+
+  if (e.target.matches(".btn-search")) {
+    
     //agregar color blanco a este
     e.target.classList.add("style-badges2");
-
-    //remover
-    d.querySelector(".cont-certificate2").classList.remove("up-certificate2");
-
+    
     //agregar color azul al contrario
     d.querySelector(".btn-certificates-badges").classList.add(
       "style-btn-badges"
-    );
+      );
 
-    //quitar el blanco
-    d.querySelector(".btn-certificates-badges").classList.remove(
-      "style-badges2"
-    );
+      //quitar el blanco
+      d.querySelector(".btn-certificates-badges").classList.remove(
+        "style-badges2"
+      );
+
+      d.querySelector(".cont-tables-certificate").classList.add(
+        "up-table-certificate"
+      );
+    //remover
+    d.querySelector(".cont-certificate2").classList.remove("up-certificate2");
+
+
   }
 });
 
-d.addEventListener("click", (e) => {
+
+const openWindowModal = (e)=>{
   if (e.target.matches(".read-certificate")) {
     d.querySelector("#modal-container-certificate").style.opacity = "1";
     d.querySelector("#modal-container-certificate").style.visibility =
       "visible";
     d.querySelector(".modal-certificate").classList.toggle("modal-clos");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.ids,
       certificates = {};
     certificate.filter((el) => {
-      if (el.id == id) {
-        certificates = el;
-      }
+      if (el.id == id) certificates = el;
+      
     });
-
     let code = `
   
       `;
     $modal.innerHTML = code;
   }
-  if (e.target.matches(".poi")) {
+}
+
+const closeWindowModal = (e)=>{
+  if (e.target.matches(".close")) {
     d.querySelector(".modal-certificate").classList.toggle("modal-clos");
     setTimeout(() => {
       d.querySelector("#modal-container-certificate").style.opacity = "0";
       d.querySelector("#modal-container-certificate").style.visibility =
         "hidden";
     }, 700);
-    /* d.querySelector(".modal-resource").classList.toggle("close-resource"); */
   }
-});
 
-/*--------------------------------------------------POST Method----------------------------------------- */
+}
 
-d.addEventListener("click", (e) => {
-  /*   const email = d.querySelector(".email-referral"); */
-  if (e.target.matches(".btn-submit")) {
-    if (!$formCertificate.certificateName.value.length) {
-      const val = $formCertificate.certificateName.value;
-      $formCertificate.certificateName.value = "* Enter certificate name";
-      setTimeout(() => {
-        $formCertificate.certificateName.value = val;
-      }, 1000);
 
-      return;
+/*-----------------------------------------------------Btn Edit Up Modify----------------------------------------- */
+
+const openCertificatesEditForm =(e)=>{
+  if (e.target.matches(".edit-certificate")) {
+    $titleCertificate.textContent = "Modify certificates";
+    $btnCertificate.value = "Save Changes";
+    d.querySelector("#alert").style.display = "none";
+    d.querySelector(".btn-certificates-badges").classList.add("btn-certificates-visible")
+    d.querySelector(".btn-search").classList.add("btn-search-visible")
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+    let id = e.target.dataset.id,
+      sponsors = {};
+    certificate.filter((el) => {
+      if (el.id == id) sponsors = el;
+      
+    });
+  
+    $formCertificate.idi.value = id;
+    $formCertificate.certificateName.value = sponsors.certificateName;
+    $formCertificate.certificateCategory.value = sponsors.certificateCategory;
+    $formCertificate.certificateType.value = sponsors.certificateType;
+    let file = d.querySelector(".file-certificate-text");
+    if (sponsors.certificateFile !== "") {
+      file.textContent = sponsors.certificateFile;
+    } else {
+      file.textContent = "No file selected";
     }
-    const activity = {
-      certificateName: $formCertificate.certificateName.value,
-      certificateCategory: $formCertificate.certificateCategory.value,
-      certificateType: $formCertificate.certificateType.value,
-      certificateFile: $formCertificate.certificateFile.value,
-    };
-    fetch(API_URL, {
-      method: "POST",
-      body: JSON.stringify(activity),
-      headers: { "content-Type": "application/json" },
-    })
-      .then((res) => {
-        res.json();
-      })
-      .catch((error) => {
-        alertManager("error", error);
-      })
-      .then((res) => {
-        getCertificateData();
-        load();
-        $formCertificate.reset();
-        alertManager("success", "Created Successfully");
-        d.querySelector(".file-certificate-text").textContent =
-          "Profile image...";
-      });
+  
+    load();
   }
+
+}
+
+
+
+
+
+
+/*---------------------------------------------------------------Method Post-------------------------------*/
+
+
+d.addEventListener("submit", async (e) => {
+  if (e.target === $formCertificate) {
+    e.preventDefault();
+    if (!e.target.idi.value) {
+      ///CREATE POST
+      try {
+        let options = {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+      certificateName: e.target.certificateName.value,
+      certificateCategory: e.target.certificateCategory.value,
+      certificateType: e.target.certificateType.value,
+      certificateFile: e.target.certificateFile.value,
+            }),
+          },
+          res = await fetch(API_URL, options),
+          json = await res.json();
+
+        if (!res.ok) throw { status: res.status, statusText: res.statusText };
+          getCertificateData();
+          load();
+          alertManager("success", "Created Successfully");
+          $formCertificate.reset();
+          d.querySelector(".file-certificate-text").textContent ="Profile image...";
+          d.querySelector(".btn-certificates-badges").classList.remove("btn-certificates-visible")
+          d.querySelector(".btn-search").classList.remove("btn-search-visible")
+          d.querySelector(".tooltip").classList.remove("show_tooltip");
+          
+      } catch (err) {
+        let message = err.statusText || "ocurrió un Error";
+    
+      }
+    } else {
+      //UPDATE -PUT
+      try {
+        let options = {
+            method: "PUT",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              certificateName: e.target.certificateName.value,
+              certificateCategory: e.target.certificateCategory.value,
+              certificateType: e.target.certificateType.value,
+              certificateFile: e.target.certificateFile.value,
+            }),
+          },
+          res = await fetch(
+            `${API_URL}/${e.target.idi.value}`,
+            options
+          ),
+          json = await res.json();
+        if (!res.ok) throw { status: res.status, statusText: res.statusText };
+            restartFormValues(e)
+      } catch (err) {
+        let message = err.statusText || "ocurrió un Error";
+       
+      }
+    }
+  }
+  function restartFormValues(e) {
+    load();
+    getCertificateData();
+    alertManager("update", "Edit Successfully");
+    openEditingForm("Create certification / Badges", "Create new");
+    $formCertificate.reset();
+    e.target.idi.value = "";
+    d.querySelector(".btn-certificates-badges").classList.remove("btn-certificates-visible")
+    d.querySelector(".btn-search").classList.remove("btn-search-visible");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+    
+  }
+  
 });
+
+function openEditingForm(title, btn) {
+  $titleCertificate.textContent = title;
+  $btnCertificate.value = btn;
+
+}
+
+
+
 
 /*---------------------------------------------------AlertManager------------------------------------------ */
 
@@ -303,92 +396,12 @@ function alertManager(typeMsg, message) {
   setTimeout(() => {
     alert.style.display = "none";
     alert.classList.remove(typeMsg);
-  }, 1500);
+  }, 2500);
 
-  /*  setTimeout(() => {
-    location.reload();
-
-  }, 2000); */
 }
 
-/*-----------------------------------------------------Btn Edit Up Modify----------------------------------------- */
 
-d.addEventListener("click", (e) => {
-  if (e.target.matches(".edit-certificate")) {
-    $titleCertificate.textContent = "Modify certificates";
-    $btnCertificate.value = "Save Changes";
-    $btnCertificate.classList.toggle("edit-two");
-    $btnCertificate.classList.toggle("btn-submit");
-    let id = e.target.dataset.id,
-      sponsors = {};
-    certificate.filter((el) => {
-      if (el.id == id) {
-        sponsors = el;
-      }
-    });
 
-    $formCertificate.idi.value = id;
-    $formCertificate.certificateName.value = sponsors.certificateName;
-    $formCertificate.certificateCategory.value = sponsors.certificateCategory;
-    $formCertificate.certificateType.value = sponsors.certificateType;
-    /*   $formCertificate.certificateFile.htmlInputElement =
-      sponsors.certificateFile; */
-
-    let file = d.querySelector(".file-certificate-text");
-    if (sponsors.certificateFile !== "") {
-      file.textContent = sponsors.certificateFile;
-    } else {
-      file.textContent = "No file selected";
-    }
-
-    load();
-  }
-});
-
-/*---------------------------------------------------PUT Method---------------------------------- */
-
-d.addEventListener("click", (e) => {
-  if (e.target.matches(".edit-two")) {
-    const spon = {
-      id: $formCertificate.idi.value,
-      certificateName: $formCertificate.certificateName.value,
-      certificateCategory: $formCertificate.certificateCategory.value,
-      certificateType: $formCertificate.certificateType.value,
-      certificateFile: $formCertificate.certificateFile.value,
-    };
-
-    if (!$formCertificate.certificateName.value.length) {
-      const value = $formCertificate.certificateName.value;
-      $formCertificate["sponsorName"].value = "* Enter certificate name";
-      setTimeout(() => {
-        $formCertificate.certificateName.value = value;
-      }, 1000);
-
-      return;
-    }
-
-    fetch(`${API_URL}/${spon.id}`, {
-      method: "PUT",
-      body: JSON.stringify(spon),
-      headers: {
-        "content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .catch((error) => {
-        alertManager("error", error);
-      })
-      .then((response) => {
-        $btnCertificate.value = "Add new certificate";
-        load();
-        alertManager("update", "Edit Successfully");
-        document.querySelector(".crud-form-certificate").reset();
-        $btnCertificate.classList.toggle("edit-two");
-        $btnCertificate.classList.toggle("btn-submit");
-        $titleCertificate.textContent = "Create certification / Badges";
-      });
-  }
-});
 
 /*--------------------------------------------Load----------------------------------- */
 
@@ -404,17 +417,18 @@ function load() {
 }
 /* -------------------------------------------------DELETE Method-------------------------------- */
 
-d.addEventListener("click", (e) => {
+const removeCertificate =(e)=>{
   if (e.target.matches(".remove-certificate")) {
     d.querySelector("#modal-container-dr").style.opacity = "1";
     d.querySelector("#modal-container-dr").style.visibility = "visible";
     d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.idr;
     d.addEventListener("submit", (e) => {
       if (e.target === $formDelete) {
         e.preventDefault();
         3;
-
+  
         fetch(`${API_URL}/${id}`, {
           method: "DELETE",
         })
@@ -426,8 +440,8 @@ d.addEventListener("click", (e) => {
             d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
             setTimeout(() => {
               d.querySelector("#modal-container-dr").style.opacity = "0";
-              d.querySelector("#modal-container-dr").style.visibility =
-                "hidden";
+              d.querySelector("#modal-container-dr").style.visibility ="hidden";
+              
             }, 700);
             getCertificateData();
             alertManager("deleted", "Deleted Successfully");
@@ -439,7 +453,10 @@ d.addEventListener("click", (e) => {
       }
     });
   }
-});
+
+}
+
+
 
 const vc = d.querySelector(".cont-table-certificate_blue"),
   vd = d.querySelector(".cont-tables-certificate");
@@ -464,4 +481,61 @@ Array.from(files).forEach((file) => {
       span.innerHTML = file.files[0].name;
     }
   });
+});
+
+const showSideBar = (e) => {
+  if (e.target.matches(".fa-bars")) {
+    setTimeout(() => {
+      e.target.classList.toggle("changeColor");
+    }, 500);
+    d.querySelector(".menu").classList.toggle("move-menu");
+  }
+};
+
+
+
+
+
+d.addEventListener("click", (e) => {
+  if (e.target.matches("#back-icon")) {
+  
+    d.querySelector(".cont-tables-certificate").classList.remove("up-table-certificate");
+    d.querySelector(".cont-certificate2").classList.add("up-certificate2");
+      e.target.style.display= "none"
+      d.getElementById("table-icon").style.display = "inline";
+
+  }
+
+  if (e.target.matches("#table-icon")) {
+    d.querySelector(".cont-tables-certificate").classList.add("up-table-certificate");
+    d.querySelector(".cont-certificate2").classList.remove("up-certificate2");
+    e.target.style.display = "none"
+    d.getElementById("back-icon").style.display = "inline";
+
+  }
+});
+
+
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".fa-bell") ){
+    d.querySelector(".tooltip").classList.toggle("show_tooltip");
+  }
+  if (e.target.matches(".nav__icon") || e.target.matches("#container") ) {
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+  }
+
+  if (e.target.matches(".notifications")) {
+    d.querySelector(".tooltip_message").classList.toggle("show_notifications");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+    d.querySelector(".open_tooltip").classList.add("fa-chevron-down");
+    d.querySelector(".open_tooltip").classList.remove("fa-chevron-up");
+  }
+});
+
+d.addEventListener("click", (e) => {
+  openWindowModal(e);
+  closeWindowModal(e);
+  openCertificatesEditForm(e)
+  removeCertificate(e);
+  showSideBar(e);
 });

@@ -21,11 +21,13 @@ export function openFormSponsor(btnshow, btnclose, modal, table) {
       load();
       $formSponsor.reset();
       d.querySelector("#alert").style.display = "none";
+      d.querySelector(".tooltip").classList.remove("show_tooltip");
     }
     if (e.target.matches(btnclose)) {
       load();
       $formSponsor.reset();
-      /* d.querySelector(".file-sponsor-text").textContent = "Profile image..."; */
+      d.querySelector(".file-sponsor-text").textContent = "Profile image...";
+      d.querySelector(".tooltip").classList.remove("show_tooltip");
     }
   });
 }
@@ -110,6 +112,7 @@ const openModalEditor = (e)=>{
     d.querySelector("#modal-container-sponsor").style.opacity = "1";
     d.querySelector("#modal-container-sponsor").style.visibility = "visible";
     d.querySelector(".modal-sponsor").classList.toggle("modal-clos");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.ids,
       sponsors = {};
     sponsor.filter((el) => {
@@ -146,6 +149,7 @@ const openSponsorEditForm = (e)=>{
     $titleSponsor.textContent = "Modify sponsors";
     $btnSponsor.value = "Save Changes";
     d.querySelector("#alert").style.display = "none";
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
   
     let id = e.target.dataset.id,
       sponsors = {};
@@ -256,6 +260,7 @@ d.addEventListener("submit", async (e) => {
         $formSponsor.reset();
         alertManager("success", "Created Successfully");
         d.querySelector(".file-sponsor-text").textContent = "Profile image...";
+        d.querySelector(".tooltip").classList.remove("show_tooltip");
       } catch (err) {
         let message = err.statusText || "ocurrió un Error";
       }
@@ -295,6 +300,8 @@ function restartFormValues(e) {
   alertManager("update", "Edit Successfully");
   $formSponsor.reset();
   e.target.idi.value = "";
+  d.querySelector(".tooltip").classList.remove("show_tooltip");
+
  
 }
 
@@ -365,6 +372,7 @@ function load() {
      d.querySelector("#modal-container-dr").style.opacity = "1";
      d.querySelector("#modal-container-dr").style.visibility = "visible";
      d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
+     d.querySelector(".tooltip").classList.remove("show_tooltip");
      let id = e.target.dataset.idr;
      d.addEventListener("submit", (e) => {
        if (e.target === $formDelete) {
@@ -432,6 +440,22 @@ const showSideBar = (e) => {
     d.querySelector(".menu").classList.toggle("move-menu");
   }
 };
+
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".fa-bell") ){
+    d.querySelector(".tooltip").classList.toggle("show_tooltip");
+  }
+  if (e.target.matches(".nav__icon") || e.target.matches("#container") ) {
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+  }
+
+  if (e.target.matches(".notifications")) {
+    d.querySelector(".tooltip_message").classList.toggle("show_notifications");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+    d.querySelector(".open_tooltip").classList.add("fa-chevron-down");
+    d.querySelector(".open_tooltip").classList.remove("fa-chevron-up");
+  }
+});
 
 
 d.addEventListener("click", (e) => {

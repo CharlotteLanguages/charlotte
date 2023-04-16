@@ -23,10 +23,12 @@ export function openFormResources(btnshow, btnclose, modal, table) {
       load();
       $formResource.reset();
       d.querySelector("#alert").style.display = "none";
+      d.querySelector(".tooltip").classList.remove("show_tooltip");
     }
     if (e.target.matches(btnclose)) {
       load();
       $formResource.reset();
+      d.querySelector(".tooltip").classList.remove("show_tooltip");
     }
   });
 }
@@ -114,6 +116,7 @@ const opeModalEditor = (e)=>{
     d.querySelector("#modal-container-resource").style.opacity = "1";
     d.querySelector("#modal-container-resource").style.visibility = "visible";
     d.querySelector(".modal-resource").classList.toggle("modal-clos");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.ids,
       resources = {};
     resource.filter((resourc) => {
@@ -157,50 +160,7 @@ function openEditingForm(title, btn) {
 
 /*--------------------------------------------------POST Method----------------------------------------- */
 
-/* d.addEventListener("click", (e) => {
-  if (e.target.matches(".btn-submit")) {
-    if (
-      !$formResource["resourceTitle"].value.length ||
-      $formResource["category"].value == "Category"
-    ) {
-      $formResource["resourceTitle"].value = "*  Obligatory field";
-      $formResource["category"].getElementsByTagName("option")[0].textContent =
-        "*    Obligatory field";
 
-      setTimeout(() => {
-        $formResource["resourceTitle"].value = "";
-        $formResource["category"].getElementsByTagName(
-          "option"
-        )[0].textContent = "Category";
-      }, 1500);
-
-      return;
-    }
-    const activity = {
-      resourceTitle: $formResource["resourceTitle"].value,
-      category: $formResource["category"].value,
-      tags: $formResource["tags"].value,
-      description: editor.getContents(),
-    };
-    fetch(API_URL, {
-      method: "POST",
-      body: JSON.stringify(activity),
-      headers: { "content-Type": "application/json" },
-    })
-      .then((res) => {
-        res.json();
-      })
-      .catch((error) => {
-        alertManager("error", error);
-      })
-      .then((res) => {
-        getResourceData();
-        load();
-        $formResource.reset();
-        alertManager("success", "Created Successfully");
-      });
-  }
-}); */
 
 /*---------------------------------------------------AlertManager------------------------------------------ */
 
@@ -227,6 +187,7 @@ function alertManager(typeMsg, message) {
      $titleResource.textContent = "Modify Resources";
      $btnResource.value = "Save Changes";
      d.querySelector("#alert").style.display = "none";
+     d.querySelector(".tooltip").classList.remove("show_tooltip");
      let id = e.target.dataset.id,
        resources = {};
      resource.filter((resourc) => {
@@ -270,6 +231,7 @@ d.addEventListener("submit", async (e) => {
           load();
           alertManager("success", "Created Successfully");
           $formResource.reset();
+          d.querySelector(".tooltip").classList.remove("show_tooltip");
       } catch (err) {
         let message = err.statusText || "ocurrió un Error";
       }
@@ -309,6 +271,7 @@ function restartFormValues(e) {
   openEditingForm("Create new resource", "Create resource");
   $formResource.reset();
   e.target.idi.value = "";
+  d.querySelector(".tooltip").classList.remove("show_tooltip");
   
 }
 
@@ -331,6 +294,7 @@ const removeResource = (e) =>{
     d.querySelector("#modal-container-dr").style.opacity = "1";
     d.querySelector("#modal-container-dr").style.visibility = "visible";
     d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.idr;
     d.addEventListener("submit", (e) => {
       if (e.target === $formDelete) {
@@ -515,6 +479,22 @@ const showSideBar = (e) => {
 
 
 /*----------------------------------------------------------------------------------- */
+
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".fa-bell") ){
+    d.querySelector(".tooltip").classList.toggle("show_tooltip");
+  }
+  if (e.target.matches(".nav__icon") || e.target.matches("#container") ) {
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+  }
+
+  if (e.target.matches(".notifications")) {
+    d.querySelector(".tooltip_message").classList.toggle("show_notifications");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+    d.querySelector(".open_tooltip").classList.add("fa-chevron-down");
+    d.querySelector(".open_tooltip").classList.remove("fa-chevron-up");
+  }
+});
 
 
 d.addEventListener("click", (e) => {

@@ -12,9 +12,6 @@ const d = document,
 const news = d.querySelector("#container-noti");
 
 
-/*--------------------------------------------show-----------------------*/
-
-
 /*-------------------------------------open form---------------------------------- */
 
 export function openFormSponsor(btnshow, btnclose, modal, table) {
@@ -24,10 +21,16 @@ export function openFormSponsor(btnshow, btnclose, modal, table) {
       $formReview.reset();
       editor.setContents(``);
       d.querySelector("#alert").style.display = "none";
+      d.querySelector(".btn-published").classList.add("btn-published-visible");
+      d.querySelector(".btn-inList").classList.add("btn-inList-visible");
+      d.querySelector(".tooltip").classList.remove("show_tooltip");
     }
     if (e.target.matches(btnclose)) {
       load();
       $formReview.reset();
+      d.querySelector(".btn-published").classList.remove("btn-published-visible");
+      d.querySelector(".btn-inList").classList.remove("btn-inList-visible");
+      d.querySelector(".tooltip").classList.remove("show_tooltip");
     }
   });
 }
@@ -103,6 +106,7 @@ const openWindowModal = (e)=>{
     d.querySelector("#modal-container-review").style.opacity = "1";
     d.querySelector("#modal-container-review").style.visibility = "visible";
     d.querySelector(".modal-review").classList.toggle("modal-clos");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.ids,
       sponsors = {};
     review.filter((el) => {
@@ -150,7 +154,6 @@ function showInlist(msg) {
         <div class = "btn-del"><i class="fas fa-trash-alt"></i></div> 
         <p class= "textRemo">Remove</p>
         <div class = "userComment"><i class="fas fa-user-circle"></i></div>
-        
         </div>
     `;
   });
@@ -180,12 +183,14 @@ d.addEventListener("submit", async (e) => {
           },
           res = await fetch(API_URL, options),
           json = await res.json();
-
-        if (!res.ok) throw { status: res.status, statusText: res.statusText };
           getReviewData();
           load();
           alertManager("success", "Created Successfully");
           $formReview.reset();
+          d.querySelector(".btn-published").classList.remove("btn-published-visible");
+          d.querySelector(".btn-inList").classList.remove("btn-inList-visible");
+          d.querySelector(".tooltip").classList.remove("show_tooltip");
+     
       } catch (err) {
         let message = err.statusText || "ocurrió un Error";
     
@@ -205,7 +210,7 @@ d.addEventListener("submit", async (e) => {
             }),
           },
           res = await fetch(
-            `${API_URL}/${e.target.idi.value}`,
+            `http://localhost:3000/reviews/${e.target.idi.value}`,
             options
           ),
           json = await res.json();
@@ -227,8 +232,11 @@ function restartFormValues(e) {
   getReviewData();
   alertManager("update", "Edit Successfully");
   openEditingForm("Create new review", "Create review");
-  $formNews.reset();
+  $formReview.reset();
   e.target.idi.value = "";
+  d.querySelector(".btn-published").classList.remove("btn-published-visible");
+  d.querySelector(".btn-inList").classList.remove("btn-inList-visible");
+  d.querySelector(".tooltip").classList.remove("show_tooltip");
   
 }
 
@@ -268,8 +276,9 @@ const openReviewEditForm = (e)=>{
   if (e.target.matches(".edit-review")) {
     $titleReview.textContent = "Modify sponsors";
     $btnReview.value = "Save Changes";
-    $btnReview.classList.toggle("edit-two");
-    $btnReview.classList.toggle("btn-submit");
+    d.querySelector(".btn-published").classList.add("btn-published-visible");
+    d.querySelector(".btn-inList").classList.add("btn-inList-visible");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.id,
       reviews = {};
     review.filter((el) => {
@@ -307,6 +316,7 @@ const removeReview = (e)=>{
     d.querySelector("#modal-container-dr").style.opacity = "1";
     d.querySelector("#modal-container-dr").style.visibility = "visible";
     d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.idr;
     d.addEventListener("submit", (e) => {
       if (e.target === $formDelete) {
@@ -415,33 +425,36 @@ editor.setDefaultStyle("font-family: Arial; font-size: 13px;");
 
 d.addEventListener("click", (e) => {
   if (e.target.matches(".btn-published")) {
-    //AGREGA EL COLOR BLANCO
-    /*  e.target.classList.add("style-badges2"); */
-    //REMOVER EL COLOR AZUL
-    /*  e.target.classList.remove(".style-btn-badges"); */
-    //REMOVER LA TABLA SIGUIENTE
-    d.querySelector(".cont-tables-review").classList.remove("up-table-review");
-    // eliminar azul del contrario
-    /*  d.querySelector(".comm").classList.remove("style-badges2"); */
-    //agregar table principal
+     //agregar color blanco a este
+     e.target.classList.add("add_color-white");
+     //agrega color azul al contrario
+     d.querySelector(".btn-inList").classList.add("add_color-blue");
+     //elimina color blanco al contrario
+     d.querySelector(".btn-inList").classList.remove("add_color-white");
+    //agregar tabla principal
     d.querySelector(".comm").classList.add("up-comments");
+    //remover tabla de comentarios
+    d.querySelector(".cont-tables-review").classList.remove("up-table-review");
     news.classList.remove("noticia");
   }
+
+  
   if (e.target.matches(".btn-inList")) {
-    d.querySelector(".cont-tables-review").classList.add("up-table-review");
-
     //agregar color blanco a este
-    /*   e.target.classList.add("style-badges2"); */
+      e.target.classList.add("add_color-white");
+      //agregar color azul al contrario
+     d.querySelector(".btn-published").classList.add("add_color-blue");
+     //quitar el blanco contrario
+      d.querySelector(".btn-published").classList.remove("add_color-white");
+      //remover tabla principal
+      d.querySelector(".comm").classList.remove("up-comments");
+      //agregar tabla de comentarios
+      d.querySelector(".cont-tables-review").classList.add("up-table-review");
+      news.classList.add("noticia");
 
-    //remover
-    d.querySelector(".comm").classList.remove("up-comments");
-    news.classList.add("noticia");
+    
 
-    //agregar color azul al contrario
-    /* d.querySelector(".cont-tables-review").classList.add("style-btn-badges"); */
-
-    //quitar el blanco
-    /*  d.querySelector(".cont-tables-review").classList.remove("style-badges2"); */
+   
   }
 });
 
@@ -456,6 +469,23 @@ const showSideBar = (e) => {
   }
 };
 
+
+
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".fa-bell") ){
+    d.querySelector(".tooltip").classList.toggle("show_tooltip");
+  }
+  if (e.target.matches(".nav__icon") || e.target.matches("#container") ) {
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+  }
+
+  if (e.target.matches(".notifications")) {
+    d.querySelector(".tooltip_message").classList.toggle("show_notifications");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+    d.querySelector(".open_tooltip").classList.add("fa-chevron-down");
+    d.querySelector(".open_tooltip").classList.remove("fa-chevron-up");
+  }
+});
 
 
 

@@ -20,16 +20,18 @@ export function openFormClasses(btnshow, btnclose, modal, table) {
       $formClasses.reset();
       setCurrentDate();
       d.querySelector("#alert").style.display = "none";
-      d.querySelector(".btn-certificates-badges").classList.toggle("btn-class-visible")
-      d.querySelector(".btn-search").classList.toggle("btn-calendar-visible")
+      d.querySelector(".btn-main-class").classList.toggle("btn-main-visible")
+      d.querySelector(".btn-calendar-class").classList.toggle("btn-calendar-visible")
       d.getElementById("calendar-icon").style.display = "none";
+      d.querySelector(".tooltip").classList.remove("show_tooltip");
     }
     if (e.target.matches(btnclose)) {
       load();
       $formClasses.reset();
-      d.querySelector(".btn-certificates-badges").classList.remove("btn-class-visible")
-      d.querySelector(".btn-search").classList.remove("btn-calendar-visible")
-      d.getElementById("calendar-icon").style.display = "inline";
+      d.querySelector(".btn-main-class").classList.remove("btn-main-visible")
+      d.querySelector(".btn-calendar-class").classList.remove("btn-calendar-visible")
+      d.querySelector(".tooltip").classList.remove("show_tooltip");
+    /*   d.getElementById("calendar-icon").style.display = "inline"; */
     }
   });
 }
@@ -138,6 +140,7 @@ const removeClasess = (e)=>{
     d.querySelector("#modal-container-dr").style.opacity = "1";
     d.querySelector("#modal-container-dr").style.visibility = "visible";
     d.querySelector(".modal-dr").classList.toggle("modal-close-dr");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.idr;
     d.addEventListener("submit", (e) => {
       if (e.target === $formDelete) {
@@ -193,9 +196,10 @@ const openClassesEditForm = (e)=>{
     $titleClasses.textContent = "Modify classes";
     $btnClasses.value = "Save Changes";
     d.querySelector("#alert").style.display = "none";
-    d.querySelector(".btn-certificates-badges").classList.toggle("btn-class-visible")
-    d.querySelector(".btn-search").classList.toggle("btn-calendar-visible")
+    d.querySelector(".btn-main-class").classList.toggle("btn-main-visible")
+    d.querySelector(".btn-calendar-class").classList.toggle("btn-calendar-visible")
     d.getElementById("calendar-icon").style.display = "none";
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
    
     let id = e.target.dataset.id,
       clases = {};
@@ -225,6 +229,7 @@ const openWindowModal = (e)=>{
     d.querySelector("#modal-container-classes").style.opacity = "1";
     d.querySelector("#modal-container-classes").style.visibility = "visible";
     d.querySelector(".modal-classes").classList.toggle("modal-clp");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
     let id = e.target.dataset.ids,
       clases = {};
     clase.filter((prom) => {
@@ -289,9 +294,10 @@ d.addEventListener("submit", async (e) => {
           load();
           alertManager("success", "Created Successfully");
           $formClasses.reset();
-          d.querySelector(".btn-certificates-badges").classList.toggle("btn-class-visible")
-          d.querySelector(".btn-search").classList.toggle("btn-calendar-visible")
+          d.querySelector(".btn-main-class").classList.toggle("btn-main-visible")
+          d.querySelector(".btn-calendar-class").classList.toggle("btn-calendar-visible")
           d.getElementById("calendar-icon").style.display = "inline";
+          d.querySelector(".tooltip").classList.remove("show_tooltip");
       } catch (err) {
         let message = err.statusText || "ocurrió un Error";
     
@@ -337,9 +343,10 @@ function restartFormValues(e) {
   openEditingForm("Create new class", "Create class");
   $formClasses.reset();
   e.target.idi.value = "";
-  d.querySelector(".btn-certificates-badges").classList.toggle("btn-class-visible")
-  d.querySelector(".btn-search").classList.toggle("btn-calendar-visible")
+  d.querySelector(".btn-main-class").classList.toggle("btn-main-visible")
+  d.querySelector(".btn-calendar-class").classList.toggle("btn-calendar-visible")
   d.getElementById("calendar-icon").style.display = "inline";
+  d.querySelector(".tooltip").classList.remove("show_tooltip");
   
 }
 
@@ -543,41 +550,38 @@ function setNewDate() {
   writeMonth(monthNumber);
 }
 d.addEventListener("click", (e) => {
-  if (e.target.matches(".btn-certificates-badges")) {
-    /*     d.querySelector(".cont-new-classes").classList.remove("open-form-classes"); */
-    //AGREGA EL COLOR BLANCO
-    e.target.classList.add("style-badges2");
-    //REMOVER EL COLOR AZUL
-    e.target.classList.remove(".style-btn-badges");
+  if (e.target.matches(".btn-main-class")) {
+    //agregar color blanco a este
+    e.target.classList.add("add_color-white");
+     //agrega color azul al contrario
+     d.querySelector(".btn-calendar-class").classList.add("add_color-blue");
+    //elimina color blanco al contrario
+    d.querySelector(".btn-calendar-class").classList.remove("add_color-white");
     //REMOVER LA TABLA SIGUIENTE
-    d.querySelector(".cont-tables-classes").classList.remove(
-      "up-table-classes"
-    );
-    // eliminar azul del contrario
-    d.querySelector(".btn-search").classList.remove("style-badges2");
+    d.querySelector(".cont-tables-classes").classList.remove("up-table-certificate");
     //agregar table principal
     d.querySelector(".calendar").classList.add("up-calendar");
   }
-  if (e.target.matches(".btn-search")) {
-    d.querySelector(".cont-tables-classes").classList.add("up-table-classes");
 
+
+  if (e.target.matches(".btn-calendar-class")) {
+   
     //agregar color blanco a este
-    e.target.classList.add("style-badges2");
+    e.target.classList.add("add_color-white");
+    //agregar color azul al contrario
+    d.querySelector(".btn-main-class").classList.add("add_color-blue");
+   //quitar el blanco contrario
+   d.querySelector(".btn-main-class").classList.remove("add_color-white");
 
+    d.querySelector(".cont-tables-classes").classList.add("up-table-certificate" );
     //remover
     d.querySelector(".calendar").classList.remove("up-calendar");
-
-    //agregar color azul al contrario
-    d.querySelector(".btn-certificates-badges").classList.add(
-      "style-btn-badges"
-    );
-
-    //quitar el blanco
-    d.querySelector(".btn-certificates-badges").classList.remove(
-      "style-badges2"
-    );
+  
   }
 });
+
+
+
 d.addEventListener("click", (e) => {
   if (e.target.matches("#back")) {
   
@@ -608,6 +612,26 @@ d.addEventListener("click", (e) => {
     d.querySelector(".menu").classList.toggle("move-menu");
   }
 });
+
+
+
+
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".fa-bell") ){
+    d.querySelector(".tooltip").classList.toggle("show_tooltip");
+  }
+  if (e.target.matches(".nav__icon") || e.target.matches("#container") ) {
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+  }
+
+  if (e.target.matches(".notifications")) {
+    d.querySelector(".tooltip_message").classList.toggle("show_notifications");
+    d.querySelector(".tooltip").classList.remove("show_tooltip");
+    d.querySelector(".open_tooltip").classList.add("fa-chevron-down");
+    d.querySelector(".open_tooltip").classList.remove("fa-chevron-up");
+  }
+});
+
 
 d.addEventListener("click", (e) => {
   removeClasess(e);

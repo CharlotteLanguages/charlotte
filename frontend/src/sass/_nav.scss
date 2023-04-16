@@ -58,8 +58,6 @@
   justify-content: flex-end;
   gap: 40px;
   align-items: center;
-
-
   @include media-queries.big-phone {
     top: 20px;
     height: 40px;
@@ -81,10 +79,7 @@
   transition: all .4s ease;
   font-size: 35px;
   color: #fff;
-  &:hover {
-    transform: scale(1.1);
-  }
-
+  position: relative;
   @include media-queries.tablet {
     font-size: 33px;
  
