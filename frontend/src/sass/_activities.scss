@@ -306,7 +306,7 @@
       width: 100%;
       height: 21.5em;
       @include media-queries.tablet {
-        height: 200px;
+        height: 20.9em;
       }
       @include media-queries.tablett {
       }
@@ -964,4 +964,76 @@ tr {
   &:hover {
     background: rgba(255, 255, 255, 0.5);
   }
+}
+
+.categoryActivities{
+  width: 270px;
+  position: relative;
+  @include media-queries.tablet {
+   
+  }
+  @include media-queries.tablett {
+    width: 260px;
+  }
+  @include media-queries.big-phone {
+    width: 100%;
+    border: 0;
+  }
+  @include media-queries.phoness {
+    width: 100%;
+    border: 0;
+   
+
+}
+}
+
+.categ{
+  border: 0;
+  outline: 0;
+  position: absolute;
+  top: 5px;
+  @include media-queries.tablet {
+   
+  }
+  @include media-queries.tablett {
+
+  }
+  @include media-queries.big-phone {
+    right: 2%;
+    top: 10px;
+  }
+  @include media-queries.phoness {
+    right: 2%;
+    top: 10px;
+  
+}
+
+}
+
+.level{
+  border: 0;
+  outline: 0;
+  position: absolute;
+  left: 35%;
+  top: 5px;
+  @include media-queries.tablet {
+    left: 42%;
+    padding-right: 4px;
+  }
+  @include media-queries.tablett {
+    left: 43%;
+    padding-right: 4px;
+  }
+  @include media-queries.big-phone {
+    top: 10px;
+    left: 48%;
+   width: 38%;
+   text-align: right;   
+  }
+  @include media-queries.phoness {
+      top: 10px;
+      left: 44%;
+     width: 38%;
+     text-align: right;   
+}
 }

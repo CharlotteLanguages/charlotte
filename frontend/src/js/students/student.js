@@ -420,13 +420,14 @@ sr.reveal(vc, {
 
 /*------------------------------------------------------------------------------------- */
 
+
+
 const editor = SUNEDITOR.create(document.querySelector(".editor-student"), {
   value: "Comments...",
   codeMirror: CodeMirror,
   katex: katex,
   buttonList: [
     // default
-    ['undo', 'redo'],
     [':p-More Paragraph-default.more_paragraph', 'font', 'fontSize', 'formatBlock', 'paragraphStyle', 'blockquote'],
     ['bold', 'underline', 'italic', 'strike', 'subscript', 'superscript'],
     ['fontColor', 'hiliteColor', 'textStyle'],
@@ -470,9 +471,10 @@ const editor = SUNEDITOR.create(document.querySelector(".editor-student"), {
 ],
 
   width: "100%",
-  
+
   lang: SUNEDITOR_LANG["en"],
 });
+
 
 editor.setDefaultStyle("font-family: Arial; font-size: 13px;");
 
@@ -501,10 +503,7 @@ new Chart(ctx, {
 
 /*------------------------------------------------------------------------------------- */
 
-window.addEventListener("load", ()=>{
-  document.getElementById("loader").classList.toggle("loader2");
 
-})
 
 
 d.addEventListener("click", (e) => {

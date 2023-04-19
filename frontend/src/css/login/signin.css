@@ -1,4 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&display=swap");
+/* @mixin min {
+  @media all and (min-width: 100px) and (max-width: 280px){
+    @content;
+  }
+} */
+/* @mixin menu {
+  @media  screen and (min-width: 1000px) and (max-width: 1225px) {
+    @content;
+  }
+} */
+/* @mixin menus {
+    @media screen and (orientation:portrait){
+    @content;
+  }
+} */
 * {
   margin: 0;
   padding: 0;
@@ -18,60 +33,198 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
 }
-
 .container {
-  width: 549px;
-  height: 710px;
+  width: 36%;
+  height: 650px;
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(18px);
   border-radius: 20px;
-  margin-top: 40px;
+  margin-top: 70px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
+@media screen and (min-width: 975px) and (max-width: 1250px) {
+  .container {
+    width: 44%;
+  }
+}
+@media all and (min-width: 755px) and (max-width: 974px) {
+  .container {
+    width: 50%;
+    height: 600px;
+  }
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  .container {
+    width: 75%;
+    height: 580px;
+    margin-top: 90px;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .container {
+    width: 85%;
+    height: 525px;
+    margin-top: 90px;
+  }
+}
+@media screen and (max-device-width: 790px) and (min-height: 800px) and (orientation: portrait) {
+  .container {
+    width: 85%;
+    height: 525px;
+    margin-top: 110px;
+  }
+}
 .container h1 {
   font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 35px;
   line-height: 43px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 33px;
   text-align: center;
   color: #FFFFFF;
-  margin-top: 40px;
+  margin-top: 10px;
 }
-
+@media screen and (min-width: 975px) and (max-width: 1250px) {
+  .container h1 {
+    font-size: 31px;
+  }
+}
+@media all and (min-width: 755px) and (max-width: 974px) {
+  .container h1 {
+    font-size: 30px;
+    line-height: 33px;
+    margin-top: -30px;
+  }
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  .container h1 {
+    font-size: 24px;
+    margin-top: -30px;
+    line-height: 28px;
+    font-weight: 600;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .container h1 {
+    font-size: 20px;
+    margin-top: -30px;
+    line-height: 25px;
+    font-weight: 600;
+  }
+}
 .container h4 {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 15px;
   line-height: 20px;
   text-align: center;
   color: #FFFFFF;
 }
+@media screen and (min-width: 975px) and (max-width: 1250px) {
+  .container h4 {
+    font-size: 15px;
+  }
+}
+@media all and (min-width: 755px) and (max-width: 974px) {
+  .container h4 {
+    font-size: 14px;
+  }
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  .container h4 {
+    font-size: 15px;
+    line-height: 12px;
+    font-weight: 500;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .container h4 {
+    font-size: 12px;
+    line-height: 10px;
+    font-weight: 500;
+  }
+}
 
 .form__group {
-  margin-left: 65px;
+  margin-left: 14%;
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .form__group {
+    margin-left: 10%;
+  }
 }
 
 .input {
-  width: 410px;
-  height: 62px;
+  width: 85%;
+  height: 40px;
   opacity: 0.3;
   border: 1px solid #FFFFFF;
   border-radius: 10px;
   padding: 0 43px 0 20px;
-  font-size: 20px;
+  font-size: 15px;
   color: #000;
   font-weight: bold;
   outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+  backdrop-filter: blur(18px);
+}
+@media all and (min-width: 755px) and (max-width: 974px) {
+  .input {
+    font-size: 15px;
+    width: 87%;
+    height: 35px;
+    padding: 0 32px 0 14px;
+  }
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  .input {
+    height: 33px;
+    padding: 0 30px 0 15px;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .input {
+    width: 90%;
+    height: 30px;
+    font-size: 12px;
+    padding: 0 30px 0 12px;
+  }
 }
 
 i {
   position: relative;
   right: 45px;
-  font-size: 23px;
+  font-size: 19px;
+  top: 2px;
+}
+@media screen and (min-width: 975px) and (max-width: 1250px) {
+  i {
+    font-size: 18px;
+  }
+}
+@media all and (min-width: 755px) and (max-width: 974px) {
+  i {
+    font-size: 16px;
+    right: 33px;
+  }
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  i {
+    font-size: 16px;
+    right: 30px;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  i {
+    font-size: 15px;
+    right: 30px;
+  }
 }
 
 .form__input-error1 {
@@ -85,7 +238,6 @@ i {
   font-size: 14px;
   display: none;
 }
-
 .form__input-error2 {
   position: absolute;
   left: 62px;
@@ -97,72 +249,187 @@ i {
   font-size: 14px;
   display: none;
 }
-
 #group__user {
   margin-top: 69px;
   margin-bottom: 40px;
 }
+@media all and (min-width: 755px) and (max-width: 974px) {
+  #group__user {
+    margin-top: 50px;
+    margin-bottom: 33px;
+  }
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  #group__user {
+    margin-top: 45px;
+    margin-bottom: 26px;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  #group__user {
+    margin-top: 40px;
+    margin-bottom: 23px;
+  }
+}
 
 .form__checkbox {
   display: flex;
-  margin-left: 65px;
-  margin-top: 33px;
+  justify-content: center;
+  margin-top: 23px;
   color: #ECECEC;
+  gap: 80px;
+}
+@media all and (min-width: 755px) and (max-width: 974px) {
+  .form__checkbox {
+    width: 90%;
+    gap: 8%;
+    margin-left: 5.5%;
+  }
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  .form__checkbox {
+    gap: 10%;
+    width: 85%;
+    margin-left: 9%;
+    margin-top: 19px;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .form__checkbox {
+    gap: 10%;
+    width: 85%;
+    margin-left: 9%;
+    margin-top: 17px;
+  }
 }
 
 .left {
-  width: 205px;
   text-align: center;
   display: flex;
+  font-size: 13px;
+  color: #fff;
+  justify-content: flex-start;
 }
-
+@media all and (min-width: 550px) and (max-width: 754px) {
+  .left {
+    font-size: 12px;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .left {
+    font-size: 11px;
+  }
+}
 .left .text-check {
-  padding-left: 20px;
+  padding-left: 10px;
+  transition: all 0.5s ease;
+}
+.left .text-check:hover {
+  cursor: pointer;
+  color: #dfdfdf;
+}
+@media all and (min-width: 755px) and (max-width: 974px) {
+  .left .text-check {
+    padding-left: 6px;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .left .text-check {
+    padding-left: 3px;
+  }
 }
 
 .right {
-  width: 205px;
   text-align: center;
-  padding-left: 50px;
+  font-size: 13px;
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  .right {
+    font-size: 12px;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .right {
+    font-size: 11px;
+  }
 }
 
 .forgot {
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
 }
-
 .forgot:hover {
   cursor: pointer;
-  color: #000000;
+  color: #cccccc;
 }
-
 .checkbox {
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
   opacity: 0.3;
   border: 1px solid #FFFFFF;
   border-radius: 3px;
 }
+@media all and (min-width: 755px) and (max-width: 974px) {
+  .checkbox {
+    width: 15px;
+    height: 15px;
+  }
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  .checkbox {
+    width: 14px;
+    height: 14px;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .checkbox {
+    width: 14px;
+    height: 14px;
+  }
+}
 
 .btn-login {
-  width: 410px;
-  height: 58px;
-  left: 70px;
-  top: 433px;
+  width: 75%;
+  height: 40px;
   background: #0057FF;
-  border-radius: 50px;
+  border-radius: 15px;
   border: 0;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 27px;
   text-align: center;
   color: #FFFFFF;
-  margin-left: 60px;
-  margin-top: 55px;
+  margin-left: 13%;
+  margin-top: 35px;
   transition: all 0.4s ease;
 }
-
+@media screen and (min-width: 975px) and (max-width: 1250px) {
+  .btn-login {
+    font-size: 17px;
+  }
+}
+@media all and (min-width: 755px) and (max-width: 974px) {
+  .btn-login {
+    font-size: 16px;
+    height: 35px;
+  }
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  .btn-login {
+    font-size: 15px;
+    height: 33px;
+    font-size: 15px;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .btn-login {
+    width: 75%;
+    height: 30px;
+    font-size: 14px;
+    margin-top: 40px;
+  }
+}
 .btn-login:hover {
   background-color: #4080ff;
 }
@@ -186,7 +453,6 @@ i {
   margin-top: 30px;
   transition: all 0.4s ease;
 }
-
 .btn-login-forgot:hover {
   background-color: #4080ff;
 }
@@ -198,7 +464,6 @@ i {
   width: 410px;
   margin-left: 60px;
 }
-
 .init-btn {
   width: 130px;
   height: 56px;
@@ -206,53 +471,154 @@ i {
   border: 0;
   border-radius: 10px;
 }
-
 .go-signup {
   display: flex;
-  width: 410px;
-  margin-left: 60px;
+  width: 90%;
+  margin-left: 25px;
   margin-top: 80px;
   justify-content: center;
+  font-weight: bold;
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .go-signup {
+    margin-left: 5%;
+  }
 }
 
 .haveAccount {
   color: #fff;
-  font-size: 16px;
+  font-size: 13px;
+  font-size: "Montserrat";
+}
+@media all and (min-width: 755px) and (max-width: 974px) {
+  .haveAccount {
+    font-size: 12px;
+  }
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  .haveAccount {
+    font-size: 11px;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .haveAccount {
+    font-size: 10px;
+  }
 }
 
 .sign-up {
-  color: #0057FF;
+  color: #1f6aff;
   font-weight: bold;
   padding-left: 10px;
+  font-size: "Montserrat";
+}
+@media all and (min-width: 755px) and (max-width: 974px) {
+  .sign-up {
+    font-size: 12px;
+  }
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  .sign-up {
+    font-size: 11px;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .sign-up {
+    font-size: 10px;
+  }
 }
 
 .logous {
   position: absolute;
   left: 50px;
-  top: 50px;
-  width: 257.98px;
+  top: 30px;
+  width: 220px;
   height: 112px;
   background: url("/src/public/charlotte-logo.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
+@media screen and (min-width: 975px) and (max-width: 1250px) {
+  .logous {
+    width: 17%;
+    height: 100px;
+    left: 3%;
+    top: 20px;
+  }
+}
+@media all and (min-width: 755px) and (max-width: 974px) {
+  .logous {
+    width: 140px;
+    height: 60px;
+    top: 7px;
+    left: 5%;
+  }
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  .logous {
+    width: 120px;
+    height: 53px;
+    top: 7px;
+    left: 6%;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .logous {
+    width: 120px;
+    height: 53px;
+    top: 7px;
+    left: 6%;
+  }
+}
+@media screen and (max-device-width: 790px) and (min-height: 800px) and (orientation: portrait) {
+  .logous {
+    top: 15px;
+  }
+}
 
 .buttom-signup {
   position: absolute;
-  width: 217px;
-  height: 71px;
+  width: 13%;
+  height: 50px;
   right: 30px;
-  top: 50px;
+  top: 40px;
   background: #0057FF;
   border-radius: 10px;
   border: 0;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
   color: #fff;
   transition: all 0.4s ease;
 }
-
+@media screen and (min-width: 975px) and (max-width: 1250px) {
+  .buttom-signup {
+    width: 13%;
+    height: 47px;
+    font-size: 19px;
+  }
+}
+@media all and (min-width: 755px) and (max-width: 974px) {
+  .buttom-signup {
+    width: 14%;
+    height: 40px;
+    font-size: 15px;
+  }
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  .buttom-signup {
+    display: none;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .buttom-signup {
+    /* width: 22%;
+    height: 30px;
+    font-size: 13px;
+    top: 20px; */
+    display: none;
+  }
+}
 .buttom-signup:hover {
   background-color: #4080ff;
 }
@@ -272,7 +638,6 @@ i {
   backdrop-filter: blur(18px);
   border-radius: 20px;
 }
-
 .container-forgot-password h1 {
   font-family: "Montserrat";
   font-style: normal;
@@ -284,12 +649,10 @@ i {
   text-align: center;
   margin-top: 15px;
 }
-
 .container-forgot-password .cancel-forgot-pass {
   display: flex;
   align-items: center;
 }
-
 .container-forgot-password .cancel-forgot-pass .cancel-back {
   font-size: 25px;
   color: #0057FF;
@@ -299,11 +662,9 @@ i {
   transition: all 0.4s ease;
   cursor: pointer;
 }
-
 .container-forgot-password .cancel-forgot-pass .cancel-back:hover {
   color: #4080ff;
 }
-
 .container-forgot-password .cancel-forgot-pass .cancel-left {
   position: relative;
   left: 2px;
@@ -312,7 +673,6 @@ i {
   transition: all 0.4s ease;
   cursor: pointer;
 }
-
 .container-forgot-password .cancel-forgot-pass .cancel-left:hover {
   color: #4080ff;
 }
@@ -328,7 +688,6 @@ i {
   background-position: center;
   background-repeat: no-repeat;
 }
-
 #group__id {
   margin-top: 19px;
   margin-bottom: 40px;
@@ -345,9 +704,7 @@ i {
   font-weight: bold;
   display: none;
 }
-
 .created-user i {
-  color: #00FF59;
   margin-left: 50px;
   font-size: 30px;
   margin-bottom: -20px;
@@ -355,43 +712,88 @@ i {
 
 .form__bottoms {
   /*  background-color: rgb(27, 195, 246); */
-  width: 450px;
+  width: 78%;
   display: flex;
   justify-content: space-around;
   position: relative;
   margin-bottom: -40px;
   margin-top: 40px;
-  margin-left: 40px;
+  margin-left: 11%;
 }
-
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .form__bottoms {
+    width: 85%;
+    margin-left: 8%;
+  }
+}
 .form__bottoms .btn {
-  max-width: 135px;
-  width: 100%;
-  height: 56px;
+  width: 30%;
+  height: 40px;
   background-color: #b0b0b0;
   border-radius: 10px;
   color: #000;
   font-weight: bold;
   align-items: center;
   display: flex;
-  padding-left: 50px;
+  padding-left: 40px;
+  font-size: 12px;
   position: relative;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
   transition: all 0.4s ease;
 }
-
+@media all and (min-width: 755px) and (max-width: 974px) {
+  .form__bottoms .btn {
+    height: 33px;
+    font-size: 11px;
+    padding-left: 10%;
+  }
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  .form__bottoms .btn {
+    height: 30px;
+    font-size: 10.5px;
+    padding-left: 10%;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .form__bottoms .btn {
+    height: 26px;
+    width: 30%;
+    font-size: 8.5px;
+    padding-left: 10%;
+  }
+}
 .form__bottoms .btn:hover {
   background-color: #e6e4e4;
 }
-
 .form__bottoms .select-login {
   position: absolute;
-  width: 36px;
-  height: 36px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   left: 5px;
+}
+@media all and (min-width: 755px) and (max-width: 974px) {
+  .form__bottoms .select-login {
+    width: 22px;
+    height: 22px;
+    left: 2%;
+  }
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  .form__bottoms .select-login {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .form__bottoms .select-login {
+    width: 18px;
+    height: 18px;
+    left: 3%;
+  }
 }
 
 #login-microsoft {
@@ -418,6 +820,116 @@ i {
   cursor: pointer;
 }
 
-/*# sourceMappingURL=signin.css.map */
+body::-webkit-scrollbar {
+  width: 8px;
+  height: 3px;
+  background-color: #e6e6e6;
+}
+
+body::-webkit-scrollbar-thumb {
+  /*   background: rgba(255, 255, 255, 0.2); */
+  border-radius: 20px;
+  background-color: #7c7c7c;
+}
+
+.login-with {
+  margin-top: 30px;
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .login-with {
+    margin-top: 30px;
+  }
+}
+
+.lines {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  margin-top: 19px;
+  position: relative;
+  width: 75%;
+  margin: auto;
+}
+.line-one {
+  width: 150px;
+  border-bottom: 1px solid #c2c2c2;
+  position: absolute;
+  top: 10px;
+  left: 5%;
+}
+@media all and (min-width: 755px) and (max-width: 974px) {
+  .line-one {
+    width: 39%;
+  }
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  .line-one {
+    width: 40%;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .line-one {
+    width: 38%;
+  }
+}
+
+.line-two {
+  width: 150px;
+  border-bottom: 1px solid #c2c2c2;
+  position: absolute;
+  right: 5%;
+  top: 10px;
+}
+@media all and (min-width: 755px) and (max-width: 974px) {
+  .line-two {
+    width: 40%;
+  }
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  .line-two {
+    width: 40%;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .line-two {
+    width: 38%;
+  }
+}
+
+.text-or {
+  color: #e1e1e1;
+  font-size: 14px;
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  .text-or {
+    font-size: 13px;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .text-or {
+    font-size: 12px;
+  }
+}
+
+.login-with_text {
+  color: #e1e1e1;
+  text-align: center;
+  font-size: 14px;
+}
+@media all and (min-width: 755px) and (max-width: 974px) {
+  .login-with_text {
+    font-size: 13px;
+  }
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  .login-with_text {
+    font-size: 12px;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .login-with_text {
+    font-size: 11px;
+  }
+}
 
 /*# sourceMappingURL=signin.css.map */

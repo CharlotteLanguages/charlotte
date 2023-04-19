@@ -91,6 +91,7 @@ export const activitiesp = async () => {
       activity = json;
       renderActivities(activity);
       addColorsTags();
+      addColors();
  
     }
   } catch (err) {
@@ -111,7 +112,10 @@ const renderActivities = (activitie) => {
     <tr class = "tr">
     <td data-label = "ID">${ele.id}</td>
     <td data-label = "Activity title">${ele.activitiName}</td>
-    <td data-label = "Category" class = "category">[ ${ele.category} ] ${ele.level}</td>
+    <td data-label = "Category" class = "categoryActivities"> 
+    <div class = "categ">[ ${ele.category} ]</div>
+    <div class = "level">${ele.level}</div>
+    </td>
     <td data-label = "Tags" class = "tags">${ele.tags}</td>
     <td data-label = "Actions">
         <div class="icons-activity">
@@ -234,8 +238,30 @@ function addColorsTags(){
           element.style.color = "#0052B4";
         }  
       });
+}
+function addColors(){
+      d.querySelectorAll(".categ").forEach(element => {
+      element.style.fontWeight = "600";
 
+        if(element.textContent.includes("[ Pro ]")){
+          element.style.color = "#33b3f3";
+          
+        }
+        if(element.textContent.includes("[ Free ]")){
+          element.style.color = "#00bd42";
+          
+        }
+        if(element.textContent.includes("[ Pro + ]")){
+          element.style.color = "#fe2323";
+          
+        }
+        if(element.textContent.includes("[ Basic ]")){
+          element.style.color = "#0052B4";
+          
+        }
 
+       
+      });
 }
 
 

@@ -12,6 +12,7 @@ const d = document,
     });
 
   } */
+/*------------------------------------------------------------------------------------------------------ */
 
 const fields = {
   firstName: false,
@@ -21,7 +22,10 @@ const fields = {
   userName: false,
 };
 
-const expressions = {
+/*----------------------------------------------------------------------------------------------------------------------------- */
+
+
+const Regularexpressions = {
   firstName: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
   lastName: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
   userName: /^[a-zA-Z0-9\_\-\.]{4,16}$/,
@@ -29,6 +33,11 @@ const expressions = {
   password:
     /(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040"])(?=.*[A-Z])(?=.*[a-z])\S{6,16}$/,
 };
+
+
+/*-------------------------------------------------------------------------------------------------------------- */
+
+
 
 const hasUser = async () => {
   try {
@@ -43,12 +52,15 @@ const hasUser = async () => {
   }
 };
 
+
+/*--------------------------------------------------------------------------------------------------------------- */
+
+
 const emailUser = async () => {
   try {
     const res = await fetch(API_URL),
       data = await res.json();
     repeatedEmailMessage(data);
-    if (!res.ok) throw { status: res.status, statusText: res.statusText };
   } catch (err) {
     const message = err.statusText || "An error occurred";
     /* let table;
@@ -56,13 +68,21 @@ const emailUser = async () => {
   }
 };
 
+
+/*----------------------------------------------------------------------------------------------------------------------- */
+
+
 function generateUserName(data) {
   if (data.length < 1) {
     form.userName.value = `${form.firstName.value
       .slice(0, 4)
       .toLowerCase()}.${form.lastName.value
       .slice(0, 4)
-      .toLowerCase()}.${form.dateBirth.value.slice(8, 10)}`;
+      .toLowerCase()}.${form.dateBirth.value
+        .slice(8, 10)}`;
+/*         console.log(form.dateBirth.value) */
+      /*   console.log(form.firstName.value)
+        console.log(form.lastName.value) */
     return;
   }
   data.map((ele) => {
@@ -115,6 +135,10 @@ function generateUserName(data) {
   });
 }
 
+
+/*---------------------------------------------------------------------------------------------------------------- */
+
+
 const validateFields = (expression, input, camp) => {
   if (expression.test(input.value)) {
     d.querySelector(`#group__${camp} .form__input-error`).classList.remove(
@@ -129,25 +153,29 @@ const validateFields = (expression, input, camp) => {
   }
 };
 
+
+/*---------------------------------------------------------------------------------------------------------------------------- */
+
+
 const validateForm = (e) => {
   switch (e.target.name) {
     case "firstName":
-      validateFields(expressions.firstName, e.target, e.target.name);
+      validateFields(Regularexpressions.firstName, e.target, e.target.name);
       hasUser();
       break;
     case "lastName":
-      validateFields(expressions.lastName, e.target, e.target.name);
+      validateFields(Regularexpressions.lastName, e.target, e.target.name);
       hasUser();
       break;
     case "email":
-      validateFields(expressions.email, e.target, e.target.name);
+      validateFields(Regularexpressions.email, e.target, e.target.name);
       emailUser();
       break;
     case "userName":
-      validateFields(expressions.userName, e.target, e.target.name);
+      validateFields(Regularexpressions.userName, e.target, e.target.name);
       break;
     case "password":
-      validateFields(expressions.password, e.target, e.target.name);
+      validateFields(Regularexpressions.password, e.target, e.target.name);
       break;
     case "dateBirth":
       hasUser();
@@ -156,7 +184,7 @@ const validateForm = (e) => {
 };
 
 inputs.forEach((input) => {
-  input.addEventListener("keyup", validateForm);
+  input.addEventListener("change", validateForm);
 });
 
 d.addEventListener("click", (e) => {
@@ -167,6 +195,9 @@ d.addEventListener("click", (e) => {
     d.querySelector("#date-birth").setAttribute("type", "text");
   }
 });
+
+
+/*---------------------------------------------------------------------------------------------------------------- */
 
 function registerUser() {
   form.addEventListener("submit", async (e) => {
@@ -198,20 +229,19 @@ function registerUser() {
           }),
           json = await res.json();
         resetForm(e);
-        window.location.href = "/src/views/login.html"
+/*         window.location.href = "/src/views/login.html" */
         if (!res.ok) throw { status: res.status, statusText: res.statusText };
       } catch (error) {
-        /*    let message = err.statusText || "ocurrió un Error";
-          $formActivity.insertAdjacentHTML(
-            "afterend",
-            `<p><b>Error ${err.status}:${message}</p></b>`
-          ); */
+
       }
     } else {
       addMesaggeIncorrect();
     }
   });
 }
+
+
+/*-------------------------------------------------------------------------------------------------------------- */
 
 registerUser();
 function resetForm(e) {
@@ -224,18 +254,30 @@ function resetForm(e) {
   d.querySelector(".icon-pass").classList.remove("fa-eye");
 }
 
+
+/*---------------------------------------------------------------------------------------------------------------- */
+
+
+
 function addMesaggeCorrect() {
   d.querySelector(".form__message-exit").style.display = "inline";
   setTimeout(() => {
     d.querySelector(".form__message-exit").style.display = "none";
   }, 2500);
 }
+
+
+/*-------------------------------------------------------------------------------------------------- */
+
 function addMesaggeIncorrect() {
   d.querySelector(".form__message-error").style.display = "inline";
   setTimeout(() => {
     d.querySelector(".form__message-error").style.display = "none";
   }, 3000);
 }
+
+
+/*------------------------------------------------------------------------------------------------------------------------ */
 
 function repeatedEmailMessage(data) {
   let uno = d.querySelector(".email__already");
@@ -244,11 +286,15 @@ function repeatedEmailMessage(data) {
       uno.classList.add("form__input-error-activ");
       setTimeout(() => {
         uno.classList.remove("form__input-error-activ");
-      }, 2500);
+      }, 4000);
       fields["email"] = false;
     }
   });
 }
+
+
+/*-------------------------------------------------------------------------------------------------------------------- */
+
 
 function showPassword() {
   let input = d.querySelector("#password-signup");

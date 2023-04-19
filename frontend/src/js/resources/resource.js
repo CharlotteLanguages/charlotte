@@ -72,6 +72,7 @@ export const getResourceData = async () => {
     } else {
       resource = json;
       renderResources(resource);
+      addColorsTags()
     }
   } catch (err) {
     const table = d.querySelector(".crud-table-resource");
@@ -92,7 +93,7 @@ const renderResources = (resource) => {
     <td data-label = "ID">${ele.id}</td>
     <td data-label = "Resources">${ele.resourceTitle}</td>
     <td data-label = "Category">${ele.category}</td>
-    <td data-label = "Tags">${ele.tags}</td>
+    <td data-label = "Tags" class = "tags">${ele.tags}</td>
     <td data-label = "Actions">
         <div class="icons-resource">
         <i class="fas fa-dot-circle read-resource" data-ids = ${ele.id} ></i>
@@ -466,6 +467,8 @@ sr.reveal($tableResource, {
 }); */
 
 
+
+
 /*------------------------------------------------------------------------------------- */
 
 const showSideBar = (e) => {
@@ -504,3 +507,25 @@ d.addEventListener("click", (e) => {
   showSideBar(e);
   removeResource(e);
 });
+
+
+function addColorsTags(){
+  d.querySelectorAll(".tags").forEach(element => {
+    element.style.fontWeight = "600";
+
+    if(element.textContent === "Speak"){
+      element.style.color = "#fe2323";
+    }
+
+    if(element.textContent === "Listen"){
+      element.style.color = "#33b3f3";
+    }
+
+    if(element.textContent === "Write"){
+      element.style.color = "#00bd42";
+    }
+    if(element.textContent === "Read"){
+      element.style.color = "#0052B4";
+    }  
+  });
+}
