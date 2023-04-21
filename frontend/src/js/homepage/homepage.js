@@ -161,6 +161,7 @@ window.addEventListener("load", ()=>{
     }, 1050);
 
   },10000);
+  language();
 })
 
   const w = window;
@@ -183,8 +184,8 @@ window.addEventListener("load", ()=>{
       });
     }
     if (e.target.matches(".sigin")) {
-     /*  window.location.href = "/src/views/login.html";
-      target = "_blank"; */
+    /*   window.location.href = "/src/views/login/login.html"; */
+      target = "_blank";
     }
   });
 
@@ -224,16 +225,16 @@ select.addEventListener("click", ()=>{
 
 
 d.addEventListener("click", (e)=>{
-  if(e.target.matches("#brasil")){
+  if(e.target.matches(".portugues") || e.target.matches("#brasil")){
     window.location.href = "/src/views/homepage/homepagePt.html"
   }
-  if(e.target.matches("#spain")){
+  if(e.target.matches(".español") || e.target.matches("#spain") ){
     window.location.href = "/src/views/homepage/homepageEs.html"
   }
-  if(e.target.matches("#france")){
+  if(e.target.matches(".frances") || e.target.matches("#france")){
     window.location.href = "/src/views/homepage/homepageFra.html"
   }
-  if(e.target.matches("#eeuu")){
+  if(e.target.matches(".ingles") || e.target.matches("#eeuu")){
     window.location.href = "/src/views/homepage/homepage.html"
   }
 })
@@ -249,3 +250,23 @@ d.addEventListener("click", (e)=>{
 
   }
 })
+
+
+
+function language(){
+  let lang = document.documentElement.getAttribute("lang"),
+  btn = d.querySelector(".btn-dark");
+  if (lang=="es"){
+    btn.textContent = "Leer más"
+  }
+  if (lang=="fr"){
+    btn.textContent = "Lire plus"
+  }
+  if (lang=="pt"){
+    btn.textContent = "Ler mais"
+  }
+  if (lang=="en"){
+    btn.textContent = "Read more"
+  }
+
+}

@@ -4,7 +4,7 @@ const form = d.querySelector(".form");
 
 d.addEventListener("click", (e) => {
   if (e.target.matches(".buttom-signup")) {
-    window.location = "/src/views/signup.html";
+    window.location = "/src/views/login/signup.html";
   }
   if (e.target.matches(".forgot")) {
     /* d.querySelector(".container-forgot-password").style.display = "inline";
@@ -83,10 +83,9 @@ function user(user){
 
     }
   })
-
-  console.log(usuario)
-
 }
+
+
 
 
 

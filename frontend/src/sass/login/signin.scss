@@ -13,16 +13,15 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center; 
-      background-attachment: fixed; 
-   
-   
-         
+      background-attachment: fixed;      
 }
 
 .login-box{
     display: flex;
     justify-content: center;
     align-items: center; 
+    min-height: 100vh;
+ 
  
 
     @include media-queries.tablet {
@@ -60,18 +59,15 @@
     @include media-queries.big-phone {
         width: 75%;
         height:580px;
-        margin-top:90px;
+   
     }
     @include media-queries.phoness {
         width: 85%;
         height:525px;
-        margin-top:90px;
-     
     }
     @include media-queries.big-vertical {
         width: 85%;
         height:525px;
-        margin-top:110px;
     }
 
     
@@ -87,6 +83,7 @@
         margin-top: 10px;
         @include media-queries.tablet {
             font-size: 31px;
+            line-height: 38px;
         }
         @include media-queries.tablett {
             font-size: 30px;
@@ -117,6 +114,7 @@
         color: #FFFFFF;
         @include media-queries.tablet {
             font-size: 15px;
+            line-height: 15px;
         }
         @include media-queries.tablett {
             font-size: 14px;
@@ -156,7 +154,8 @@
      font-family: Arial, Helvetica, sans-serif;
     backdrop-filter: blur(18px);
      @include media-queries.tablet {
-         
+        height: 37px;
+        padding: 0 35px 0 12px;
      }
      @include media-queries.tablett {
         font-size: 15px;
@@ -178,11 +177,12 @@
     }
     i{
         position: relative;
-        right: 45px;
+        right: 40px;
         font-size: 19px;
         top: 2px;
         @include media-queries.tablet {
             font-size: 18px;
+            right: 35px
         }
         @include media-queries.tablett {
             font-size: 16px;
@@ -419,13 +419,13 @@
         transition: all 0.4s ease;
         @include media-queries.tablet {
             font-size: 17px;
+            height: 37px;
         }
         @include media-queries.tablett {
             font-size: 16px;
             height: 35px;
         }
         @include media-queries.big-phone {
-            font-size: 15px;
             height: 33px;
             font-size: 15px;
         }
@@ -441,34 +441,38 @@
         }
     }
     .btn-login-forgot{
-        width: 410px;
-        height: 58px;
-        left: 70px;
-        top: 0px;
+        width: 75%; 
+        height: 40px;
         background: #0057FF;
-        border-radius: 50px;
+        border-radius: 15px;
         border: 0;
         font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: 600;
-        font-size: 22px;
+        font-size: 18px;
         line-height: 27px;
         text-align: center;
         color: #FFFFFF;
-        margin-left: 60px;
+        margin-left: 13%;
         margin-top: 30px;
         transition: all 0.4s ease;
         @include media-queries.tablet {
-     
+            font-size: 17px;
+            height: 37px;
         }
         @include media-queries.tablett {
-       
+            font-size: 16px;
+            height: 35px;
         }
         @include media-queries.big-phone {
-         
+            height: 33px;
+            font-size: 15px;
         }
         @include media-queries.phoness {
-  
+            width: 75%;
+            height: 30px;
+            font-size: 14px;
+            margin-top: 40px;
         }
         &:hover{
             background-color: #4080ff;
@@ -563,7 +567,7 @@
     }
     
     .sign-up{
-        color: #1f6aff;
+        color: #4d88ff;
         font-weight: bold;   
         padding-left: 10px;
          font-size: "Montserrat";
@@ -584,10 +588,10 @@
 
     .logous{
         position: absolute;
-        left: 50px;
+        left: 2%;
         top: 30px;
-        width: 220px;
-        height: 112px;
+        width: 180px;
+        height: 90px;
         background: url("/src/public/charlotte-logo.png");
         background-size: contain;
         background-position: center;
@@ -612,32 +616,42 @@
 
         }
         @include media-queries.phoness {
-            width: 120px;
-            height: 53px;
-            top: 7px;
-            left: 6%;
+            width: 100px;
+            height: 35px;
+            top: 20px;
+            left: 35%;
+        
         
         }
       
-        @include media-queries.big-vertical {
-         
-            top: 15px;
-       
-        
-        }
+        @include media-queries.big-vertical{
+            width: 150px;
+          height: 60px;
+          display: block;
+          left: 34%;
+          top: 3%;
+          opacity: 1;
+            
+          }
+          @include media-queries.portrait-long {
+            left: 39%;
+            width: 200px;
+            height: 88px;
+            top: 5%;
+           }
       
     
     }
     .buttom-signup{
         position: absolute;
-        width: 13%;
-        height: 50px;
+        width: 12%;
+        height: 45px;
         right: 30px;
         top: 40px;
         background: #0057FF;
         border-radius: 10px;
         border: 0;
-        font-size: 20px;
+        font-size: 19px;
         font-weight: bold;
         color: #fff;
         transition: all 0.4s ease;
@@ -673,61 +687,92 @@
     .change-forgot-password{
         display: none;
     }
+
+
+    /*--------------------------------------------------------------------------------------------*/
+
     .container-forgot-password{
-        width: 549px;
-        height: 407px;
+        width: 40%;
+        height: 390px;
         background: rgba(255, 255, 255, 0.04);
         backdrop-filter: blur(18px);
         border-radius: 20px;
+    
         @include media-queries.tablet {
+            width: 44%;
      
         }
         @include media-queries.tablett {
-       
+            width: 50%;
         }
         @include media-queries.big-phone {
-         
+            width: 75%;
+            
         }
         @include media-queries.phoness {
-  
+            width: 85%;
+            height: 330px;
+        }
+        @include media-queries.big-vertical {
+      
+            height: 350px;
         }
        
         h1{
             font-family: 'Montserrat';
             font-style: normal;
             font-weight: 700;
-            font-size: 35px;
+            font-size: 30px;
             line-height: 43px;
             text-align: center;
             color: #FFFFFF;
             text-align: center;
             margin-top: 15px;
+            @include media-queries.tablet {
+                font-size: 28px;
+         
+            }
+            @include media-queries.tablett {
+                font-size: 26px;
+            }
+            @include media-queries.big-phone {
+                font-size: 24px;
+            }
+            @include media-queries.phoness {
+                font-size: 20px;
+                font-weight: 600;
+            }
         }
    
         .cancel-forgot-pass{
             display: flex;
             align-items: center;
+            gap: 3px;
+            margin-top: 2%;
+            margin-left: 2%;
            
             
             .cancel-back{
-                font-size: 25px;
+                font-size: 18px;
                 color: #0057FF;
-                font-weight: bold;
-                margin-left: 10px;
-                font-weight: bold;
+                font-weight: 700;
+                padding-top: 6px;
                 transition: all 0.4s ease;
+                text-decoration:underline;
                 cursor: pointer;
                 @include media-queries.tablet {
-     
+                    font-size: 17px;
                 }
                 @include media-queries.tablett {
+                    font-size: 16px;
                
                 }
                 @include media-queries.big-phone {
-                 
+                    font-size: 15px;
                 }
                 @include media-queries.phoness {
-          
+                    font-size: 14px;
+                    padding-top: 2px;
                 }
                 &:hover{
                     color: #4080ff;
@@ -737,21 +782,21 @@
             .cancel-left{
                 position: relative;
                 left: 2px;
-                font-size: 60px;
+                font-size: 30px;
                 color:#0057FF; 
                 transition: all 0.4s ease;
                 cursor: pointer;
                 @include media-queries.tablet {
-     
+                    font-size: 28px;
                 }
                 @include media-queries.tablett {
-               
+                    font-size: 26px;
                 }
                 @include media-queries.big-phone {
-                 
+                    font-size: 24px;
                 }
                 @include media-queries.phoness {
-          
+                    font-size: 22px;
                 }
                 &:hover{
                 color: #4080ff;
@@ -862,12 +907,14 @@
           box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
           transition: all 0.4s ease;
           @include media-queries.tablet {
-     
+            height: 37px;
+            padding-left: 10%;
+            font-size: 11px;
           }
           @include media-queries.tablett {
             height: 33px;
             font-size: 11px;
-            padding-left: 10%;
+            padding-left: 11%;
           }
           @include media-queries.big-phone {
             height: 30px;
@@ -892,7 +939,8 @@
           border-radius: 50%;
           left: 5px;
           @include media-queries.tablet {
-     
+            width: 24px;
+            height: 24px;
           }
           @include media-queries.tablett {
             width: 22px;
@@ -992,7 +1040,7 @@
         top: 10px;
         left: 5%;
         @include media-queries.tablet {
-     
+            width: 39%;
         }
         @include media-queries.tablett {
             width: 39%;
@@ -1011,10 +1059,10 @@
         right: 5%;
         top: 10px;
         @include media-queries.tablet {
-     
+            width: 39%;
         }
         @include media-queries.tablett {
-            width: 40%;
+            width: 39%;
         }
         @include media-queries.big-phone {
             width: 40%;

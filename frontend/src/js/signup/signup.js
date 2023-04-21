@@ -3,15 +3,25 @@ const d = document,
   form = document.querySelector(".form"),
   inputs = document.querySelectorAll(".form__input");
 
-/*   export function scrollBehavor(id1) {
-    window.sr = ScrollReveal();
-    sr.reveal(id1, {
+/*   
+  d.addEventListener("DOMContentLoaded", (e) => {
+    d.querySelector(".form").style.display = "none";
+   setTimeout(() => {
+     
+    d.querySelector(".form").style.display = "block";
+   }, 1000);
+    
+  }); */
+/*     window.sr = ScrollReveal();
+    const hp = d.querySelector(".form");
+    sr.reveal(hp, {
       duration: 2500,
       origin: "bottom",
-      distance: "-5px",
-    });
+      distance: "-30px",
+    }); */
 
-  } */
+
+
 /*------------------------------------------------------------------------------------------------------ */
 
 const fields = {
@@ -317,3 +327,6 @@ d.querySelector(".genderone").addEventListener("click", (e) => {
   d.querySelector(".gender").classList.add("notGender");
 });
 
+d.addEventListener("DOMContentLoaded", (e) => {
+ 
+});

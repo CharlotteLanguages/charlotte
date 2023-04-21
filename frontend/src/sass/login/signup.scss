@@ -7,6 +7,7 @@
   box-sizing: border-box;
 
 
+
 }
 
 
@@ -20,10 +21,11 @@ body {
   display: flex;
   min-height: 100vh;
   justify-content: center;
+  align-items: center;
+ 
 
-  @include media-queries.phoness {
-    background-size: contain;
-      }
+
+
 
 }
 
@@ -61,6 +63,20 @@ body {
     left: 35%; */
     display: none;
   }
+  @include media-queries.big-vertical{
+    width: 150px;
+  height: 60px;
+  display: block;
+  left: 34%;
+  top: 3%;
+    
+  }
+  @include media-queries.portrait-long {
+    left: 39%;
+    width: 200px;
+    height: 88px;
+    top: 5%;
+   }
 }
 
 .form {
@@ -74,25 +90,29 @@ body {
   margin-top: 5%;
   height: 690px;
   margin-bottom: 30px;
+
+
   
  
 
 
   @include media-queries.tablet {
     width: 50%;
-    margin-top: 10%;
+    
     margin-bottom: 50px;
   }
   @include media-queries.tablett {
     font-size: 16px;
     width: 60%;
     height: 660px;
-    margin-top: 16%;
+    margin-top: 0%;
+  
   }
   @include media-queries.big-phone {
     font-size: 15px;
     width: 75%;
     height: 620px;
+    margin-top: 0%;
 
     box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.4);
 
@@ -100,15 +120,15 @@ body {
   @include media-queries.phoness {
     width:90%;
    height:570px;
-   margin-top: 12%;
     box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.02);
   
 
   }
 
   @include media-queries.big-vertical {
     height:610px;
-    margin-top: 22%;
+   
    
   }
   
@@ -148,6 +168,7 @@ body {
   @include media-queries.big-vertical {
     gap: 2.5em;
   }
+
 
 }
 .form__group {
