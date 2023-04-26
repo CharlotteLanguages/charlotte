@@ -267,7 +267,7 @@ background-color: aqua; */
 }
 @media all and (min-width: 755px) and (max-width: 974px) {
   .navbar__menu {
-    width: 68%;
+    width: 75%;
     margin-right: 10px;
   }
 }
@@ -1283,9 +1283,10 @@ ul.show {
 }
 @media all and (min-width: 280px) and (max-width: 549px) {
   .container__subscribe h1 {
-    font-size: 22px;
-    line-height: 30px;
+    font-size: 20px;
+    line-height: 28px;
     margin-bottom: 20px;
+    padding: 0 10px 0 10px;
   }
 }
 

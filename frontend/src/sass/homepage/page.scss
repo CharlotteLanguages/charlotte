@@ -235,8 +235,9 @@ body{
     margin-right: 10px;
   }
   @include media-queries.tablett {
-    width: 68%;
+    width: 75%;
     margin-right: 10px;
+
   }
   @include media-queries.big-phone {
     transition: all 0.4s ease;
@@ -255,6 +256,7 @@ body{
     transition: transform 1s;
     overflow: auto;
     padding-bottom: 40px;
+ 
   }
   @include media-queries.phoness {
     transition: all 0.4s ease;
@@ -1144,9 +1146,10 @@ width: 295px;
       margin-bottom: 25px;
     }
     @include media-queries.phoness {
-      font-size: 22px;
-      line-height: 30px;
+      font-size: 20px;
+      line-height: 28px;
       margin-bottom: 20px;
+      padding: 0 10px 0 10px;
     }
   }
 }

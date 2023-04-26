@@ -270,3 +270,5 @@ function language(){
   }
 
 }
+let cat = d.querySelector(".text-white").textContent;
+console.log(cat);

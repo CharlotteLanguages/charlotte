@@ -1,3 +1,5 @@
+/* import {hacer} from "../homepage_free/homepage_free.js" */
+
 const d = document,
   API_URL = "http://localhost:3000/signup";
 const form = d.querySelector(".form");
@@ -39,7 +41,7 @@ d.addEventListener("click", (e) => {
 
 
 
-const loadData = async () => {
+export const loadData = async () => {
   try {
     let res = await fetch(API_URL),
       json = await res.json();
@@ -61,15 +63,19 @@ function validateUser(user){
     e.preventDefault();
      const usuario = user.filter(user=>{
       if(user.userName === form.userName.value && user.password === form.password.value){
-        window.location.href = "/src/views/homepage_user/homepage_user.html"
-       return true
+       /*  window.location.href = "/src/views/homepage_user/homepage_user.html" */
+    /*    return true */
+      return user
+    /* hacer() */
 
       }
     })
+    
 
   })
-  
+ 
 }
+
 
 
 /* export const usert =  form.userName.value; */
@@ -86,6 +92,7 @@ function user(user){
 }
 
 
+window.addEventListener("load", ()=>{
+  document.getElementById("loader").classList.toggle("loader2");
 
-
-
+})

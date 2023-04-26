@@ -330,3 +330,11 @@ d.querySelector(".genderone").addEventListener("click", (e) => {
 d.addEventListener("DOMContentLoaded", (e) => {
  
 });
+
+
+/*-------------------------------------------------------------- */
+
+window.addEventListener("load", ()=>{
+  document.getElementById("loader").classList.toggle("loader2");
+
+})

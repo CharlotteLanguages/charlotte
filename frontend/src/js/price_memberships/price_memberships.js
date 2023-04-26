@@ -26,10 +26,8 @@ const loadData = async () => {
     result.map((ele) => {
         switch (ele.memberName) {
           case "Basic":
-             let input = d.querySelector(".container_memberships");
+             let input = d.querySelector(".basic");
                 input.innerHTML += ` 
-          
-                <div class="membership">
                 <div>
                     <div class="price">
                         <span>$${ele.memberPrice}</span>
@@ -39,33 +37,61 @@ const loadData = async () => {
                 <div class="cont_membership">
                     <h1 class="membership_name">${ele.memberName}</h1>
                     <div class="membership_description">
-                        <p class="description_paragraph">Lor, doloremque necto debitis natus! Excepturi ex deserunt asperna</p>
+                        <p class="description_paragraph">You will get the following benefits</p>
                     
                         <div class="membership_item">
                         <i class="fas fa-check-circle success"></i>
-                        <p>contiene extra funciones</p>
+                        <p>Access to educational content "Future tenses, writing and structure of grammar recognition", gamification.</p>
                     </div>
                     <div class="membership_item">
                         <i class="fas fa-check-circle success"></i>
-                        <p>contiene extra funciones</p>
+                        <p>Tutorials.</p>
+                    </div>
+                    <div class="membership_item">
+                        <i class="fas fa-check-circle success"></i>
+                        <p>Access to media library.</p>
+                    </div>
+                    <div class="membership_item">
+                        <i class="fas fa-check-circle success"></i>
+                        <p>Learning badges.</p>
                     </div>
                     <div class="membership_item">
                         <i class="fas fa-times-circle failure"></i>
-                        <p>contiene extra funciones</p>
+                        <p>Option to take an international exam.</p>
                     </div>
+                    <div class="membership_item">
+                        <i class="fas fa-times-circle failure"></i>
+                        <p>Extra mentoring.</p>
+                    </div>
+                    <div class="membership_item">
+                        <i class="fas fa-times-circle failure"></i>
+                        <p>Conversation club.</p>
+                    </div>
+                    <div class="membership_item">
+                    <i class="fas fa-times-circle failure"></i>
+                    <p>Full certificate.</p>
+                </div>
+            <div class="membership_item">
+                <i class="fas fa-times-circle failure"></i>
+                <p>Guest, educational content, 3 tutorials.</p>
+            </div>
+            <div class="membership_item">
+                <i class="fas fa-times-circle failure"></i>
+                <p>Special offers.</p>
+                  
                     </div>
                     <span class="membership_price">$0.50/subscribe</span>
                     <button class="membership_button">Start now!</button>
                 </div>
-            </div>  
+      
                 `
             break;
 
 
           case "Pro":
-            let input2 = d.querySelector(".container_memberships");
+            let input2 = d.querySelector(".pro");
             input2.innerHTML += ` 
-            <div class="membership">
+          
             <div>
                 <div class="price">
                     <span>$${ele.memberPrice}</span>
@@ -75,34 +101,60 @@ const loadData = async () => {
             <div class="cont_membership">
                 <h1 class="membership_name">${ele.memberName}</h1>
                 <div class="membership_description">
-                    <p class="description_paragraph">Lor, doloremque necto debitis natus! Excepturi ex deserunt asperna</p>
-                
+                    <p class="description_paragraph">You will get the following benefits</p>
                     <div class="membership_item">
                     <i class="fas fa-check-circle success"></i>
-                    <p>contiene extra funciones</p>
+                    <p>Access to educational content "Future tenses, writing and structure of grammar recognition", gamification.</p>
                 </div>
                 <div class="membership_item">
                     <i class="fas fa-check-circle success"></i>
-                    <p>contiene extra funciones</p>
+                    <p>Tutorials.</p>
+                </div>
+                <div class="membership_item">
+                    <i class="fas fa-check-circle success"></i>
+                    <p>Access to media library.</p>
+                </div>
+                <div class="membership_item">
+                    <i class="fas fa-check-circle success"></i>
+                    <p>Learning badges.</p>
+                </div>
+                <div class="membership_item">
+                    <i class="fas fa-check-circle success"></i>
+                    <p>Option to take an international exam.</p>
                 </div>
                 <div class="membership_item">
                     <i class="fas fa-times-circle failure"></i>
-                    <p>contiene extra funciones</p>
+                    <p>Extra mentoring.</p>
                 </div>
+                <div class="membership_item">
+                    <i class="fas fa-times-circle failure"></i>
+                    <p>Conversation club.</p>
+                </div>
+                <div class="membership_item">
+                    <i class="fas fa-times-circle failure"></i>
+                    <p>Full certificate.</p>
+                </div>
+            <div class="membership_item">
+                <i class="fas fa-times-circle failure"></i>
+                <p>Guest, educational content, 3 tutorials.</p>
+            </div>
+            <div class="membership_item">
+                <i class="fas fa-times-circle failure"></i>
+                <p>Special offers.</p>
+            </div>
+            
                 </div>
                 <span class="membership_price">$0.50/subscribe</span>
                 <button class="membership_button">Start now!</button>
             </div>
-        </div>
+
             
             `
             break;
 
           case "Pro +":
-            let input3 = d.querySelector(".container_memberships");
+            let input3 = d.querySelector(".proo");
             input3.innerHTML += ` 
-
-            <div class="membership">
             <div>
                 <div class="price">
                     <span>$${ele.memberPrice}</span>
@@ -112,32 +164,59 @@ const loadData = async () => {
             <div class="cont_membership">
                 <h1 class="membership_name">${ele.memberName}</h1>
                 <div class="membership_description">
-                    <p class="description_paragraph">Lor, doloremque necto debitis natus! Excepturi ex deserunt asperna</p>
-                
+                    <p class="description_paragraph">You will get the following benefits</p>
                     <div class="membership_item">
                     <i class="fas fa-check-circle success"></i>
-                    <p>contiene extra funciones</p>
+                    <p>Access to educational content "Future tenses, writing and structure of grammar recognition", gamification.</p>
+                </div>
+
+                    <div class="membership_item">
+                    <i class="fas fa-check-circle success"></i>
+                    <p>Tutorials.</p>
                 </div>
                 <div class="membership_item">
                     <i class="fas fa-check-circle success"></i>
-                    <p>contiene extra funciones</p>
+                    <p>Access to media library.</p>
                 </div>
                 <div class="membership_item">
-                    <i class="fas fa-times-circle failure"></i>
-                    <p>contiene extra funciones</p>
+                    <i class="fas fa-check-circle success"></i>
+                    <p>Learning badges.</p>
                 </div>
+                <div class="membership_item">
+                    <i class="fas fa-check-circle success"></i>
+                    <p>Option to take an international exam.</p>
+                </div>
+                <div class="membership_item">
+                    <i class="fas fa-check-circle success"></i>
+                    <p>Extra mentoring.</p>
+                </div>
+                <div class="membership_item">
+                    <i class="fas fa-check-circle success"></i>
+                    <p>Full certificate.</p>
+                </div>
+                <div class="membership_item">
+                    <i class="fas fa-check-circle success"></i>
+                    <p>Conversation club.</p>
+                </div>
+                <div class="membership_item">
+                    <i class="fas fa-check-circle success"></i>
+                    <p>Guest, educational content, 3 tutorials.</p>
+                </div>
+                <div class="membership_item">
+                    <i class="fas fa-check-circle success"></i>
+                    <p>Special offers.</p>
+                </div>
+                   
                 </div>
                 <span class="membership_price">$0.50/subscribe</span>
                 <button class="membership_button">Start now!</button>
             </div>
-        </div>
+
             `
             break;
           case "Free":
-            let input4 = d.querySelector(".container_memberships");
+            let input4 = d.querySelector(".free");
             input4.innerHTML += `
-             
-            <div class="member">
             <div>
                 <div class="price">
                     <span class>Free</span>
@@ -151,15 +230,11 @@ const loadData = async () => {
                 
                     <div class="membership_item">
                     <i class="fas fa-check-circle success"></i>
-                    <p>contiene extra funciones</p>
+                    <p>Demo of access to educational content "Future tenses, writing and recognition structure"</p>
                 </div>
                 <div class="membership_item">
                     <i class="fas fa-check-circle success"></i>
-                    <p>contiene extra funciones</p>
-                </div>
-                <div class="membership_item">
-                    <i class="fas fa-times-circle failure"></i>
-                    <p>contiene extra funciones</p>
+                    <p>Access to a content library for 5 days</p>
                 </div>
                 </div>
                 <span class="membership_price">$0.50/subscribe</span>
@@ -168,21 +243,20 @@ const loadData = async () => {
 
             <div class="cont_membership-class">
             <h1 class="membership_name--free">
-            <span>Class Test</span>
-            <spa class = "live"n>Live</span>
+            <p>Class Test</p>
+            <p class = "live">Live</p>
             </h1>
          
             <div class="membership_description">
                 <div class="membership_item">
                 <i class="fas fa-check-circle success"></i>
-                <p>contiene extra funciones las cuaeles hay que plantear</p>
+                <p>Request Class</p>
             </div>
            
             </div>
             <button class="membership_button--class">Start Free class</button>
         </div>
-            
-        </div>
+
             `
             break;
          
@@ -262,3 +336,8 @@ d.addEventListener("click", (e)=>{
     }
   })
   
+
+  window.addEventListener("load", ()=>{
+    document.getElementById("loader").classList.toggle("loader2");
+  
+  })
