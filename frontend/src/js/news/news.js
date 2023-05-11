@@ -181,6 +181,7 @@ const openNewsEditForm  = (e)=>{
     $formNews.titleNews.value = Nnews.titleNews;
     $formNews.categoryNews.value = Nnews.categoryNews;
     $formNews.tagsNews.value = Nnews.tagsNews;
+   /*  $formNews.imageNews.value = Nnews.imageNews; */
     editor.setContents(`${Nnews.editorNews}`);
     load();
   }
@@ -207,6 +208,7 @@ d.addEventListener("submit", async (e) => {
               titleNews: e.target.titleNews.value,
               categoryNews: e.target.categoryNews.value,
               tagsNews: e.target.tagsNews.value,
+             /*  imageNews:e.target.imageNews.value, */
               editorNews: editor.getContents(),
             }),
           },
@@ -233,6 +235,7 @@ d.addEventListener("submit", async (e) => {
               titleNews: e.target.titleNews.value,
               categoryNews: e.target.categoryNews.value,
               tagsNews: e.target.tagsNews.value,
+              /* imageNews:e.target.imageNews.value, */
               editorNews: editor.getContents(),
             }),
           },
@@ -458,4 +461,19 @@ d.addEventListener("click", (e) => {
     d.querySelector(".open_tooltip").classList.add("fa-chevron-down");
     d.querySelector(".open_tooltip").classList.remove("fa-chevron-up");
   }
+});
+
+const files = d.querySelectorAll("#imgSponsor");
+Array.from(files).forEach((file) => {
+  file.addEventListener("change", (e) => {
+    const span = d.querySelector(".file-sponsor-text");
+    if (file.files.length == 0) {
+      span.innerHTML = "No file selected";
+    } else if (file.files.length > 1) {
+      /*   span.innerHTML = file.files[0].name; */
+      span.innerHTML = file.files.length + " Selected files";
+    } else {
+      span.innerHTML = file.files[0].name;
+    }
+  });
 });

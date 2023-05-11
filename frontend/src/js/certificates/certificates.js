@@ -144,18 +144,18 @@ const renderCertificate = (certificate) => {
   $tableCertificate.appendChild($fragment);
 };
 
+/*---------------------------------------------------------------------------------------------------------------------------------------------- */
 function search(certificate) {
   let codigo = "";
   certificate.reverse().forEach((ele) => {
     const $tr = d.createElement("tr");
     codigo = `
-
-    <tr>
-    <td class ="fgh" data-label = "ID">${ele.id}</td>
-    <td class ="fgh" data-label = "Name">${ele.certificateName}</td>
-    <td class ="fgh" data-label = "Category">${ele.certificateCategory}</td>
-    <td class ="fgh" data-label = "Type">${ele.certificateType}</td>
-    <td class ="fgh" data-label = "Actions">
+    <tr class ="fgh">
+    <td data-label = "ID">${ele.id}</td>
+    <td data-label = "Name">${ele.certificateName}</td>
+    <td data-label = "Category">${ele.certificateCategory}</td>
+    <td data-label = "Type">${ele.certificateType}</td>
+    <td data-label = "Actions">
         <div class="icons-certificate">
         <i class="fas fa-dot-circle read-certificate" data-ids = ${ele.id} ></i>
         <i class="fas fa-times-circle remove-certificate" data-idr =${ele.id}></i>
@@ -171,6 +171,8 @@ function search(certificate) {
   $tableCertificate2.appendChild($fragment2);
 }
 
+/*--------------------------------------------------------------------------------------------------------------------------- */
+
 d.addEventListener("keyup", (e) => {
   if (e.target.matches(".input-search-certific")) {
     d.querySelectorAll(".fgh").forEach((el) => {
@@ -180,6 +182,8 @@ d.addEventListener("keyup", (e) => {
     });
   }
 });
+
+
 /*-----------------------------------------------------Btn Read show------------------------------------------- */
 
 d.addEventListener("click", (e) => {
@@ -226,6 +230,9 @@ d.addEventListener("click", (e) => {
 });
 
 
+
+/*--------------------------------------------------------------------------------------------------------------------------- */
+
 const openWindowModal = (e)=>{
   if (e.target.matches(".read-certificate")) {
     d.querySelector("#modal-container-certificate").style.opacity = "1";
@@ -245,6 +252,10 @@ const openWindowModal = (e)=>{
     $modal.innerHTML = code;
   }
 }
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------------- */
 
 const closeWindowModal = (e)=>{
   if (e.target.matches(".close")) {

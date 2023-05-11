@@ -96,7 +96,6 @@ export const getClassesData = async () => {
 };
 
 
-
 /*---------------------------------------------------------------------------------------------------- */
 
 
@@ -190,6 +189,7 @@ function alertManager(typeMsg, message) {
 }
 
 /*-------------------------------------------------------------------------------------- */
+
 
 const openClassesEditForm = (e)=>{
   if (e.target.matches(".edit-classes")) {
@@ -639,3 +639,4 @@ d.addEventListener("click", (e) => {
   closeWindowModal(e);
   openClassesEditForm(e);
 });
+

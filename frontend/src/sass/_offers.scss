@@ -221,83 +221,7 @@
 
 
 .input-price-promotion {
-  box-sizing: border-box;
-  position: absolute;
-  @include mixingfunc.measures(46%, 33px, 48.5%, 97px);
-  @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
-  border: 1px solid #8f8f8f;
-  border-radius: 10px;
-  padding-left: 8px;
-  color: #000000;
-  outline: none;
-  margin-left: 18px;
-
-  @include media-queries.tablet {
-    left: 48%;
-  }
-  @include media-queries.tablett {
-    left: 48%;
-    font-size: 0.9rem;
-    height: 31px;
-  }
-  @include media-queries.big-phone {
-    top: 82px;
-    height: 28px;
-    font-size: 0.8rem;
-    left: 47%;
-    padding-left: 10px;
-    padding-right: 5px;
-  }
-  @include media-queries.phoness {
-    left: 45%;
-    padding-left: 10px;
-    padding-right: 5px;
-    height: 27px;
-    font-size: 0.8rem;
-    top: 90px;
-  }
-}
-
-.input-DateEnd-promotion {
-  box-sizing: border-box;
-  position: absolute;
-  top: 138px;
-  left: 230px;
-  @include mixingfunc.font-style(Arial, normal, 400, .9rem, 100%, justify);
-  width: 22.5%;
-  height: 33px;
-  border: 1px solid #8f8f8f;
-  border-radius: 10px;
-  padding-left: 8px;
-  color: #000000;
-  outline: none;
-
-  @include media-queries.tablet {
-    left: 22px;
-  }
-  @include media-queries.tablett {
-    left: 22px;
-    font-size: 0.9rem;
-    height: 31px;
-  }
-  @include media-queries.big-phone {
-    top: 117px;
-    height: 28px;
-    font-size: 0.8rem;
-    left: 17px;
-    padding-left: 10px;
-    padding-right: 5px;
-  }
-  @include media-queries.phoness {
-    left: 10px;
-    padding-left: 10px;
-    padding-right: 5px;
-    height: 27px;
-    font-size: 0.8rem;
-    top: 89px;
-  }
-}
-.input-DateStart-promotion {
+ 
   box-sizing: border-box;
   position: absolute;
   top: 138px;
@@ -337,6 +261,82 @@
     height: 27px;
     font-size: 0.8rem;
     top: 89px;
+  }
+}
+
+.input-DateEnd-promotion {
+  box-sizing: border-box;
+  position: absolute;
+  @include mixingfunc.measures(46%, 33px, 48.5%, 138px);
+  @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  padding-left: 8px;
+  color: #000000;
+  outline: none;
+  margin-left: 18px;
+
+  @include media-queries.tablet {
+    left: 48%;
+  }
+  @include media-queries.tablett {
+    left: 48%;
+    font-size: 0.9rem;
+    height: 31px;
+  }
+  @include media-queries.big-phone {
+    top: 82px;
+    height: 28px;
+    font-size: 0.8rem;
+    left: 47%;
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+  @include media-queries.phoness {
+    left: 45%;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 90px;
+  }
+ 
+}
+.input-DateStart-promotion {
+  box-sizing: border-box;
+  position: absolute;
+  @include mixingfunc.measures(46%, 33px, 48.5%, 97px);
+  @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  padding-left: 8px;
+  color: #000000;
+  outline: none;
+  margin-left: 18px;
+
+  @include media-queries.tablet {
+    left: 48%;
+  }
+  @include media-queries.tablett {
+    left: 48%;
+    font-size: 0.9rem;
+    height: 31px;
+  }
+  @include media-queries.big-phone {
+    top: 82px;
+    height: 28px;
+    font-size: 0.8rem;
+    left: 47%;
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+  @include media-queries.phoness {
+    left: 45%;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 90px;
   }
 }
 
@@ -414,40 +414,43 @@
 
 
 .input-offer-promotion {
+
   box-sizing: border-box;
   position: absolute;
-  @include mixingfunc.measures(46%, 33px, 48.5%, 138px);
-  @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
+  top: 138px;
+  left: 230px;
+  @include mixingfunc.font-style(Arial, normal, 400, .9rem, 100%, justify);
+  width: 22.5%;
+  height: 33px;
   border: 1px solid #8f8f8f;
   border-radius: 10px;
   padding-left: 8px;
   color: #000000;
   outline: none;
-  margin-left: 18px;
 
   @include media-queries.tablet {
-    left: 48%;
+    left: 22px;
   }
   @include media-queries.tablett {
-    left: 48%;
+    left: 22px;
     font-size: 0.9rem;
     height: 31px;
   }
   @include media-queries.big-phone {
-    top: 82px;
+    top: 117px;
     height: 28px;
     font-size: 0.8rem;
-    left: 47%;
+    left: 17px;
     padding-left: 10px;
     padding-right: 5px;
   }
   @include media-queries.phoness {
-    left: 45%;
+    left: 10px;
     padding-left: 10px;
     padding-right: 5px;
     height: 27px;
     font-size: 0.8rem;
-    top: 90px;
+    top: 89px;
   }
 }
 

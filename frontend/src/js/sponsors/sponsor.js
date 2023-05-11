@@ -405,6 +405,7 @@ function load() {
 
  }
 
+ /*-------------------------------------------------------------------- */
 
 const vc = d.querySelector(".cont-table-sponsor_blue"),
   vd = d.querySelector(".cont-tables-sponsor");
@@ -416,6 +417,9 @@ sr.reveal(vc, {
   distance: "-5px",
 });
 
+
+
+/*--------------------------------------------------------------------------------------------------- */
 const files = d.querySelectorAll("#imgSponsor");
 Array.from(files).forEach((file) => {
   file.addEventListener("change", (e) => {
@@ -440,6 +444,9 @@ const showSideBar = (e) => {
     d.querySelector(".menu").classList.toggle("move-menu");
   }
 };
+
+
+/*--------------------------------------------------------------------------------------------- */
 
 d.addEventListener("click", (e) => {
   if (e.target.matches(".fa-bell") ){

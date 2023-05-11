@@ -11,8 +11,9 @@
 
 <body>
     <main>
+        <i class="fas fa-bars" id="bars"></i>
         <ul class="dropdown">
-
+            <i class="fas fa-times-circle close"></i>
             <div class="">
                 <img src="/src/public/homepage_basic/perfil.png" class="profile-basic">
                 <div class="desciption-profile">
@@ -23,9 +24,10 @@
                     </div>
                 </div>
                 <div class="content">
-                    <p>Dashboard</p>
-                    <p>Tutorials</p>
-                    <p>Resources</p>
+                    <a href="">Dashboard</a>
+                    <a href="">Tutorials</a>
+                    <a href="">Resources</a>
+                
                 </div>
             </div>
 
@@ -134,17 +136,14 @@
                 <img src="/src/public/logo-charlotte.png" class="logo-charlotte">
             </div>
 
-            <!--  <div class="container_Countdown">
-
-            </div> -->
-
+    
             <div class="navbar">
                 <ul class="navbar__menu">
                     <!-- <li><a href="">Dashboard</a></li>
                     <li><a href="">Tutorials</a></li>
                     <li><a href="">Resources</a></li> -->
                     <div class="user">
-                        <i class="far fa-user-circle"></i>
+                        <i class="far fa-user-circle icon_user"></i>
                         <i class="fas fa-chevron-down open_tooltip"></i>
                         <div class="tooltip">
                             <div class="profile">
@@ -254,21 +253,21 @@
 
             <div class="header_information">
                 <div class="person_information">
-                    <img src="/src/public/homepage_free/profile.png" alt="">
+                    <img src="/src/public/homepage_free/profile.png" class="profile_picture-free">
                     <div class="information">
                         <h1 class="name">Alberto Barrera</h1>
                         <p class="rol">Frontend - Developer</p>
                         <div class="time">
-                            <img src="/src/public/homepage_free/recently-viewed.png" alt="">
-                            <p>Recently</p>
-                            <i></i>
+                            <img src="/src/public/homepage_free/recently-viewed.png" class="recently-img">
+                            <p  class="recently-text">Recently</p>
+            
                         </div>
                     </div>
                 </div>
                 <div class="import_information">
                     <div class="btn_ask">
                         <p>Ask for help</p>
-                        <img src="/src/public/homepage_free/exclamacion.png" alt="">
+                        <img src="/src/public/homepage_free/exclamacion.png" class="exclamation-icon">
 
                     </div>
                     <div class="btn_announcement">
@@ -287,8 +286,8 @@
                         beatae, doloribus, corrupti sunt voluptatem quas sapiente fugiat quisquam repellat veritatis
                         quibusdam voluptate molestias</p>
                 </div>
-                <div class="aside-img">
-                    <img src="/src/public/homepage_free/img-main.png" alt="">
+                <div class="cont-aside-img">
+                    <img src="/src/public/homepage_free/img-main.png" class="aside-img" >
                 </div>
             </div>
             <div class="activities-tutorials">
@@ -330,6 +329,26 @@
                         <img src="/src/public/homepage_free/lock.png" alt="">
                         <p>Exercise introduction</p>
                     </div>
+                    <div class="activity" id="gray-color">
+                        <img src="/src/public/homepage_free/lock.png" alt="">
+                        <p>Exercise introduction</p>
+                    </div>
+                    <div class="activity" id="gray-color">
+                        <img src="/src/public/homepage_free/lock.png" alt="">
+                        <p>Exercise introduction</p>
+                    </div>
+                    <div class="activity" id="gray-color">
+                        <img src="/src/public/homepage_free/lock.png" alt="">
+                        <p>Exercise introduction</p>
+                    </div>
+                    <div class="activity" id="gray-color">
+                        <img src="/src/public/homepage_free/lock.png" alt="">
+                        <p>Exercise introduction</p>
+                    </div>
+                    <div class="activity" id="gray-color">
+                        <img src="/src/public/homepage_free/lock.png" alt="">
+                        <p>Exercise introduction</p>
+                    </div>
 
 
 
@@ -337,21 +356,33 @@
                 <div class="tutorials">
                     <h1>Tutorials</h1>
                     <div class="video">
-                        <iframe width="361" height="121" src="https://www.youtube.com/embed/6IwUl-4pAzc"
-                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
-        clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <img src="/src/public/fondo-login.png" alt="" class="img_video">
+                        <i class="fas fa-play-circle play"></i>
                         <div class="description_video">Tutorial Ipsum Dolor</div>
                     </div>
                     <div class="video">
-                        <iframe width="361" height="121" src="https://www.youtube.com/embed/6IwUl-4pAzc"
-                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
-        clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <img src="/src/public/fondo-login.png" alt="" class="img_video">
+                        <i class="fas fa-play-circle play"></i>
                         <div class="description_video">Tutorial Ipsum Dolor</div>
                     </div>
                     <div class="video">
-                        <iframe width="361" height="121" src="https://www.youtube.com/embed/6IwUl-4pAzc"
-                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
-        clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <img src="/src/public/fondo-login.png" alt="" class="img_video">
+                        <i class="fas fa-play-circle play"></i>
+                        <div class="description_video">Tutorial Ipsum Dolor</div>
+                    </div>
+                    <div class="video">
+                        <img src="/src/public/fondo-login.png" alt="" class="img_video">
+                        <i class="fas fa-play-circle play"></i>
+                        <div class="description_video">Tutorial Ipsum Dolor</div>
+                    </div>
+                    <div class="video">
+                        <img src="/src/public/fondo-login.png" alt="" class="img_video">
+                        <i class="fas fa-play-circle play"></i>
+                        <div class="description_video">Tutorial Ipsum Dolor</div>
+                    </div>
+                    <div class="video">
+                        <img src="/src/public/fondo-login.png" alt="" class="img_video">
+                        <i class="fas fa-play-circle play"></i>
                         <div class="description_video">Tutorial Ipsum Dolor</div>
                     </div>
                 </div>

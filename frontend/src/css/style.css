@@ -4053,6 +4053,114 @@ body::-webkit-scrollbar-thumb:hover {
 .input-price-promotion {
   box-sizing: border-box;
   position: absolute;
+  top: 138px;
+  left: 29px;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 100%;
+  text-align: justify;
+  width: 22.5%;
+  height: 33px;
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  padding-left: 8px;
+  color: #000000;
+  outline: none;
+}
+@media screen and (min-width: 975px) and (max-width: 1250px) {
+  .input-price-promotion {
+    left: 26.5%;
+  }
+}
+@media all and (min-width: 755px) and (max-width: 974px) {
+  .input-price-promotion {
+    /* top: 48px;
+    height: 30px;
+    font-size: .9rem; */
+    left: 26.5%;
+    font-size: 0.9rem;
+    height: 31px;
+  }
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  .input-price-promotion {
+    top: 117px;
+    height: 28px;
+    font-size: 0.8rem;
+    left: 26%;
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .input-price-promotion {
+    left: 10px;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 89px;
+  }
+}
+
+.input-DateEnd-promotion {
+  box-sizing: border-box;
+  position: absolute;
+  width: 46%;
+  height: 33px;
+  left: 48.5%;
+  top: 138px;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 130%;
+  text-align: justify;
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  padding-left: 8px;
+  color: #000000;
+  outline: none;
+  margin-left: 18px;
+}
+@media screen and (min-width: 975px) and (max-width: 1250px) {
+  .input-DateEnd-promotion {
+    left: 48%;
+  }
+}
+@media all and (min-width: 755px) and (max-width: 974px) {
+  .input-DateEnd-promotion {
+    left: 48%;
+    font-size: 0.9rem;
+    height: 31px;
+  }
+}
+@media all and (min-width: 550px) and (max-width: 754px) {
+  .input-DateEnd-promotion {
+    top: 82px;
+    height: 28px;
+    font-size: 0.8rem;
+    left: 47%;
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+}
+@media all and (min-width: 280px) and (max-width: 549px) {
+  .input-DateEnd-promotion {
+    left: 45%;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+    top: 90px;
+  }
+}
+
+.input-DateStart-promotion {
+  box-sizing: border-box;
+  position: absolute;
   width: 46%;
   height: 33px;
   left: 48.5%;
@@ -4071,19 +4179,19 @@ body::-webkit-scrollbar-thumb:hover {
   margin-left: 18px;
 }
 @media screen and (min-width: 975px) and (max-width: 1250px) {
-  .input-price-promotion {
+  .input-DateStart-promotion {
     left: 48%;
   }
 }
 @media all and (min-width: 755px) and (max-width: 974px) {
-  .input-price-promotion {
+  .input-DateStart-promotion {
     left: 48%;
     font-size: 0.9rem;
     height: 31px;
   }
 }
 @media all and (min-width: 550px) and (max-width: 754px) {
-  .input-price-promotion {
+  .input-DateStart-promotion {
     top: 82px;
     height: 28px;
     font-size: 0.8rem;
@@ -4093,120 +4201,13 @@ body::-webkit-scrollbar-thumb:hover {
   }
 }
 @media all and (min-width: 280px) and (max-width: 549px) {
-  .input-price-promotion {
+  .input-DateStart-promotion {
     left: 45%;
     padding-left: 10px;
     padding-right: 5px;
     height: 27px;
     font-size: 0.8rem;
     top: 90px;
-  }
-}
-
-.input-DateEnd-promotion {
-  box-sizing: border-box;
-  position: absolute;
-  top: 138px;
-  left: 230px;
-  font-family: Arial;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 0.9rem;
-  line-height: 100%;
-  text-align: justify;
-  width: 22.5%;
-  height: 33px;
-  border: 1px solid #8f8f8f;
-  border-radius: 10px;
-  padding-left: 8px;
-  color: #000000;
-  outline: none;
-}
-@media screen and (min-width: 975px) and (max-width: 1250px) {
-  .input-DateEnd-promotion {
-    left: 22px;
-  }
-}
-@media all and (min-width: 755px) and (max-width: 974px) {
-  .input-DateEnd-promotion {
-    left: 22px;
-    font-size: 0.9rem;
-    height: 31px;
-  }
-}
-@media all and (min-width: 550px) and (max-width: 754px) {
-  .input-DateEnd-promotion {
-    top: 117px;
-    height: 28px;
-    font-size: 0.8rem;
-    left: 17px;
-    padding-left: 10px;
-    padding-right: 5px;
-  }
-}
-@media all and (min-width: 280px) and (max-width: 549px) {
-  .input-DateEnd-promotion {
-    left: 10px;
-    padding-left: 10px;
-    padding-right: 5px;
-    height: 27px;
-    font-size: 0.8rem;
-    top: 89px;
-  }
-}
-
-.input-DateStart-promotion {
-  box-sizing: border-box;
-  position: absolute;
-  top: 138px;
-  left: 29px;
-  font-family: Arial;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 0.9rem;
-  line-height: 100%;
-  text-align: justify;
-  width: 22.5%;
-  height: 33px;
-  border: 1px solid #8f8f8f;
-  border-radius: 10px;
-  padding-left: 8px;
-  color: #000000;
-  outline: none;
-}
-@media screen and (min-width: 975px) and (max-width: 1250px) {
-  .input-DateStart-promotion {
-    left: 26.5%;
-  }
-}
-@media all and (min-width: 755px) and (max-width: 974px) {
-  .input-DateStart-promotion {
-    /* top: 48px;
-    height: 30px;
-    font-size: .9rem; */
-    left: 26.5%;
-    font-size: 0.9rem;
-    height: 31px;
-  }
-}
-@media all and (min-width: 550px) and (max-width: 754px) {
-  .input-DateStart-promotion {
-    top: 117px;
-    height: 28px;
-    font-size: 0.8rem;
-    left: 26%;
-    padding-left: 10px;
-    padding-right: 5px;
-  }
-}
-@media all and (min-width: 280px) and (max-width: 549px) {
-  .input-DateStart-promotion {
-    left: 10px;
-    padding-left: 10px;
-    padding-right: 5px;
-    height: 27px;
-    font-size: 0.8rem;
-    top: 89px;
   }
 }
 
@@ -4305,53 +4306,52 @@ body::-webkit-scrollbar-thumb:hover {
 .input-offer-promotion {
   box-sizing: border-box;
   position: absolute;
-  width: 46%;
-  height: 33px;
-  left: 48.5%;
   top: 138px;
+  left: 230px;
   font-family: Arial;
   font-style: normal;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 130%;
+  font-size: 0.9rem;
+  line-height: 100%;
   text-align: justify;
+  width: 22.5%;
+  height: 33px;
   border: 1px solid #8f8f8f;
   border-radius: 10px;
   padding-left: 8px;
   color: #000000;
   outline: none;
-  margin-left: 18px;
 }
 @media screen and (min-width: 975px) and (max-width: 1250px) {
   .input-offer-promotion {
-    left: 48%;
+    left: 22px;
   }
 }
 @media all and (min-width: 755px) and (max-width: 974px) {
   .input-offer-promotion {
-    left: 48%;
+    left: 22px;
     font-size: 0.9rem;
     height: 31px;
   }
 }
 @media all and (min-width: 550px) and (max-width: 754px) {
   .input-offer-promotion {
-    top: 82px;
+    top: 117px;
     height: 28px;
     font-size: 0.8rem;
-    left: 47%;
+    left: 17px;
     padding-left: 10px;
     padding-right: 5px;
   }
 }
 @media all and (min-width: 280px) and (max-width: 549px) {
   .input-offer-promotion {
-    left: 45%;
+    left: 10px;
     padding-left: 10px;
     padding-right: 5px;
     height: 27px;
     font-size: 0.8rem;
-    top: 90px;
+    top: 89px;
   }
 }
 

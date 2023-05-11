@@ -39,8 +39,8 @@ function countdDown(id, limitDate, finalMessage) {
       ).slice(-2), // el slice es para tomar los ultimos 2 valores, de atras hacia adelante
       seconds = ("0" + Math.floor((limiTime % (1000 * 60)) / 1000)).slice(-2); // el slice es para tomar los ultimos 2 valores, de atras hacia adelante;
 
-   /*  $countdown.innerHTML = `<h3 class = "coutndown"> Your test ends in ${days} Days ${hours} Hours ${minutes} Minutes
-     ${seconds} Seconds </h3> `; */
+    $countdown.innerHTML = `<h3 class = "coutndown"> Your test ends in ${days} Days ${hours} Hours ${minutes} Minutes
+     ${seconds} Seconds </h3> `;
 
     if (limiTime < 0) {
       clearInterval(countdownTempo);
@@ -154,3 +154,17 @@ export function hacer(){
   nav.innerHTML += `<li><a href="">Alberto</a></li>`
   window.location.href = "/src/views/homepage_free/homepage_free.html"
 } */
+
+d.addEventListener("click", (e)=>{
+  if(e.target.matches("#bars")){
+    d.querySelector(".dropdown").classList.toggle("move-menu");
+    d.querySelector("#bars").classList.toggle("show-bars");
+  }
+  if(e.target.matches(".close")){
+    d.querySelector(".dropdown").classList.toggle("move-menu");
+    setTimeout(() => {
+      d.querySelector("#bars").classList.toggle("show-bars");
+      
+    }, 400);
+  }
+})
