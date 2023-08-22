@@ -33,6 +33,7 @@
                 <form class="crud-form">
                     <input type="hidden" name="idi">
                     <input class="title-activity" type="text" name="activitiName" placeholder="Activity Name" required>
+
                     <select class="category-activity" name="category" required>
                         <option selected disabled="">Category</option>
                         <option>Free</option>
@@ -49,8 +50,24 @@
                         <option>Listen</option>
                     </select>
 
-                    <input class="author-activity" type="text" name="author" placeholder="Author" required>
-
+                
+                    <div class="wrapper">
+                        <div class="select-btn">
+                            <span class="span">Select Course</span>
+                        
+                            
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <div class="content-search">
+                            <div class="search">
+                                <i class="fas fa-search"></i>
+                                <input type="text" spellcheck="false" placeholder="Search course">
+                            </div>
+                            <ul class="options"></ul>
+                        </div>
+                    </div>
+                    <input type="hidden" name="course">
+                   
                     <select class="level-activity" name="level" required>
                         <option selected disabled="">Level</option>
                         <option>Basic l</option>
@@ -96,7 +113,11 @@
 
         <section id="nav">
             <div class="nav__icon">
-                <i class="fas fa-bell"></i>
+                <i class="fas fa-bell">
+                    <div class="tooltip">
+                            
+                    </div>
+                </i>
                 <i class="far fa-envelope"></i>
                 <a href="" class="profile"></a>
             </div>
@@ -121,12 +142,12 @@
 
 
         <form class="form-delete-dr" action="">
-            <section id="modal-container-dr">
+            <section class="modal-container-dr">
                 <div class="modal-dr modal-close-dr">
                     <h3>Delete item</h3>
                     <textarea name="reasonDelete" id="text-dr"  placeholder="Reason..." required></textarea>
                         <div class="buttons_delete">
-                            <button class="close-dr btn-dr2">Cancel</button>
+                            <div class="close-dr btn-dr2">Cancel</div>
                             <input type="submit" class="close-dr bnt-dr" value="Yes, Delete"></input>
                       </div>
                 </div>
@@ -148,7 +169,7 @@
         </section>
     </div>
 
-    <script src="/src/js/activities/main-activities.js" type="module"></script>
+    <script src="/src/js/crud_tables/activities/main-activities.js" type="module"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous">
     </script>

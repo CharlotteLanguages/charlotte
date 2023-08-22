@@ -35,18 +35,28 @@
                         <input class="title-promotion" type="text" name="promotionTitle" placeholder="Prmotion name"
                             required>
 
-                        <select class="input-category-promotion" name="promotionCategory">
-                            <option selected disabled="">Category</option>
-                            <option>Bussiness</option>
-                            <option>Engineer</option>
-                            <option>Specialist</option>
-                            <option>Associate</option>
-                            <option>Producer</option>
-                            <option>Developer</option>
-                            <option>Manager</option>
-                            <option>Technician</option>
-                            <option>Assistant</option>
-                        </select>
+                       <!--  <select class="input-category-promotion" name="promotionCategory">
+                            <option selected disabled="">Courses</option>
+                      
+                        </select> -->
+                        
+                    <div class="wrapper">
+                        <div class="select-btn">
+                            <span class="span">Select Course</span>
+                        
+                            
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <div class="content-search">
+                            <div class="search">
+                                <i class="fas fa-search"></i>
+                                <input type="text" spellcheck="false" placeholder="Search course">
+                            </div>
+                            <ul class="options"></ul>
+                        </div>
+                    </div>
+                    <input type="hidden" name="course">
+                    
                         <input class="input-DateStart-promotion" type="datetime-local" name="promotionDateStart"
                             placeholder="Start Date*" min="2023-04-01">
                             <input class="input-DateEnd-promotion" type="datetime-local" name="promotionDateEnd"
@@ -96,9 +106,12 @@
         <section id="nav">
 
             <div class="nav__icon">
-                <i class="fas fa-bell"></i>
+                <i class="fas fa-bell">
+                    <div class="tooltip"></div>
+                </i>
                 <i class="far fa-envelope"></i>
                 <a href="" class="profile"></a>
+    
             </div>
         </section>
 
@@ -122,7 +135,7 @@
         </section>
 
         <form class="form-delete-dr" action="">
-            <section id="modal-container-dr">
+            <section class="modal-container-dr">
                 <div class="modal-dr modal-close-dr">
                     <h3>Delete item</h3>
                     <textarea name="reasonDelete" id="text-dr"  placeholder="Reason..." required></textarea>
@@ -179,7 +192,7 @@
         </template>
 
     </div>
-    <script src="/src/js/offers/main-offer.js" type="module"></script>
+    <script src="/src/js/crud_tables/offers/main-offer.js" type="module"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous">
     </script>

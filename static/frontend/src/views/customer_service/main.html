@@ -5,11 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="/src/css/customer_service/main.css">
+    <title>Customer Service</title>
 </head>
 
 <body>
+    <div class="lds-ring loader" id="loader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
     <div class="banner">
         <div class="items">
             <img src="/src/public/logo-charlotte.png" class="charlotte-logo">
@@ -34,21 +40,21 @@
             <div class="image" id="education">
                 <img class="education">
                 <p class="text-image">EDUCATION</p>
-                <a href="/src/views/customer_service/education.html"></a>
+               
             </div>
-            <div class="image">
+            <div class="image" id="support">
                 <img class="support">
                 <p class="text-image">SUPPORT</p>
             </div>
-            <div class="image">
+            <div class="image" id="platform">
                 <img class="plataform">
                 <p class="text-image">PLATAFORM</p>
             </div>
-            <div class="image">
+            <div class="image" id="payments">
                 <img class="payments">
                 <p class="text-image">PAYMENTS</p>
             </div>
-            <div class="image">
+            <div class="image" id="human-talent">
                 <img class="human-talent">
                 <p class="text-image">HUMAN TALENT</p>
             </div>
@@ -65,8 +71,9 @@
             </div>
         </div>
     </div>
-    <script src="/src/js/customer_service/main.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous"></script>
+    <script src="/src/js/customer_service/main.js"></script>
 </body>
 
 </html>

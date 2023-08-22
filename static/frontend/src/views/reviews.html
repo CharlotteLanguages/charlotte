@@ -19,6 +19,7 @@
     <!------------------------------ Katex--------------------------------------->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
     <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
+    <title>Reviews</title>
 </head>
 
 <body>
@@ -32,7 +33,7 @@
                     <p class="crud-title-review font-title-review">Create new review</p>
                     <form class="crud-form-review">
                         <input type="hidden" name="idi">
-                        <input class="title-review" type="text" name="titleReview" placeholder="Title">
+                        <input class="title-review" type="text" name="titleReview" placeholder="Title" required>
                         <select class="mention-review" name="mentionReview">
                             <option selected disabled="">Mention</option>
                             <option>Agent</option>
@@ -45,7 +46,7 @@
                             <option>Liaison</option>
 
                         </select>
-                        <input class="author-review" type="text" name="authorReview" placeholder="Author">
+                        <input class="author-review" type="text" name="authorReview" placeholder="Author" required>
 
                         <div id="area-review">
                             <textarea name="editorReview" class="txtarea-review" cols="30" rows="10"> </textarea>
@@ -81,7 +82,9 @@
 
         <section id="nav">
             <div class="nav__icon">
-                <i class="fas fa-bell"></i>
+                <i class="fas fa-bell">
+                    <div class="tooltip"> </div>
+                </i>
                 <i class="far fa-envelope"></i>
                 <a href="" class="profile"></a>
                 <div class="btn-published">Published</div>
@@ -98,22 +101,18 @@
         </section>
 
         <section id="cont-comments" class="up-comments comm">
-            <!--   <p class="title-comment">Reviews</p> -->
-
-
-
         </section>
 
         <section id="modal-container-review">
             <div class="modal-review modal-clos">
-                <div class="close-review"><i class="fas fa-times-circle poi"></i></div>
+                <div class="close-review"><i class="fas fa-times-circle close"></i></div>
                 <div class="cont-p-review">
 
                 </div>
         </section>
 
         <form class="form-delete-dr" action="">
-            <section id="modal-container-dr">
+            <section class="modal-container-dr">
                 <div class="modal-dr modal-close-dr">
                     <h3>Delete item</h3>
                     <textarea name="reasonDelete" id="text-dr"  placeholder="Reason..." required></textarea>
@@ -140,7 +139,7 @@
 
     </div>
     <!--     <script src="/src/js/index.js" type="module"></script> -->
-    <script src="/src/js/review/main-review.js" type="module"></script>
+    <script src="/src/js/crud_tables/review/main-review.js" type="module"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous">
     </script>

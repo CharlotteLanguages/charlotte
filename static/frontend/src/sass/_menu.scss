@@ -6,7 +6,7 @@
   background: #ebebeb;
   box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 20px 20px 0px;
-  transition: transform 1s; 
+  transition: transform 1s;
   overflow: auto;
   &::after {
     content: "";
@@ -17,7 +17,6 @@
       width: 50%;
       margin-left: 22.5%;
       top: 408px;
-    
     }
     @include media-queries.big-phone {
       width: 45%;
@@ -30,46 +29,39 @@
       top: 535px;
     }
     @include media-queries.tablet {
-     width: 12%;
+      width: 12%;
     }
- 
   }
   @include media-queries.tablet {
-    width: 17%;    
+    width: 17%;
   }
   @include media-queries.tablett {
     width: 100%;
     position: fixed;
     z-index: 100;
-    opacity: .9;
+    opacity: 0.9;
     height: 100%;
     transform: translateX(-150%);
     border-radius: 0;
-    
-
   }
   @include media-queries.big-phone {
     width: 100%;
     position: fixed;
     z-index: 100;
-    opacity: .9;
+    opacity: 0.9;
     height: 100%;
     transform: translateX(-150%);
     border-radius: 0;
-
   }
   @include media-queries.phoness {
     width: 100%;
     position: fixed;
     z-index: 100;
-    opacity: .9;
+    opacity: 0.9;
     height: 100%;
     transform: translateX(-150%);
     border-radius: 0;
-
   }
-    
-
 
   .menu__logo {
     background: url("/src/public/logo-charlotte.png");
@@ -80,20 +72,18 @@
     height: 70px;
     display: flex;
     justify-content: center;
-     margin: auto;
-     margin-top: 5%;
-   
-    
+    margin: auto;
+    margin-top: 5%;
+
     @include media-queries.tablet {
-     height: 65px;
-     margin-top: 6%;
-  
+      height: 65px;
+      margin-top: 6%;
     }
     @include media-queries.tablett {
       height: 60px;
     }
     @include media-queries.big-phone {
-     height: 55px;
+      height: 55px;
     }
     @include media-queries.phoness {
       height: 50px;
@@ -106,7 +96,7 @@
     @include media-queries.tablett {
       margin-top: 50px;
 
-    overflow: auto;
+      overflow: auto;
     }
     @include media-queries.big-phone {
       margin-top: 45px;
@@ -124,15 +114,15 @@
       list-style: none;
       margin-bottom: 12px;
       height: 27px;
-      transition: all .4s ease-in;
-    
+      transition: all 0.4s ease-in;
+
       @include media-queries.tablett {
         width: 90%;
         margin: auto;
         height: 37px;
         margin-bottom: 18px;
       }
-      
+
       @include media-queries.big-phone {
         width: 90%;
         margin: auto;
@@ -145,28 +135,22 @@
         height: 30px;
         margin-bottom: 13px;
       }
-      
+
       &:hover {
         background: #8eaaff;
         border-radius: 50px 0px 0px 50px;
-      
- /*        @include media-queries.tablet {
-        transform: scale(1.02);
-        }
-        @include media-queries.tablett {
-        transform: scale(1.01);
-        }
-        @include media-queries.big-phone {
-        transform: scale(1.01);
-        }
-        @include media-queries.phoness {
-        transform: scale(1.01);
-        } */
       }
 
       a {
         text-decoration: none;
-        @include mixingfunc.font-style(Arial, normal, 500, 1.05rem, 36px, center);
+        @include mixingfunc.font-style(
+          Arial,
+          normal,
+          500,
+          1.05rem,
+          36px,
+          center
+        );
         width: 100%;
         height: 28px;
         color: #000000;
@@ -176,19 +160,22 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: all .1s ease;
-     
-        @include media-queries.tablett{
-         width: 90%;    
-         font-size: 19px;
+        transition: all 0.1s ease;
+
+        @include media-queries.tablet {
+          font-size: 15px;
         }
-        @include media-queries.big-phone{
-         width: 90%;    
-         font-size: 17px;
+        @include media-queries.tablett {
+          width: 90%;
+          font-size: 18x;
         }
-        @include media-queries.phoness{
-         width: 90%;    
-         font-size: 15px;
+        @include media-queries.big-phone {
+          width: 90%;
+          font-size: 17px;
+        }
+        @include media-queries.phoness {
+          width: 90%;
+          font-size: 15px;
         }
       }
     }
@@ -197,7 +184,6 @@
 
 .move-menu {
   transform: translateX(0%);
-
 }
 
 .press {
@@ -206,17 +192,16 @@
   border-radius: 50px 0px 0px 50px;
   text-align: center;
   /* transition: all 0.4s ease; */
-
 }
 .space-top {
   margin-top: 35px;
-  @include media-queries.tablett{
-    margin-top: 35px; 
-   }
-  @include media-queries.big-phone{
-    margin-top: 35px; 
-   }
-  @include media-queries.phoness{
-   margin-top: 35px; 
-   }
+  @include media-queries.tablett {
+    margin-top: 35px;
+  }
+  @include media-queries.big-phone {
+    margin-top: 35px;
+  }
+  @include media-queries.phoness {
+    margin-top: 35px;
+  }
 }

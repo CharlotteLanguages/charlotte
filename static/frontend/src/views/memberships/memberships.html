@@ -8,187 +8,176 @@
     <title>Memberships</title>
 </head>
 <body>
+    <div class="lds-ring loader" id="loader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
     <div class="container">
-        <h1 class="title">Get Started Now</h1>
-
-        <div class="container_memberships">
-      <!--       <div class="membership">
-                <div>
-                    <div class="price">
-                        <span>$99</span>
-                    </div>
-                    <span class="triangle"></span>
+        <div class="navbar__social-medias">
+            <div class="social-medias">
+                <div class="btn__social-medias">
+                    <a href="https://www.linkedin.com/company/charlotte-languages-center/about/" target="_blank"
+                        id="linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
                 </div>
-                <div class="cont_membership">
-                    <h1 class="membership_name">Basic</h1>
-                    <div class="membership_description">
-                        <p class="description_paragraph">Lor, doloremque necto debitis natus! Excepturi ex deserunt asperna</p>
-                        <div class="membership_item">
-                            <i class="fas fa-times-circle failure"></i>
-                            <p>contiene extra funcioon importantes rescatar importante</p>
+                <div class="btn__social-medias">
+                    <a href="https://www.facebook.com/profile.php?id=100089370116188" target="_blank" id="facebook">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                </div>
+                <div class="btn__social-medias">
+                    <a href="https://twitter.com/home" target="_blank" id="twitter">
+                        <i class="fab fa-twitter-square"></i>
+                    </a>
+                </div>
+                <div class="btn__social-medias">
+                    <a href="https://www.instagram.com/charlotte_languagescenter/" target="_blank" id="instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="contenedor">
+    
+                <div class="selectbox">
+                        <div class="select" id="select">
+                            <div class="content-select">
+                                <img src="/src/public/homepage/united_states-icon.png" class="country-icon">
+                            </div>
+                            <i class="fas fa-angle-down down"></i>
+                            <i class="fas fa-angle-up up"></i>
                         </div>
-                        <div class="membership_item">
-                            <i class="fas fa-check-circle success"></i>
-                            <p>contiene extra funciones</p>
+                <div class="options" id="options">
+                    <div class="option">
+                        <div class="content-option">
+                            <img src="/src/public/homepage/brazil-icon.png" class="country-icon" id="brasil">
+                           
                         </div>
-                        <div class="membership_item">
-                            <i class="fas fa-check-circle success"></i>
-                            <p>contiene extra funciones</p>
+                    </div>
+                    <div class="option">
+                        <div class="content-option">
+                            <img src="/src/public/homepage/spain-icon.png" class="country-icon" id="spain">
+                           
                         </div>
-                        <div class="membership_item">
-                            <i class="fas fa-times-circle failure"></i>
-                            <p>contiene extra funciones</p>
+                    </div>
+                    <div class="option">
+                        <div class="content-option">
+                            <img src="/src/public/homepage/france-icon.png" class="country-icon" id="france">
+                           
                         </div>
-                        <div class="membership_item">
-                            <i class="fas fa-times-circle failure"></i>
-                            <p>contiene extra funciones</p>
+                    </div>
+    
+                </div>
+            </div>
+            <input type="hidden" name="pais"id="inputSelect" value="">
+        </div> 
+    </div>
+     <!--    <div class="navbar">
+            <img src="/src/public/logo-charlotte.png" class="logo">
+            <ul class="navbar__menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">Dashboard</a></li>
+                <div class="user">
+                    <i class="far fa-user-circle"></i>
+                   <p>Alberto B.</p>
+                   <i class="fas fa-chevron-down open_tooltip"></i>
+                   <div class="tooltip">
+                       <div class="profile">
+                        <i class="fas fa-user-circle"></i>
+                        <p>See my profile</p>
+                       </div>
+                       <div class="section_medium">
+                           <div class="see_courses">
+                             <img src="/src/public/homepageUser/course.png" alt="">
+                             <p>See all my courses</p>
+                           </div>
+                           <div class="resources">
+                             <img src="/src/public/homepageUser/resource.png" alt="">
+                             <p>Resources</p>
+                           </div>
+                           <div class="subs">
+                             <img src="/src/public/homepageUser/subscription.png" alt="" class="subscription-img">
+                             <p>My subscription</p>
+                           </div>
                         </div>
-                        <div class="membership_item">
-                            <i class="fas fa-check-circle success"></i>
-                            <p>contiene extra funciones</p>
+                        <div class="section_final">
+                            <div class="customer_service">
+                              <img src="/src/public/homepageUser/customer.png" alt="">
+                              <p>Customer service</p>
+                            </div>
+                          <div class="logout">
+                            <img src="/src/public/homepageUser/logout.png" alt="">
+                            <p>Log out</p>
+                          </div>
                         </div>
+                   </div>
+                </div>
+                <div class="user_notification">
+                    <img src="/src/public/homepageUser/notificacion (1).png" class="notifications">
+                    <div class="tooltip_message">
+                        <div class="notify_content">
+                            <div class="notify">
+                              <div class="notify_section">
+                                  <label class="notify_circle" id="color1"></label>
+                                  <h2 class="notify_title">Notify</h2>
+                              </div>
+                              <p class="notify_subject">Subject: "Welcome lorem ipsum"</p>
+                            </div>
+                            <div class="notify">
+                              <div class="notify_section">
+                                  <label class="notify_circle" id="color2"></label>
+                                  <h2 class="notify_title">Receive new Certify</h2>
+                              </div>
+                              <p class="notify_subject">Subject: "Congratulations"</p>
+                            </div>
+                            <div class="notify">
+                              <div class="notify_section">
+                                  <label class="notify_circle"></label>
+                                  <h2 class="notify_title">Renew your membership</h2>
+                              </div>
+                              <p class="notify_subject">Subject: "Welcome lorem ipsum"</p>
+                            </div>
+                            <div class="notify">
+                              <div class="notify_section">
+                                  <label class="notify_circle"></label>
+                                  <h2 class="notify_title">Lvl 1 Completed</h2>
+                              </div>
+                              <p class="notify_subject">Subject: "Welcome lorem ipsum"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                
-                    </div>
-                    <span class="membership_price">$0.50/subscribe</span>
-                    <button class="membership_button">Start now!</button>
-                </div>
-            </div>
-            <div class="membership">
-                <div>
-                    <div class="price">
-                        <span>$199</span>
-                    </div>
-                    <span class="triangle"></span>
-                </div>
-                <div class="memebership"></div>
-                <div class="cont_membership">
-                    <h1 class="membership_name">Pro</h1>
-                    <div class="membership_description">
-                        <p class="description_paragraph">Lorem ipsum dolor sit m saepe culpa, sequi alias aperiam architecto debitis natus! Excepturi ex deserunt asperna</p>
-                        <div class="membership_item">
-                            <i class="fas fa-check-circle success"></i>
-                            <p>contiene extra funciones</p>
-                        </div>
-                        <div class="membership_item">
-                            <i class="fas fa-check-circle success"></i>
-                            <p>contiene extra funciones</p>
-                        </div>
-                        <div class="membership_item">
-                            <i class="fas fa-times-circle failure"></i>
-                            <p>contiene extra funciones</p>
-                        </div>
-                        <div class="membership_item">
-                            <i class="fas fa-check-circle success"></i>
-                            <p>contiene extra funciones</p>
-                        </div>
-                        <div class="membership_item">
-                            <i class="fas fa-times-circle failure"></i>
-                            <p>contiene extra funciones</p>
-                        </div>
-                        <div class="membership_item">
-                            <i class="fas fa-times-circle failure"></i>
-                            <p>contiene extra funciones</p>
-                        </div>
-                        <div class="membership_item">
-                            <i class="fas fa-check-circle success"></i>
-                            <p>contiene extra funciones</p>
-                        </div>
-                    </div>
-                    <span class="membership_price">$0.50/subscribe</span>
-                    <button class="membership_button">Start now!</button>
-                </div>
-            </div>
-           
-            <div class="membership">
-                <div>
-                    <div class="price">
-                        <span>$990</span>
-                    </div>
-                    <span class="triangle"></span>
-                </div>
-                <div class="cont_membership">
-                    <h1 class="membership_name">Pro +</h1>
-                    <div class="membership_description">
-                        <p class="description_paragraph">Lo, doloremque nemo praqui alias aperiam architecto debitis natus! Excepturi ex deserunt asperna</p>
-                        <div class="membership_item">
-                            <i class="fas fa-check-circle success"></i>
-                            <p>contiene extra funciones</p>
-                        </div>
-                        <div class="membership_item">
-                            <i class="fas fa-check-circle success"></i>
-                            <p>contiene extra funciones</p>
-                        </div>
-                        <div class="membership_item">
-                            <i class="fas fa-times-circle failure"></i>
-                            <p>contiene extra funciones</p>
-                        </div>
-                        <div class="membership_item">
-                            <i class="fas fa-check-circle success"></i>
-                            <p>contiene extra funciones</p>
-                        </div>
-                        <div class="membership_item">
-                            <i class="fas fa-times-circle failure"></i>
-                            <p>contiene extra funciones</p>
-                        </div>
-                        <div class="membership_item">
-                            <i class="fas fa-check-circle success"></i>
-                            <p>contiene extra funciones</p>
-                        </div>
-                        <div class="membership_item">
-                            <i class="fas fa-times-circle failure"></i>
-                            <p>contiene extra funciones</p>
-                        </div>
-                    </div>
-                    <span class="membership_price">$0.50/subscribe</span>
-                    <button class="membership_button">Start now!</button>
-                </div>
+                <input type="hidden" name="pais"id="inputSelect" value="">
+            </ul>
+    </div> -->
 
-            </div>
-            
-            <div class="membership">
-                <div>
-                    <div class="price">
-                        <span>Free</span>
-                    </div>
-                    <span class="triangle"></span>
-                </div>
-                <div class="cont_membership">
-                    <h1 class="membership_name">Free</h1>
-                    <div class="membership_description">
-                        <p class="description_paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, doloremque nemo praesentium aliquam saepe culpa, sequi alias aperiam archia</p>
-                        <div class="membership_item">
-                            <i class="fas fa-check-circle success"></i>
-                            <p>contiene extra funciones</p>
-                        </div>
-                        <div class="membership_item">
-                            <i class="fas fa-check-circle success"></i>
-                            <p>contiene extra funciones</p>
-                        </div>
-                        <div class="membership_item">
-                            <i class="fas fa-check-circle success"></i>
-                            <p>contiene extra funciones</p>
-                        </div>
-                        <div class="membership_item">
-                            <i class="fas fa-check-circle success"></i>
-                            <p>contiene extra funciones</p>
-                        </div>
-                        <div class="membership_item">
-                            <i class="fas fa-check-circle success"></i>
-                            <p>contiene extra funciones</p>
-                        </div>
-                        <div class="membership_item">
-                            <i class="fas fa-check-circle success"></i>
-                            <p>contiene extra funciones</p>
-                        </div>
+    
+            <h1 class="title">Get Started Now</h1>
+    
+            <div class="container_memberships">
+                
+                <div class="membership basic">
                     
                     </div>
-                    <span class="membership_price">$0.50/subscribe</span>
-                    <button class="membership_button">Start now!</button>
-                </div>
-            </div> -->
+                <div class="membership pro">
+                    
+                    </div>
+                <div class="membership proo">
+                    
+                    </div>
+                <div class="member free">
+                    
+                    </div>
+                </div>  
 
-        </div>
-        <img src="/src/public/charlotte-logo.png" class="logo" alt="">
+
+        
+                <!-- <img src="/src/public/charlotte-logo.png" class="logo" alt=""> -->
+            </div>
+
     </div>
     <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous">
     </script>

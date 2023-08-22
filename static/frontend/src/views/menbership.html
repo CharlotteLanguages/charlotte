@@ -88,7 +88,9 @@
         <section id="nav">
 
             <div class="nav__icon">
-                <i class="fas fa-bell"></i>
+                <i class="fas fa-bell">
+                    <div class="tooltip"></div>
+                </i>
                 <i class="far fa-envelope"></i>
                 <a href="" class="profile"></a>
             </div>
@@ -112,13 +114,13 @@
         </section>
 
         <form class="form-delete-dr" action="">
-            <section id="modal-container-dr">
+            <section class="modal-container-dr">
                 <div class="modal-dr modal-close-dr">
                     <h3>Delete item</h3>
                     <textarea name="reasonDelete" id="text-dr"  placeholder="Reason..." required></textarea>
                         <div class="buttons_delete">
-                            <button class="close-dr btn-dr2">Cancel</button>
-                            <input type="submit" class="close-dr bnt-dr" value="Yes, Delete"></input>
+                            <div class="btn-dr2">Cancel</div>
+                            <input type="submit" class="bnt-dr" value="Yes, Delete"></input>
                       </div>
                 </div>
             </section>
@@ -138,7 +140,7 @@
         </section>
 
     </div>
-    <script src="/src/js/memberships/main-membership.js" type="module"></script>
+    <script src="/src/js/crud_tables/memberships/main-membership.js" type="module"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous">
     </script>

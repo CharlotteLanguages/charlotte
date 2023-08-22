@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/css/style.css">
+    <title>Sponsors</title>
 </head>
 
 <body>
@@ -50,7 +51,7 @@
                 <li><a href="/src/views/student.html">Students</a></li>
                 <li><a href="/src/views/news.html">News</a></li>
                 <li><a href="/src/views/courses.html">Courses</a></li>
-                <li><a href="/src/views/actividades.html">Activities</a></li>
+                <li><a href="/src/views/activities.html">Activities</a></li>
                 <li><a href="/src/views/resource.html">Resources</a></li>
                 <li><a href="/src/views/certificates.html">Certificates</a></li>
                 <li><a href="/src/views/classes.html" class="space">Private classes</a></li>
@@ -66,7 +67,9 @@
 
         <section id="nav">
             <div class="nav__icon">
-                <i class="fas fa-bell"></i>
+                <i class="fas fa-bell">
+                    <div class="tooltip"> </div>
+                </i>
                 <i class="far fa-envelope"></i>
                 <a href="" class="profile"></a>
             </div>
@@ -89,7 +92,7 @@
         </section>
 
         <form class="form-delete-dr" action="">
-            <section id="modal-container-dr">
+            <section class="modal-container-dr">
                 <div class="modal-dr modal-close-dr">
                     <h3>Delete item</h3>
                     <textarea name="reasonDelete" id="text-dr"  placeholder="Reason..." required></textarea>
@@ -116,7 +119,7 @@
 
     </div>
     <!--     <script src="/src/js/index.js" type="module"></script> -->
-    <script src="/src/js/sponsors/main-sponsor.js" type="module"></script>
+    <script src="/src/js/crud_tables/sponsors/main-sponsor.js" type="module"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous">
     </script>

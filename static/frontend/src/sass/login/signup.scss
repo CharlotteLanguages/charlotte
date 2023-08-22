@@ -6,7 +6,8 @@
   padding: 0;
   box-sizing: border-box;
 
-  /*     font-family: 'Montserrat', sans-serif; */
+
+
 }
 
 
@@ -19,19 +20,9 @@ body {
   background-attachment: fixed;
   display: flex;
   min-height: 100vh;
-
-  @include media-queries.tablet {
-    font-size: 17px;
-  }
-  @include media-queries.tablett {
-    font-size: 16px;
-  }
-  @include media-queries.big-phone {
-  font-size: 15px;
-  }
-  @include media-queries.phoness {
-    height: 210px;
-  }
+  justify-content: center;
+  align-items: center;
+ 
 }
 
 .charlotte-log {
@@ -41,40 +32,101 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
-  width: 80%;
-  max-width: 258px;
-  height: 100px;
+  width: 180px;
+  height: 70px;
   border: none;
-  top: 32px;
-  left: 50px;
+  top: 38px;
+  left: 5%;
+  
+  @include media-queries.tablet {
+    width: 140px;
+    height: 60px;
+    left: 5%;
+  }
+  @include media-queries.tablett {
+    width: 100px;
+    height: 40px;
+    left: 3%;
+   
+  }
+  @include media-queries.big-phone {
+    display: none;
+  }
+  @include media-queries.phoness {
+/*     width: 29%;
+    height: 40px;
+    top: 4px;
+    left: 35%; */
+    display: none;
+  }
+  @include media-queries.big-vertical{
+    width: 150px;
+  height: 60px;
+  display: block;
+  left: 34%;
+  top: 3%;
+    
+  }
+  @include media-queries.portrait-long {
+    left: 39%;
+    width: 200px;
+    height: 88px;
+    top: 5%;
+   }
 }
 
 .form {
-  margin: auto;
+
   width: 40%;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(18px);
- 
   box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.4);
   text-align: center;
-
-  margin-top: 40px;
+  margin-top: 5%;
   height: 690px;
+  margin-bottom: 30px;
+
+
+  
+ 
+
+
   @include media-queries.tablet {
     width: 50%;
+    
+    margin-bottom: 50px;
   }
   @include media-queries.tablett {
     font-size: 16px;
+    width: 60%;
+    height: 660px;
+    margin-top: 0%;
+  
   }
   @include media-queries.big-phone {
-  font-size: 15px;
+    font-size: 15px;
+    width: 75%;
+    height: 620px;
+    margin-top: 0%;
+
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.4);
+
   }
   @include media-queries.phoness {
-    height: 210px;
+    width:90%;
+   height:570px;
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.02);
+  
+
   }
 
-  
+  @include media-queries.big-vertical {
+    height:610px;
+   
+   
+  }
   
 }
 
@@ -86,25 +138,39 @@ body {
   gap: 3em;
   padding-top: 5px;
   padding-bottom: 0px;
+
   @include media-queries.tablet {
-    padding: 4.5em 4em;
+    /* padding: 1em 4em; */
+ 
   }
   @include media-queries.tablett {
-    padding: 4.5em 3.5em
+      padding-left: 3.5em;
+      padding-right: 3.5em;
+      gap: 2.9em;
+    
   }
   @include media-queries.big-phone {
-    padding: 4.5em 3em
+    padding-left: 2.9em;
+    padding-right: 2.9em;
+    gap: 2.8em;
+  
   }
   @include media-queries.phoness {
-    padding: 4.5em 2.5em
+    padding-left: 2em;
+    padding-right: 2em;
+    gap: 2.3em;
   }
+
+  @include media-queries.big-vertical {
+    gap: 2.5em;
+  }
+
 
 }
 .form__group {
   position: relative;
   --color: #5757577e;
   font-family: "Roboto", sans-serif;
-
 
 }
 
@@ -116,37 +182,37 @@ body {
   line-height: 55px;
   font-style: normal;
   @include media-queries.tablet {
-    font-size: 27px;
+    font-size: 22px;
   }
   @include media-queries.tablett {
-    font-size: 26px;
+    font-size: 21px;
   }
   @include media-queries.big-phone {
-    font-size: 25px;
+    font-size: 21px;
   }
   @include media-queries.phoness {
-    font-size: 24px;
+    font-size: 19px;
   }
 }
 .form__bottoms {
   /*  background-color: rgb(27, 195, 246); */
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   position: relative;
   margin-bottom: -40px;
   margin-top: 0px;
- 
 
+ 
   .btn {
-    max-width: 110px;
-    width: 100%;
+   
+    width: 28%;
     height: 40px;
     border-radius: 10px;
     color: #000;
     font-weight: bold;
     align-items: center;
     display: flex;
-    padding-left: 40px;
+    padding-left: 10%;
     position: relative;
     cursor: pointer;
     font-size: 12px;
@@ -158,15 +224,24 @@ body {
     }
     @include media-queries.tablet {
       font-size: 11px;
+      height:38px;
+    
     }
     @include media-queries.tablett {
       font-size: 10px;
+      height:36px;
+  
+
     }
     @include media-queries.big-phone {
     font-size: 9px;
+    height:34px;
+
     }
     @include media-queries.phoness {
     font-size: 9px;
+    height:32px;
+    width: 31%;
     }
   }
   .select-login {
@@ -175,6 +250,24 @@ body {
     height: 27px;
     border-radius: 50%;
     left: 5px;
+
+    @include media-queries.tablet {
+      width: 25px;
+      height: 25px;
+    }
+    @include media-queries.tablett {
+      width: 23px;
+      height: 23px;
+    }
+    @include media-queries.big-phone {
+      width: 21px;
+      height: 21px;
+    }
+    @include media-queries.phoness {
+      width: 19px;
+      height: 19px;
+      left: 2px;
+    }
   }
 }
 #login-microsoft {
@@ -204,6 +297,19 @@ body {
   color: #000;
   font-family: "Roboto", sans-serif;
   font-size: 13px;
+  @include media-queries.tablet {
+    font-size: 12px;
+  }
+  @include media-queries.tablett {
+    font-size: 12px;
+  }
+  @include media-queries.big-phone {
+    font-size: 11px;
+  }
+  @include media-queries.phoness {
+    font-size: 10px;
+  }
+
 }
 
 .form__link-signup {
@@ -213,6 +319,21 @@ body {
   font-size: 14px;
   transition: all 0.3s ease;
   padding-left: 15px;
+  @include media-queries.tablet {
+    font-size: 14px;
+  }
+  @include media-queries.tablett {
+    font-size: 13px;
+  }
+  @include media-queries.big-phone {
+    font-size: 11px;
+  }
+  @include media-queries.phoness {
+    font-size: 10px;
+    
+  }
+
+  
 
   &:hover {
     color: #6095ff;
@@ -229,17 +350,45 @@ body {
   font-size: 14.5px;
   margin-top: -4px;
 
+  @include media-queries.tablet {
+    font-size: 13.5px;
+  }
+  @include media-queries.tablett {
+    font-size: 13px;
+  }
+  @include media-queries.big-phone {
+    font-size: 12.5px;
+  }
+  @include media-queries.phoness {
+    font-size: 11.5px;
+  }
+
 }
 
 .form__input:focus + .form__label,
 .form__input:not(:placeholder-shown) + .form__label {
   transform: translateY(-8px) scale(0.7);
   transform-origin: left top;
-  font-size: 19px;
+  font-size: 20px;
   color: rgb(71, 71, 71);
   transition: all 0.4s ease;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+  @include media-queries.tablet {
+    font-size: 18px;
+  }
+  @include media-queries.tablett {
+    font-size: 17px;
+    transform: translateY(-6px) scale(0.7);
+  }
+  @include media-queries.big-phone {
+    font-size: 18px;
+    transform: translateY(-2px) scale(0.7);
+  }
+  @include media-queries.phoness {
+    font-size: 17px;
+    transform: translateY(3px) scale(0.7);
+  }
 }
 
 .form__label {
@@ -253,11 +402,37 @@ body {
   font-size: 15px;
   transition: all 0.4s ease;
 
+  @include media-queries.tablet {
+    font-size: 14px;
+  }
+  @include media-queries.tablett {
+    font-size: 13px;
+  }
+  @include media-queries.big-phone {
+    font-size: 12px;
+  }
+  @include media-queries.phoness {
+    font-size: 12px;
+  }
+  
+
 }
 .user__pass {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
+  @include media-queries.tablet {
+  
+  }
+  @include media-queries.tablett {
+ 
+  }
+  @include media-queries.big-phone {
+    gap: 25px;
+  }
+  @include media-queries.phoness {
+    gap: 20px;
+  }
 
 }
 
@@ -276,6 +451,32 @@ body {
   margin-bottom: 22px;
   &:hover {
     background-color: #4080ff;
+  }
+
+  @include media-queries.tablet {
+    font-size: 15px;
+  }
+  @include media-queries.tablett {
+    font-size: 14px;
+    width: 160px;
+    height: 35px;
+    margin-bottom: 19px;
+
+  }
+  @include media-queries.big-phone {
+    font-size: 13px;
+    width: 150px;
+    height: 33px;
+  }
+  @include media-queries.phoness {
+    font-size: 12px;
+    width: 140px;
+    height: 30px;
+    margin-bottom: 12px;
+
+  }
+  @include media-queries.big-vertical {
+    margin-bottom: 18px;
   }
 }
 
@@ -301,6 +502,18 @@ body {
   margin-bottom: -20px;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
+  @include media-queries.tablet {
+    font-size: 13px;
+  }
+  @include media-queries.tablett {
+    font-size: 13px;
+  }
+  @include media-queries.big-phone {
+    font-size: 12px;
+  }
+  @include media-queries.phoness {
+    font-size: 11px;
+  }
 }
 
 #icon {
@@ -315,13 +528,39 @@ body {
     transform: scale(1.05);
     cursor: pointer;
   }
+  @include media-queries.tablet {
+    font-size: 17px;
+  }
+  @include media-queries.tablett {
+    font-size: 16px;
+  }
+  @include media-queries.big-phone {
+    font-size: 15px;
+  }
+  @include media-queries.phoness {
+    font-size: 14px;
+  }
 }
 
 #password-signup {
-  /* font-family: Arial, Helvetica, sans-serif; */
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   padding-right: 38px;
+
+  @include media-queries.tablet {
+    font-size: 14px;
+  }
+  @include media-queries.tablett {
+    font-size: 13px;
+  }
+  @include media-queries.big-phone {
+    font-size: 12.5px;
+    padding-right: 30px;
+  }
+  @include media-queries.phoness {
+    font-size: 11.5px;
+    padding-right: 28px;
+  }
 }
 
 #date-birth {
@@ -340,17 +579,39 @@ body {
   position: absolute;
   top: 26px;
   /*  color: rgb(255, 3, 3); */
-  text-align: initial;
-  font-size: 10px;
+  text-align:justify;
+  font-size: 11px;
   margin-bottom: 0;
   font-family: "Roboto", sans-serif;
   color: red;
   display: none;
   line-height: 12px;
+
+  @include media-queries.tablet {
+    font-size: 10.5px;
+    line-height: 10.5px;
+  }
+  @include media-queries.tablett {
+    font-size: 10px;
+    line-height: 10px;
+  }
+  @include media-queries.big-phone {
+     font-size: 9.2px;
+      line-height: 9px;
+      top: 23px;
+  }
+  @include media-queries.phoness {
+      font-size: 8.4px;
+      line-height: 8.7px;
+      top: 22px;
+    
+   
+   
+  }
 }
 .email__already {
   position: absolute;
-  top: 23px;
+  top: 20px;
   /*  color: rgb(255, 3, 3); */
   text-align: initial;
   font-size: 13px;
@@ -358,6 +619,19 @@ body {
   font-family: "Roboto", sans-serif;
   color: red;
   display: none;
+
+  @include media-queries.tablet {
+    font-size: 12px;
+  }
+  @include media-queries.tablett {
+    font-size: 11px;
+  }
+  @include media-queries.big-phone {
+    font-size: 10px;
+  }
+  @include media-queries.phoness {
+    font-size: 9px;   
+  }
 }
 .form__input-error-active {
   display: block;
@@ -377,8 +651,19 @@ body {
   font-weight: bold;
   max-width: 300px;
   margin: auto;
-  /*  visibility: hidden; */
   display: none;
+  @include media-queries.tablet {
+    font-size: 14px;
+  }
+  @include media-queries.tablett {
+    font-size: 13px;
+  }
+  @include media-queries.big-phone {
+    font-size: 12px;
+  }
+  @include media-queries.phoness {
+    font-size: 11px;
+  }
 }
 
 .form__message-error {
@@ -395,17 +680,58 @@ body {
   margin: auto;
   z-index: 100;
   display: none;
+  @include media-queries.tablet {
+    font-size: 14px;
+  }
+  @include media-queries.tablett {
+    font-size: 13px;
+  }
+  @include media-queries.big-phone {
+    font-size: 12px;
+  }
+  @include media-queries.phoness {
+    font-size: 11px;
+    bottom: 5px;
+    top: 0;
+
+  }
 }
 
 #form__message-error {
+
   b {
     font-size: 18px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
+
+    @include media-queries.tablet {
+      font-size: 13px;
+    }
+    @include media-queries.tablett {
+      font-size: 12px;
+    }
+    @include media-queries.big-phone {
+      font-size: 11px;
+    }
+    @include media-queries.phoness {
+      font-size: 13px;
   }
+}
 }
 .fa-exclamation-circle {
   font-size: 18px;
+  @include media-queries.tablet {
+    font-size: 13px;
+  }
+  @include media-queries.tablett {
+    font-size: 12px;
+  }
+  @include media-queries.big-phone {
+    font-size: 11px;
+  }
+  @include media-queries.phoness {
+    font-size: 13px;
+}
 }
 
 .fa-check-circle {
@@ -419,4 +745,86 @@ body {
 
 .notGender{
  display: none;
+}
+
+
+body::-webkit-scrollbar {
+  width: 8px;
+  height: 3px;
+  background-color: #e6e6e6;
+  
+}
+
+body::-webkit-scrollbar-thumb {
+/*   background: rgba(255, 255, 255, 0.2); */
+  border-radius: 20px;
+  background-color: #7c7c7c;
+}
+
+
+
+  
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #82cbff transparent transparent transparent;
+  @include media-queries.big-phone {
+    width: 44px;
+    height: 44px;
+  }
+  @include media-queries.phoness {
+    width: 44px;
+    height: 44px;
+  }
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  background-color: #1c1c1c;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 100000;
+  display: flex;
+  top: 0;
+  left: 0;
+  clip-path: circle(150% at 100% 0);
+  transition: all 1s ease;
+  opacity: 0.7;
+}
+
+.loader2 {
+  clip-path: circle(0% at 100% 0%);
 }

@@ -1,6 +1,5 @@
 
 
-
 const d = document,  
       $fragment = d.createDocumentFragment()
   
@@ -56,7 +55,7 @@ countdDown(id, "Apr 10 2023 12:59:10", "Feliz Cumpleaños Alberto 🤓");
 
 const API_URL = "http://localhost:3000/activities";
 
-const loadData = async () => {
+export const loadDatas = async () => {
   try {
     let res = await fetch(API_URL),
       json = await res.json();
@@ -147,5 +146,26 @@ function printActivities(activity) {
 }
 
 d.addEventListener("DOMContentLoaded", (e) => {
-  loadData();
+  const token = localStorage.getItem("token");
+  (token)?loadDatas(): window.location.href = "/src/views/login/login.html";
 });
+
+/* let nav =  d.querySelector(".navbar__menu");
+export function hacer(){
+  nav.innerHTML += `<li><a href="">Alberto</a></li>`
+  window.location.href = "/src/views/homepage_free/homepage_free.html"
+} */
+
+d.addEventListener("click", (e)=>{
+  if(e.target.matches("#bars")){
+    d.querySelector(".dropdown").classList.toggle("move-menu");
+    d.querySelector("#bars").classList.toggle("show-bars");
+  }
+  if(e.target.matches(".close")){
+    d.querySelector(".dropdown").classList.toggle("move-menu");
+    setTimeout(() => {
+      d.querySelector("#bars").classList.toggle("show-bars");
+      
+    }, 400);
+  }
+})

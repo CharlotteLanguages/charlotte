@@ -143,7 +143,6 @@ body{
   justify-content: space-between;
   margin-right: 20px;
 
-
   li {
     list-style: none;
     transition: all 0.4s ease;
@@ -161,8 +160,6 @@ body{
       display: flex;
       justify-content: center;
       align-items: center;
-   
-
       &:hover {
         background-color: #4457b9;
         border-radius: 20px;
@@ -174,7 +171,7 @@ body{
       transition: all 0.5s ease;
       width: 90%;
       text-align: center;
-      height: 38px;
+      height: 32px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -182,6 +179,7 @@ body{
         background-color: #4457b9;
         border-radius: 20px;
         opacity: 0.9;
+        
       }
     }
 
@@ -236,8 +234,9 @@ body{
     margin-right: 10px;
   }
   @include media-queries.tablett {
-    width: 68%;
+    width: 75%;
     margin-right: 10px;
+
   }
   @include media-queries.big-phone {
     transition: all 0.4s ease;
@@ -256,6 +255,7 @@ body{
     transition: transform 1s;
     overflow: auto;
     padding-bottom: 40px;
+ 
   }
   @include media-queries.phoness {
     transition: all 0.4s ease;
@@ -298,6 +298,7 @@ body{
     justify-content: center;
     align-items: center;
     transition: all 0.4s ease;
+ 
     &:hover {
       background: #4f66da;
     }
@@ -306,13 +307,13 @@ body{
       font-size: 19px;
       width: 125px;
       height: 40px;
-      padding-top: 7px;
+     
     }
     @include media-queries.tablett {
       font-size: 17px;
       width: 110px;
       height: 36px;
-      padding-top: 5px;
+   
     }
     @include media-queries.big-phone {
       font-size: 20px;
@@ -321,15 +322,18 @@ body{
       width: 90%;
       padding-top: 3px;
       font-weight: 500;
-      height: 50px;
+      height: 33px;
       font-weight: 0;
       font-family: "Roboto", sans-serif;
+      &:hover{
+        background: none;
+      }
     }
     @include media-queries.phoness {
       background: none;
       box-shadow: none;
       width: 90%;
-      padding-top: 3px;
+      padding-top: 20px;
       font-weight: 500;
       font-size: 19px;
       font-weight: 500;
@@ -339,6 +343,9 @@ body{
       justify-content: center;
       align-items: center;
       font-family: "Roboto", sans-serif;
+      &:hover{
+        background: none;
+      }
     }
   }
 }
@@ -452,93 +459,169 @@ ul.show {
   }
 }
 .phone {
-  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  width: 295px; 
+  
+  @include media-queries.tablet {
+   width: 215px;
+
+  
+  }
+  @include media-queries.tablett {
+    width: 218px;
+    
+  }
+  
   @include media-queries.big-phone {
+
     margin-bottom: 30px;
+    width: 220px;
+ 
   }
   @include media-queries.phoness {
+    width: 120px;
     margin-bottom: 22px;
+   margin-top: 25px;
+  
   }
+}
+
+.call-us{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+  gap: 5px;
+width: 295px;
+  @include media-queries.tablet {
+   
+  }
+  @include media-queries.tablett {
+  
+  }
+  @include media-queries.big-phone {
+    
+  }
+  @include media-queries.phoness {
+   
+  }
+ 
+
 }
 
 .phone-icon {
-  position: absolute;
-  top: 55%;
-  left: 180px;
-  width: 28px;
-  height: 28px;
   color: #acacac;
-  font-size: 23px;
+  font-size: 17px;
 
   @include media-queries.tablet {
-    left: 135px;
-    font-size: 21px;
+   
+    font-size: 16px;
   }
   @include media-queries.tablett {
-    left: 133px;
-    font-size: 21px;
+   
+    font-size: 15px;
   }
   @include media-queries.big-phone {
-    font-size: 18px;
+
     left: 134px;
   }
   @include media-queries.phoness {
-    font-size: 16px;
-    left: 18%;
-    top: 126%;
+    font-size: 11px;
+  
   }
 }
 .contact-icons {
-  position: relative;
-  margin-left: 10px;
-  margin-bottom: 30px;
-  @include media-queries.phoness {
-    margin-top: 10px;
-  }
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items:start;
+    text-align: center;
+    width: 45%;
+    margin-top: 20px;
 
+  
+
+
+    @include media-queries.tablet {
+      width: 140px;
+    
+     
+    }
+    @include media-queries.tablett {
+      
+      width: 136px;
+    
+    }
+    @include media-queries.big-phone {
+      width: 137px;
+      
+    }
+    @include media-queries.phoness {
+      width: 74px;
+      gap: 5px;
+      margin-top: 20px;
+    
+ 
+    }
+ 
 
   .icons {
-    position: absolute;
-    width: 100px;
-    top: 10px;
-    left: 30px;
+    width: 160px;
+    display: flex;
+    gap: 5px; 
+    justify-content: center;
+    align-items: center;
+   
+  
+    
+    @include media-queries.tablet {
+      width: 115px;
+    }
+    @include media-queries.tablett {
+    width: 108px;
+    }
+    @include media-queries.big-phone {
+      width: 110px;
+    }
     @include media-queries.phoness {
-      top: 0;
-      left: 5px;
+      width: 57px;  
+      gap: 3px;
+     
+    
+    
     }
   }
-  @include media-queries.big-phone {
-  }
-  @include media-queries.phoness {
-    margin-left: 5px;
- 
-  }
+
 }
 .telegram-icon {
-  margin-top: 16px;
-  width: 26px;
-  height: 26px;
+ 
+  width: 24px;
+  height: 24px;
  
   @include media-queries.tablet {
     width: 22px;
     height: 22px;
   }
   @include media-queries.tablett {
-    width: 24px;
-    height: 24px;
-  }
-  @include media-queries.big-phone {
-    width: 23px;
-    height: 23px;
-  }
-  @include media-queries.phoness {
     width: 21px;
     height: 21px;
+  }
+  @include media-queries.big-phone {
+    width: 20px;
+    height: 20px;
+  }
+  @include media-queries.phoness {
+    width: 15px;
+    height: 15px;
   }
 }
 .whatsapp-icon {
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   @include media-queries.tablet {
     width: 22px;
     height: 22px;
@@ -548,12 +631,12 @@ ul.show {
     height: 24px;
   }
   @include media-queries.big-phone {
-    width: 23px;
-    height: 23px;
-  }
-  @include media-queries.phoness {
     width: 21px;
     height: 21px;
+  }
+  @include media-queries.phoness {
+    width: 15px;
+    height: 15px;
   }
 }
 
@@ -615,47 +698,57 @@ ul.show {
 }
 
 .customer-service {
-  position: relative;
-  top: 11px;
-
+  display: flex;
+  gap: 8px;
+  justify-content: start;
+  align-items: center;
+  width: 180px;
+  @include media-queries.tablet {
+  width: 160px;
+  }
+  @include media-queries.tablett {
+    width: 140px;
+    
+  }
+  
   @include media-queries.big-phone {
+
     margin-top: 20px;
+    width: 145px;
   }
   @include media-queries.phoness {
-    margin-top: 10px;
+    margin-top: 30px;
+    width: 80px;
+    gap: 4px;
 
-    width: 50%;
+   
   }
 }
 
 .headphone-icon {
-  position: absolute;
-  top: 3px;
-  width: 28px;
-  height: 28px;
-  left: 165px;
-  font-size: 24px;
+ 
+  font-size: 19px;
   color: #acacac;
+  margin-top: 4px;
 
  
   @include media-queries.tablet {
-    font-size: 22px;
-    left: 125px;
+    font-size: 19px;
+  
  
   }
   @include media-queries.tablett {
-    left: 125px;
-    font-size: 22px;
+  
+    font-size: 18px;
   
   }
   @include media-queries.big-phone {
-    font-size: 21px;
-    left: 122px;
+    font-size: 17px;
+
   }
   @include media-queries.phoness {
-    font-size: 20px;
-    left: 18%;
-    top: 16px;
+    font-size: 13px;
+  
 
   }
 }
@@ -981,7 +1074,6 @@ ul.show {
   border-radius: 9px;
   text-align: center;
   font-size: 20px;
-  padding-top: 2px;
   margin-top: 20px;
   margin-bottom: 12px;
   cursor: pointer;
@@ -989,6 +1081,7 @@ ul.show {
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
   &:hover {
     background-color: #485fd4;
   }
@@ -1052,9 +1145,10 @@ ul.show {
       margin-bottom: 25px;
     }
     @include media-queries.phoness {
-      font-size: 22px;
-      line-height: 30px;
+      font-size: 20px;
+      line-height: 28px;
       margin-bottom: 20px;
+      padding: 0 10px 0 10px;
     }
   }
 }
@@ -1354,22 +1448,24 @@ ul.show {
     top: 1%;
     bottom: 93.65%;
     z-index: 1000;
+  
     i {
-      font-size: 23px;
+      color: #000000;
+      font-size: 22px;
 
       @include media-queries.phoness {
         font-size: 20px;
       }
       @include media-queries.tablett {
-        font-size: 22px;
+        font-size: 20px;
       }
       @include media-queries.big-phone {
-        font-size: 21px;
+        font-size: 20px;
       }
     }
     
     @include media-queries.tablet {
-      right: 3%;
+      right: 3.5%;
       top: 1%;
     }
     @include media-queries.tablett {
@@ -1377,8 +1473,8 @@ ul.show {
       top: 1%;
     }
     @include media-queries.big-phone {
-      right: 6%;
-      top: 1%;
+      right: 5%;
+      top: 2%;
     }
     @include media-queries.phoness {
       right: 9%;

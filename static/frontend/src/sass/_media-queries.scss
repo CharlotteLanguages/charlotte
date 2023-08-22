@@ -94,12 +94,12 @@
 
 
 @mixin big-vertical {
-  @media screen and (max-device-width: 790px) and (min-height:800px) and (orientation:portrait){
+  @media screen and (max-device-width: 750px) and (min-height:800px) and (orientation:portrait){
     @content;
   }
 }
 @mixin portrait-long {
-  @media screen and (max-device-width: 480px) and (min-height:800px) and (orientation:portrait){
+  @media screen and (min-device-width: 751px) and (min-height:800px) and (orientation:portrait){
     @content;
   }
 }

@@ -53,8 +53,8 @@
                         </select>
 
                         <div>
-
-                            <input type="file" accept="image/*" multiple name="sponsorImage"
+                          
+                            <input type="file" accept="image/*" multiple name="imageNews"
                                 placeholder="Profille image..." id="imgSponsor">
                             <label for="imgSponsor" class="file-sponsor">
                                 <span class="file-sponsor-btn"><i class="fas fa-upload"></i></span>
@@ -99,40 +99,13 @@
 
         <section id="nav">
             <div class="nav__icon">
-                <div>
-                    <i class="fas fa-bell"></i>
-                    <div class="tooltip">
-                        <div class="profile">
-                         <i class="fas fa-user-circle"></i>
-                         <p>See my profile</p>
-                        </div>
-                        <div class="section_medium">
-                            <div class="see_courses">
-                              <img src="/src/public/homepageUser/course.png" alt="">
-                              <p>See all my courses</p>
-                            </div>
-                            <div class="resources">
-                              <img src="/src/public/homepageUser/resource.png" alt="">
-                              <p>Resources</p>
-                            </div>
-                            <div class="subs">
-                              <img src="/src/public/homepageUser/subscription.png" alt="" class="subscription-img">
-                              <p>My subscription</p>
-                            </div>
-                         </div>
-                         <div class="section_final">
-                             <div class="customer_service">
-                               <img src="/src/public/homepageUser/customer.png" alt="">
-                               <p>Customer service</p>
-                             </div>
-                           <div class="logout">
-                             <img src="/src/public/homepageUser/logout.png" alt="">
-                             <p>Log out</p>
-                           </div>
-                         </div>
-                    </div>
 
-                </div>
+                    <i class="fas fa-bell">
+                        <div class="tooltip">
+                            
+                        </div>
+                    </i>
+
                 <i class="far fa-envelope"></i>
                 <a href="" class="profile"></a>
             </div>
@@ -155,10 +128,10 @@
         </section>
 
         <form class="form-delete-dr" action="">
-            <section id="modal-container-dr">
+            <section class="modal-container-dr">
                 <div class="modal-dr modal-close-dr">
                     <h3>Delete item</h3>
-                    <textarea name="reasonDelete" id="text-dr"  placeholder="Reason..." required></textarea>
+                    <textarea name="reasonDeleted" id="text-dr"  placeholder="Reason..." required></textarea>
                         <div class="buttons_delete">
                             <button class="close-dr btn-dr2">Cancel</button>
                             <input type="submit" class="close-dr bnt-dr" value="Yes, Delete"></input>
@@ -180,12 +153,11 @@
             <p class="noti__parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deserunt eius,
                 animi fugiat debitis, id ipsa sint recusandae eum nobis odit sequi nihil dicta beatae qui eveniet
                 mollitia, excepturi adipisci.</p>
-
         </section>
 
 
     </div>
-    <script src="/src/js/news/main-new.js" type="module"></script>
+    <script src="/src/js/crud_tables/news/main-new.js" type="module"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous">
     </script>
