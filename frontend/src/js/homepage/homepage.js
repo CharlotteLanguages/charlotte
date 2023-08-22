@@ -1,6 +1,8 @@
 const d = document,
   API_URL = `http://localhost:3000/news`,
   $modal = document.querySelector(".cont-p-news");
+
+  
   const noticia = [{
     titleNews:"Welcome to Charlotte Languages Center",
     editorNews: `

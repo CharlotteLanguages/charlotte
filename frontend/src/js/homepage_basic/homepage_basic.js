@@ -148,8 +148,20 @@ function printActivities(activity) {
   /*    const basic2 = result.filter(free => free.level==="Basic ll"); */
 }
 
+const getUser = async () => {
+  const user = localStorage.getItem("user");
+  try {
+    let res = await fetch(`https://apicharlotte.up.railway.app/student/${user}`),
+      json = await res.json();
+    console.log(json[0]);
+  } catch (err) {
+    let message = err.statusText || "ocurrió un Error";
+  }
+};
+
 d.addEventListener("DOMContentLoaded", (e) => {
   loadData();
+  getUser();
 });
 
 
@@ -166,3 +178,4 @@ d.addEventListener("click", (e)=>{
     }, 400);
   }
 })
+

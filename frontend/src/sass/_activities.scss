@@ -186,7 +186,7 @@
       padding-right: 5px;
       height: 27px;
       font-size: 0.8rem;
-      top: 123px;
+      top: 90px;
     }
   }
 
@@ -967,8 +967,10 @@ tr {
 }
 
 .categoryActivities{
+  
   width: 270px;
   position: relative;
+ 
   @include media-queries.tablet {
    
   }
@@ -991,7 +993,8 @@ tr {
   border: 0;
   outline: 0;
   position: absolute;
-  top: 5px;
+  /* top: 5px; */
+  /* bottom: 50px; */
   @include media-queries.tablet {
    
   }
@@ -1015,7 +1018,8 @@ tr {
   outline: 0;
   position: absolute;
   left: 35%;
-  top: 5px;
+  /* bottom: 50px; */
+  /* top: 5px; */
   @include media-queries.tablet {
     left: 42%;
     padding-right: 4px;
@@ -1036,4 +1040,228 @@ tr {
      width: 38%;
      text-align: right;   
 }
+}
+
+
+.wrapper{
+  position: absolute;
+  @include mixingfunc.measures(46%, 33px, 50.5%, 136px);
+  z-index: 100;
+
+  @include media-queries.tablett {
+   left: 50.8%;
+    
+  }
+  
+  @include media-queries.big-phone {
+    top: 117px;
+    left: 50.6%;
+    
+    
+  }
+  
+  @include media-queries.phoness {
+    
+   top: 124px;
+   left: 48%;
+   margin-left: 5px;
+ 
+  }
+ 
+
+}
+
+.select-btn, li{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+}
+.select-btn{
+  height: 33px;
+/*   width: 100%; */
+  padding: 0 5px 0 22px ;
+  font-size: 17px;
+  background-color: #fff;
+  border-radius: 10px;
+  justify-content: space-between;
+/*   box-shadow: 0 10px 25px rgba(0, 0, 0, .1); */
+  border: 1px solid #8f8f8f;
+  @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
+
+  @include media-queries.tablet {
+    /* left: 48%; */
+  }
+  @include media-queries.tablett {
+    
+    font-size: 0.9rem;
+    height: 31px;
+   
+  }
+  @include media-queries.big-phone {
+
+    height: 28px;
+    font-size: 0.8rem;
+    /* left: 47%; */
+    padding-left: 10px;
+    padding-right: 5px;
+   
+    
+  }
+  @include media-queries.phoness {
+    /* left: 45%; */
+    padding-left: 15px;
+    padding-right: 5px;
+    height: 27px;
+    font-size: 0.8rem;
+  
+  }
+  
+}
+
+.select-btn i{
+  font-size: 15px;
+  transition: transform .2s linear;
+  @include media-queries.phoness {
+   margin-left: 3px;
+  
+
+    
+  
+  }
+ 
+}
+
+.span{
+
+  white-space: nowrap;
+      overflow: auto;
+}
+.span::-webkit-scrollbar{
+  width: 1px;
+  height: 1px;
+}
+.span::-webkit-scrollbar-track{
+background: #ffffff;
+border-radius: 25px;
+}
+.span::-webkit-scrollbar-thumb{
+background: #ffffff;
+border-radius: 25px;
+}
+.span::-webkit-scrollbar-thumb:hover{
+background: #ffffff;
+}
+
+
+.wrapper.active .select-btn i{
+  transform: rotate(-180deg);
+
+}
+
+
+.content-search{
+  display: none;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 7px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .1);
+  background-color: #ffffff;
+  border: solid 1px #e0e0e0;
+
+}
+
+.wrapper.active .content-search{
+  display: block;
+
+}
+
+.content-search .search{
+  position: relative;
+ 
+  
+}
+
+.search i{
+  top: 50%;
+  left: 15px;
+  color: #999;
+  font-size: 15px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  position: absolute;
+ 
+  
+}
+
+.search input {
+  height: 30px;
+  width: 100%;
+  outline: none;
+  font-size: 13px;
+  border-radius: 5px;
+  padding:  0 20px 0 43px;
+  border: 1px solid #b3b3b3;
+ 
+ 
+  
+
+
+}
+
+.search input:focus {
+   padding-left: 42px;
+   border:  2px solid #4285f4;
+
+}
+.search input::placeholder{
+  color: #bfbfbf;
+}
+.content-search .options{
+  margin-top: 10px;
+  max-height:145px ;
+  overflow-y: auto;
+  padding-right: 7px;
+/*      background: yellow; */
+  transition: all 0.4s ease;
+  margin-bottom: 0;
+  padding-left: 12px;
+ 
+
+}
+
+.options::-webkit-scrollbar{
+  width: 7px;
+  height: 5px;
+}
+.options::-webkit-scrollbar-track{
+background: #f1f1f1;
+border-radius: 25px;
+}
+.options::-webkit-scrollbar-thumb{
+background: #a6a6a6;
+border-radius: 25px;
+}
+.options::-webkit-scrollbar-thumb:hover{
+background: #b3b3b3;
+}
+.options li{
+  height: 29px;
+  padding:  0 13px;
+  font-size: 15px;
+  transition: all 0.4s ease;
+/*   background-color: #dc751b; */
+  transition: all 0.3s ease;
+  margin: 0;
+  white-space: nowrap;
+  overflow: auto;
+}
+
+.options li::-webkit-scrollbar{
+  width: 3px;
+  height: 3px;
+}
+.options li:hover, li.selected{
+  border-radius: 5px;
+  background: #e1e1e1;
 }

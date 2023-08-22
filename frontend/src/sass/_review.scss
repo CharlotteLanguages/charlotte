@@ -722,10 +722,11 @@ tr {
   }
 
   .cont-p-review {
+   
     position: absolute;
-    width: 97%;
-    max-height: 785px;
-    top: 25px;
+    width: 97.5%;
+    max-height: 780px;
+    top: 35px;
     bottom: 10px;
     left: 10px;
     right: 10px;
@@ -906,16 +907,20 @@ tr {
        
       }
       @include media-queries.tablett {
-
+        
       }
       @include media-queries.big-phone {
-        height: 18.8em;
+        height: 22.8em;
       }
       @include media-queries.phoness {
-        height: 17.4eovm;
+        height: 21em;
       }
       @include media-queries.portrait-long {
-        height: 24.5em;
+        height: 24em;
+      }
+      @include media-queries.big-vertical {
+      
+        height: 32.5em;
       }
     }
   }
@@ -1491,4 +1496,16 @@ color: #000000;
 
   .btn-inList-visible{
     display: none;
+  }
+
+  .cont-p-review::-webkit-scrollbar {
+    width: 7.9px;
+    height: 8px;
+
+    border-radius: 20px;
+  }
+  
+  .cont-p-review::-webkit-scrollbar-thumb {
+    background: rgba(149, 149, 149, 0.661);
+    border-radius: 20px;
   }

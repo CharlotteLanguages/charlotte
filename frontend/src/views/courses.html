@@ -35,15 +35,10 @@
                         <input class="title-course" type="text" name="courseTitle" placeholder="Course Title" required>
                         <select class="input-category-course" name="category" required>
                             <option selected disabled="">Category</option>
-                            <option>Bussiness</option>
-                            <option>Engineer</option>
-                            <option>Specialist</option>
-                            <option>Associate</option>
-                            <option>Producer</option>
-                            <option>Developer</option>
-                            <option>Manager</option>
-                            <option>Technician</option>
-                            <option>Assistant</option>
+                            <option>Free</option>
+                            <option>Basic</option>
+                            <option>Pro</option>
+                            <option>Pro +</option>
                         </select>
 
                         <input class="input-price-course" type="number" name="price" placeholder="Price*" required>
@@ -108,19 +103,19 @@
 
         <section id="modal-container-course">
             <div class="modal-course modal-cl">
-                <div class="close-course"><i class="fas fa-times-circle poi"></i></div>
+                <div class="close-course"><i class="fas fa-times-circle close"></i></div>
                 <div class="cont-p-course">
                 </div>
 
         </section>
 
         <form class="form-delete-dr" action="">
-            <section id="modal-container-dr">
+            <section class="modal-container-dr">
                 <div class="modal-dr modal-close-dr">
                     <h3>Delete item</h3>
                     <textarea name="reasonDelete" id="text-dr"  placeholder="Reason..." required></textarea>
                         <div class="buttons_delete">
-                            <button class="close-dr btn-dr2">Cancel</button>
+                            <div class="close-dr btn-dr2">Cancel</div>
                             <input type="submit" class="close-dr bnt-dr" value="Yes, Delete"></input>
                       </div>
                 </div>
@@ -143,7 +138,7 @@
 
 
     </div>
-    <script src="/src/js/courses/main-courses.js" type="module"></script>
+    <script src="/src/js/crud_tables/courses/main-courses.js" type="module"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous">
     </script>

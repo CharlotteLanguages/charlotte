@@ -1,7 +1,9 @@
 const d = document,
-  API_URL = `http://localhost:3000/signup`,
+  API_URL = `https://apicharlotte.up.railway.app/register`,
+/*   API_URL = `http://localhost:3000/signup`, */
   form = document.querySelector(".form"),
   inputs = document.querySelectorAll(".form__input");
+  console.log(inputs)
 
 /*   
   d.addEventListener("DOMContentLoaded", (e) => {
@@ -12,13 +14,7 @@ const d = document,
    }, 1000);
     
   }); */
-/*     window.sr = ScrollReveal();
-    const hp = d.querySelector(".form");
-    sr.reveal(hp, {
-      duration: 2500,
-      origin: "bottom",
-      distance: "-30px",
-    }); */
+
 
 
 
@@ -40,8 +36,7 @@ const Regularexpressions = {
   lastName: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
   userName: /^[a-zA-Z0-9\_\-\.]{4,16}$/,
   email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-  password:
-    /(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040"])(?=.*[A-Z])(?=.*[a-z])\S{6,16}$/,
+  password:/(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040"])(?=.*[A-Z])(?=.*[a-z])\S{6,16}$/
 };
 
 
@@ -54,11 +49,8 @@ const hasUser = async () => {
     const res = await fetch(API_URL),
       data = await res.json();
     generateUserName(data);
-    if (!res.ok) throw { status: res.status, statusText: res.statusText };
   } catch (err) {
     const message = err.statusText || "An error occurred";
-    /* let table;
-      table.insertAdjacentHTML("afterend", `<p></p> ${err.status}: ${err:message}`);  */
   }
 };
 
@@ -72,11 +64,19 @@ const emailUser = async () => {
       data = await res.json();
     repeatedEmailMessage(data);
   } catch (err) {
-    const message = err.statusText || "An error occurred";
-    /* let table;
-      table.insertAdjacentHTML("afterend", `<p></p> ${err.status}: ${err:message}`);  */
+    
   }
 };
+
+
+function setMinimumYear() {
+  let currentDate = new Date(),
+    currentYear = currentDate.getFullYear()-10;
+  d.querySelector("#date-birth").setAttribute("max",`${currentYear}-12-31`);
+}
+
+
+
 
 
 /*----------------------------------------------------------------------------------------------------------------------- */
@@ -90,51 +90,102 @@ function generateUserName(data) {
       .slice(0, 4)
       .toLowerCase()}.${form.dateBirth.value
         .slice(8, 10)}`;
-/*         console.log(form.dateBirth.value) */
-      /*   console.log(form.firstName.value)
-        console.log(form.lastName.value) */
     return;
   }
   data.map((ele) => {
     if (ele.userName == form.userName.value.toLowerCase()) {
-      if (form.firstName.value.length <= 2 && form.lastName.value.length <= 3) {
-        form.userName.value = `${form.firstName.value
-          .slice(0, 1)
-          .toLowerCase()}.${form.lastName.value
-          .slice(0, 2)
-          .toLowerCase()}.${form.dateBirth.value.slice(8, 10)}`;
-        return;
-      }
-      if (form.userName.value.length == 9) {
-        form.userName.value = `${form.firstName.value
-          .slice(0, 2)
-          .toLowerCase()}.${form.lastName.value
-          .slice(0, 2)
-          .toLowerCase()}.${form.dateBirth.value.slice(8, 10)}`;
-        return;
-      }
-      if (form.userName.value.length == 8) {
-        form.userName.value = `${form.firstName.value
-          .slice(0, 1)
-          .toLowerCase()}.${form.lastName.value
-          .slice(0, 3)
-          .toLowerCase()}.${form.dateBirth.value.slice(8, 10)}`;
-        return;
-      }
-      if (form.userName.value.length == 10) {
-        form.userName.value = `${form.firstName.value
-          .slice(0, 2)
-          .toLowerCase()}.${form.lastName.value
-          .slice(0, 3)
-          .toLowerCase()}.${form.dateBirth.value.slice(8, 10)}`;
-        return;
-      }
-
-      form.userName.value = `${form.firstName.value
-        .slice(0, 3)
-        .toLowerCase()}.${form.lastName.value
-        .slice(0, 3)
-        .toLowerCase()}.${form.dateBirth.value.slice(8, 10)}`;
+      let userName = ele.userName.split(".");
+      for (var i=0; i < userName.length; i++) {
+    
+        if (userName[0].length == 4 && userName[1].length == 4) {
+          form.userName.value = `${form.firstName.value
+            .slice(0, 4)
+            .toLowerCase()}.${form.lastName.value
+            .slice(0, 3)
+            .toLowerCase()}.${form.dateBirth.value.slice(8, 10)}`;
+          return;
+        }
+        if (userName[0].length == 4 &&  userName[1].length == 3) {
+          form.userName.value = `${form.firstName.value
+            .slice(0, 4)
+            .toLowerCase()}.${form.lastName.value
+            .slice(0, 2)
+            .toLowerCase()}.${form.dateBirth.value.slice(8, 10)}`;
+          return;
+        }
+        if (userName[0].length == 4 &&  userName[1].length == 2) {
+          form.userName.value = `${form.firstName.value
+            .slice(0, 3)
+            .toLowerCase()}.${form.lastName.value
+            .slice(0, 4)
+            .toLowerCase()}.${form.dateBirth.value.slice(8, 10)}`;
+          return;
+        }
+        if (userName[0].length == 3 &&  userName[1].length == 4) {
+          form.userName.value = `${form.firstName.value
+            .slice(0, 3)
+            .toLowerCase()}.${form.lastName.value
+            .slice(0, 3)
+            .toLowerCase()}.${form.dateBirth.value.slice(8, 10)}`;
+          return;
+        }
+        if (userName[0].length == 3 &&  userName[1].length == 3) {
+          form.userName.value = `${form.firstName.value
+            .slice(0, 3)
+            .toLowerCase()}.${form.lastName.value
+            .slice(0, 2)
+            .toLowerCase()}.${form.dateBirth.value.slice(8, 10)}`;
+          return;
+        }
+        if (userName[0].length == 3 &&  userName[1].length == 2) {
+          form.userName.value = `${form.firstName.value
+            .slice(0, 2)
+            .toLowerCase()}.${form.lastName.value
+            .slice(0, 4)
+            .toLowerCase()}.${form.dateBirth.value.slice(8, 10)}`;
+          return;
+        }
+        if (userName[0].length == 2 &&  userName[1].length == 4) {
+          form.userName.value = `${form.firstName.value
+            .slice(0, 2)
+            .toLowerCase()}.${form.lastName.value
+            .slice(0, 3)
+            .toLowerCase()}.${form.dateBirth.value.slice(8, 10)}`;
+          return;
+        }
+        if (userName[0].length == 2 &&  userName[1].length == 3) {
+          form.userName.value = `${form.firstName.value
+            .slice(0, 2)
+            .toLowerCase()}.${form.lastName.value
+            .slice(0, 2)
+            .toLowerCase()}.${form.dateBirth.value.slice(8, 10)}`;
+          return;
+        }
+        if (userName[0].length == 2 &&  userName[1].length == 2) {
+          form.userName.value = `${form.firstName.value
+            .slice(0, 1)
+            .toLowerCase()}.${form.lastName.value
+            .slice(0, 4)
+            .toLowerCase()}.${form.dateBirth.value.slice(8, 10)}`;
+          return;
+        }
+        if (userName[0].length == 1 &&  userName[1].length == 4) {
+          form.userName.value = `${form.firstName.value
+            .slice(0, 1)
+            .toLowerCase()}.${form.lastName.value
+            .slice(0, 3)
+            .toLowerCase()}.${form.dateBirth.value.slice(8, 10)}`;
+          return;
+        }
+        if (userName[0].length == 1 &&  userName[1].length == 3) {
+          form.userName.value = `${form.firstName.value
+            .slice(0, 1)
+            .toLowerCase()}.${form.lastName.value
+            .slice(0, 2)
+            .toLowerCase()}.${form.dateBirth.value.slice(8, 10)}`;
+          return;
+        }
+     }     
     } else {
       form.userName.value = `${form.firstName.value
         .slice(0, 4)
@@ -151,14 +202,12 @@ function generateUserName(data) {
 
 const validateFields = (expression, input, camp) => {
   if (expression.test(input.value)) {
-    d.querySelector(`#group__${camp} .form__input-error`).classList.remove(
-      "form__input-error-active"
-    );
+
+    d.querySelector(`#group__${camp} .form__input-error`).classList.remove("form__input-error-active");
     fields[camp] = true;
   } else {
-    d.querySelector(`#group__${camp} .form__input-error`).classList.add(
-      "form__input-error-active"
-    );
+
+    d.querySelector(`#group__${camp} .form__input-error`).classList.add("form__input-error-active");
     fields[camp] = false;
   }
 };
@@ -172,30 +221,49 @@ const validateForm = (e) => {
     case "firstName":
       validateFields(Regularexpressions.firstName, e.target, e.target.name);
       hasUser();
+       getData();
+
       break;
+
     case "lastName":
       validateFields(Regularexpressions.lastName, e.target, e.target.name);
       hasUser();
+      getData();
       break;
-    case "email":
-      validateFields(Regularexpressions.email, e.target, e.target.name);
-      emailUser();
-      break;
-    case "userName":
+
+      case "email":
+        validateFields(Regularexpressions.email, e.target, e.target.name);
+        emailUser();
+        break;
+
+        case "userName":
       validateFields(Regularexpressions.userName, e.target, e.target.name);
       break;
+
     case "password":
       validateFields(Regularexpressions.password, e.target, e.target.name);
       break;
+
+  }
+};
+const validateDateBirth = (e) => {
+  switch (e.target.name) {
     case "dateBirth":
       hasUser();
+      getData();
       break;
   }
 };
 
 inputs.forEach((input) => {
-  input.addEventListener("change", validateForm);
+  input.addEventListener("keyup", validateForm);
+  input.addEventListener("change", validateDateBirth);
 });
+
+
+
+
+
 
 d.addEventListener("click", (e) => {
   if (e.target.matches("#date-birth")) {
@@ -220,27 +288,33 @@ function registerUser() {
       fields.password &&
       form.password.value.length > 1 &&
       fields.email &&
+      form.email.value.length > 1 &
+      fields.userName &&
       form.email.value.length > 1
     ) {
       try {
         const dataUser = {
-            firstName: e.target.firstName.value,
+            name: e.target.firstName.value,
             lastName: e.target.lastName.value,
             email: e.target.email.value,
-            dateBirth: e.target.dateBirth.value,
+            birthDate: e.target.dateBirth.value,
             gender: e.target.gender.value,
             userName: e.target.userName.value,
             password: e.target.password.value,
           },
+          /* res = await fetch("http://localhost:4000/api/auth/signup", */
           res = await fetch(API_URL, {
             method: "POST",
             body: JSON.stringify(dataUser),
             headers: { "content-Type": "application/json" },
           }),
           json = await res.json();
+          console.log(json);
+      
+         /*  window.location.href = "/src/views/login/login.html"  */
+         addMesaggeCorrect();
         resetForm(e);
-/*         window.location.href = "/src/views/login.html" */
-        if (!res.ok) throw { status: res.status, statusText: res.statusText };
+   
       } catch (error) {
 
       }
@@ -251,12 +325,12 @@ function registerUser() {
 }
 
 
+registerUser();
+
 /*-------------------------------------------------------------------------------------------------------------- */
 
-registerUser();
 function resetForm(e) {
   e.target.reset();
-  addMesaggeCorrect();
   d.querySelector("#date-birth").setAttribute("type", "text");
   d.querySelector(".gender2").classList.add("notGender");
   d.querySelector(".gender").classList.remove("notGender");
@@ -273,7 +347,7 @@ function addMesaggeCorrect() {
   d.querySelector(".form__message-exit").style.display = "inline";
   setTimeout(() => {
     d.querySelector(".form__message-exit").style.display = "none";
-  }, 2500);
+  }, 2000);
 }
 
 
@@ -282,25 +356,49 @@ function addMesaggeCorrect() {
 function addMesaggeIncorrect() {
   d.querySelector(".form__message-error").style.display = "inline";
   setTimeout(() => {
+    window.location.href = "/src/views/login/login.html" 
     d.querySelector(".form__message-error").style.display = "none";
-  }, 3000);
+  }, 2000);
 }
 
 
 /*------------------------------------------------------------------------------------------------------------------------ */
 
 function repeatedEmailMessage(data) {
-  let uno = d.querySelector(".email__already");
+ const uno = d.querySelector(".email__already")
   data.forEach((ele) => {
     if (ele.email == form.email.value) {
       uno.classList.add("form__input-error-activ");
       setTimeout(() => {
         uno.classList.remove("form__input-error-activ");
-      }, 4000);
-      fields["email"] = false;
-    }
+      }, 4000); 
+       fields["email"] = false;
+      }
   });
 }
+
+async function getData() {
+  try {
+    const res = await fetch(API_URL),
+      data = await res.json();
+      data.forEach(user=>{
+        if (user.userName == form.userName.value) {
+          d.querySelector(`#group__userName .form__input-error`).classList.add("form__input-error-active");
+          fields.userName = false;
+        } else {
+        
+          d.querySelector(`#group__userName .form__input-error`).classList.remove("form__input-error-active");
+         fields.userName = true;
+        }
+
+      })
+
+
+      
+  } catch (err) {
+    const message = err.statusText || "An error occurred";
+  }
+};
 
 
 /*-------------------------------------------------------------------------------------------------------------------- */
@@ -328,7 +426,7 @@ d.querySelector(".genderone").addEventListener("click", (e) => {
 });
 
 d.addEventListener("DOMContentLoaded", (e) => {
- 
+ setMinimumYear();
 });
 
 

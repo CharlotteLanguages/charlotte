@@ -61,20 +61,16 @@
             </div>
 
             <div class="form__group">
-                <input type="text" id="date-birth" class="form__input" placeholder=" " name="dateBirth" min="1930-01-01"
+                <input type="text" id="date-birth" class="form__input" placeholder=" " name="dateBirth" min="1940-01-01"
                     required>
                 <label for="date-birth" class="form__label">Date of Birth</label>
                 <span class="form__line"></span>
                 <p class="form__input-error">no se adminten numeros</p>
             </div>
-
-            <div class="form__group  gender">
-                <input type="text" class="form__input genderone" placeholder=" " id="gender">
-                <label for="gender" class="form__label">Gender</label>
-                <span class="form__line"></span>
-            </div>
-            <div class="form__group notGender gender2">
-                <select class="form__input" id="gender" placeholder=" " required>
+          
+            <div class="form__group genderone">
+                <!-- <input type="text" class="form__input genderone" placeholder=" " id="gender" name="gender"> -->
+                <select class="form__input" id="gender" placeholder=" " name="gender" required>
                     <option selected disabled=""></option>
                     <option>Male</option>
                     <option>Famale</option>
@@ -83,6 +79,16 @@
                 <label for="gender" class="form__label">Gender</label>
                 <span class="form__line"></span>
             </div>
+          <!--   <div class="form__group notGender gender2">
+                <select class="form__input" id="gender" placeholder=" " name="gender" required>
+                    <option selected disabled=""></option>
+                    <option>Male</option>
+                    <option>Famale</option>
+                    <option>Unspecified</option>
+                </select>
+                <label for="gender" class="form__label">Gender</label>
+                <span class="form__line"></span>
+            </div> -->
             <div class="user__pass">
                 <div class="form__group" id="group__userName">
                     <input type="text" id="username-signup" class="form__input" placeholder=" " name="userName"
@@ -90,7 +96,7 @@
                     <label for="username-signup" class="form__label">Username</label>
                     <i class="icon-user fas fa-user" id="icon"></i>
                     <span class="form__line"></span>
-                    <p class="form__input-error">press this field before submitting the form to validate the user</p>
+                    <p class="form__input-error">Username already exist</p>
                 </div>
                 <div class="form__group" id="group__password">
                     <input type="password" id="password-signup" class="form__input" placeholder=" " name="password"

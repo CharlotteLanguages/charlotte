@@ -264,45 +264,8 @@
   }
 }
 
-.input-DateEnd-promotion {
-  box-sizing: border-box;
-  position: absolute;
-  @include mixingfunc.measures(46%, 33px, 48.5%, 138px);
-  @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
-  border: 1px solid #8f8f8f;
-  border-radius: 10px;
-  padding-left: 8px;
-  color: #000000;
-  outline: none;
-  margin-left: 18px;
 
-  @include media-queries.tablet {
-    left: 48%;
-  }
-  @include media-queries.tablett {
-    left: 48%;
-    font-size: 0.9rem;
-    height: 31px;
-  }
-  @include media-queries.big-phone {
-    top: 82px;
-    height: 28px;
-    font-size: 0.8rem;
-    left: 47%;
-    padding-left: 10px;
-    padding-right: 5px;
-  }
-  @include media-queries.phoness {
-    left: 45%;
-    padding-left: 10px;
-    padding-right: 5px;
-    height: 27px;
-    font-size: 0.8rem;
-    top: 90px;
-  }
- 
-}
-.input-DateStart-promotion {
+.input-DateEnd-promotion {
   box-sizing: border-box;
   position: absolute;
   @include mixingfunc.measures(46%, 33px, 48.5%, 97px);
@@ -344,7 +307,8 @@
   display: none;
 }
 
-.input-category-promotion {
+.input-DateStart-promotion {
+  
   box-sizing: border-box;
     position: absolute;
     top: 97px;

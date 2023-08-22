@@ -146,7 +146,8 @@ function printActivities(activity) {
 }
 
 d.addEventListener("DOMContentLoaded", (e) => {
-  loadDatas();
+  const token = localStorage.getItem("token");
+  (token)?loadDatas(): window.location.href = "/src/views/login/login.html";
 });
 
 /* let nav =  d.querySelector(".navbar__menu");
