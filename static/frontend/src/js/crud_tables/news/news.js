@@ -161,7 +161,7 @@ const openNewsEditForm = (e) => {
     $formNews.titleNews.value = Nnews.title;
     $formNews.categoryNews.value = Nnews.category;
     $formNews.tagsNews.value = Nnews.tags;
-  /*    $formNews.imageNews.value = Nnews.image; */
+    $formNews.imageNews.value = Nnews.image; 
     editor.setContents(`${Nnews.description}`);
     load();
   }
