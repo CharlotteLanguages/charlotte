@@ -1,5 +1,6 @@
 const d = document,
   API_URL = `https://apicharlotte.up.railway.app/new/NEWS`,
+  API_URL2 = `https://apicharlotte.up.railway.app/news`,
   $formNews = d.querySelector(".crud-form-news"),
   $titleNews = d.querySelector(".crud-title-news"),
   $btnNews = d.getElementById("create-news"),
@@ -48,7 +49,7 @@ function CodeTh() {
 let news = [];
 export const getNewsData = async () => {
   try {
-    let res = await fetch(API_URL),
+    let res = await fetch(API_URL2),
       json = await res.json();
     if (json.length <= 0) {
       const tables = d.querySelector(".crud-table-news");
