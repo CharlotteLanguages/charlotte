@@ -1,5 +1,5 @@
 const d = document,
-  API_URL = `https://apicharlotte.up.railway.app/news`,
+  API_URL = `https://apicharlotte.up.railway.app/new/NEWS`,
   $formNews = d.querySelector(".crud-form-news"),
   $titleNews = d.querySelector(".crud-title-news"),
   $btnNews = d.getElementById("create-news"),
