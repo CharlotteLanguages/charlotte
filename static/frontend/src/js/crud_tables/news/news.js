@@ -197,7 +197,8 @@ d.addEventListener("submit", async (e) => {
       } catch (err) {
         let message = err.statusText || "ocurrió un Error";
       }
-    } else {
+    } 
+    /*else {
       //UPDATE -PUT
       try {
         let options = {
@@ -218,7 +219,7 @@ d.addEventListener("submit", async (e) => {
       } catch (err) {
         let message = err.statusText || "ocurrió un Error";
       }
-    }
+    }*/
   }
 });
 
