@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/en.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/xml/xml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/css/css.js"></script>
+    <title>Message</title>
+</head>
+
+<body>
+    <div id="container">
+
+        <section class="cont-new-inbox open-form-inbox ">
+            <section class=" crud-inbox" id="cont-form-inbox">
+                <article>
+                    <p class="crud-title-inbox font-title-inbox">Create new message</p>
+                    <form action="" class="crud-form-inbox">
+
+                        <input type="hidden" name="idi">
+                        <input class="title-inbox" type="text" name="subject" placeholder="Subject" required>
+                        <select class="input-category-inbox" name="student">
+                            <option selected disabled="">Student</option>
+                            <option>Bussiness</option>
+                            <option>Engineer</option>
+                            <option>Specialist</option>
+                            <option>Associate</option>
+                            <option>Producer</option>
+                            <option>Developer</option>
+                            <option>Manager</option>
+                            <option>Technician</option>
+                            <option>Assistant</option>
+                        </select>
+                        <select class="input-price-inbox" name="type">
+                            <option selected disabled="">Type</option>
+                            <option>Alert</option>
+                            <option>Success</option>
+                        </select>
+                        <div id="area-inbox">
+                            <textarea name="description" class="txtarea-inbox" cols="30" rows="10"> </textarea>
+                        </div>
+                    </form>
+                    <input id="create-inbox" type="submit" value="Create inbox" class="btn-submit">
+                    <input class="cancel-form" type="button" value="Cancel">
+                </article>
+
+            </section>
+        </section>
+
+        <div class="menu">
+            <a href="" class="menu__logo"></a>
+            <div class="menu__list">
+                <div>
+                    <li><a href="/src/views/student.html">Students</a></li>
+                    <li><a href="/src/views/news.html">News</a></li>
+                    <li><a href="/src/views/courses.html">Courses</a></li>
+                    <li><a href="/src/views/actividades.html">Activities</a></li>
+                    <li><a href="/src/views/resource.html">Resources</a></li>
+                    <li><a href="/src/views/certificates.html">Certificates</a></li>
+                    <li><a href="/src/views/classes.html" class="space">Private Classes</a></li>
+
+                </div>
+                <div class="space-top">
+                    <li class="space2"><a href="/src/views/promotions.html">Offers</a></li>
+                    <li><a href="/src/views/menbership.html">Memberships</a></li>
+                    <li><a href=" /src/views/referrals.html">Referrals</a>
+                    </li>
+                    <li><a href="/src/views/sponsors.html">Sponsors</a></li>
+                    <li><a href="/src/views/reviews.html">Reviews</a>
+
+                </div>
+            </div>
+        </div>
+
+        <section id="nav">
+            <div class="nav__icon">
+                <i class="fas fa-bell"></i>
+                <i class="far fa-envelope"></i>
+                <a href="" class="profile"></a>
+                <div class="btn-entry">Entry</div>
+                <div class="btn-departure">Departure</div>
+            </div>
+        </section>
+
+        <section class="cont-tables-inbox">
+            <div class="cont-table-inbox_blue">
+                <table class="crud-table-inbox table-inbox">
+                </table>
+            </div>
+            <button class="btn-inbox">Create new message</button>
+        </section>
+        <section class="tables-inbox2 up-table-inbox2">
+            <p class="textDeparture">Departure</p>
+            <div class="cont-box">
+                <h1>Place illo sed</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum mollitia accusamus esse, distinctio eius
+                    earum odio odit quas repellendus ullam, aliquid voluptates ipsum quos sed quis unde? Aliquam, minima
+                    accusamus!</p>
+                <div>
+
+                    <p>kid</p>
+                    <p>Music</p>
+                    <p>Gsrden</p>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quas nostrum quo eligendi,
+                    itaque, sequi praesentium voluptas illo quod quidem temporibus tempore maiores laboriosam quis!
+                    Dignissimos, quaerat soluta. Accusantium, magnam!</p>
+
+
+            </div>
+        </section>
+
+
+
+        <section id="modal-container-inbox">
+            <div class="modal-inbox modal-cl">
+                <div class="close-inbox"><i class="fas fa-times-circle poi"></i></div>
+                <div class="cont-p-inbox">
+                    <p>Incomming Message</p>
+                    <i class="fas fa-user-circle"></i>
+                </div>
+
+        </section>
+
+        <form class="form-delete" action="">
+            <section id="modal-container-dr">
+                <div class="modal-dr modal-close-dr">
+                    <h3>Delete item</h3>
+                    <textarea name="cuadro" id="text-dr" cols="30" rows="10" placeholder="Reason..."
+                        required></textarea>
+                    <button type="submit" class="close-dr bnt-dr">Yes, Delete</button>
+                    <button class="close-dr btn-dr2">Cancel</button>
+
+                </div>
+            </section>
+
+        </form>
+        <section class="container-notify-succes sucesx alert" id="alert">
+            <i class="fas fa-check-circle close-notify-succes"></i>
+            <p class="parrafo-succes"></p>
+            <!--   <i class="fas fa-check-circle check-succes"></i> -->
+        </section>
+
+
+        <section id="container-noti">
+            <div class="noti__idea"></div>
+            <p class="noti__parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deserunt eius,
+                animi fugiat debitis, id ipsa sint recusandae eum nobis odit sequi nihil dicta beatae qui eveniet
+                mollitia, excepturi adipisci.</p>
+
+        </section>
+
+
+    </div>
+    <script src="/src/js/crud_tables/inbox/main-inbox.js" type="module"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+@use "mixingfunc";
+@use "media-queries";
+
+.menu {
+  @include mixingfunc.measures(16%, 800px, 0px, 0px);
+  background: #ebebeb;
+  box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 20px 20px 0px;
+  transition: transform 1s;
+  overflow: auto;
+  &::after {
+    content: "";
+    position: absolute;
+    @include mixingfunc.measures(11%, 0px, 2%, 418px);
+    border: 1px solid #5d5c5c;
+    @include media-queries.phoness {
+      width: 50%;
+      margin-left: 22.5%;
+      top: 408px;
+    }
+    @include media-queries.big-phone {
+      width: 45%;
+      margin-left: 25.5%;
+      top: 494px;
+    }
+    @include media-queries.tablett {
+      width: 40%;
+      margin-left: 27.5%;
+      top: 535px;
+    }
+    @include media-queries.tablet {
+      width: 12%;
+    }
+  }
+  @include media-queries.tablet {
+    width: 17%;
+  }
+  @include media-queries.tablett {
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    opacity: 0.9;
+    height: 100%;
+    transform: translateX(-150%);
+    border-radius: 0;
+  }
+  @include media-queries.big-phone {
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    opacity: 0.9;
+    height: 100%;
+    transform: translateX(-150%);
+    border-radius: 0;
+  }
+  @include media-queries.phoness {
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    opacity: 0.9;
+    height: 100%;
+    transform: translateX(-150%);
+    border-radius: 0;
+  }
+
+  .menu__logo {
+    background: url("/src/public/logo-charlotte.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 75%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 5%;
+
+    @include media-queries.tablet {
+      height: 65px;
+      margin-top: 6%;
+    }
+    @include media-queries.tablett {
+      height: 60px;
+    }
+    @include media-queries.big-phone {
+      height: 55px;
+    }
+    @include media-queries.phoness {
+      height: 50px;
+    }
+  }
+
+  .menu__list {
+    margin-top: 60px;
+
+    @include media-queries.tablett {
+      margin-top: 50px;
+
+      overflow: auto;
+    }
+    @include media-queries.big-phone {
+      margin-top: 45px;
+    }
+    @include media-queries.phoness {
+      margin-top: 35px;
+    }
+
+    li {
+      width: 94%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      list-style: none;
+      margin-bottom: 12px;
+      height: 27px;
+      transition: all 0.4s ease-in;
+
+      @include media-queries.tablett {
+        width: 90%;
+        margin: auto;
+        height: 37px;
+        margin-bottom: 18px;
+      }
+
+      @include media-queries.big-phone {
+        width: 90%;
+        margin: auto;
+        height: 35px;
+        margin-bottom: 17px;
+      }
+      @include media-queries.phoness {
+        width: 90%;
+        margin: auto;
+        height: 30px;
+        margin-bottom: 13px;
+      }
+
+      &:hover {
+        background: #8eaaff;
+        border-radius: 50px 0px 0px 50px;
+      }
+
+      a {
+        text-decoration: none;
+        @include mixingfunc.font-style(
+          Arial,
+          normal,
+          500,
+          1.05rem,
+          36px,
+          center
+        );
+        width: 100%;
+        height: 28px;
+        color: #000000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.1s ease;
+
+        @include media-queries.tablet {
+          font-size: 15px;
+        }
+        @include media-queries.tablett {
+          width: 90%;
+          font-size: 18x;
+        }
+        @include media-queries.big-phone {
+          width: 90%;
+          font-size: 17px;
+        }
+        @include media-queries.phoness {
+          width: 90%;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+.move-menu {
+  transform: translateX(0%);
+}
+
+.press {
+  height: 46px;
+  background: #8eaaff;
+  border-radius: 50px 0px 0px 50px;
+  text-align: center;
+  /* transition: all 0.4s ease; */
+}
+.space-top {
+  margin-top: 35px;
+  @include media-queries.tablett {
+    margin-top: 35px;
+  }
+  @include media-queries.big-phone {
+    margin-top: 35px;
+  }
+  @include media-queries.phoness {
+    margin-top: 35px;
+  }
+}

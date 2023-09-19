@@ -1,0 +1,1444 @@
+@use "mixingfunc";
+@use "media-queries";
+
+.cont-new-classes {
+  width: 63%;
+  height: 635px;
+  left: 25%;
+  top: 17%;
+  margin-right: 20px;
+  position: absolute;
+  background: #fff;
+  border-radius: 20px;
+
+  @include media-queries.tablet {
+    width: 65%;
+    left: 26%;
+    height: 630px;
+  }
+  @include media-queries.tablett {
+    width: 77%;
+    left: 12%;
+    height: 630px;
+    top: 120px;
+  }
+  @include media-queries.big-phone {
+    width: 85%;
+    left: 7.5%;
+    height: 560px;
+    top: 90px;
+  }
+  @include media-queries.phoness {
+    width: 90%;
+    left: 5%;
+    height: 85%;
+    top: 80px;
+  }
+  
+  }
+
+.title-classes {
+  box-sizing: border-box;
+  padding-left: 19px;
+  padding-right: 10px;
+  position: absolute;
+  width: 93.4%;
+  height: 33px;
+  left: 29px;
+  top: 55px;
+  color: #000;
+  border: 1px solid #8f8f8f;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  @include media-queries.tablet {
+    left:22px;
+
+  }
+  @include media-queries.tablett {
+    left:22px;
+    height: 31px;
+    font-size: .9em;
+  }
+
+  @include media-queries.big-phone {
+    top: 50px;
+    height: 28px;
+    font-size: .8em;
+    left:19px;
+    width: 93.1%;
+  }
+  @include media-queries.phoness {
+    top: 45px;
+    height: 27px;
+    left:11px;
+    width: 94.2%;
+    padding-left: 10px;
+    padding-right: 5px;
+    font-size: .8rem;
+    
+   
+  }
+  }
+
+.student-name-classes {
+    box-sizing: border-box;
+    position: absolute;
+    @include mixingfunc.measures(46%, 33px, 48.5%, 98.5px);
+    @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    padding-left: 8px;
+    color: #000000;
+    outline: none;
+    margin-left: 18px;
+  
+    @include media-queries.tablet {
+      left: 48%;
+    }
+    @include media-queries.tablett {
+      left: 48%;
+      font-size: 0.9rem;
+      height: 31px;
+    }
+    @include media-queries.big-phone {
+      top: 87px;
+      height: 28px;
+      font-size: 0.8rem;
+      left: 47%;
+      padding-left: 10px;
+      padding-right: 5px;
+    }
+    @include media-queries.phoness {
+      padding-left: 10px;
+      padding-right: 5px;
+      height: 27px;
+      font-size: 0.8rem;
+      top: 77px;
+       left: 48.9%;
+       width: 45%;
+       margin-left: 12px
+    }
+    }
+
+.input-category-classes {
+      box-sizing: border-box;
+      position: absolute;
+      top: 98.5px;
+      left: 29px;
+      @include mixingfunc.font-style(Arial, normal, 400, 1rem, 100%, justify);
+      width: 46%;
+      height: 33px;
+      border: 1px solid #8f8f8f;
+      border-radius: 10px;
+      padding-left: 8px;
+      color: #000000;
+      outline: none;
+    
+      @include media-queries.tablet {
+        left: 22px;
+      }
+      @include media-queries.tablett {
+        left: 22px;
+        font-size: 0.9rem;
+        height: 31px;
+      }
+      @include media-queries.big-phone {
+        top: 87px;
+        height: 28px;
+        font-size: 0.8rem;
+        left: 17px;
+        padding-left: 10px;
+        padding-right: 5px;
+      }
+      @include media-queries.phoness {
+        left: 11px;
+        padding-left: 10px;
+        padding-right: 5px;
+        height: 27px;
+        font-size: 0.8rem;
+        top: 77px;
+      }
+    }
+    
+.font-title-classes {
+      position: absolute;
+      height: 39px;
+      left: 28px;
+      top: 11px;
+      font-family: Arial;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 130%;
+      @include media-queries.tablet {
+        font-size: 19px;
+      }
+      @include media-queries.tablett {
+        font-size: 19px;
+      }
+      @include media-queries.big-phone {
+        font-size: 18px;
+      }
+      @include media-queries.phoness {
+        font-size: 17px;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        height: 30px;
+      }
+    }
+    
+.input-type-classes {
+      box-sizing: border-box;
+      position: absolute;
+      @include mixingfunc.measures(46%, 33px, 48.5%, 142px);
+      @include mixingfunc.font-style(Arial, normal, 400, 1rem, 130%, justify);
+      border: 1px solid #8f8f8f;
+      border-radius: 10px;
+      padding-left: 8px;
+      color: #000000;
+      outline: none;
+      margin-left: 18px;
+    
+      @include media-queries.tablet {
+        left: 48%;
+      }
+      @include media-queries.tablett {
+        left: 48%;
+        font-size: 0.9rem;
+        height: 31px;
+      }
+      @include media-queries.big-phone {
+        top: 123px;
+        height: 28px;
+        font-size: 0.8rem;
+        left: 47%;
+        padding-left: 10px;
+        padding-right: 5px;
+      }
+      @include media-queries.phoness {
+        width: 93%;
+        padding-left: 10px;
+        padding-right: 5px;
+        top: 109px;
+        height: 27px;
+        font-size: .8em;
+        left:-7px;
+        width: 94.2%;
+    
+        
+      }
+    }
+
+.input-DateEnd-classes {
+      box-sizing: border-box;
+      position: absolute;
+      top: 142px;
+      left: 27%;
+      @include mixingfunc.font-style(Arial, normal, 400, .9rem, 100%, justify);
+      width: 22.5%;
+      height: 33px;
+      border: 1px solid #8f8f8f;
+      border-radius: 10px;
+      padding-left: 8px;
+      color: #000000;
+      outline: none;
+      padding-right: 3px;
+     
+    
+      @include media-queries.tablet {
+        left: 26.5%;
+      
+        
+      }
+      @include media-queries.tablett {
+        left: 26.6%;
+        font-size: 0.9rem;
+        height: 31px;
+      }
+      @include media-queries.big-phone {
+        top: 123px;
+        height: 28px;
+        font-size: 0.7.5rem;
+        left: 26.7%;
+        padding-left: 10px;
+        padding-right: 2px;
+        @include mixingfunc.font-style(Arial, normal, 400, .9rem, 100%, justify);
+        width: 22%;
+      }
+      @include media-queries.phoness {
+        left: 48.9%;
+        padding-left: 10px;
+        padding-right: 5px;
+        height: 27px;
+        font-size: 0.8rem;
+        top: 140px;
+        width: 45%;
+        margin-left: 12px
+
+    /*     left: 45%;
+        padding-left: 10px;
+        padding-right: 5px;
+        height: 27px;
+        font-size: 0.8rem;
+        top: 77px;
+         left: 47%; */
+      }
+    }
+
+.input-DateStart-classes {
+      box-sizing: border-box;
+    position: absolute;
+    top: 142px;
+    left: 29px;
+    @include mixingfunc.font-style(Arial, normal, 400, .9rem, 100%, justify);
+    width: 22.5%;
+    height: 33px;
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    padding-left: 8px;
+    color: #000000;
+    outline: none;
+    padding-right: 3px;
+  
+    @include media-queries.tablet {
+      left: 22px;
+     
+    }
+    @include media-queries.tablett {
+
+      left: 22px;
+      font-size: 0.9rem;
+      height: 31px;
+    }
+    @include media-queries.big-phone {
+      top: 123px;
+      height: 28px;
+      font-size: 0.5rem;
+      left: 17px;
+      padding-left: 4px;
+      padding-right: 2px;   
+      @include mixingfunc.font-style(Arial, normal, 400, .9rem, 100%, justify);
+      width: 22%;
+    }
+    @include media-queries.phoness {
+      left: 10px;
+      padding-left: 10px;
+      padding-right: 5px;
+      height: 27px;
+      font-size: 0.8rem;
+      top: 140px;
+      width: 46%;
+    }
+    }
+    
+  .open-form-classes {
+    transform: translateY(-200%);
+  }
+  
+  
+  #create-classes {
+    position: absolute;
+    width: 170px;
+    height: 35px;
+    right: 3%;
+    top: 585px;
+    background: #338af3;
+    border-radius: 20px;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    transition: all 0.4s ease;
+    outline: none;
+    border: 0;
+  
+    @include media-queries.tablet {
+      top: 580px;
+      font-size: 17px;
+      width: 155px;
+    }
+  
+    @include media-queries.big-phone {
+      max-width: 130px;
+      font-size: 15px;
+      top: 520px;
+      height: 30px;
+    }
+    @include media-queries.phoness {
+      max-width: 125px;
+      font-size: 14px;
+      top: 93%;
+      height: 30px;
+    }
+  
+    color: #fff;
+    &:hover {
+      background: rgb(140, 168, 250);
+    }
+  }
+
+  .cancel-classes {
+    position: absolute;
+    width: 120px;
+    height: 35px;
+    left: 25px;
+    top: 585px;
+    background: white;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 20px;
+    border: 0.5px solid rgb(150, 148, 148);
+    transition: all 0.4s ease;
+  
+    @include media-queries.tablet {
+      width: 100px;
+      top: 580px;
+    }
+  
+    @include media-queries.big-phone {
+      font-size: 15px;
+      width: 100px;
+      top: 520px;
+      height: 30px;
+      left: 17px;
+    }
+    @include media-queries.phoness {
+      width: 90px;
+      font-size: 14px;
+      top: 93%;
+      height: 30px;
+      left: 10px;
+    }
+  
+    &:hover {
+      background: rgb(238, 238, 238);
+    }
+  }
+  
+  .none-classes {
+    display: none;
+  }
+  
+ 
+  
+  #area-classes {
+    box-sizing: border-box;
+    position: absolute;
+    width: 93.2%;
+    left: 29px;
+    top: 185px;
+    border-radius: 10px;
+  
+    @include media-queries.tablet {
+      left: 22px;
+      top: 185px;
+    }
+    @include media-queries.tablett {
+      left: 22px;
+      top: 184px;
+    }
+    @include media-queries.big-phone {
+      left: 17px;
+      top: 160px;
+    }
+    @include media-queries.phoness {
+      left: 10px;
+      top: 174px;
+      width: 91.2%;
+    }
+  
+    .txtarea-classes {
+      resize: none;
+      border-radius: 10px;
+     
+      height: 21.5em;
+      @include media-queries.tablet {
+        height: 280px;
+      }
+      @include media-queries.tablett {
+      }
+      @include media-queries.big-phone {
+        height: 19em;
+      }
+      @include media-queries.phoness {
+       height: 16em;
+      }
+    }
+  }
+  
+  /*----------------------------- Section Table---------------------- */
+  
+  .cont-tables-classes {
+    margin: auto;
+    margin-top: 120px;
+    max-width: 1251px;
+    width: 70%;
+    height: 460px;
+    background: #8eaaff;
+    border-radius: 15px;
+    box-shadow: 5px 10px 10px 10px rgba(0, 0, 0, 0.25);
+    position: relative;
+  
+    @include media-queries.tablett {
+      width: 85%;
+    }
+    @include media-queries.tablet {
+      width: 75%;
+    }
+    @include media-queries.big-phone {
+      width: 88%;
+      height: 330px;
+      margin-top: 80px;
+    }
+    @include media-queries.phoness {
+      width: 90%;
+      height: 340px;
+      margin-top: 80px;
+    }
+    @include media-queries.big-vertical {
+      height: 505px;
+      margin-top: 100px;
+    }
+  
+    .cont-table-classes_blue {
+      overflow-y: auto;
+      width: 100%;
+      max-width: 1251px;
+      height: 400px;
+      margin-top: 5px;
+  
+      @include media-queries.big-phone {
+        height: 280px;
+      }
+      @include media-queries.phoness {
+        height: 295px;
+      }
+      @include media-queries.big-vertical {
+        height: 455px;
+      }
+    }
+  
+    .table-classes {
+      width: 100%;
+      max-width: 100%;
+      height: 400px;
+      background: #ffffff;
+      border-radius: 12px;
+      border-collapse: collapse;
+  
+      @include media-queries.tablet {
+        width: 100%;
+      }
+      @include media-queries.tablett {
+        width: 100%;
+      }
+      @include media-queries.big-phone {
+        width: 98.8%;
+        margin-left: 6px;
+        margin-top: 3px;
+      }
+      @include media-queries.phoness {
+        width: 98.5%;
+        margin-left: 4px;
+      }
+  
+      @include media-queries.big-vertical {
+        height: 455px;
+      }
+      th {
+        @include mixingfunc.font-style(arial, normal, 600, 19px, 100%, center);
+        font-family: Arial;
+        border: solid 1px black;
+        height: 40px;
+        border-top: none;
+  
+        @include media-queries.tablet {
+          font-size: 16px;
+        }
+        @include media-queries.tablett {
+          font-size: 16px;
+        }
+      }
+      td {
+        @include mixingfunc.font-style(Arial, normal, 400, 17px, 130%, left);
+        border: solid 1px black;
+        padding-left: 17px;
+        padding-right: 17px;
+        white-space: nowrap;
+        overflow: auto;
+        height: 32px;
+        max-width: 310px;
+        min-width: 60px;
+        text-align: justify;
+        border-bottom: none;
+  
+        @include media-queries.tablet {
+          font-size: 14px;
+          height: 30px;
+          max-width: 190px;
+          min-width: 28px;
+        }
+        @include media-queries.tablett {
+          font-size: 13px;
+          height: 30px;
+          max-width: 170px;
+          min-width: 20px;
+        }
+        /*       @include media-queries.tablett {
+          font-size: 12px;
+          height: 24px;
+          max-width: 150px;
+          min-width: 15px;
+          background-color: #1a63f5;
+        } */
+        @include media-queries.big-phone {
+          display: block;
+          margin: auto;
+          max-width: 100%;
+          height: 40px;
+          font-size: 14px;
+          text-align: right;
+          align-items: center;
+          padding-top: 12px;
+          border: 1px solid #ddd;
+          overflow: auto;
+        }
+        @include media-queries.phoness {
+          display: block;
+          margin: auto;
+          max-width: 100%;
+          height: 35px;
+          font-size: 12px;
+          text-align: right;
+          align-items: center;
+          padding-top: 12px;
+          border: 1px solid #ddd;
+          padding-left: 8px;
+          padding-right: 8px;
+          overflow: auto;
+        };
+      }
+      td:last-child {
+        @include media-queries.big-phone {
+          border-bottom: 0;
+        }
+      }
+      td:first-child {
+        @include media-queries.big-phone {
+          border-top-right-radius: 10px;
+          border-top-left-radius: 10px;
+          text-align: right;
+        }
+        @include media-queries.phoness {
+          border-top-right-radius: 10px;
+          border-top-left-radius: 10px;
+          text-align: right;
+        }
+        text-align: center;
+      }
+      td::-webkit-scrollbar {
+        width: 8px;
+        border-radius: 20px;
+        height: 3px;
+      }
+  
+      td::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 20px;
+      }
+  
+      td:before {
+        @include media-queries.big-phone {
+          content: attr(data-label);
+          font-weight: bold;
+          float: left;
+          margin-right: 10px;
+        }
+        @include media-queries.phoness {
+          content: attr(data-label);
+          font-weight: bold;
+          float: left;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  thead {
+    @include media-queries.big-phone {
+      display: none;
+    }
+    @include media-queries.phoness {
+      display: none;
+    }
+  }
+
+  tr {
+    @include media-queries.big-phone {
+      background-color: #f7f7f7;
+      /* border: 1px solid #ddd; */
+      display: block;
+      margin-bottom: 10px;
+      border-bottom: 4px solid #ddd;
+      border-radius: 10px;
+    }
+    @include media-queries.phoness {
+      background-color: #f7f7f7;
+      display: block;
+      margin-bottom: 10px;
+      border-bottom: 4px solid #ddd;
+      border-radius: 10px;
+    }
+  }
+  .up-table-classes {
+    transform: translateY(-200%);
+  }
+  
+  
+  .btn-classes {
+    @include mixingfunc.font-style(Arial, normal, 600, 19px, 130%, center);
+  width: 195px;
+  height: 35px;
+  background: #338af3;
+  border-radius: 15px;
+  color: #ffffff;
+  transition: all 0.5s ease;
+  margin-top: 10px;
+  margin-left: 785px;
+  border: 0.5px solid #1a63f5;
+  position: absolute;
+  top: 88.5%;
+  right: 1%;
+  text-decoration: none;
+
+  &:hover {
+    background: #fff;
+    color: #000;
+    transition: all 0.4s ease;
+  }
+
+  @include media-queries.tablet {
+    font-size: 18px;
+    width: 175px;
+    height: 32px;
+  }
+  @include media-queries.tablett {
+    font-size: 17px;
+    width: 170px;
+    height: 32px;
+  }
+
+  @include media-queries.big-phone {
+    font-size: 15px;
+    width: 150px;
+    height: 28px;
+    top: 86%;
+    right: 1.8%;
+  }
+  @include media-queries.phoness {
+    font-size: 14px;
+    width: 115px;
+    height: 27px;
+    top: 87.5%;
+    right: 2.5%;
+  }
+  @include media-queries.big-vertical {
+    top: 91%;
+  }
+  }
+  
+  /*------------------Section Modal-----------*/
+  #modal-container-classes {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    z-index: 1000;
+    @include mixingfunc.measures(100%, 100%, 0, 0);
+    background-color: rgba(143, 143, 143, 0.65);
+  }
+  
+  
+  .modal-classes {
+    position: relative;
+    width: 60%;
+    height: 500px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    transition: transform 1.3s;
+    transform: translateY(0%);
+  
+    @include media-queries.tablet {
+      width: 80%;
+      height: 50%;
+      margin-top: 80px;
+    }
+    @include media-queries.tablett {
+  
+      width: 80%;
+      height: 50%;
+      margin-top: 80px;
+    }
+    @include media-queries.big-phone {
+      width: 80%;
+      height: 90%;
+      margin-top: 30px;
+    }
+    @include media-queries.phoness {
+      width: 94%;
+      height: 92%;
+      margin-top: 15px;
+    }
+    @include media-queries.lands {
+      height: 80%;
+    }
+  
+   .close-classes {
+    position: absolute;
+    right: 1.4%;
+    top: 8px;
+    color: #000;
+    z-index: 1000;
+    i {
+      font-size: 22px;
+      @include media-queries.tablett {
+        font-size: 21x;
+      }
+      @include media-queries.big-phone {
+        font-size: 20px;
+      }
+      @include media-queries.phoness {
+        font-size: 19px;
+      }
+    }
+
+   
+    @include media-queries.tablet {
+      right: 1.3%;
+    }
+    @include media-queries.tablett {
+      right: 1.3%;
+    }
+    @include media-queries.big-phone {
+      right: 1.5%;
+    }
+    @include media-queries.phoness {
+      right: 1.7%;
+    }
+   }
+  
+   .cont-p-classes {
+    position: absolute;
+    width: 97%;
+    max-height: 785px;
+    top: 25px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    overflow: auto;
+    padding: 20px 20px 20px 20px;
+    @include media-queries.tablet {
+      width: 98%;
+      height: 92%;       
+     }
+    @include media-queries.tablett {
+      width: 97%;
+      height: 92%;     
+     }
+    @include media-queries.big-phone {
+      width: 97%;
+      height: 90%;     
+      top: 20px;
+     }
+    @include media-queries.phoness {
+      width: 97%;
+      height: 92%;     
+     }
+   }
+  
+  }
+  .modal-clp {
+   transform: translateY(-200%); 
+  }
+  
+  
+  
+/*----------------buttons admin------------------*/
+  
+  .icons-classes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  @include media-queries.big-phone {
+    justify-content: flex-end;
+    grid-gap: 18px;
+    align-items: center;
+    height: 10px;
+    padding-top: 7px;
+  }
+  @include media-queries.phoness {
+    justify-content: flex-end;
+    grid-gap: 18px;
+    align-items: center;
+    height: 10px;
+    padding-top: 2px;
+  }
+
+    i {
+    width: 35px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+  
+    .edit-classes {
+      font-size: 19px;
+      color: #ff9811;
+      transition: all 0.4s ease;
+      &:hover {
+        color: #6e7f8f;
+      }
+  
+      @include media-queries.tablet {
+        font-size: 17px;
+      }
+      @include media-queries.tablett {
+        font-size: 16px;
+      }
+      @include media-queries.big-phone {
+        font-size: 18px;
+      }
+      @include media-queries.phoness {
+        font-size: 16px;
+      }
+    }
+    .remove-classes {
+      font-size: 19px;
+      color: red;
+      transition: all 0.4s ease;
+      &:hover {
+        color: #6e7f8f;
+      }
+  
+      @include media-queries.tablet {
+        font-size: 17px;
+      }
+      @include media-queries.tablett {
+        font-size: 16px;
+      }
+      @include media-queries.big-phone {
+        font-size: 18px;
+      }
+      @include media-queries.phoness {
+        font-size: 16px;
+      }
+    }
+  
+    .read-classes {
+      font-size: 19px;
+      color: #0057ff;
+      transition: all 0.4s ease;
+      &:hover {
+        color: #6e7f8f;
+      }
+  
+      @include media-queries.tablet {
+        font-size: 17px;
+      }
+      @include media-queries.tablett {
+        font-size: 16px;
+      }
+      @include media-queries.big-phone {
+        font-size: 18px;
+      }
+      @include media-queries.phoness {
+        font-size: 16px;
+      }
+    }
+  }
+
+
+  .cont-table-classes_blue::-webkit-scrollbar {
+    width: 7.9px;
+    border-radius: 20px;
+    height: 8px;
+  }
+  
+  .cont-table-classes_blue::-webkit-scrollbar-thumb {
+    background: rgba(231, 230, 230, 0.7);
+    border-radius: 20px;
+    &:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+  }
+  
+
+
+
+
+.calendar{
+  $width: 70%;
+  position: absolute;
+  @include mixingfunc.measures($width, "", 23%, 130px);
+  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.30);
+  border-radius: 20px;
+
+  @include media-queries.tablet {
+    font-size: 23px;
+    width: 75%;
+    left: 21%;
+  }
+  @include media-queries.tablett {
+    left: 14%;
+    width: 79%;
+    left: 10%;
+  }
+  @include media-queries.big-phone {
+    left: 5%;
+    width: 90%;
+    top: 85px;
+  }
+  @include media-queries.phoness {
+    left: 5%;
+    width: 90%;
+    top: 78px;
+
+  }
+  @include media-queries.big-vertical {
+    left: 5%;
+    width: 90%;
+    top: 90px;
+  }
+
+
+  &__info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+  @include mixingfunc.measures(100%, 100px, 0, 0);
+  @include mixingfunc.font-style(Arial, normal, 550, 30px, 130%, "");
+  color: white;
+  background: #0057FF;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  
+  @include media-queries.tablet {
+    font-size: 23px;
+  }
+  @include media-queries.tablett {
+    left: 14%;
+  }
+  @include media-queries.big-phone {
+    left: 10%;
+    height: 80px;
+  }
+  @include media-queries.phoness {
+    padding: 0 .6em;
+    height: 68px;
+  }
+
+  @include media-queries.big-vertical {
+    left: 10%;
+    height: 80px;
+  }
+  
+  }
+  
+    &__text{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 24px;
+      line-height: 30px;
+      
+  
+      @include media-queries.tablet {
+        font-size: 23px;
+      }
+      @include media-queries.tablett {
+        font-size: 22px;
+      }
+      @include media-queries.big-phone {
+        font-size: 20px;
+        line-height: 28px;
+      }
+      @include media-queries.phoness {
+        font-size: 17px;
+        line-height: 25px;
+
+      }
+
+      @include media-queries.big-vertical {
+        font-size: 20px;
+        line-height: 28px;
+      }
+      
+    }
+    &__prev, &__next{
+      color: rgb(255, 255, 255);
+      cursor: pointer;
+      font-size: 1.1em;
+      @include media-queries.tablet {
+        font-size: 33px;
+      }
+      @include media-queries.tablett {
+        font-size: 31px;
+      }
+      @include media-queries.big-phone {
+        font-size: 29px;
+      }
+      @include media-queries.phoness {
+        font-size: 24px;
+    
+      }
+      
+  
+    }
+  
+    &__week{
+      display: grid;
+      align-items: center;
+      grid-template-columns: repeat(7, 1fr);
+      grid-gap:10px;
+      background: #D9D9D9;
+      height: 57px;
+      
+      @include mixingfunc.font-style(Arial, normal, 550, 22px, 130%, "");
+      color: #000;
+      cursor: pointer;
+      width: 100%;
+      @include media-queries.tablet {
+        font-size: 21px;
+      }
+      @include media-queries.tablett {
+        font-size: 20px;
+      }
+      @include media-queries.big-phone {
+      font-size: 19px;
+      height: 50px;
+      }
+      @include media-queries.phoness {
+        font-size: 1px;
+        height: 45px;
+
+      }
+      @include media-queries.big-vertical {
+        font-size: 19px;
+      height: 50px;
+
+      }
+      
+
+    }
+    &__dates{
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-gap:10px;
+      height: 57px;
+      @include mixingfunc.font-style(Arial, normal, 500, 8px, 130%, "");
+      align-items: center;
+      
+      @include media-queries.tablet {
+        font-size: 21px;
+      }
+      @include media-queries.tablett {
+        font-size: 20px;
+      }
+      @include media-queries.big-phone {
+      font-size: 19px;
+      }
+      @include media-queries.phoness {
+        font-size: 18px;
+      }
+      @include media-queries.big-vertical {
+        font-size: 19px;
+      }
+  
+    }
+  
+    &__item{
+      text-align: center;
+      line-height: 1;
+      cursor: pointer;
+      font-size: 18px;
+
+      @include media-queries.tablet {
+        font-size: 17px;
+      }
+      @include media-queries.tablett {
+        font-size: 16px;
+      }
+      @include media-queries.big-phone {
+      font-size: 15px;
+      }
+      @include media-queries.phoness {
+        font-size: 13px;
+      }
+      
+      @include media-queries.big-vertical {
+        font-size: 15px;;
+      }
+  
+    }
+    &__dates{
+      width: 100%;
+      height: 250px;
+      left: 0px;
+      font-size: 300px;
+      background: #ffffff;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      @include media-queries.tablet {
+        font-size: 17px;
+      }
+      @include media-queries.tablett {
+        font-size: 16px;
+      }
+      @include media-queries.big-phone {
+      font-size: 15px;
+      height: 220px;
+      }
+      @include media-queries.phoness {
+        height: 190px;
+   
+      }
+
+        
+      @include media-queries.big-vertical {
+        font-size: 15px;
+      height: 230px;
+      }
+     
+      
+   
+    }
+    &__today{
+      background-color: #599ef3;
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin: auto;
+      transition: all 0.4s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover{
+        background-color: #11c1ed;
+      }
+      @include media-queries.big-phone {
+        height: 25px;
+        width: 25px;
+        }
+        @include media-queries.phoness {
+          height: 22px;
+          width: 22px;
+     
+        }
+    }
+    &__lastDays{
+      opacity: 0.3;
+    }
+  }
+
+  .up-calendar{
+    transform: translateY(-200%);
+  }
+
+
+
+
+  .visible-calendar{
+    display: none;
+  }
+
+  #back{
+    display: none;
+
+    @include media-queries.big-phone {
+      position: absolute;
+      top: 450px;
+      left: 7%;
+      color: #ffffff;
+      font-size: 24px;
+      transition: all .4s ease;
+      &:hover{
+        color: #e9e9e9;
+      }
+ 
+    }
+    @include media-queries.phoness {
+      position: absolute;
+      top: 400px;
+      left: 7%;
+      color: #ffffff;
+      font-size: 23px;
+      transition: all .4s ease;
+      &:hover{
+        color: #e9e9e9;
+      }
+ 
+    }
+    @include media-queries.big-vertical {
+      position: absolute;
+      top: 470px;
+      left: 7%;
+      color: #ffffff;
+      font-size: 23px;
+      transition: all .4s ease;
+      &:hover{
+        color: #e9e9e9;
+      }
+    }
+   
+    
+  }
+
+  
+#calendar-icon{
+  display: none;
+
+   @include media-queries.big-phone {
+     position: absolute;
+     font-size: 21px;
+     top: 90%;
+      color: #e0f5ff;
+      left: 3%;
+      transition: all  .4s ease;
+      display: inline;
+      &:hover{
+       color: #fff;
+      }
+
+   }
+   @include media-queries.phoness {
+     position: absolute;
+     font-size: 20px;
+     top: 91%;
+      color: #e0f5ff;
+      left: 4%;
+      transition: all  .4s ease;
+      display: inline;
+      &:hover{
+       color: #fff;
+      }
+
+   }
+   @include media-queries.big-vertical {
+    top: 93.5%;
+  }
+}
+
+
+.btn-main-class {
+  position: absolute;
+  background-color: #ffffff;
+  color: #000;
+  @include mixingfunc.measures(210px, 37px, 23%, 47px);
+  display: flex;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 550;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px 3px rgba(0, 0, 0, 0.25);
+  transition: all .4s ease;
+  user-select: none;
+  &:hover{
+    box-shadow: 0px 4px 6px 3px rgba(0, 0, 0, 0.25);
+   
+  }
+  @include media-queries.tablet {
+    width: 16.5%;
+    height: 34px;
+    font-size: 19px;
+    left: 22%;
+ 
+  }
+  @include media-queries.tablett {
+    width: 17%;
+    height: 34px;
+    font-size: 18px;
+    left: 10%;
+  }
+  @include media-queries.big-phone {
+    /* width: 16%;
+    height: 27px;
+    font-size: 15px;
+    top: 26px;
+    left: 11%; */
+    display: none;
+  }
+  @include media-queries.phoness {
+   /*  width: 14%; */
+   display: none;
+  }
+}
+
+.btn-calendar-class {
+  position: absolute;
+  display: flex;
+  @include mixingfunc.measures(210px, 37px, 43%, 47px);
+  border-radius: 20px;
+  background-color: #8eaaff;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 550;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 6px 3px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  transition: all .4s ease;
+  &:hover{
+    box-shadow: 0px 4px 6px 3px rgba(0, 0, 0, 0.25);
+  }
+
+  @include media-queries.tablet {
+    width: 16.5%;
+    height: 35px;
+    font-size: 19px;
+    left: 42%;
+  }
+  @include media-queries.tablett {
+    width: 17%;
+    height: 34px;
+    font-size: 18px;
+    left: 30%;
+  }
+  @include media-queries.big-phone {
+/*     width: 16%;
+    height: 27px;
+    font-size: 15px;
+    left: 30%;
+    top: 26px; */
+    display: none;
+  }
+  @include media-queries.phoness {
+  display: none;
+  }
+
+}
+
+.btn-main-visible{
+  display: none;
+}
+.btn-calendar-visible{
+  display: none;
+}
+

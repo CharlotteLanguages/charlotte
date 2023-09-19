@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/style.css">
+     <!------------------------------ Sun Editor--------------------------------------->
+     <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
+     <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/en.js"></script>
+     <!------------------------------ Codemirrorx--------------------------------------->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.css">
+     <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/htmlmixed/htmlmixed.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/xml/xml.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/css/css.js"></script>
+     <!------------------------------ Katex--------------------------------------->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+     <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
+    <title>Courses</title>
+</head>
+
+<body>
+    <div id="container">
+        <i class="fas fa-bars" id="bars"></i>
+        <section class="cont-new-course open-form-course ">
+            <section class=" crud-course" id="cont-form-courses">
+                <article>
+                    <p class="crud-title-course font-title-course">Create new course</p>
+                    <form action="" class="crud-form-course">
+
+                        <input type="hidden" name="idi">
+                        <input class="title-course" type="text" name="courseTitle" placeholder="Course Title" required>
+                        <select class="input-category-course" name="category" required>
+                            <option selected disabled="">Category</option>
+                            <option>Free</option>
+                            <option>Basic</option>
+                            <option>Pro</option>
+                            <option>Pro +</option>
+                        </select>
+
+                        <input class="input-price-course" type="number" name="price" placeholder="Price*" required>
+                        <div id="area-courses">
+                            <textarea name="description" class="txtarea-course" cols="30" rows="10"> </textarea>
+                        </div>
+                        <input id="create-course" type="submit" value="Create course" class="btn-submit">
+                        <input class="cancel-course" type="button" value="Cancel">
+                    </form>
+                </article>
+
+            </section>
+        </section>
+
+        <div class="menu">
+            <a href="" class="menu__logo"></a>
+            <div class="menu__list">
+                <div>
+                    <li><a href="/src/views/student.html">Students</a></li>
+                    <li><a href="/src/views/news.html">News</a></li>
+                    <li class="press"><a href="/src/views/courses.html">Courses</a></li>
+                    <li><a href="/src/views/activities.html">Activities</a></li>
+                    <li><a href="/src/views/resource.html">Resources</a></li>
+                    <li><a href="/src/views/certificates.html">Certificates</a></li>
+                    <li><a href="/src/views/classes.html" class="space">Private Classes</a></li>
+
+                </div>
+                <div class="space-top">
+                    <li class="space2"><a href="/src/views/offers.html">Offers</a></li>
+                    <li><a href="/src/views/menbership.html">Memberships</a></li>
+                    <li><a href=" /src/views/referrals.html">Referrals</a>
+                    </li>
+                    <li><a href="/src/views/sponsors.html">Sponsors</a></li>
+                    <li><a href="/src/views/reviews.html">Reviews</a>
+
+                </div>
+            </div>
+        </div>
+
+        <section id="nav">
+            <div class="nav__icon">
+                <i class="fas fa-bell">
+                    <div class="tooltip">
+                            
+                    </div>
+
+                </i>
+                <i class="far fa-envelope">
+                    
+                </i>
+                <a href="" class="profile"></a>
+            </div>
+        </section>
+
+        <section class="cont-tables-course">
+            <div class="cont-table-course_blue">
+                <table class="crud-table-course table-course">
+                </table>
+            </div>
+            <button class="btn-courses">Add new course</button>
+        </section>
+
+        <section id="modal-container-course">
+            <div class="modal-course modal-cl">
+                <div class="close-course"><i class="fas fa-times-circle close"></i></div>
+                <div class="cont-p-course">
+                </div>
+
+        </section>
+
+        <form class="form-delete-dr" action="">
+            <section class="modal-container-dr">
+                <div class="modal-dr modal-close-dr">
+                    <h3>Delete item</h3>
+                    <textarea name="reasonDelete" id="text-dr"  placeholder="Reason..." required></textarea>
+                        <div class="buttons_delete">
+                            <div class="close-dr btn-dr2">Cancel</div>
+                            <input type="submit" class="close-dr bnt-dr" value="Yes, Delete"></input>
+                      </div>
+                </div>
+            </section>
+        </form>
+        <section class="container-notify-succes sucesx alert" id="alert">
+            <i class="fas fa-check-circle close-notify-succes"></i>
+            <p class="parrafo-succes"></p>
+            <!--   <i class="fas fa-check-circle check-succes"></i> -->
+        </section>
+
+
+        <section id="container-noti">
+            <div class="noti__idea"></div>
+            <p class="noti__parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deserunt eius,
+                animi fugiat debitis, id ipsa sint recusandae eum nobis odit sequi nihil dicta beatae qui eveniet
+                mollitia, excepturi adipisci.</p>
+
+        </section>
+
+
+    </div>
+    <script src="/src/js/crud_tables/courses/main-courses.js" type="module"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

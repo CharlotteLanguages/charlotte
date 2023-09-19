@@ -1,0 +1,151 @@
+@use "mixingfunc";
+@use "media-queries";
+
+@mixin fa-btn-style($left, $right, $top, $bottom) {
+  position: absolute;
+  left: $left;
+  right: $right;
+  top: $top;
+  bottom: $bottom;
+  color: #fff;
+  font-size: 50px;
+}
+
+.boton-nav-3 {
+  padding-top: 8px;
+  text-decoration: none;
+  position: absolute;
+  background: #8eaaff;
+  color: #fff;
+  border-radius: 50px;
+  @include mixingfunc.measures(264px, 47px, 344px, 53px);
+  @include mixingfunc.font-style(Montserrat, normal, 600, 25px, 30px, center);
+  &:hover {
+    background: #fff;
+    color: #000;
+
+    transition: all 0.4s ease;
+  }
+}
+
+.boton-nav-4 {
+  position: absolute;
+  padding-top: 8px;
+  text-decoration: none;
+
+  background: #fff;
+  color: #000;
+  border-radius: 50px;
+  @include mixingfunc.measures(264px, 47px, 623px, 53px);
+  @include mixingfunc.font-style(Montserrat, normal, 600, 25px, 30px, center);
+  text-decoration: none;
+
+  &:hover {
+    background: #8eaaff;
+    color: #fff;
+
+    transition: all 0.4s ease;
+  }
+}
+
+.nav__icon {
+  position: absolute;
+  right: 9%;
+  top: 30px;
+  width: 50%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
+  align-items: center;
+  @include media-queries.big-phone {
+    top: 20px;
+    height: 40px;
+    gap: 30px;
+    width: 70%;
+    }
+    @include media-queries.phoness {
+      top: 20px;
+      height: 40px;
+      gap: 30px;
+      width: 70%;
+    }
+  
+  
+}
+
+.fa-bell {
+  /* @include fa-btn-style(75.5%, 19.58%, 5.08%, 90.04%); */
+  transition: all .4s ease;
+  font-size: 35px;
+  color: #fff;
+  position: relative;
+  @include media-queries.tablet {
+    font-size: 33px;
+ 
+
+  }
+  @include media-queries.tablett {
+  font-size: 30px;
+
+  }
+  @include media-queries.big-phone {
+  font-size: 28px;
+  
+  }
+  @include media-queries.phoness {
+  font-size: 25px;
+
+  }
+  }
+
+.fa-envelope {
+  margin-left: 50px;
+  font-size: 35px;
+  color: #fff;
+
+  @include media-queries.tablet {
+    font-size: 33px; 
+  }
+  @include media-queries.tablett {
+    font-size: 30px;
+  }
+  @include media-queries.big-phone {
+    font-size: 28px;
+  }
+  @include media-queries.phoness {
+    font-size: 25px; 
+  }
+}
+
+.profile {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: url("/src/public/perfil2.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-left: 5%;
+
+
+  @include media-queries.tablet {
+    width: 44px;
+    height: 44px;
+  }
+  @include media-queries.tablett {
+    width: 40px;
+    height: 40px;
+  }
+  @include media-queries.big-phone {
+    width: 35px;
+    height: 35px;
+    margin-left: 8%;
+  }
+  @include media-queries.phoness {
+    width: 33px;
+    height: 33px;
+    margin-left: 10%;
+  }
+ 
+}

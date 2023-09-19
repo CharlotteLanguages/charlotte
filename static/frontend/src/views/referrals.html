@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <title>Referrals</title>
+</head>
+
+<body>
+
+    <div id="container">
+        <i class="fas fa-bars" id="bars"></i>
+        <section class="cont-new-referral open-form-referral">
+            <section class=" crud-referral" id="cont-form-referral">
+                <article>
+                    <p class="crud-title-referral font-title-referral">Create new referral</p>
+                    <form class="crud-form-referral">
+                        <input type="hidden" name="idi">
+                        <input class="title-referral" type="text" name="referralName" placeholder="Referral name"
+                            pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" title="llena todos LOS Campos" required>
+                        <input type="email" class="email-referral" name="referralEmail" placeholder="Email" required>
+                        <input type="number" class="phone-referral" name="referralPhone" placeholder="Phone">
+
+                        <input id="create-referral" type="submit" value="Create referral" class="btn-submit">
+                        <input class="cancel-referral" type="button" value="Cancel">
+                    </form>
+                </article>
+
+            </section>
+        </section>
+
+        <div class="menu">
+            <a href="" class="menu__logo"></a>
+            <div class="menu__list">
+                <li><a href="/src/views/student.html">Students</a></li>
+                <li><a href="/src/views/news.html">News</a></li>
+                <li><a href="/src/views/courses.html">Courses</a></li>
+                <li><a href="/src/views/activities.html">Activities</a></li>
+                <li><a href="/src/views/resource.html">Resources</a></li>
+                <li><a href="/src/views/certificates.html">Certificates</a></li>
+                <li><a href="/src/views/classes.html" class="space">Private classes</a></li>
+                <div class="space-top">
+                    <li><a href="/src/views/offers.html">Offers</a></li>
+                    <li><a href="/src/views/menbership.html">Memberships</a></li>
+                    <li class=" press"><a href="/src/views/referrals.html">Referrals</a></li>
+                    <li><a href="/src/views/sponsors.html">Sponsors</a></li>
+                    <li><a href="/src/views/reviews.html">Reviews</a>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <section id="nav">
+
+            <div class="nav__icon">
+                <i class="fas fa-bell">
+                    <div class="tooltip"></div>
+
+                </i>
+                <i class="far fa-envelope"></i>
+                <a href="" class="profile"></a>
+            </div>
+        </section>
+
+        <section class="cont-tables-referral ">
+            <div class="cont-table-referral_blue">
+                <table class="crud-table-referral table-referral">
+                </table>
+            </div>
+            <button class="btn-referral">Add new referral</button>
+        </section>
+
+        <section id="modal-container-referral">
+            <div class="modal-referral modal-clos">
+                <div class="close-referral"><i class="fas fa-times-circle close"></i></div>
+                <div class="cont-p-referral">
+                </div>
+        </section>
+        
+        <form class="form-delete-dr" action="">
+            <section class="modal-container-dr">
+                <div class="modal-dr modal-close-dr">
+                    <h3>Delete item</h3>
+                    <textarea name="reasonDelete" id="text-dr"  placeholder="Reason..." required></textarea>
+                        <div class="buttons_delete">
+                            <div class="btn-dr2">Cancel</div>
+                            <input type="submit" class="bnt-dr" value="Yes, Delete"></input>
+                        </div>
+                    </div>
+                </section>
+            </form>
+            
+
+        <section class="container-notify-succes alert" id="alert">
+            <i class="fas fa-check-circle close-notify-succes"></i>
+            <p class="parrafo-succes"></p>
+            <!--   <i class="fas fa-check-circle check-succes"></i> -->
+
+        </section>
+
+        <section id="container-noti">
+            <div class="noti__idea"></div>
+            <p class="noti__parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deserunt eius,
+                animi fugiat debitis, id ipsa sint recusandae eum nobis odit sequi nihil dicta beatae qui eveniet
+                mollitia, excepturi adipisci.</p>
+
+        </section>
+
+
+    </div>
+    <!--     <script src="/src/js/index.js" type="module"></script> -->
+    <script src="/src/js/crud_tables/referrals/main-referrals.js" type="module"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

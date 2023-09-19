@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/src/public/logo-shortcut.png">
+    <link rel="stylesheet" href="/src/css/homepage/page.css">
+    <title>Homepage</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="lds-ring loader" id="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="navbar__social-medias">
+            <div class="social-medias">
+                <div class="btn__social-medias">
+                    <a href="https://www.linkedin.com/company/charlotte-languages-center/about/" target="_blank"
+                        id="linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <div class="btn__social-medias">
+                    <a href="https://www.facebook.com/profile.php?id=100089370116188" target="_blank" id="facebook">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                </div>
+                <div class="btn__social-medias">
+                    <a href="https://twitter.com/home" target="_blank" id="twitter">
+                        <i class="fab fa-twitter-square"></i>
+                    </a>
+                </div>
+                <div class="btn__social-medias">
+                    <a href="https://www.instagram.com/charlotte_languagescenter/" target="_blank" id="instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="contenedor">
+
+                <div class="selectbox">
+                        <div class="select" id="select">
+                            <div class="content-select">
+                                <img src="/src/public/homepage/france-icon.png" class="country-icon">
+                            </div>
+                            <i class="fas fa-angle-down down"></i>
+                            <i class="fas fa-angle-up up"></i>
+                        </div>
+                <div class="options" id="options">
+                    <div class="option">
+                        <div class="content-option portugues">
+                            <img src="/src/public/homepage/brazil-icon.png" class="country-icon" id="brasil">
+                           <!--  <p class="title">PT</p> -->
+                        </div>
+                    </div>
+                    <div class="option">
+                        <div class="content-option español">
+                            <img src="/src/public/homepage/spain-icon.png" class="country-icon" id="spain">
+                            <!-- <p class="title">ES</p> -->
+                        </div>
+                    </div>
+                    <div class="option">
+                        <div class="content-option ingles">
+                            <img src="/src/public/homepage/united_states-icon.png" class="country-icon" id="eeuu">
+                           <!--  <p class="title">EN</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name="pais"id="inputSelect" value="">
+        </div> 
+    </div>
+        <div class="navbar">
+            <img src="/src/public/charlotte-logo.png" class="logo">
+            <ul class="navbar__menu">
+                <li><a href="">Accueil</a></li>
+                <li><a href="/src/views/memberships/memberships.html" target="_blank">Adhésion</a></li>
+                <li><a href="/src/views/customer_service/main.html" target="_blank">Service client</a></li>
+                <li><a href="/src/views/login/signup.html" target="_blank">Inscription</a></li>
+                <li><a href="/src/views/login/login.html" id="login" class="sigin" target="_blank">Connexion</a></li>
+            
+            </ul>
+            <i class="fas fa-bars" id="bars"></i>
+
+        </div>
+        <div class="call-action none">
+            <p>Apprendre avec Charlotte Languages</p>
+            <button class="btn-start">Commencer!</button>
+            <i class="far fa-times-circle"></i>
+        </div>
+        <div class="slider">
+            <div class="slider-slides">
+                <div class="slider-slide active">
+                    <img class="img1">
+                </div>
+                <div class="slider-slide">
+                    <img class="img2">
+                </div>
+                <div class="slider-slide">
+                    <img class="img3">
+                </div>
+                <div class="slider-slide">
+                    <img class="img4">
+                </div>
+                <div class="slider-slide">
+                    <img class="img5">
+                </div>
+            </div>
+            <div class="slider-btns">
+                <i class="fas fa-chevron-left prev"></i>
+                <i class="fas fa-chevron-right next"></i>
+            </div>
+        </div>
+
+        <div class="section-main"> 
+
+        </div>
+        <div class="container__subscribe">
+            <h1>Juste au cas où vous auriez raté quelque chose</h1>
+            <div class="subscribe">
+                <h1>Commencez maintenant</h1>
+                <div class="getStarted">
+                    <p>S'inscrire à la Newsletter! </p>
+                    <input type="email" class="email" placeholder="écrivez votre e-mail ici..." id="email">
+                    <label for="email"><i class="fas fa-envelope envelope"></i></label>
+                </div>
+            </div>
+
+        </div>
+        
+        <button class="scroll-top-btn hidden">&#11014;</button>
+        <section id="modal-container-news">
+            <img src="/src/public/logo-charlotte.png" class="fondo">
+            <div class="modal-news modal-cl">
+                <div class="close-news"><i class="fas fa-times-circle poi"></i></div>
+                <div class="cont-p-news">
+                </div>
+        </section>
+
+    </div>
+    <div class="footer">
+        <div class="info-contact">
+            <div class="phone">
+                <p class="text-white">Appelez-nous: (+1) 980-274-1445 </p>
+                <div class="call-us">
+                    <a href="" class="text-color">Cliquez pour appeler </a>
+                    <i class="fas fa-phone-alt phone-icon"></i>
+                </div>
+               
+            </div>
+
+            <div class="contact-icons">
+                <a class="text-white">Contactez-nous via</a>
+                <div class="icons">
+                    <img src="/src/public/homepage/telegram-icon.png" class="telegram-icon">
+                    <img src="/src/public/homepage/whatsap-icon.png" class="whatsapp-icon">
+                </div>
+            </div>
+
+            <div class="customer-service">
+                <a href="" class="text-color">Service Clients </a>
+                <i class="fas fa-headphones headphone-icon"></i>
+               
+            </div>
+
+        </div>
+        <img src="/src/public/charlotte-logo.png" class="logo-charlotte">
+
+        <div class=" info-contact2">
+            <div>
+                <p>Horaire d'attention</p>
+                <p>Lundi à vendredi | 9:00-18:00 Hs</p>
+            </div>
+            <div class="email-charlotte">
+                <p>Immédiatement</p>
+                <p>socialnetworks@charlottelanguagescenter.com</p>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous">
+    </script>
+    <script src="/src/js/homepage/homepage.js"></script>
+</body>
+
+</html>

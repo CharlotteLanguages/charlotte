@@ -1,0 +1,1178 @@
+@use "../media-queries";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  body{
+      background-image: url("/src/public/fondo.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center; 
+      background-attachment: fixed;      
+}
+
+.login-box{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh;
+ 
+ 
+
+    @include media-queries.tablet {
+     
+      }
+      @include media-queries.tablett {
+     
+      }
+      @include media-queries.big-phone {
+       
+      }
+      @include media-queries.phoness {
+
+      }
+}
+
+.container{
+    width: 36%;
+    height: 650px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(18px);
+    border-radius: 20px;
+    margin-top:70px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include media-queries.tablet {
+        width: 44%;
+    }
+    @include media-queries.tablett {
+        width: 50%;
+        height:600px;
+    }
+    @include media-queries.big-phone {
+        width: 75%;
+        height:580px;
+   
+    }
+    @include media-queries.phoness {
+        width: 85%;
+        height:525px;
+    }
+    @include media-queries.big-vertical {
+        width: 85%;
+        height:525px;
+    }
+
+    
+    h1{    
+        font-family: 'Montserrat', sans-serif;
+        line-height: 43px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 33px;
+        text-align: center;
+        color: #FFFFFF;
+        margin-top: 10px;
+        @include media-queries.tablet {
+            font-size: 31px;
+            line-height: 38px;
+        }
+        @include media-queries.tablett {
+            font-size: 30px;
+            line-height: 33px;
+            margin-top: -30px;
+        }
+        @include media-queries.big-phone {
+            font-size: 24px;
+            margin-top: -30px;
+            line-height: 28px;
+            font-weight: 600;
+        }
+        @include media-queries.phoness {
+            font-size: 20px;
+            margin-top: -30px;
+            line-height: 25px;
+            font-weight: 600;
+        }
+    }
+
+    h4{
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight:700;
+        font-size: 15px;
+        line-height: 20px;
+        text-align: center;
+        color: #FFFFFF;
+        @include media-queries.tablet {
+            font-size: 15px;
+            line-height: 15px;
+        }
+        @include media-queries.tablett {
+            font-size: 14px;
+        }
+        @include media-queries.big-phone {
+            font-size: 15px;
+            line-height: 12px;
+            font-weight:500;
+        }
+        @include media-queries.phoness {
+            font-size: 12px;
+            line-height: 10px;
+            font-weight:500;
+        }
+    }
+}
+
+.form__group{
+    margin-left: 14%;
+   
+    @include media-queries.phoness {
+        margin-left: 10%;
+     }
+
+}
+.input{
+    width: 85%;
+    height: 40px;
+    opacity: .3;  
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    padding: 0 43px 0 20px;
+    font-size: 15px;
+     color: #000;
+     font-weight: bold; 
+     outline: none;
+     font-family: Arial, Helvetica, sans-serif;
+    backdrop-filter: blur(18px);
+     @include media-queries.tablet {
+        height: 37px;
+        padding: 0 35px 0 12px;
+     }
+     @include media-queries.tablett {
+        font-size: 15px;
+        width: 87%;
+        height: 35px;
+        padding: 0 32px 0 14px;
+     }
+     @include media-queries.big-phone {
+        height: 33px;
+        padding: 0 30px 0 15px;
+     }
+     @include media-queries.phoness {
+        width: 90%;
+        height: 30px;
+        font-size: 12px;
+        padding: 0 30px 0 12px;
+     }
+     
+    }
+    i{
+        position: relative;
+        right: 40px;
+        font-size: 19px;
+        top: 2px;
+        @include media-queries.tablet {
+            font-size: 18px;
+            right: 35px
+        }
+        @include media-queries.tablett {
+            font-size: 16px;
+            right: 33px;
+        }
+        @include media-queries.big-phone {
+            font-size: 16px;
+            right: 30px;
+        }
+        @include media-queries.phoness {
+            font-size: 15px;
+            right: 30px;
+        }
+    }
+    
+    
+    .form__input-error1{
+        position: absolute;
+    left: 62px;
+    width: 410px;
+    margin-top: 10px;
+    color: rgb(255, 1, 1);
+    font-weight: bold;
+    top: 230px;
+    font-size: 14px;
+    display: none;
+    @include media-queries.tablet {
+     
+    }
+    @include media-queries.tablett {
+   
+    }
+    @include media-queries.big-phone {
+     
+    }
+    @include media-queries.phoness {
+
+    }
+}
+.form__input-error2{
+    position: absolute;
+    left: 62px;
+    width: 410px;
+    margin-top: 10px;
+    color: rgb(255, 1, 1);
+    font-weight: bold;
+    top: 330px;
+    font-size: 14px;
+    display: none;
+    @include media-queries.tablet {
+     
+    }
+    @include media-queries.tablett {
+   
+    }
+    @include media-queries.big-phone {
+     
+    }
+    @include media-queries.phoness {
+
+    }
+}
+
+
+#group__user{
+    margin-top: 69px;
+    margin-bottom: 40px;
+    
+   
+    @include media-queries.tablet {
+     
+    }
+    @include media-queries.tablett {
+        margin-top: 50px;
+        margin-bottom: 33px;
+    }
+    @include media-queries.big-phone {
+        margin-top: 45px;
+        margin-bottom: 26px;
+    }
+    @include media-queries.phoness {
+        margin-top: 40px;
+        margin-bottom: 23px;
+     
+    }
+}
+
+.form__checkbox{ 
+    display: flex;
+    justify-content: center;
+    margin-top: 23px; 
+    color: #ECECEC;
+    gap: 80px;
+   
+   
+    @include media-queries.tablet {
+     
+    }
+    @include media-queries.tablett {
+        width: 90%;
+        gap: 8%;
+        margin-left: 5.5%;
+    }
+    @include media-queries.big-phone {
+        gap: 10%;
+        width: 85%;
+        margin-left: 9%;
+        margin-top: 19px;
+    }
+    @include media-queries.phoness {
+        gap: 10%;
+        width: 85%;
+        margin-left: 9%;
+        margin-top: 17px; 
+    }
+}
+
+.left{
+
+    text-align: center;
+    display: flex;
+    font-size: 13px;
+    color: #fff;
+    justify-content:  flex-start;
+
+    @include media-queries.tablet {
+     
+    }
+    @include media-queries.tablett {
+   
+    }
+    @include media-queries.big-phone {
+        font-size: 12px;
+    }
+    @include media-queries.phoness {
+        font-size: 11px;
+       
+    }   
+        .text-check{
+            padding-left: 10px;
+            transition: all 0.5s ease;
+            &:hover{
+                cursor: pointer;
+                color: #dfdfdf;
+            }
+            @include media-queries.tablett {
+                padding-left: 6px;
+            }
+            
+            @include media-queries.phoness {
+                padding-left: 3px;
+            } 
+        }
+    }
+
+    .right{
+        text-align: center;
+        font-size: 13px;
+        
+        @include media-queries.tablet {
+     
+        }
+        @include media-queries.tablett {
+       
+        }
+        @include media-queries.big-phone {
+            font-size: 12px;
+        }
+        @include media-queries.phoness {
+            font-size: 11px;
+        }
+       
+    }
+    .forgot{
+        transition: all 0.5s ease;
+        &:hover{
+            cursor: pointer;
+            color: #cccccc;
+        }
+        @include media-queries.tablet {
+     
+        }
+        @include media-queries.tablett {
+       
+        }
+        @include media-queries.big-phone {
+         
+        }
+        @include media-queries.phoness {
+  
+        }
+     
+        
+    }
+
+    .checkbox{
+        width: 17px;
+        height: 17px;
+        opacity: 0.3;
+        border: 1px solid #FFFFFF;
+        border-radius: 3px;
+        @include media-queries.tablet {
+     
+        }
+        @include media-queries.tablett {
+            width: 15px;
+            height: 15px;
+        }
+        @include media-queries.big-phone {
+            width: 14px;
+            height: 14px;
+        }
+        @include media-queries.phoness {
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    .btn-login{
+        width: 75%;
+        height: 40px;
+        background: #0057FF;
+        border-radius: 15px;
+        border: 0;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+        text-align: center;
+        color: #FFFFFF;
+        margin-left:13%;
+        margin-top: 35px;
+        transition: all 0.4s ease;
+        @include media-queries.tablet {
+            font-size: 17px;
+            height: 37px;
+        }
+        @include media-queries.tablett {
+            font-size: 16px;
+            height: 35px;
+        }
+        @include media-queries.big-phone {
+            height: 33px;
+            font-size: 15px;
+        }
+        @include media-queries.phoness {
+            width: 75%;
+            height: 30px;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+        &:hover{
+           
+            background-color: #4080ff;
+        }
+    }
+    .btn-login-forgot{
+        width: 75%; 
+        height: 40px;
+        background: #0057FF;
+        border-radius: 15px;
+        border: 0;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+        text-align: center;
+        color: #FFFFFF;
+        margin-left: 13%;
+        margin-top: 30px;
+        transition: all 0.4s ease;
+        @include media-queries.tablet {
+            font-size: 17px;
+            height: 37px;
+        }
+        @include media-queries.tablett {
+            font-size: 16px;
+            height: 35px;
+        }
+        @include media-queries.big-phone {
+            height: 33px;
+            font-size: 15px;
+        }
+        @include media-queries.phoness {
+            width: 75%;
+            height: 30px;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+        &:hover{
+            background-color: #4080ff;
+        }
+    }
+    
+    .buttons{
+        margin-top: 75px;
+        display: flex;
+        justify-content: space-between;
+        width: 410px;
+        margin-left: 60px;
+        @include media-queries.tablet {
+     
+        }
+        @include media-queries.tablett {
+       
+        }
+        @include media-queries.big-phone {
+         
+        }
+        @include media-queries.phoness {
+  
+        }
+        
+    }
+
+    .init-btn{
+        width: 130px;
+        height: 56px;
+        background-color: #fff;
+        border: 0;
+        border-radius: 10px;
+        @include media-queries.tablet {
+     
+        }
+        @include media-queries.tablett {
+       
+        }
+        @include media-queries.big-phone {
+         
+        }
+        @include media-queries.phoness {
+  
+        }
+    }
+
+    .go-signup{
+        display: flex;
+        width: 90%;
+        margin-left: 25px;
+        margin-top: 80px;
+        justify-content: center;
+        font-weight: bold;
+     
+       
+       
+        @include media-queries.tablet {
+     
+        }
+        @include media-queries.tablett {
+       
+        }
+        @include media-queries.big-phone {
+         
+        }
+        @include media-queries.phoness {
+                margin-left: 5%;
+        }
+       
+        
+    }
+    
+    .haveAccount{
+        color: #fff;
+        font-size: 13px;
+         font-size: "Montserrat";
+         @include media-queries.tablet {
+     
+         }
+         @include media-queries.tablett {
+            font-size: 12px;
+         }
+         @include media-queries.big-phone {
+            font-size: 11px;
+         }
+         @include media-queries.phoness {
+            font-size: 10px;
+           
+         }
+      
+    }
+    
+    .sign-up{
+        color: #4d88ff;
+        font-weight: bold;   
+        padding-left: 10px;
+         font-size: "Montserrat";
+         @include media-queries.tablet {
+     
+         }
+         @include media-queries.tablett {
+            font-size: 12px;
+         }
+         @include media-queries.big-phone {
+            font-size: 11px;
+         }
+         @include media-queries.phoness {
+            font-size: 10px;
+            
+         }
+    }
+
+    .logous{
+        position: absolute;
+        left: 2%;
+        top: 30px;
+        width: 180px;
+        height: 90px;
+        background: url("/src/public/charlotte-logo.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        @include media-queries.tablet {
+            width: 17%;
+            height: 100px;
+            left: 3%;
+            top: 20px;
+        }
+        @include media-queries.tablett {
+            width: 140px;
+            height: 60px;
+            top: 7px;
+            left: 5%;
+        }
+        @include media-queries.big-phone {
+            width: 120px;
+            height: 53px;
+            top: 7px;
+            left: 6%;
+
+        }
+        @include media-queries.phoness {
+            width: 100px;
+            height: 35px;
+            top: 20px;
+            left: 35%;
+        
+        
+        }
+      
+        @include media-queries.big-vertical{
+            width: 150px;
+          height: 60px;
+          display: block;
+          left: 34%;
+          top: 3%;
+          opacity: 1;
+            
+          }
+          @include media-queries.portrait-long {
+            left: 39%;
+            width: 200px;
+            height: 88px;
+            top: 5%;
+           }
+      
+    
+    }
+    .buttom-signup{
+        position: absolute;
+        width: 12%;
+        height: 45px;
+        right: 30px;
+        top: 40px;
+        background: #0057FF;
+        border-radius: 10px;
+        border: 0;
+        font-size: 19px;
+        font-weight: bold;
+        color: #fff;
+        transition: all 0.4s ease;
+        @include media-queries.tablet {
+            width: 13%;
+            height: 47px;
+            font-size: 19px;
+        }
+        @include media-queries.tablett {
+            width: 14%;
+            height: 40px;
+            font-size: 15px;
+        }
+        @include media-queries.big-phone {
+            display: none;
+        }
+        @include media-queries.phoness {
+            /* width: 22%;
+            height: 30px;
+            font-size: 13px;
+            top: 20px; */
+            display: none;
+        }
+        &:hover{
+            background-color: #4080ff;
+        }
+    }
+
+    .buttons-signup{
+        display: flex;
+    }
+
+    .change-forgot-password{
+        display: none;
+    }
+
+
+    /*--------------------------------------------------------------------------------------------*/
+
+    .container-forgot-password{
+        width: 40%;
+        height: 390px;
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(18px);
+        border-radius: 20px;
+    
+        @include media-queries.tablet {
+            width: 44%;
+     
+        }
+        @include media-queries.tablett {
+            width: 50%;
+        }
+        @include media-queries.big-phone {
+            width: 75%;
+            
+        }
+        @include media-queries.phoness {
+            width: 85%;
+            height: 330px;
+        }
+        @include media-queries.big-vertical {
+      
+            height: 350px;
+        }
+       
+        h1{
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 43px;
+            text-align: center;
+            color: #FFFFFF;
+            text-align: center;
+            margin-top: 15px;
+            @include media-queries.tablet {
+                font-size: 28px;
+         
+            }
+            @include media-queries.tablett {
+                font-size: 26px;
+            }
+            @include media-queries.big-phone {
+                font-size: 24px;
+            }
+            @include media-queries.phoness {
+                font-size: 20px;
+                font-weight: 600;
+            }
+        }
+   
+        .cancel-forgot-pass{
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            margin-top: 2%;
+            margin-left: 2%;
+           
+            
+            .cancel-back{
+                font-size: 18px;
+                color: #0057FF;
+                font-weight: 700;
+                padding-top: 6px;
+                transition: all 0.4s ease;
+                text-decoration:underline;
+                cursor: pointer;
+                @include media-queries.tablet {
+                    font-size: 17px;
+                }
+                @include media-queries.tablett {
+                    font-size: 16px;
+               
+                }
+                @include media-queries.big-phone {
+                    font-size: 15px;
+                }
+                @include media-queries.phoness {
+                    font-size: 14px;
+                    padding-top: 2px;
+                }
+                &:hover{
+                    color: #4080ff;
+                }
+                
+            }
+            .cancel-left{
+                position: relative;
+                left: 2px;
+                font-size: 30px;
+                color:#0057FF; 
+                transition: all 0.4s ease;
+                cursor: pointer;
+                @include media-queries.tablet {
+                    font-size: 28px;
+                }
+                @include media-queries.tablett {
+                    font-size: 26px;
+                }
+                @include media-queries.big-phone {
+                    font-size: 24px;
+                }
+                @include media-queries.phoness {
+                    font-size: 22px;
+                }
+                &:hover{
+                color: #4080ff;
+                }
+            }
+        }
+
+    }
+    .logous-p{
+        position: absolute;
+        left: -600px;
+        top: -270px;
+        width: 257.98px;
+        height: 112px;
+        background: url("/src/public/logo-charlotte.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        @include media-queries.tablet {
+     
+        }
+        @include media-queries.tablett {
+       
+        }
+        @include media-queries.big-phone {
+         
+        }
+        @include media-queries.phoness {
+            
+        }
+    }
+
+    #group__id{
+        margin-top: 19px;
+        margin-bottom: 40px; 
+
+    }
+
+    .created-user{
+        position: relative;
+        top: 50px;
+        text-align: center;
+        width: 1000px;
+        margin: auto;
+        color: #fff;
+        font-size: 25px;
+        font-weight: bold;
+        display: none;
+        @include media-queries.tablet {
+     
+        }
+        @include media-queries.tablett {
+       
+        }
+        @include media-queries.big-phone {
+         
+        }
+        @include media-queries.phoness {
+  
+        }
+        i{
+           
+            margin-left: 50px;
+            font-size: 30px;
+            margin-bottom: -20px;
+            
+        }
+    }
+
+    .form__bottoms {
+        /*  background-color: rgb(27, 195, 246); */
+        width:78%;
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+        margin-bottom: -40px;
+        margin-top: 40px;
+        margin-left: 11%;
+        @include media-queries.tablet {
+     
+        }
+        @include media-queries.tablett {
+       
+        }
+        @include media-queries.big-phone {
+         
+        }
+        @include media-queries.phoness {
+            width:85%;
+            margin-left: 8%;
+        }
+       
+      
+        .btn {
+          width: 30%;
+          height: 40px;
+          background-color: #b0b0b0; 
+          border-radius: 10px;
+          color: #000;
+          font-weight: bold;
+          align-items: center;
+          display: flex;
+          padding-left: 40px;
+          font-size: 12px;
+          position: relative;
+          cursor: pointer;
+          font-family: "Montserrat", sans-serif;
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+          transition: all 0.4s ease;
+          @include media-queries.tablet {
+            height: 37px;
+            padding-left: 10%;
+            font-size: 11px;
+          }
+          @include media-queries.tablett {
+            height: 33px;
+            font-size: 11px;
+            padding-left: 11%;
+          }
+          @include media-queries.big-phone {
+            height: 30px;
+            font-size: 10.5px;
+            padding-left: 10%;
+          }
+          @include media-queries.phoness {
+            height: 26px;
+            width: 30%;
+            font-size: 8.5px;
+            padding-left: 10%;
+           
+          }
+          &:hover {
+            background-color: #e6e4e4;
+          }
+        }
+        .select-login {
+          position: absolute;
+          width: 26px;
+          height: 26px;
+          border-radius: 50%;
+          left: 5px;
+          @include media-queries.tablet {
+            width: 24px;
+            height: 24px;
+          }
+          @include media-queries.tablett {
+            width: 22px;
+            height: 22px;
+            left: 2%;
+          }
+          @include media-queries.big-phone {
+            width: 20px;
+            height: 20px;
+          }
+          @include media-queries.phoness {
+            width: 18px;
+          height: 18px;
+          left: 3%;
+          }
+        }
+      }
+      #login-microsoft {
+        background: url("/src/public/login/login-microsoft.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+      #login-google {
+        background: url("/src/public/login/login-google.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+      #login-facebook {
+        background: url("/src/public/login/login-facebook.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+
+      body::-webkit-scrollbar {
+        width: 8px;
+        height: 3px;
+        background-color: #e6e6e6;
+        
+      }
+      
+      body::-webkit-scrollbar-thumb {
+      /*   background: rgba(255, 255, 255, 0.2); */
+        border-radius: 20px;
+        background-color: #7c7c7c;
+      }
+
+      .login-with{
+        margin-top: 30px;
+        @include media-queries.tablet {
+     
+        }
+        @include media-queries.tablett {
+       
+        }
+        @include media-queries.big-phone {
+         
+        }
+        @include media-queries.phoness {
+            margin-top: 30px;
+        }
+    
+      }
+
+      .lines{
+        display: flex;
+        gap: 4px;
+        justify-content: center;
+        margin-top: 19px;
+        position: relative;
+        width: 75%;
+        margin: auto;
+        @include media-queries.tablet {
+     
+        }
+        @include media-queries.tablett {
+       
+        }
+        @include media-queries.big-phone {
+         
+        }
+        @include media-queries.phoness {
+       
+        }
+        
+      }
+
+      .line-one{
+        width: 150px;
+        border-bottom: 1px solid #c2c2c2;
+        position: absolute;
+        top: 10px;
+        left: 5%;
+        @include media-queries.tablet {
+            width: 39%;
+        }
+        @include media-queries.tablett {
+            width: 39%;
+        }
+        @include media-queries.big-phone {
+            width: 40%;
+        }
+        @include media-queries.phoness {
+            width: 38%;
+        }
+      }
+      .line-two{
+        width: 150px;
+        border-bottom: 1px solid #c2c2c2;
+        position: absolute;
+        right: 5%;
+        top: 10px;
+        @include media-queries.tablet {
+            width: 39%;
+        }
+        @include media-queries.tablett {
+            width: 39%;
+        }
+        @include media-queries.big-phone {
+            width: 40%;
+        }
+        @include media-queries.phoness {
+            width: 38%;
+        }
+      }
+
+      .text-or{
+        color: #e1e1e1;
+        font-size: 14px;
+        @include media-queries.tablet {
+     
+        }
+        @include media-queries.tablett {
+       
+        }
+        @include media-queries.big-phone {
+            font-size: 13px;
+        }
+        @include media-queries.phoness {
+            font-size: 12px;
+        }
+      }
+
+
+      .login-with_text{
+        color: #e1e1e1;
+        text-align: center;
+        font-size: 14px;
+        @include media-queries.tablet {
+     
+        }
+        @include media-queries.tablett {
+            font-size: 13px;
+        }
+        @include media-queries.big-phone {
+            font-size: 12px;
+        }
+        @include media-queries.phoness {
+            font-size: 11px;
+        }
+      }
+
+
+      
+  
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #82cbff transparent transparent transparent;
+    @include media-queries.big-phone {
+      width: 44px;
+      height: 44px;
+    }
+    @include media-queries.phoness {
+      width: 44px;
+      height: 44px;
+    }
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .loader {
+    background-color: #1c1c1c;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: 100000;
+    display: flex;
+    top: 0;
+    left: 0;
+    clip-path: circle(150% at 100% 0);
+    transition: all 1s ease;
+    opacity: 0.7;
+  }
+  
+  .loader2 {
+    clip-path: circle(0% at 100% 0%);
+  }
+  

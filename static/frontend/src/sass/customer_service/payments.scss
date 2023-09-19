@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.banner {
+  background-image: url("/src/public/customer_service/payments/banner-payments.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 395px;
+}
+
+.charlotte-logo {
+  position: relative;
+  width: 100%;
+  max-width: 258px;
+  max-height: 112px;
+  margin-left: 90px;
+  margin-top: 32px;
+  height: auto;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.column-one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 28px;
+  padding-top: 28px;
+
+  p {
+    width: 92%;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: justify;
+    color: #000000;
+ 
+
+  }
+}
+
+.payments-types {
+  padding-top: 28px;
+}
+.payments {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 28px;
+  
+}
+#skrill {
+  margin-right: 10px;
+}
+#paypal {
+  margin-right: 10px;
+}
+
+.column-two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 28px;
+  padding-top: 28px;
+  .text {
+    width: 92%;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: justify;
+    color: #000000;
+  }
+}
+
+.contact {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: justify;
+  color: #000000;
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.row_one-text_two {
+  padding: 20px 15px;
+  width: 90%;
+  margin: auto;
+  border: solid 1px #797979;
+  border-radius: 15px;
+  h2 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+    color: #000000;
+  }
+}
+.input-select {
+  width: 100%;
+  height: 45px;
+  background: #0057ff;
+  border-radius: 15px;
+  margin-top: 11px;
+  border: 0;
+  color: #fff;
+  font-size: 17px;
+  padding-left: 20px;
+  outline: none;
+}
