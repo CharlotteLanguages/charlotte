@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@font-face {
+  font-family: "Artifika-Regular";
+  src: url("/src/public/font-2/Artifika-Regular.ttf.woff") format("woff"), url("/src/public/font-2/Artifika-Regular.ttf.svg#Artifika-Regular") format("svg"), url("/src/public/font-2/Artifika-Regular.ttf.eot"), url("/src/public/font-2/Artifika-Regular.ttf.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Comodo-Free-Vintage";
+  src: url("/src/public/font-3/Comodo-Free-Vintage.ttf.woff") format("woff"), url("/src/public/font-3/Comodo-Free-Vintage.ttf.svg#Comodo-Free-Vintage") format("svg"), url("/src/public/font-3/Comodo-Free-Vintage.ttf.eot"), url("/src/public/font-3/Comodo-Free-Vintage.ttf.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.main {
+  background-color: rgba(143, 143, 143, 0.65);
+  padding-top: 40px;
+}
+
+.certificate {
+  background: url("/src/public/homepageUser/cert.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 68%;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 43px;
+}
+.certificate p {
+  color: rgb(171, 135, 65);
+  font-family: "Artifika-Regular";
+}
+
+.letra-b {
+  font-size: 33px;
+  font-weight: 400;
+  margin-left: 7%;
+}
+
+.letra-bb {
+  font-size: 30px;
+  font-weight: 400;
+  width: 68%;
+  text-align: center;
+}
+
+.letra-m {
+  font-family: "Comodo-Free-Vintage";
+  font-size: 16px;
+}
+
+.small-letter {
+  text-align: center;
+  width: 65%;
+  font-size: 12px;
+}
+
+.signature-section {
+  display: flex;
+  width: 63%;
+  justify-content: space-between;
+  margin-right: 24%;
+  margin-top: 50px;
+}
+.signature-section p {
+  color: rgb(171, 135, 65);
+  font-family: "Artifika-Regular";
+  margin-top: 40px;
+  border-top: 1px solid rgb(171, 135, 65);
+  width: 175px;
+  text-align: left;
+  padding-top: 5px;
+  font-size: 13px;
+}
+
+.fa-download {
+  color: #f7f7f7;
+  font-size: 30px;
+  position: fixed;
+  right: 5%;
+  top: 5%;
+  transition: all 0.4s ease;
+}
+.fa-download:hover {
+  color: #ffebeb;
+  transform: scale(1.1);
+}
+
+.title {
+  color: #ffecec;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  /*    font-family: "Montserrat"; */
+  margin-bottom: 20px;
+}
+
+.logo-charlotte {
+  width: 100%;
+  max-width: 100px;
+  max-height: 80px;
+}
+
+#paragraph_1 {
+  margin-top: 40px;
+}
+
+#paragraph_2 {
+  margin-top: 20px;
+}
+
+#paragraph_3 {
+  margin-top: 100px;
+}
+
+#paragraph_4 {
+  margin-top: 40px;
+}
+
+#paragraph_5 {
+  margin-top: 20px;
+}
+
+#paragraph_6 {
+  margin-top: 20px;
+}
+
+/*# sourceMappingURL=pdf.css.map */

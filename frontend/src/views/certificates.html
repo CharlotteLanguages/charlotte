@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <title>Certificates</title>
+</head>
+
+<body>
+
+    <div id="container">
+        <i class="fas fa-bars" id="bars"></i>
+        <section class="cont-new-certificate open-form-certificate">
+            <section class="crud-certificate" id="cont-form-certificate">
+                <p class="crud-title-certificate font-title-certificate">Create certification / Badges</p>
+                    <form class="crud-form-certificate">
+                        
+                        <input type="hidden" name="idi">
+                       
+                        <input class="title-certificate" type="text" name="certificateName"
+                            placeholder="Certification Name" required>
+                       
+                       
+                            <select class="category-certificate" name="certificateCategory">
+                            <option selected disabled="">Category</option>
+                            <option>Free</option>
+                            <option>Basic</option>
+                            <option>Pro</option>
+                            <option>Pro +</option>
+                        </select>
+                        <div>
+                            
+                            <select class="type-certificate" name="certificateType">
+                                <option selected disabled="">Type</option>
+                                <option>Certificate</option>
+                                <option>Badges</option>
+
+                            </select>
+                            <input type="file" accept=application/pdf multiple name="certificateFile" placeholder="Profille image..."
+                                id="fileCertificate">
+                            <label for="fileCertificate" class="file-certificate">
+                                <span class="file-certificate-btn"><i class="fas fa-upload"></i></span>
+                                <span class="file-certificate-text">Certificate template...</span>
+                            </label>
+                        </div>
+                        <input id="create-certificate" type="submit" value="Create new" class="btn-submit">
+                        <input class="cancel-certificate" type="button" value="Cancel">
+                    </form>
+            </section>
+        </section>
+
+        <div class="menu">
+            <a href="" class="menu__logo"></a>
+            <div class="menu__list">
+                <li><a href="/src/views/student.html">Students</a></li>
+                <li><a href="/src/views/news.html">News</a></li>
+                <li><a href="/src/views/courses.html">Courses</a></li>
+                <li><a href="/src/views/activities.html">Activities</a></li>
+                <li><a href="/src/views/resource.html">Resources</a></li>
+                <li class="press"><a href="/src/views/certificates.html">Certificates</a></li>
+                <li><a href="/src/views/classes.html" class="space">Private classes</a></li>
+                <div class="space-top">
+                    <li><a href="/src/views/offers.html">Offers</a></li>
+                    <li><a href="/src/views/menbership.html">Memberships</a></li>
+                    <li><a href="/src/views/referrals.html">Referrals</a></li>
+                    <li><a href="/src/views/sponsors.html">Sponsors</a></li>
+                    <li><a href="/src/views/reviews.html">Reviews</a>
+                </div>
+            </div>
+        </div>
+
+        <section id="nav">
+            <div class="nav__icon">
+                <i class="fas fa-bell">
+                    <div class="tooltip">
+                            
+                    </div>
+
+                </i>
+                <i class="far fa-envelope"></i>
+                <a href="" class="profile"></a>
+                <div class="btn-certificates-badges">Certificates / Badges</div>
+                <div class="btn-search">Search</div>
+            </div>
+        </section>
+
+        <section class="cont-tables-certificate">
+            <div class="cont-table-certificate_blue">
+                <table class="crud-table-certificate table-certificate">
+                </table>
+            </div>
+            <button class="btn-certificate">Add new certification / Badges</button>
+            <i class="fas fa-tablet-alt" id="table-icon"></i>
+        </section>
+
+        <section class="cont-certificate2 up-certificate2">
+            <input type="text" placeholder="Search..." class="input-search-certific" autofocus="autofocus">
+            <div class="lupa">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="cont-certificate_blue2">
+                <table class="crud-certificate2 certificate2">
+                </table>
+            </div>
+            <i class="fas fa-arrow-left" id="back-icon"></i>
+        </section>
+
+        <section id="modal-container-certificate">
+            <div class="modal-certificate modal-clos">
+                <div class="close-certificate"><i class="fas fa-times-circle close"></i></div>
+                <div class="cont-p-certificate">
+
+                </div>
+        </section>
+
+        <form class="form-delete-dr" action="">
+            <section class="modal-container-dr">
+                <div class="modal-dr modal-close-dr">
+                    <h3>Delete item</h3>
+                    <textarea name="reasonDelete" id="text-dr"  placeholder="Reason..." required></textarea>
+                        <div class="buttons_delete">
+                            <button class="close-dr btn-dr2">Cancel</button>
+                            <input type="submit" class="close-dr bnt-dr" value="Yes, Delete"></input>
+                      </div>
+                </div>
+            </section>
+        </form>
+
+        <section class="container-notify-succes alert" id="alert">
+            <i class="fas fa-check-circle close-notify-succes"></i>
+            <p class="parrafo-succes"></p>
+        </section>
+
+        <section id="container-noti">
+            <div class="noti__idea"></div>
+            <p class="noti__parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deserunt eius,
+                animi fugiat debitis, id ipsa sint recusandae eum nobis odit sequi nihil dicta beatae qui eveniet
+                mollitia, excepturi adipisci.</p>
+        </section>
+
+
+    </div>
+    <!--     <script src="/src/js/index.js" type="module"></script> -->
+    <script src="/src/js/crud_tables/certificates/main-certificates.js" type="module"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

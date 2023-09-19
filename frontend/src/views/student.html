@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/style.css">
+     <!------------------------------ Sun Editor--------------------------------------->
+    <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/en.js"></script>
+    <!------------------------------ Codemirrorx--------------------------------------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/xml/xml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/css/css.js"></script>
+    <!------------------------------ Katex--------------------------------------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
+    <title>Students</title>
+</head>
+
+<body>
+
+    <div id="container">
+       <!--  <div class="lds-ring loader" id="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div> -->
+        <i class="fas fa-bars" id="bars"></i>
+        <section class="cont-new-student open-form-student">
+            <section class=" crud-student" id="cont-form-student">
+                
+                    <p class="crud-title-student font-title-student">Create new student</p>
+                    <form class="crud-form-student">
+                        <input type="hidden" name="idi">
+                        <div>
+        
+                            <input type="text" class="first-name-student form__input" name="studentName" placeholder="First name" required>
+                        </div>
+                        <div>
+                            <input type="text" class="last-name-student form__input" name="lastNameStudent" placeholder="Last name" required>
+                      
+                        </div>
+                        <div>
+                            <input type="email" class="email-student" name="emailStudent" placeholder="Email" required>
+                          
+                        </div>
+                        <div>
+
+                            <label for="birthdayStudent" class="text-birth-day">Date of Birth</label>
+                            <input type="date" class="birth-day-student form__input" name="birthdayStudent" id="birthdayStudent" required>
+                        </div>
+                      
+                        <select class="gender-student form__input" name="genderStudent" id="genderStudent">
+                            <option selected disabled=""></option>
+                            <option>Male</option>
+                            <option>Famale</option>
+                        </select>
+                        <label for="genderStudent" class="text-gender">Gender</label>
+                        <input type="text" class="username-student form__input" name="usernameStudent" placeholder="Username">
+                        <input type="password" class="password-student form__input" name="passwordStudent" placeholder="Password" required>
+
+                        <select class="membership-student form__input" name="membershipStudent" id="membershipStudent" required>
+                            <option selected disabled=""></option>
+                            <option>Free</option>
+                            <option>Basic</option>
+                            <option>Pro</option>
+                            <option>Pro +</option>
+                        </select>
+                        <label for="membershipStudent" class="text-membership"> Membership</label>
+                        <div id="area-student">
+                            <textarea name="commets-student" class="editor-student" cols="30" rows="10"></textarea>
+                        </div>
+                        <input id="create-student" type="submit" value="Create student" class="btn-submit">
+                        <input class="cancel-student" type="button" value="Cancel">
+                    </form>
+           
+
+            </section>
+        </section>
+
+        <div class="menu">
+            <a href="" class="menu__logo"></a>
+            <div class="menu__list">
+                <li class="press"><a href="/src/views/student.html">Students</a></li>
+                <li><a href="/src/views/news.html">News</a></li>
+                <li><a href="/src/views/courses.html">Courses</a></li>
+                <li><a href="/src/views/activities.html">Activities</a></li>
+                <li><a href="/src/views/resource.html">Resources</a></li>
+                <li><a href="/src/views/certificates.html">Certificates</a></li>
+                <li><a href="/src/views/classes.html" class="space">Private classes</a></li>
+                <div class="space-top">
+                    <li><a href="/src/views/offers.html">Offers</a></li>
+                    <li><a href="/src/views/menbership.html">Memberships</a></li>
+                    <li><a href="/src/views/referrals.html">Referrals</a></li>
+                    <li><a href="/src/views/sponsors.html">Sponsors</a></li>
+                    <li><a href="/src/views/reviews.html">Reviews</a>
+                </div>
+            </div>
+        </div>
+
+        <section id="nav">
+            <div class="nav__icon">
+                    <i class="fas fa-bell">
+                        <div class="tooltip">
+                            
+                        </div>
+
+                    </i>
+
+                <i class="far fa-envelope"></i>
+                <a href="" class="profile"></a>
+            </div>
+        </section>
+
+        <section class="cont-tables-student">
+            <div class="cont-table-student_blue">
+                <table class="crud-table-student table-student">
+                </table>
+            </div>
+            <button class="btn-student">Add new student</button>
+        </section>
+
+         <section id="modal-container-student">
+            <div class="modal-student modal-clos">
+                <div class="close-student"><i class="fas fa-times-circle close"></i></div>
+                <div class="cont-p-student">
+                </div>
+        </section>
+
+     
+            <form class="form-delete-dr" action="">
+                <section class="modal-container-dr">
+                    <div class="modal-dr modal-close-dr">
+                        <h3>Delete item</h3>
+                        <textarea name="reasonDelete" id="text-dr"  placeholder="Reason..." required></textarea>
+                            <div class="buttons_delete">
+                                <div class="btn-dr2">Cancel</div>
+                                <input type="submit" class="bnt-dr" value="Yes, Delete"></input>
+                            </div>
+                        </div>
+                    </section>
+                </form>
+                
+  
+
+        <section class="container-notify-succes alert" id="alert">
+            <i class="fas fa-check-circle close-notify-succes"></i>
+            <p class="parrafo-succes"></p>
+        </section>
+
+        <section id="container-noti">
+            <div class="noti__idea"></div>
+            <p class="noti__parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deserunt eius,
+                animi fugiat debitis, id ipsa sint recusandae eum nobis odit sequi nihil dicta beatae qui eveniet
+                mollitia, excepturi adipisci fugiat debitis, id ipsa sint recusandae eum nobis odit sequi.</p>
+        </section>
+
+
+    </div>
+    <!--     <script src="/src/js/index.js" type="module"></script> -->
+    <script src="/src/js/crud_tables/students/main-student.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.1.2/chart.min.js"
+        integrity="sha512-fYE9wAJg2PYbpJPxyGcuzDSiMuWJiw58rKa9MWQICkAqEO+xeJ5hg5qPihF8kqa7tbgJxsmgY0Yp51+IMrSEVg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>

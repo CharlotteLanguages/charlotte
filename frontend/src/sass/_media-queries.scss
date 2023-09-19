@@ -1,0 +1,116 @@
+@mixin table {
+  @media  screen and (min-width: 1450px) and (max-width: 1700px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media  screen and (min-width: 1450px) and (max-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin phone2 {
+  @media  screen and (min-width: 1310px) and (max-width: 1450px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media  screen and (min-width: 1225px) and (max-width: 1310px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (min-width: 1060px) and (max-width: 1225px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 975px) and (max-width: 1250px) {
+    @content;
+  }
+}
+
+@mixin tablett {
+  @media all and (min-width: 755px) and (max-width: 974px){
+    @content;
+  }
+}
+@mixin big-phone {
+  @media all and (min-width: 550px) and (max-width: 754px){
+    @content;
+  }
+}
+
+@mixin phoness {
+  @media all and (min-width: 280px) and (max-width: 549px){
+    @content;
+  }
+}
+/* @mixin min {
+  @media all and (min-width: 100px) and (max-width: 280px){
+    @content;
+  }
+} */
+
+
+/* @mixin menu {
+  @media  screen and (min-width: 1000px) and (max-width: 1225px) {
+    @content;
+  }
+} */
+/* @mixin menus {
+    @media screen and (orientation:portrait){
+    @content;
+  }
+} */
+@mixin lands {
+  @media only screen and (min-width: 330px)  and (orientation:landscape){
+    @content;
+  }
+}
+@mixin landi {
+  @media only screen and (min-width: 330px)  and  (max-height:412px) and (orientation:landscape){
+    @content;
+  }
+}
+@mixin lands2 {
+  @media only screen and (min-width: 630px) and  (max-width: 620px) and (orientation:landscape){
+    @content;
+  }
+}
+@mixin lands3 {
+  @media only screen and (min-width: 930px) and (orientation:landscape){
+    @content;
+  }
+}
+
+
+
+
+
+
+@mixin big-vertical {
+  @media screen and (max-device-width: 750px) and (min-height:800px) and (orientation:portrait){
+    @content;
+  }
+}
+@mixin portrait-long {
+  @media screen and (min-device-width: 751px) and (min-height:800px) and (orientation:portrait){
+    @content;
+  }
+}
+@mixin ipad-vertical {
+  @media screen and (min-device-width: 481px) and (orientation:portrait){
+    @content;
+  }
+}
+@mixin ipad-horizontal {
+  @media screen and (min-device-width: 481px) and (orientation:landscape){
+    @content;
+  }
+}
+

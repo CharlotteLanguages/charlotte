@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*     font-family: 'Montserrat', sans-serif; */
+}
+
+.container__spa {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0;
+}
+
+.redes {
+  background: url("/src/public/prueba/redes.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*  width: 90%; */
+  width: 1440px;
+  height: 60px;
+  background-color: rgb(204, 205, 205);
+}
+
+.menu {
+  background: url("/src/public/prueba/menu.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*  width: 90%; */
+  width: 1440px;
+  height: 151px;
+  background-color: #c9dbeb;
+}
+
+.banner {
+  width: 1440px;
+  height: 471px;
+  top: 211px;
+  background: url("/src/public/prueba/banner.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section {
+  /*  width: 1440px;
+  background-color: #c9dbeb;
+  margin-top: 500px; */
+  background-color: #c9dbeb;
+  width: 1440px;
+}
+
+.notione {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 40px;
+  align-items: center;
+}
+
+.notione .image {
+  background: url("/src/public/prueba/prueba1.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-left: 50px;
+  /*    padding-top: 50px; */
+  width: 480px;
+  height: 400px;
+  padding-left: 20px;
+}
+
+.notione .text h1 {
+  font-size: 55px;
+  font-size: bold;
+  text-align: center;
+}
+
+.notione .text p {
+  width: 900px;
+  font-size: 35px;
+  text-align: justify;
+}
+
+.notitwo {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 40px;
+  align-items: center;
+}
+
+.notitwo .image2 {
+  background: url("/src/public/prueba/saludos.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-left: 50px;
+  /*    padding-top: 50px; */
+  width: 500px;
+  height: 600px;
+  padding-left: 20px;
+}
+
+.notitwo .text2 {
+  width: 800px;
+}
+
+.notitwo .text2 h1 {
+  font-size: 55px;
+  font-size: bold;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.notitwo .text2 p {
+  font-size: 35px;
+  text-align: justify;
+}
+
+.notitwo .text2 .learn {
+  width: 564px;
+  height: 43px;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 43px;
+  /* identical to box height */
+  text-align: justify;
+  color: #0057FF;
+}
+
+.noti3 {
+  width: 1440px;
+  /*   
+    background-color: rgb(0, 255, 38);
+
+  /*   gap: 10px; */
+}
+
+.noti3 .title {
+  text-align: center;
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.cont__image {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-left: 50px;
+  /* background-color: rgb(192, 192, 192); */
+  width: 1440px;
+}
+
+.cont__image .container__image {
+  width: 408px;
+  height: 775px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
+
+.cont__image .container__image .image {
+  height: 605px;
+  background: url("/src/public/prueba/saludos.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cont__image .container__image .image__text {
+  height: 170px;
+  background-color: #ff7dd6;
+  color: #fff;
+  font-size: 20px;
+  text-align: justify;
+  padding: 20px;
+  background: url("/src/public/prueba/puente.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.noti4 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.noti4 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.noti4 .container .text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 38px;
+  text-align: justify;
+  padding: 20px;
+}
+
+.noti4 .container #img1 {
+  width: 126px;
+  height: 146px;
+  background: url("/src/public/prueba/logo1.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.noti4 .container #img2 {
+  width: 146px;
+  height: 146px;
+  background: url("/src/public/prueba/logo2.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.noti4 .container #img3 {
+  width: 146px;
+  height: 146px;
+  background: url("/src/public/prueba/logo3.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.footer {
+  width: 1440px;
+  height: 321px;
+  top: 211px;
+  background: url("/src/public/prueba/footer.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 5px;
+}
+
+/*# sourceMappingURL=homepage.css.map */
+
+/*# sourceMappingURL=homepage.css.map */

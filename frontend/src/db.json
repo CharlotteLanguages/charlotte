@@ -1,0 +1,290 @@
+{
+  "activities": [
+    {
+      "id": 2,
+      "activitiName": "bARRERA",
+      "category": "",
+      "level": "Level 3",
+      "author": "alberto",
+      "tags": "",
+      "description": "<p><br></p>"
+    }
+  ],
+  "course": [
+    {
+      "id": 4,
+      "courseTitle": "los mejores",
+      "category": "Associate",
+      "price": "45",
+      "description": "<p><br></p>"
+    },
+    {
+      "id": 6,
+      "courseTitle": "programacion web",
+      "category": "Bussiness",
+      "price": "667",
+      "description": "<p><br></p>"
+    },
+    {
+      "id": 7,
+      "courseTitle": "programacion web",
+      "category": "Associate",
+      "price": "888",
+      "description": "<p><br></p>"
+    },
+    {
+      "courseTitle": "Mobility",
+      "category": "Bussiness",
+      "price": "1099",
+      "description": "<p style=\"text-align: center;\"><span style=\"background-color: rgb(0, 85, 255); font-size: 28px;\">todos somos</span></p><p style=\"text-align: center;\"><span style=\"background-color: rgb(0, 85, 255); font-size: 28px;\"><br></span></p>",
+      "id": 8
+    },
+    {
+      "courseTitle": "programacion web",
+      "category": "Engineer",
+      "price": "56",
+      "description": "<p><br></p>",
+      "id": 9
+    },
+    {
+      "courseTitle": "Mobility",
+      "category": "Bussiness",
+      "price": "1099",
+      "description": "<p style=\"text-align: center;\"><span style=\"background-color: rgb(0, 85, 255); font-size: 28px;\">todos somos</span></p><p style=\"text-align: center;\"><span style=\"background-color: rgb(0, 85, 255); font-size: 28px;\"><br></span></p>",
+      "id": 10
+    },
+    {
+      "id": 11,
+      "courseTitle": "programacion web",
+      "category": "Specialist",
+      "price": "45",
+      "description": "<p><br></p>"
+    },
+    {
+      "id": 12,
+      "courseTitle": "los mejores",
+      "category": "Engineer",
+      "price": "678",
+      "description": "<p><br></p>"
+    }
+  ],
+  "promotion": [
+    {
+      "id": 1,
+      "promotionTitle": "2 cursos por 1",
+      "promotionPrice": "233",
+      "promotionOffer": "5544",
+      "promotionDateStart": "2023-01-16T10:36",
+      "promotionDateEnd": "2023-01-04T10:36",
+      "promotioCategory": "Bussiness",
+      "promotioDescription": "<p><br></p>"
+    }
+  ],
+  "resource": [
+    {
+      "id": 1,
+      "resourceTitle": "creando recurso de prueba",
+      "category": "Accountabilly",
+      "tags": "Listen",
+      "description": "<p><br></p>"
+    },
+    {
+      "id": 2,
+      "resourceTitle": "creando recurso de prueba",
+      "category": "Paradigm",
+      "tags": "Listen",
+      "description": "<p><br></p>"
+    },
+    {
+      "id": 3,
+      "resourceTitle": "Kids",
+      "category": "Books",
+      "tags": "Read",
+      "description": "<p><br></p>"
+    },
+    {
+      "id": 4,
+      "resourceTitle": "creando recurso de prueba",
+      "category": "Books",
+      "tags": "Speak",
+      "description": "<p><br></p>"
+    }
+  ],
+  "membership": [
+    {
+      "id": 1,
+      "memberName": "pro +",
+      "memberPrice": "455",
+      "memberCategory": "Accounts",
+      "memberDescription": "<p><br></p>"
+    },
+    {
+      "id": 2,
+      "memberName": "pro +",
+      "memberPrice": "456",
+      "memberCategory": "Program",
+      "memberDescription": "<p><br></p>"
+    },
+    {
+      "id": 3,
+      "memberName": "pro +",
+      "memberPrice": "45",
+      "memberCategory": "Program",
+      "memberDescription": "<p><br></p>"
+    },
+    {
+      "memberName": "pro +",
+      "memberCategory": "Accounts",
+      "memberPrice": "56",
+      "memberDescription": "<p><br></p>",
+      "id": 4
+    }
+  ],
+  "referral": [
+    {
+      "id": 1,
+      "referralName": "Eletrificadora del caquetá sas donde los bueno se hace 10 veces más grande",
+      "referralEmail": "albertOBARRERAOBREGON458@gmail.com",
+      "referralPhone": "3115678900"
+    }
+  ],
+  "sponsor": [
+    {
+      "id": 1,
+      "sponsorName": "losesponsors son omportantes",
+      "sponsorAddress": "crara 20m10",
+      "sponsorWebsite": "www.albertobarrera.com.gov.ar",
+      "sponsorImage": ""
+    }
+  ],
+  "student": [
+    {
+      "id": 1,
+      "studentName": "Alberto",
+      "lastNameStudent": "Barrera Obregon",
+      "emailStudent": "albertobarrea@gmail.com",
+      "birthdayStudent": "2023-01-04",
+      "genderStudent": "",
+      "usernameStudent": "alberto458",
+      "passwordStudent": "sfbdgxng",
+      "membershipStudent": "BASIC",
+      "commentstudent": "<p>Comments...</p>"
+    },
+    {
+      "id": 2,
+      "studentName": "Alberto",
+      "lastNameStudent": "Barrera Obregon",
+      "emailStudent": "albertobarrea@gmail.com",
+      "birthdayStudent": "2023-01-04",
+      "genderStudent": "",
+      "usernameStudent": "alberto458",
+      "passwordStudent": "sfbdgxng",
+      "membershipStudent": "BASIC",
+      "commentstudent": "<p>Comments...</p>"
+    },
+    {
+      "studentName": "maria",
+      "lastNameStudent": "",
+      "emailStudent": "albertobarre46a@gmail.com",
+      "birthdayStudent": "2023-01-03",
+      "genderStudent": "",
+      "usernameStudent": "alberto458",
+      "passwordStudent": "vlbdgb",
+      "membershipStudent": "BASIC",
+      "commentstudent": "<p>Comments...</p>",
+      "id": 3
+    },
+    {
+      "studentName": "Alberto",
+      "lastNameStudent": "Barrera Obregon",
+      "emailStudent": "albertobarrea@gmail.com",
+      "birthdayStudent": "2023-01-04",
+      "genderStudent": "",
+      "usernameStudent": "alberto458",
+      "passwordStudent": "sfbdgxng",
+      "membershipStudent": "BASIC",
+      "commentstudent": "<p>Comments...</p>",
+      "id": 4
+    }
+  ],
+  "news": [
+    {
+      "id": 1,
+      "titleNews": "TITULO 1",
+      "categoryNews": "Designer",
+      "tagsNews": "Liaison",
+      "editorNews": "<p><br></p>"
+    },
+    {
+      "id": 2,
+      "titleNews": "ad",
+      "categoryNews": "Associate",
+      "tagsNews": "Liaison",
+      "editorNews": "<p><br></p>"
+    },
+    {
+      "id": 3,
+      "titleNews": "TITULO 1",
+      "categoryNews": "Designer",
+      "tagsNews": "Analiyt",
+      "editorNews": "<p><br></p>"
+    }
+  ],
+  "certificate": [
+    {
+      "id": 3,
+      "certificateName": "certificado 1",
+      "certificateCategory": "Bussiness",
+      "certificateType": "ADP",
+      "certificateFile": ""
+    },
+    {
+      "id": 4,
+      "certificateName": "certificado 2",
+      "certificateCategory": "Engineer",
+      "certificateType": "ADP",
+      "certificateFile": ""
+    },
+    {
+      "id": 5,
+      "certificateName": "certificado 2",
+      "certificateCategory": "Engineer",
+      "certificateType": "ADP",
+      "certificateFile": ""
+    }
+  ],
+  "classes": [
+    {
+      "id": 1,
+      "promotionTitle": "2 cursos por 1",
+      "promotionPrice": "albertp",
+      "promotionOffer": "2",
+      "promotionDateStart": "2023-01-17",
+      "promotionDateEnd": "08:30",
+      "promotioCategory": "FREE",
+      "promotioDescription": "<p><br></p>"
+    },
+    {
+      "promotionTitle": "GDHFH",
+      "promotionPrice": "alberto",
+      "promotionOffer": "",
+      "promotionDateStart": "2023-01-25",
+      "promotionDateEnd": "10:32",
+      "promotioCategory": "FREE",
+      "promotioDescription": "<p><br></p>",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "promotionTitle": "2 cursos por 1",
+      "promotionPrice": "albertp",
+      "promotionOffer": "5544",
+      "promotionDateStart": "",
+      "promotionDateEnd": "23:38",
+      "promotioCategory": "BASIC",
+      "promotioDescription": "<p><br></p>"
+    }
+  ],
+  "notifications": [],
+  "inbox": []
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/src/css/style.css">
+    <!------------------------------ Sun Editor--------------------------------------->
+    <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/en.js"></script>
+    <!------------------------------ Codemirrorx--------------------------------------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/lib/codemirror.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/xml/xml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.49.0/mode/css/css.js"></script>
+    <!------------------------------ Katex--------------------------------------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
+    <title>Activities</title>
+</head>
+
+<body>
+    <div id="container">
+         <i class="fas fa-bars" id="bars"></i>
+        <section class="cont-new-activitie open-form-activitie">
+            <section class=" crud" id="list-select">
+
+                <p class="crud-title font-title-activitie">Create activity</p>
+                <form class="crud-form">
+                    <input type="hidden" name="idi">
+                    <input class="title-activity" type="text" name="activitiName" placeholder="Activity Name" required>
+
+                    <select class="category-activity" name="category" required>
+                        <option selected disabled="">Category</option>
+                        <option>Free</option>
+                        <option>Basic</option>
+                        <option>Pro</option>
+                        <option>Pro +</option>
+                    </select>
+
+                    <select class="tags-activity" name="tags">
+                        <option selected disabled="">Optional Tags</option>
+                        <option>Read</option>
+                        <option>Write</option>
+                        <option>Speak</option>
+                        <option>Listen</option>
+                    </select>
+
+                
+                    <div class="wrapper">
+                        <div class="select-btn">
+                            <span class="span">Select Course</span>
+                        
+                            
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <div class="content-search">
+                            <div class="search">
+                                <i class="fas fa-search"></i>
+                                <input type="text" spellcheck="false" placeholder="Search course">
+                            </div>
+                            <ul class="options"></ul>
+                        </div>
+                    </div>
+                    <input type="hidden" name="course">
+                   
+                    <select class="level-activity" name="level" required>
+                        <option selected disabled="">Level</option>
+                        <option>Basic l</option>
+                        <option>Basic ll</option>
+                        <option>Intermediate l</option>
+                        <option>Intermediate ll</option>
+                        <option>Upper Intermediate l</option>
+                        <option>Upper Intermediate ll</option>
+                        <option>Advanced</option>
+                    </select>
+
+                    <div id="area">
+                        <textarea name="description" class="txtarea" cols="30" rows="10"> </textarea>
+                    </div>
+                    <input id="create-activitie" type="submit" value="Create Activity" class="btn-submit">
+                    <input class="cancel-activitie" type="button" value="Cancel">
+                </form>
+            </section>
+        </section>
+
+        <div class="menu">
+            <a href="" class="menu__logo"></a>
+            <div class="menu__list">
+                <li><a href="/src/views/student.html">Students</a></li>
+                <li><a href="/src/views/news.html">News</a></li>
+                <li><a href="/src/views/courses.html">Courses</a></li>
+                <li class="press"><a href="/src/views/activities.html">Activities</a></li>
+                <li><a href="/src/views/resource.html">Resources</a></li>
+                <li><a href="/src/views/certificates.html">Certificates</a></li>
+                <li><a href="/src/views/classes.html" class="space">Private Classes</a></li>
+                <div class="space-top">
+                    <li class="space2"><a href="/src/views/offers.html">Offers</a></li>
+                    <li><a href="/src/views/menbership.html">Memberships</a></li>
+                    <li><a href="/src/views/referrals.html">Referrals</a></li>
+                    <li><a href="/src/views/sponsors.html">Sponsors</a></li>
+                    <li><a href="/src/views/reviews.html">Reviews</a>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <section id="nav">
+            <div class="nav__icon">
+                <i class="fas fa-bell">
+                    <div class="tooltip">
+                            
+                    </div>
+                </i>
+                <i class="far fa-envelope"></i>
+                <a href="" class="profile"></a>
+            </div>
+        </section>
+
+        <section class="cont-tables-activities">
+            <div class="cont-table-activities_blue">
+                <table class="crud-table-activities table-activities">
+                </table>
+            </div>
+            <button class="btn-activities">Add new activity</button>
+        </section>
+        
+        <section id="modal-container-activity">
+            <div class="modal-activity modal-cla">
+                <div class="close-activity"><i class="fas fa-times-circle close"></i></div>
+                <div class="cont-p-activity">
+                </div>
+            </div>
+        </section>
+
+
+
+        <form class="form-delete-dr" action="">
+            <section class="modal-container-dr">
+                <div class="modal-dr modal-close-dr">
+                    <h3>Delete item</h3>
+                    <textarea name="reasonDelete" id="text-dr"  placeholder="Reason..." required></textarea>
+                        <div class="buttons_delete">
+                            <div class="close-dr btn-dr2">Cancel</div>
+                            <input type="submit" class="close-dr bnt-dr" value="Yes, Delete"></input>
+                      </div>
+                </div>
+            </section>
+        </form>
+
+        <section class="container-notify-succes sucesx alert" id="alert">
+            <i class="fas fa-check-circle close-notify-succes"></i>
+            <p class="parrafo-succes"></p>
+        </section>
+
+
+        <section id="container-noti">
+            <div class="noti__idea"></div>
+            <p class="noti__parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deserunt eius,
+                animi fugiat debitis, id ipsa sint recusandae eum nobis odit sequi nihil dicta beatae qui eveniet
+                mollitia, excepturi adipisci.</p>
+
+        </section>
+    </div>
+
+    <script src="/src/js/crud_tables/activities/main-activities.js" type="module"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

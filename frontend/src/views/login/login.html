@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/login/signin.css">
+    <!--     <link rel="stylesheet" href="/src/css/login/signin.css"> -->
+    <title>Login</title>
+
+</head>
+
+<body>
+    <div class="lds-ring loader" id="loader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <p class="created-user">User Created Successfuly <i class="fas fa-check-circle"></i></p>
+
+    <div class="login-box">
+        <form class="container form">
+            <h1>Welcome Back!</h1>
+            <h4>Nice to see you again</h4>
+            <div class="form__group" id="group__user">
+                <input type="text" placeholder="Email" class="input" name="email">
+                <i class="icon-user fas fa-user"></i>
+            </div>
+            <p class="form__input-error1">user already exists</p>
+
+            <div class="form__group" id="group__password">
+                <input type="password" placeholder="Enter Password" class="input" name="password">
+                <i class="icon-pass fas fa-lock"></i>
+            </div>
+            <p class="form__input-error2">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+
+            <div class="form__checkbox" id="grup__checkbox">
+                <div class="left">
+                    <input class="checkbox" type="checkbox" name="check" id="checkbox">
+                    <label for="checkbox" class="text-check">Keep me logged in</label>
+                </div>
+                <div class="right">
+                    <label class="forgot">Forgot Password?</label>
+                </div>
+            </div>
+            <input type="submit" value="Log In" class="btn-login">
+            <div class="login-with">
+                <div class="lines">
+                    <p class="line-one"></p>
+                    <P class="text-or">or</P>
+                    <p class="line-two"></p>
+                </div>
+                <p class="login-with_text">Login With</p>
+
+            </div>
+            <!--     <div class="buttonss">
+                <div class="buttons-signup">
+                    <input type="button" class="btn-microsoft init-btn" value="microsoft">
+                    <img class="image" id="signup-microsoft">
+
+                </div class="buttons-signup">
+                <div>
+                    <input type="button" class="btn-google init-btn" value="google">
+                    <img class="image" id="signup-google">
+                </div>
+                <div class="buttons-signup">
+                    <input type="button" class="facebook init-btn" value="facebook">
+                    <img class="image" id="signup-facebbok">
+                </div>
+            </div> -->
+            <div class="form__bottoms">
+                <div class="btn">
+                    <div class=""> Microsoft</div>
+                    <label class="select-login" id="login-microsoft"></label>
+                </div>
+                <div class="btn">
+                    <div class="">Google</div>
+                    <label class="select-login" id="login-google"></label>
+                </div>
+                <div class="btn">
+                    <div class="">Facebook</div>
+                    <label class="select-login" id="login-facebook"></label>
+                </div>
+            </div>
+
+            <div class="go-signup">
+                <label class="haveAccount">Don't have An account?</label>
+                <a class="sign-up" href="/src/views/login/signup.html">Sign up</a>
+            </div>
+        </form>
+
+
+        <!-- forgot pass -->
+        <form class="container-forgot-password change-forgot-password">
+            <div class="cancel-forgot-pass">
+                <i class="fas fa-chevron-left cancel-left"></i>
+                <label class="cancel-back">Cancel</label>
+            </div>
+            <h1>Forgot Password?</h1>
+            <div class="form__group" id="group__id">
+                <input type="text" placeholder="ID Document" class="input">
+                <i class="icon-user fas fa-user"></i>
+            </div>
+            <!-- <p class="form__input-error1">El usuario tiene que ser de 4 a 16 dígitos</p> -->
+
+            <div class="form__group" id="group__password">
+                <input type="password" placeholder="email" class="input">
+                <i class="icon-pass far fa-envelope"></i>
+            </div>
+            <!--  <p class="form__input-error2">La contraseña tiene que ser de 4 a 12 dígitos.</p> -->
+
+            <input type="submit" value="Reset Password" class="btn-login-forgot">
+        </form>
+
+
+
+        <div class="logous"></div>
+        <button class="buttom-signup">Sign up</button>
+    </div>
+    <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="/src/js/signin/signin.js" type="module"></script>
+</body>
+
+</html>

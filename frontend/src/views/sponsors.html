@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <title>Sponsors</title>
+</head>
+
+<body>
+
+    <div id="container">
+        <i class="fas fa-bars" id="bars"></i>
+        <section class="cont-new-sponsor open-form-sponsor">
+            <section class=" crud-sponsor" id="cont-form-sponsor">
+                <article>
+
+                    <p class="crud-title-sponsor font-title-sponsor">Create new sponsor</p>
+                    <form class="crud-form-sponsor">
+                        <input type="hidden" name="idi">
+                        <input class="title-sponsor" type="text" name="sponsorName" placeholder="Sponsor Name" required>
+                        <input type="email" class="address-sponsor" name="sponsorAddress" placeholder="Address">
+                        <input type="text" class="web-sponsor" name="sponsorWebsite" placeholder="Website">
+                        <div>
+
+                            <input type="file" accept="image/*" multiple name="sponsorImage"
+                                placeholder="Profille image..." id="imgSponsor">
+                            <label for="imgSponsor" class="file-sponsor">
+                                <span class="file-sponsor-btn"><i class="fas fa-upload"></i></span>
+                                <span class="file-sponsor-text">Profile image...</span>
+                                <!--   BUSCAR UN ARCHIVO QUE ES MUY IMPORTANTE PARA
+                                    LASOCIEDAD Y
+                                    EL ESTADO CIVIL COLOMBIANO DADO A LA FALTA DE COSAS
+                                </span> -->
+                            </label>
+                        </div>
+
+                        <input id="create-sponsor" type="submit" value="Create sponsor" class="btn-submit">
+                        <input class="cancel-sponsor" type="button" value="Cancel">
+                    </form>
+                </article>
+
+            </section>
+        </section>
+
+        <div class="menu">
+            <a href="" class="menu__logo"></a>
+            <div class="menu__list">
+                <li><a href="/src/views/student.html">Students</a></li>
+                <li><a href="/src/views/news.html">News</a></li>
+                <li><a href="/src/views/courses.html">Courses</a></li>
+                <li><a href="/src/views/activities.html">Activities</a></li>
+                <li><a href="/src/views/resource.html">Resources</a></li>
+                <li><a href="/src/views/certificates.html">Certificates</a></li>
+                <li><a href="/src/views/classes.html" class="space">Private classes</a></li>
+                <div class="space-top">
+                    <li><a href="/src/views/offers.html">Offers</a></li>
+                    <li><a href="/src/views/menbership.html">Memberships</a></li>
+                    <li><a href="/src/views/referrals.html">Referrals</a></li>
+                    <li class="press"><a href="/src/views/sponsors.html">Sponsors</a></li>
+                    <li><a href="/src/views/reviews.html">Reviews</a>
+                </div>
+            </div>
+        </div>
+
+        <section id="nav">
+            <div class="nav__icon">
+                <i class="fas fa-bell">
+                    <div class="tooltip"> </div>
+                </i>
+                <i class="far fa-envelope"></i>
+                <a href="" class="profile"></a>
+            </div>
+        </section>
+
+        <section class="cont-tables-sponsor">
+            <div class="cont-table-sponsor_blue">
+                <table class="crud-table-sponsor table-sponsor">
+                </table>
+            </div>
+            <button class="btn-sponsor">Add new sponsor</button>
+        </section>
+
+        <section id="modal-container-sponsor">
+            <div class="modal-sponsor modal-clos">
+                <div class="close-sponsor"><i class="fas fa-times-circle close"></i></div>
+                <div class="cont-p-sponsor">
+
+                </div>
+        </section>
+
+        <form class="form-delete-dr" action="">
+            <section class="modal-container-dr">
+                <div class="modal-dr modal-close-dr">
+                    <h3>Delete item</h3>
+                    <textarea name="reasonDelete" id="text-dr"  placeholder="Reason..." required></textarea>
+                        <div class="buttons_delete">
+                            <div class="btn-dr2">Cancel</div>
+                            <input type="submit" class="bnt-dr" value="Yes, Delete"></input>
+                        </div>
+                    </div>
+                </section>
+            </form>
+
+        <section class="container-notify-succes alert" id="alert">
+            <i class="fas fa-check-circle close-notify-succes"></i>
+            <p class="parrafo-succes"></p>
+        </section>
+
+        <section id="container-noti">
+            <div class="noti__idea"></div>
+            <p class="noti__parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deserunt eius,
+                animi fugiat debitis, id ipsa sint recusandae eum nobis odit sequi nihil dicta beatae qui eveniet
+                mollitia, excepturi adipisci.</p>
+        </section>
+
+
+    </div>
+    <!--     <script src="/src/js/index.js" type="module"></script> -->
+    <script src="/src/js/crud_tables/sponsors/main-sponsor.js" type="module"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://kit.fontawesome.com/d65d9c50b6.js" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
